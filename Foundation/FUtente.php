@@ -17,8 +17,20 @@ Class FUtente extends Fdb {
 	
 	public function inserisciUtente(DUtente $utente){   
 		$dati=$utente->getAsArray();
-		$this->db->setvariabili($this->tabella,$this->chiavedb,"");
-		$this->db->insert($dati);
+                $username=$dati['username'];
+                $Password=$dati['password'];
+                $Nome=$dati['nome'];
+                $Cognome=$dati['cognome'];
+                $Email=$dati['email'];
+                $Codice_attivazione=$dati['codice_attivazione'];
+                $stato_attivazione=$dati['stato_attivazione'];
+                $tipo=$dati['tipo'];
+                $squadra=$dati['squadra'];
+                $ElencoColonne="'username', 'password', 'nome','cognome', 'email','codice_attivazione','stato_attivazione','tipo','squadra' ";;
+                $TuplaValori= "'$username', '$Password', '$Nome','$Cognome', '$Email','$Codice_attivazione','$stato_attivazione','$tipo','$squadra' ";
+                $result=$this->db->insert($this->tabella,$ElencoColonne, $TuplaValori);
+		//$this->db->setvariabili($this->tabella,$this->chiavedb,"");
+		
 	}
 	
 	public function getUtenteByEmail($_email){ 

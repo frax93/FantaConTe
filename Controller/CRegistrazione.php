@@ -104,9 +104,8 @@ class CRegistrazione {
                         "NonAttivato", $data['nome'],$data['cognome'],"normale",$Squadra);
                 $dutente->set_activationcode();
                 /***BISOGNA REGISTRARE L'UTENTE NEL DATABASE****/
-                $result=$dutente->getAsArray();
-                print_r($result);
                 $futente->inserisciUtente($dutente);
+               
                 //$this->invia_email($dutente);
                 //$query->commit();
                 //$this->inviaMailRegistrazione($data['email']);

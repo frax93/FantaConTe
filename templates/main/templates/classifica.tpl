@@ -1,7 +1,7 @@
 <div> 
-              <div>  <h5>Classifica FantaConTe</h5> 
+              <div class="classifica">  <h5>Classifica FantaConTe</h5> 
 									
-									<div class="table-wrapper">
+									<div class="table-wrapper ">
 										<table>
 											<thead>
 												<tr>
