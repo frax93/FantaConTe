@@ -10,31 +10,21 @@ Class FUtente extends Fdb {
 
 	public function __construct(){   
 	    $this->db = USingleton::getInstance('Fdb');
-	    $this->tabella="utenti";
-	    $this->chiavedb="(username,password,nome,cognome,email,codice_attivazione,stato_attivazione,tipo_utente,squadra)";
-	    $this->bind="(:username,:password,:nome,:cognome,:email,:codice_attivazione,:stato_attivazione,:tipo_utente,:squadra)";
+	    $this->tabella="utente";
+	    $this->chiavedb="(username,password,nome,cognome,email,codice_attivazione,stato_attivazione,tipo,squadra)";
+	    $this->bind="(:username,:password,:nome,:cognome,:email,:codice_attivazione,:stato_attivazione,:tipo,:squadra)";
 	}
 	
 	public function inserisciUtente(DUtente $utente){   
 		$dati=$utente->getAsArray();
-                $username=$dati['username'];
-                $Password=$dati['password'];
-                $Nome=$dati['nome'];
-                $Cognome=$dati['cognome'];
-                $Email=$dati['email'];
-                $Codice_attivazione=$dati['codice_attivazione'];
-                $stato_attivazione=$dati['stato_attivazione'];
-                $tipo=$dati['tipo'];
-                $squadra=$dati['squadra'];
-                $ElencoColonne="'username', 'password', 'nome','cognome', 'email','codice_attivazione','stato_attivazione','tipo','squadra' ";;
-                $TuplaValori= "'$username', '$Password', '$Nome','$Cognome', '$Email','$Codice_attivazione','$stato_attivazione','$tipo','$squadra' ";
-                $result=$this->db->insert($this->tabella,$ElencoColonne, $TuplaValori);
-		//$this->db->setvariabili($this->tabella,$this->chiavedb,"");
+                $this->db->autoincremento = $this->autoincremento;
+                $this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
+                $this->db->insert($dati);
 		
 	}
 	
 	public function getUtenteByEmail($_email){ 
-	     $this->db->setvariabili($this->tabella,"email","");
+	     $this->db->setvariabili($this->tabella,"email",":email");
 	     return $this->db->queryGenerica("*",'=',$_email);
 	}
 	

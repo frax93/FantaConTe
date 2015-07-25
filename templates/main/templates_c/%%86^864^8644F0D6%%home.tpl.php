@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-07-23 19:30:10
+<?php /* Smarty version 2.6.13, created on 2015-07-25 16:59:28
          compiled from home.tpl */ ?>
 <html>
 	<head>
@@ -7,6 +7,13 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="css/main.css" />
+                <link rel="stylesheet" href="css/tabella.css" />
+                <script src="Javascript/jquery.min.js"></script>
+			<script src="Javascript/jquery.scrollex.min.js"></script>
+			<script src="Javascript/jquery.scrolly.min.js"></script>
+			<script src="Javascript/skel.min.js"></script>
+			<script src="Javascript/util.js"></script>
+			<script src="Javascript/main.js"></script>
 	</head>
 	<body class="landing">
 
@@ -54,21 +61,21 @@
 											<ul class="actions">
 											<form class="form" >
 											<li><div class="buttonin1" >
-			                                <input type="text" id="email" name="email" value="" placeholder="Email">
+			                                <input type="text" placeholder="Username">
 			                                </div>
 			                                </li>
 			                                <li><div class="buttonin2" >
-		                                 	<input type="password" id="password" name="password" value=""placeholder="Password">
+		                                 	<input type="password" placeholder="Password">
 		                                 	</div>
 		                                 	</li>
 		                                 	<li><button type="submit" class="button special" id="login-button"><a href="index.php?controller=Registrazione&task=login">Login</button></li></form>
 	                                      	</ul>
-												<a href="index.php?controller=Registrazione&task=registra" class="button">Registrati</a>
+												<a href="index.php?controller=Registrazione&task=modulo_registrazione" class="button">Registrati</a>
 										
 										
 										</div>
 						</div>
-						<a href="index.php?controller=Registrazione&task=tutorial" class="more scrolly">Segui Tutorial</a>
+						<a href="index.php?controller=Tutorial" class="more scrolly">Segui Tutorial</a>
 
             <!-- collegare il bottone per il tutorial -->
                <ul class="copyright">
@@ -76,12 +83,7 @@
 						</ul>
 
 		<!-- Scripts -->
-			<script src="Javascript/jquery.min.js"></script>
-			<script src="Javascript/jquery.scrollex.min.js"></script>
-			<script src="Javascript/jquery.scrolly.min.js"></script>
-			<script src="Javascript/skel.min.js"></script>
-			<script src="Javascript/util.js"></script>
-			<script src="Javascript/main.js"></script>
+			
 
 	</body>
 </html>

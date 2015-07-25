@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS FantaConTe;
-CREATE DATABASE FantaConTe;
-USE FantaConTe;
+DROP DATABASE IF EXISTS fantaconte;
+CREATE DATABASE fantaconte;
+USE fantaconte;
 
-CREATE TABLE IF NOT EXISTS `utenti` (
+CREATE TABLE IF NOT EXISTS `utente` (
     `username` VARCHAR(20) NOT NULL ,
     `password` VARCHAR(10) NOT NULL,
     `nome`          VARCHAR(20) NOT NULL ,
@@ -11,34 +11,33 @@ CREATE TABLE IF NOT EXISTS `utenti` (
     `codice_attivazione` VARCHAR(10) NOT NULL,
     `stato_attivazione` VARCHAR(10) NOT NULL,
     `tipo_utente` VARCHAR(10) NOT NULL,
-    `squadra` VARCHAR(20) NOT NULL,
+    `squadra` VARCHAR(200) NOT NULL,
     PRIMARY KEY (`email`)
 );
-/**CREATE TABLE Formazione (
-    --modulo CHAR(5) NOT NULL,
-    titolari -- DA VEDERE NOT NULL,
-    panchina -- DA VEDERE,
-    team  VARCHAR(20) NOT NULL ,
-    giocatori --DA VEDERE,
-    PRIMARY KEY(team)
+CREATE TABLE IF NOT EXISTS `Formazione`(
+    ` modulo`  CHAR(5) NOT NULL,
+    `titolari` VARCHAR(200) NOT NULL,
+    `panchina` VARCHAR(200) NOT NULL,
+    `squadra`  VARCHAR(20) NOT NULL ,
+    PRIMARY KEY(`squadra`)
 );
-CREATE TABLE Classifica (
-    username VARCHAR(20) NOT NULL ,
-    punteggio INTEGER NOT NULL,
-    partite_giocate INTEGER NOT NULL,
-    vittorie INTEGER NOT NULL,
-    pareggi INTEGER NOT NULL,
-    sconfitte INTEGER NOT NULL,
-    percentuale_vittoria FLOAT NOT NULL,
-    PRIMARY KEY (username)
+CREATE TABLE IF NOT EXISTS `Classifica`(
+    `username`  VARCHAR(20) NOT NULL ,
+    `punteggio` INTEGER NOT NULL,
+    `partite_giocate` INTEGER NOT NULL,
+    `vittorie` INTEGER NOT NULL,
+    `pareggi` INTEGER NOT NULL,
+    `sconfitte` INTEGER NOT NULL,
+    `percentuale_vittoria` FLOAT NOT NULL,
+    PRIMARY KEY (`username`)
 );
-CREATE TABLE Squadra(
-    id            SMALLINT NOT NULL AUTO_INCREMENT ,
-    nome          VARCHAR(20) NOT NULL ,
-    giocatori     --DA VEDERE,
-    PRIMARY KEY (id)
+CREATE TABLE IF NOT EXISTS `Squadra`(
+    `id`            SMALLINT NOT NULL AUTO_INCREMENT ,
+    `nome`          VARCHAR(20) NOT NULL ,
+    `giocatori` VARCHAR(200) NOT NULL,
+    PRIMARY KEY (`id`)
 );
-***/
+
 CREATE TABLE  IF NOT EXISTS `Giocatori` (
     `id`            SMALLINT NOT NULL AUTO_INCREMENT ,
     `nome`          VARCHAR(20) NOT NULL ,

@@ -11,7 +11,7 @@ class CHome {
 	 * Imposta la pagina e verifica anche l'autenticazione.
 	 */
 	public function __construct(){
-		$View = USingleton::getInstance('View');
+		$View = USingleton::getInstance('VHome');
 		try {
 			$contenuto=$this->mux();
 			echo $contenuto;
@@ -28,10 +28,17 @@ class CHome {
         $VHome->impostaContenuto($contenuto);
         $fdb=USingleton::getInstance('Fdb');
         $query=$fdb->getDatabase();
+        $query->beginTransaction();
+        try{
         $fclassifica=USingleton::getInstance('FClassifica');
         $classifica=$fclassifica->getClassifica();
         $VHome->impostaPaginaGuest($classifica);
         return $VHome->mostraPagina();
+        }
+        catch (Exception $e) {
+            
+        }
+        
       }
 	/**
 	 * Smista le richieste delegando i corrispondenti controller.

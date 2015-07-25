@@ -87,39 +87,38 @@ class CRegistrazione {
      *
      * @return mixed
      */
-    public function creaUtente() {
+    public function registra() {
         $VRegistrazione=USingleton::getInstance('VRegistrazione');
         $futente=USingleton::getInstance('FUtente');
         $fdb=USingleton::getInstance('Fdb');
         $data=$VRegistrazione->getDatiRegistrazione();
         $Squadra= new DSquadra($data['nome_squadra']); 
         $query=$fdb->getDataBase();
-        //$query->beginTransaction();
-        /*Se l'utente non è già stato registrato*/
-        if (!($futente->getUtenteByEmail($data['email']))){
-            try{
+        $query->beginTransaction();
+        try{
+        /*Controlla se l'utente non è già stato registrato*/
+            if (!($futente->getUtenteByEmail($data['email']))){
+            
               if($data['password_1']===$data['password']) {
                 unset($data['password_1']);
                 $dutente=new DUtente($data['username'],$data['password'],$data['email'],
                         "NonAttivato", $data['nome'],$data['cognome'],"normale",$Squadra);
                 $dutente->set_activationcode();
-                /***BISOGNA REGISTRARE L'UTENTE NEL DATABASE****/
                 $futente->inserisciUtente($dutente);
-               
                 //$this->invia_email($dutente);
-                //$query->commit();
-                //$this->inviaMailRegistrazione($data['email']);
-                
+                //$this->attivazione();
+                $query->commit();
                 return $VRegistrazione->successTemplate();
-                }
+                }  
+            throw new Exception("Utente già registrato");
             }
-            catch (Exception $e){
-                //$query->rollback();
+        }
+        catch (Exception $e){
+                $query->rollback();
             	return $VRegistrazione->failedTemplate();
                 
-            }
-        throw new Exception("Utente già registrato");
         }
+        
     }
     
     /**
@@ -132,9 +131,11 @@ class CRegistrazione {
     //Da fare
     private function invia_email(DUtente $_utente) {
         $FUtente=USingleton::getInstance('FUtente');
+        $email=$_utente->getemail();
     	$email_url = urlencode($email);
     	$utente=$FUtente->getUtenteByEmail($email);
-    	$codice_attivazione = $utente[0]['codice_attivazione'];
+        //print_r($utente);
+    	$codice_attivazione = $utente['codice_attivazione'];
     	$url = "http://fantaconte.altervista.org/index.php?controller=Registrazione&task=attiva&codice_attivazione=".$codice_attivazione."&mail=".$email_url;
     	$to = $email;
     	$subject = 'Benvenuto in FantaConTe';
@@ -156,14 +157,17 @@ class CRegistrazione {
         $VRegistrazione = USingleton::getInstance('VRegistrazione');
         $attivazione=$VRegistrazione->getDatiAttivazione();
         $futente=USingleton::getInstance('FUtente');
-        $user=$futente->getUtenteByEmail($dati['email']);
-        if (!($attivazione)){
+        $user=$futente->getUtenteByEmail($attivazione['email']);
+        if (isset($attivazione)){
             if ($user->getCodiceAttivazione()==$attivazione['codice']) {
                 $update = array("stato_attivazione" => "attivato",
     				       "email" => urldecode($attivazione['email']));
     		$futente->updateUtente($update);
                 
-            } /*else {
+            }
+            
+            //Return template successo attivazione
+            /*else {
                 $view->impostaErrore('Il codice di attivazione &egrave; errato');
                 $view->setLayout('problemi');
             }
@@ -178,7 +182,7 @@ class CRegistrazione {
      *
      * @return string
      */
-    public function register() {
+    public function inviamodulo() {
         $VRegistrazione=USingleton::getInstance('VRegistrazione');
         return $VRegistrazione->processaTemplate();
     }
@@ -204,10 +208,10 @@ class CRegistrazione {
         switch ($view->getTask()) {
             case 'recupera_password':
                 return $this->recuperaPassword();
-            case 'registra':
-                return $this->register();
+            case 'modulo_registrazione':
+                return $this->inviamodulo();
             case 'salva':
-                return $this->creaUtente();
+                return $this->registra();
             case 'login':
                 return $this->login();
             case 'attiva':

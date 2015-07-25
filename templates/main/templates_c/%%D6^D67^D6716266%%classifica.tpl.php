@@ -1,9 +1,9 @@
-<?php /* Smarty version 2.6.13, created on 2015-07-16 19:28:40
+<?php /* Smarty version 2.6.13, created on 2015-07-25 16:37:41
          compiled from classifica.tpl */ ?>
 <div> 
-              <div>  <h5>Classifica FantaConTe</h5> 
+              <div class="classifica">  <h5>Classifica FantaConTe</h5> 
 									
-									<div class="table-wrapper">
+									<div class="table-wrapper ">
 										<table>
 											<thead>
 												<tr>

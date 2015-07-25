@@ -21,12 +21,12 @@ Class Fdb{
         //si crea una stringa con il nome dell'host e del database
         //in seguito si crea un oggetto PDO per creare la connessione al DB
         try{ 
+            //Attiva impostazione PDO per controllo errori try-catch
+            $attributi = array(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $connection="$dbms:host=".$config[$dbms]['host'].";dbname=".$config[$dbms]['database'];
-            $this->db= new PDO($connection,$config[$dbms]['user'],$config[$dbms]['password']);
+            $this->db= new PDO($connection,$config[$dbms]['user'],$config[$dbms]['password'],$attributi);
             //Disabilita Auto-commit del PDO al database
             //$this->db->setAttribute(PDO::ATTR_AUTOCOMMIT, FALSE);
-            //Attiva impostazione PDO per controllo errori try-catch 
-            //$this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
         catch(PDOException $error){
             die("Attenzione..! \n Errore durante la connessione al database: ".$error->getMessage());
@@ -37,22 +37,17 @@ Class Fdb{
         $this->tabella=$table;
         $this->bind=$_bind;
     }
-    public function insert($NomeTabella,$ElencoColonne,$TuplaValori){
-        /*if($this->autoincremento){
+    public function insert($dati){
+        if($this->autoincremento){
              unset($dati['id']);
         }
         else{
             $query=$this->db->prepare("INSERT INTO ".$this->tabella."\n".$this->chiavedb."VALUES".$this->bind);
             $risultato= $query->execute($dati);
             return $risultato;
-        }*/
-        $query =$this->db->prepare("INSERT INTO `$NomeTabella` ($ElencoColonne)Values($TuplaValori)");
-        //$query=$this->db->prepare("INSERT INTO `$NomeTabella` ($ElencoColonne)"."VALUES ($TuplaValori);");
-        $query->execute();
-        $risultato = $query->fetchAll();
-        return $risultato;
+         }
        
-    }
+        }
         /**
 	  * Setta i parametri per la prossima query da effettuare
 	  * @param string $_column Colonne da selezionare

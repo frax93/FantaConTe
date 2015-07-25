@@ -64,7 +64,7 @@
 		                                 	</li>
 		                                 	<li><button type="submit" class="button special" id="login-button"><a href="index.php?controller=Registrazione&task=login">Login</button></li></form>
 	                                      	</ul>
-												<a href="index.php?controller=Registrazione&task=registra" class="button">Registrati</a>
+												<a href="index.php?controller=Registrazione&task=modulo_registrazione" class="button">Registrati</a>
 										
 										
 										</div>
