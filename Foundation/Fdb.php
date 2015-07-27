@@ -22,6 +22,7 @@ Class Fdb{
         //in seguito si crea un oggetto PDO per creare la connessione al DB
         try{ 
             //Attiva impostazione PDO per controllo errori try-catch
+            //inserire $attributi con $this->db->setAttribute
             $attributi = array(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $connection="$dbms:host=".$config[$dbms]['host'].";dbname=".$config[$dbms]['database'];
             $this->db= new PDO($connection,$config[$dbms]['user'],$config[$dbms]['password'],$attributi);
