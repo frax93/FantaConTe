@@ -42,6 +42,7 @@ Class Fdb{
              unset($dati['id']);
         }
         else{
+           //provare con metodo query
             $query=$this->db->prepare("INSERT INTO ".$this->tabella."\n".$this->chiavedb."VALUES".$this->bind);
             $risultato= $query->execute($dati);
             return $risultato;
