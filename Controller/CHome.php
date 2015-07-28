@@ -16,7 +16,7 @@ class CHome {
 			$contenuto=$this->mux();
 			echo $contenuto;
 		} catch (Exception $e) {
-			$View->invia(array("error" => $e->getMessage()));
+                    throw new Exception ("Errore");
 		}
 	}
         /**
@@ -28,7 +28,7 @@ class CHome {
         $VHome->impostaContenuto($contenuto);
         $fdb=USingleton::getInstance('Fdb');
         $query=$fdb->getDatabase();
-        $query->beginTransaction();
+        //$query->beginTransaction();
         try{
         $fclassifica=USingleton::getInstance('FClassifica');
         $classifica=$fclassifica->getClassifica();

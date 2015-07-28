@@ -45,8 +45,8 @@
 												{foreach from=$portieri item=por}
                                                                                                 
                                                                                                     <tr>
-													<td >{$por.nome} </td>
-                                                                                                        <td id="prova">{$por.cognome} </td>
+													<td>{$por.nome} </td>
+                                                                                                        <td>{$por.cognome} </td>
 													<td>{$por.squadra_reale} </td>
 													<td>{$por.valore}</td>
                                                                                                         <td> <k>  <button type="submit" class="buttonp" id="pippo">Compra</button> </k>     </td>

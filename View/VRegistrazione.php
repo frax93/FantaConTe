@@ -11,7 +11,7 @@ class VRegistrazione extends View{
      *
      * @return mixed
      */
-    public function getPassword() {
+    public function getDati() {
         $dati=array();
         if (isset($_REQUEST['password'])&&isset($_REQUEST['email'])){
             $dati[0]=$_REQUEST['email'];

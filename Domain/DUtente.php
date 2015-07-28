@@ -52,7 +52,7 @@ class DUtente{
             return "Nome non valido";
     }
     public function setcognome($_cognome){
-        $regexp='/^[[:alpha] \']{2,30}$/';
+        $regexp='/^[[:alpha:] \']{3,30}$/';
         if(preg_match($regexp,$_cognome))
            $this->cognome=$_cognome;
         else
@@ -101,11 +101,11 @@ class DUtente{
         return $this->codice_attivazione;
     }
     public function getsquadra(){
-        $_squadra=  unserialize($this->squadra);
+        $_squadra=unserialize($this->squadra);
         return $_squadra;
     }
     public function statoattivazione(){
-        return $this->statoatt;
+        return $this->stato_attivazione;
     }
     public function getAsArray(){
     	$result=array();

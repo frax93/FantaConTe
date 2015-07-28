@@ -4,13 +4,13 @@ USE fantaconte;
 
 CREATE TABLE IF NOT EXISTS `utente` (
     `username` VARCHAR(20) NOT NULL ,
-    `password` VARCHAR(10) NOT NULL,
+    `password` VARCHAR(100) NOT NULL,
     `nome`          VARCHAR(20) NOT NULL ,
     `cognome`       VARCHAR(20) NOT NULL ,
-    `email`         VARCHAR(30) NOT NULL,
-    `codice_attivazione` VARCHAR(10) NOT NULL,
-    `stato_attivazione` VARCHAR(10) NOT NULL,
-    `tipo_utente` VARCHAR(10) NOT NULL,
+    `email`         VARCHAR(50) NOT NULL,
+    `codice_attivazione` VARCHAR(13) NOT NULL,
+    `stato_attivazione` VARCHAR(11) NOT NULL,
+    `tipo_utente` VARCHAR(7) NOT NULL,
     `squadra` VARCHAR(200) NOT NULL,
     PRIMARY KEY (`email`)
 );

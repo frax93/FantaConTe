@@ -51,7 +51,9 @@ class CMercato{
                            $attacco[$a]=$giocatori[$i];
                            $a++;
                          }
+                         $id[$i]=$i;
                     }
+                    $vmercato->impostaDati('id',$i);
                     $vmercato->impostaDati('portieri',$portieri);
                     $vmercato->impostaDati('difesa',$difesa);
                     $vmercato->impostaDati('centrocampo',$centrocampo);

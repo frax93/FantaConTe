@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-07-25 16:35:29
+<?php /* Smarty version 2.6.13, created on 2015-07-27 15:52:12
          compiled from mercato.tpl */ ?>
 <div id="main">                
 		<section class="spotlight">
@@ -49,9 +49,9 @@
 ?>
                                                                                                 
                                                                                                     <tr>
-													<td ><?php echo $this->_tpl_vars['por']['nome']; ?>
+													<td><?php echo $this->_tpl_vars['por']['nome']; ?>
  </td>
-                                                                                                        <td id="prova"><?php echo $this->_tpl_vars['por']['cognome']; ?>
+                                                                                                        <td><?php echo $this->_tpl_vars['por']['cognome']; ?>
  </td>
 													<td><?php echo $this->_tpl_vars['por']['squadra_reale']; ?>
  </td>

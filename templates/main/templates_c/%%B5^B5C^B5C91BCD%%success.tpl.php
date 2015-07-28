@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-07-24 10:48:48
+<?php /* Smarty version 2.6.13, created on 2015-07-28 17:34:34
          compiled from success.tpl */ ?>
 <div id="banner"><font color=green>Fanta</font><font color=white>Con</font><font color=red>Te</font>
 	<p>Complimenti la tua registrazione &egrave  andata a buon fine!!.</p>

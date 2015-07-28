@@ -13,7 +13,7 @@ class FClassifica extends Fdb {
 		$this->autoincremento = TRUE;
 		$this->db = USingleton::getInstance('Fdb');
 		$this->tabella="classifica";
-		$this->chiavedb="(utente,punteggio,partite_giocate,vittorie,pareggi,sconfitte,percentuale_vittoria)";
+                $this->chiavedb="(`utente`, `punteggio`, `partite_giocate`, `vittorie`, `pareggi`, `sconfitte`, `percentuale_vittoria`)";
 		$this->bind="(:utente, :punteggio, :partite_giocate, :vittorie, :pareggi, :sconfitte, :percentuale_vittoria)";
 	}
 	

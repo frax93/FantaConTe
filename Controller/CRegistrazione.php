@@ -61,7 +61,6 @@ class CRegistrazione {
         $FUtente=USingleton::getInstance('FUtente');
         $user=$FUtente->getUtenteByEmail($login['email']);
         if(!($user)){
-            $user=$user[0];
             if ($user['password']===md5($login['password'])){
                 if ($user['stato_attivazione']==="attivato"){         
                     $session=USingleton::getInstance('USession');
@@ -94,11 +93,10 @@ class CRegistrazione {
         $data=$VRegistrazione->getDatiRegistrazione();
         $Squadra= new DSquadra($data['nome_squadra']); 
         $query=$fdb->getDataBase();
-        $query->beginTransaction();
+        //$query->beginTransaction();
         try{
         /*Controlla se l'utente non è già stato registrato*/
             if (!($futente->getUtenteByEmail($data['email']))){
-            
               if($data['password_1']===$data['password']) {
                 unset($data['password_1']);
                 $dutente=new DUtente($data['username'],$data['password'],$data['email'],
@@ -107,14 +105,14 @@ class CRegistrazione {
                 $futente->inserisciUtente($dutente);
                 //$this->invia_email($dutente);
                 //$this->attivazione();
-                $query->commit();
+                //$query->commit();
                 return $VRegistrazione->successTemplate();
                 }  
             throw new Exception("Utente già registrato");
             }
         }
         catch (Exception $e){
-                $query->rollback();
+                //$query->rollback();
             	return $VRegistrazione->failedTemplate();
                 
         }

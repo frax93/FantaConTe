@@ -45,7 +45,7 @@ document.write(" "+giorno+" "+date+" "+mese+" "+year+" - ora "+ora+":"+minuti+":
 
 $(document).ready(function(){
     $("#pippo").click(function(){
-        var dati=[];
+        var dati= new Array();
         for(var i=0;i<3;i++){
             dati[i]=$('#prova').html();
             //alert(dati.pop());

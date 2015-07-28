@@ -4,7 +4,6 @@
  * @author francesco maione
  * @author michele taranta
  */
-global $config;
 $dbms='mysql';
 $config[$dbms]['user'] = 'root';
 $config[$dbms]['password'] = '';
