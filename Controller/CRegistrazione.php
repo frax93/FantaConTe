@@ -30,22 +30,19 @@ class CRegistrazione {
         $VRegistrazione= USingleton::getInstance('VRegistrazione');
         $task=$VRegistrazione->getTask();
         $controller=$VRegistrazione->getController();
-        $this->_username=$VRegistrazione->getUsername();
-        $this->_password=$VRegistrazione->getPassword();
-        if ($session->getvalore('username')!=false) {
+        $dati=$VRegistrazione->getDati();
+        if($session->getvalore('email')!=false) {
             $autenticato=true;
             //autenticato
-        } elseif ($task=='autentica' && $controller='registrazione') {
+        } elseif ($task=='login' && $controller=='Registrazione') {
             //controlla autenticazione
-            $autenticato=$this->autentica($this->_username, $this->_password);
+            $autenticato=$this->login();
         }
-        if ($task=='esci' && $controller='registrazione') {
+        if ($task=='logout' && $controller=='Registrazione') {
             //logout
             $this->logout();
             $autenticato=false;
         }
-        $VRegistrazione->impostaErrore($this->_errore);
-        $this->_errore='';
         return $autenticato;
     }
     /**
@@ -59,28 +56,32 @@ class CRegistrazione {
         $VRegistrazione= USingleton::getInstance('VRegistrazione');
         $login=$VRegistrazione->getDati();
         $FUtente=USingleton::getInstance('FUtente');
+        print($login['email']);
         $user=$FUtente->getUtenteByEmail($login['email']);
-        if(!($user)){
-            if ($user['password']===md5($login['password'])){
-                if ($user['stato_attivazione']==="attivato"){         
+        if(isset($user)){
+            $user=$user[0];
+            if($user['password']==md5($login['password'])){
+                if($user['stato_attivazione']==="Attivato"){  
                     $session=USingleton::getInstance('USession');
                     $session->setvalore('username',$user['username']);
                     $session->setValore('nome',$user['nome']);
         	    $session->setValore('cognome',$user['cognome']);
         	    $session->setValore('email',$user['email']);
         	    $session->setValore('tipo_utente',$user['tipo_utente']);
-                }
+                    return true;
+                 }
                 else 
                     //Account non attivato dare errore
                     throw new Exception("Utente non attivato");
             }
             else
         	throw new Exception("Username e/o Password Errati");
-            
-        }  
+        }   
          else 
             throw new Exception("Utente non trovato");
-    }
+    return false;
+}
+    
     /**
      * Crea un utente sul database controllando che non esista già
      *
@@ -188,9 +189,14 @@ class CRegistrazione {
      * EfFettua il logout
      */
     public function logout() {
+        $VRegistrazione=  USingleton::getInstance('VRegistrazione');
         $session=USingleton::getInstance('USession');
-        $session->cancella_valore('username');
-        $session->cancella_valore('nome_cognome');
+        $session->cancellaValore('username');
+        $session->cancellaValore('nome');
+        $session->cancellaValore('cognome');
+        $session->cancellaValore('email');
+        $session->cancellaValore('tipo_utente');    
+        return $VRegistrazione->logoutTemplate();
     }
     public function tutorial(){
      $VRegistrazione=USingleton::getInstance('VRegistrazione');

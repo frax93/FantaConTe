@@ -12,33 +12,37 @@ class CHome {
 	 */
 	public function __construct(){
 		$View = USingleton::getInstance('VHome');
-		try {
+		//try {
 			$contenuto=$this->mux();
 			echo $contenuto;
-		} catch (Exception $e) {
-                    throw new Exception ("Errore");
-		}
+		//} catch (Exception $e) {
+                    //throw new Exception ("Errore");
+		//}
 	}
         /**
          * Metodo che imposta la pagina home iniziale
          */
       public function impostaPagina () {
         $VHome= USingleton::getInstance('VHome');
+        $CRegistrazione=USingleton::getInstance('CRegistrazione');
+        $registrato=$CRegistrazione->getUtenteRegistrato();
         $contenuto=$this->mux();
         $VHome->impostaContenuto($contenuto);
         $fdb=USingleton::getInstance('Fdb');
         $query=$fdb->getDatabase();
         //$query->beginTransaction();
-        try{
-        $fclassifica=USingleton::getInstance('FClassifica');
-        $classifica=$fclassifica->getClassifica();
-        $VHome->impostaPaginaGuest($classifica);
-        return $VHome->mostraPagina();
+        if($registrato) {    
+           try{
+             $fclassifica=USingleton::getInstance('FClassifica');
+             $classifica=$fclassifica->getClassifica();
+             $VHome->PaginaRegistrato();
+           } 
+           catch (Exception $e) {
+             throw new Exception("Errore DB");
+           }
         }
-        catch (Exception $e) {
-            
-        }
-        
+        else 
+            $VHome->PaginaGuest();
       }
 	/**
 	 * Smista le richieste delegando i corrispondenti controller.

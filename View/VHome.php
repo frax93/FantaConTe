@@ -59,23 +59,24 @@ class VHome extends View{
     /**
      * Imposta la pagina per gli utenti registrati/autenticati
      */
-    public function impostaPaginaRegistrato() {
+    public function PaginaRegistrato() {
         $session=USingleton::getInstance('USession');
+        $this->assign('Fanta','Fanta');
+        $this->assign('Con','Con');
+        $this->assign('Te','Te');
+        $this->assign('Benvenuto',$session->getvalore('username'));
         $this->assign('title','FantaConTe');
-        $nome_cognome=$session->leggi_valore('nome_cognome');
-        $this->assign('content_title','Benvenuto '.$nome_cognome);
-        $this->assign('main_content',$this->content);
-        $this->assign('menu',$this->button);
-        $this->aggiungiTastoLogout();
+        $this->display('classifica.tpl');
     }
     /*
      * imposta la pagina per gli utenti non registrati/autenticati
      */
-    public function impostaPaginaGuest() {
+    public function PaginaGuest() {
         $this->assign('title','FantaConTe');
         $this->assign('Fanta','Fanta');
         $this->assign('Con','Con');
         $this->assign('Te','Te');
+        $this->display('home.tpl');
     }
     /**
      * aggiunge il tasto logout al menu laterale

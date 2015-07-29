@@ -14,7 +14,7 @@ Class Fdb{
     protected $db;
     protected $tabella;
     protected $chiavedb;
-    protected $bind; //fa l'associazione tra un nome e un valore dell'SQL statement
+    protected $bind;
     protected $autoincremento=FALSE;
     public function __construct(){
         require("includes/config.php");
@@ -44,7 +44,7 @@ Class Fdb{
         }
         else{
             //usare $this->bind in $query
-            $query = "INSERT INTO `fantaconte`.`$this->tabella` $this->chiavedb VALUES ('$dati[username]','$dati[password]','$dati[nome]','$dati[cognome]','$dati[email]','$dati[codice_attivazione]','$dati[stato_attivazione]','$dati[tipo]','$dati[squadra]')";
+            $query = "INSERT INTO `fantaconte`.`$this->tabella` $this->chiavedb VALUES $dati";
             $sql=$this->db->prepare($query);
             //fare il bind dei dati passati usando i place-holders
             //$sql->bindParam($this->bind,$dati);
@@ -109,7 +109,7 @@ Class Fdb{
 	 			$query=$this->db->prepare($sql);
 	 		}
 	 	}
-	 	try {
+	 	try {   
 	 		$query->execute();
 	 		$result=$query->fetchAll(PDO::FETCH_ASSOC);
 	 	} 

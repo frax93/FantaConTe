@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-07-25 16:59:28
+<?php /* Smarty version 2.6.13, created on 2015-07-29 18:39:26
          compiled from home.tpl */ ?>
 <html>
 	<head>
@@ -41,7 +41,7 @@
 									<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
 										<ul>
-                                                                                        <li><a href="index.php?controller=Classifica&task=nuova">Home</a></li>
+                                                                                        <li><a href="index.php">Home</a></li>
 											<li><a href="index.php?controller=Mercato&task=riempi">Mercato</a></li>
 											<li><a href="index.php?controller=Formazione&task=nuova">Formazione</a></li>
 											<li><a href="index.php?controller=Registrazione&task=logout">Log Out</a></li>
@@ -57,25 +57,26 @@
 							.... il sito per il vostro Calcio<br /></font>
 							</p>
 							<!-- per cancellare i bottoni di login <div class="cancellabottone"> -->
-								<div>
+							<form method="post" enctype="multipart/form-data" action="index.php?controller=Registrazione&task=login">	
+                                                        <div>
 											<ul class="actions">
 											<form class="form" >
 											<li><div class="buttonin1" >
-			                                <input type="text" placeholder="Username">
+			                                <input type="text" id="email" name="email" value="" placeholder="Email">
 			                                </div>
 			                                </li>
 			                                <li><div class="buttonin2" >
-		                                 	<input type="password" placeholder="Password">
+		                                 	<input type="password" id="password" name="password" value=""placeholder="Password">
 		                                 	</div>
 		                                 	</li>
-		                                 	<li><button type="submit" class="button special" id="login-button"><a href="index.php?controller=Registrazione&task=login">Login</button></li></form>
+		                                 	<li> <input type="submit" name="submit" id="login-button" class="button special" value="Login"> </form></li>
 	                                      	</ul>
 												<a href="index.php?controller=Registrazione&task=modulo_registrazione" class="button">Registrati</a>
 										
 										
 										</div>
 						</div>
-						<a href="index.php?controller=Tutorial" class="more scrolly">Segui Tutorial</a>
+						<a href="index.php?controller=Registrazione&task=tutorial" class="more scrolly">Segui Tutorial</a>
 
             <!-- collegare il bottone per il tutorial -->
                <ul class="copyright">

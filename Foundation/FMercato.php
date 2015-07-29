@@ -22,15 +22,10 @@ class FMercato extends Fdb {
 	        return $this->db->queryGenerica("*","");
 	}
 	
-	/*public function getGiocatoreByvariabili($_var) {
-		foreach ($_var as $key => $valore) {
-			$chiavedb[] = $key;
-			$bind[] = ":".$key;
-			$valori[]=$valore;
-		}
-		$this->db->setvariabili($this->tabella,$chiavedb,$bind);
-		return $this->db->queryvariabile("*",$valori);
-	}*/
+	//prende DGiocatore e cambia voto
+        public function updateVoto(){
+            
+        }
 
 }
 ?>

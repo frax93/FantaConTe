@@ -14,8 +14,8 @@ class VRegistrazione extends View{
     public function getDati() {
         $dati=array();
         if (isset($_REQUEST['password'])&&isset($_REQUEST['email'])){
-            $dati[0]=$_REQUEST['email'];
-            $dati[1]=$_REQUEST['password'];
+            $dati['email']=$_REQUEST['email'];
+            $dati['password']=$_REQUEST['password'];
             return $dati;
         }
         else
@@ -63,6 +63,10 @@ class VRegistrazione extends View{
         return $this->fetch('attivazione.tpl');
         
     }
+     public function logoutTemplate() {
+        return $this->fetch('logout_success.tpl');
+        
+    }
     /**
      * Imposta i dati nel template identificati da una chiave ed il relativo valore
      *
@@ -97,5 +101,11 @@ class VRegistrazione extends View{
         else
             return false;
     } 
+      public function getController() {
+        if (isset($_REQUEST['controller']))
+            return $_REQUEST['controller'];
+        else
+            return false;
+    }
 }
 ?>
