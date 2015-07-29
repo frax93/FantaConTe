@@ -21,7 +21,8 @@ public function inserisciClassifica(DClassifica $_object){
                 $dati=$_object->getasArray();
 		$this->db->autoincremento = $this->autoincremento;
 		$this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
-		$this->db->insert($dati);
+                $stringa="('$dati[utente]','$dati[punteggio]','$dati[partite_giocate]','$dati[vittorie]','$dati[pareggi]','$dati[sconfitte]','$dati[percentuale_vittoria]')";
+		$this->db->insert($stringa);
         }
 
 	public function getClassifica(){

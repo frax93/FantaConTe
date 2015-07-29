@@ -18,10 +18,11 @@ class FFormazione extends Fdb {
 	}
 	
 public function inserisciFormazione(DFormazione $_object){
-		$classe=get_class($_object);
+		$dati=$_object->getasArray();
 		$this->db->autoincremento = $this->autoincremento;
 		$this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
-		$this->db->insert($dati);
+                $stringa="('$dati[modulo]','$dati[titolari]','$dati[panchina]','$dati[team]','$dati[countdif]','$dati[countcen]','$dati[countatt]','$dati[giocat]')";
+		$this->db->insert($stringa);
 	}
 
 	public function getFormazione($team)

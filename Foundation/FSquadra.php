@@ -21,7 +21,8 @@ public function inserisciSquadra(Squadra $object){
                 $dati=$object->getAsArray();
 		$this->db->autoincremento = $this->autoincremento;
 		$this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
-		$this->db->insert($dati);
+                $stringa="('$dati[nome]','$dati[Cpor]','$dati[Cdif]','$dati[Ccen]','$dati[Catt]','$dati[giocatori]')";
+		$this->db->insert($stringa);
                 
 }
 
