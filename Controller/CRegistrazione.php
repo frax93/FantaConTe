@@ -189,14 +189,12 @@ class CRegistrazione {
      * EfFettua il logout
      */
     public function logout() {
-        $VRegistrazione=  USingleton::getInstance('VRegistrazione');
         $session=USingleton::getInstance('USession');
         $session->cancellaValore('username');
         $session->cancellaValore('nome');
         $session->cancellaValore('cognome');
         $session->cancellaValore('email');
         $session->cancellaValore('tipo_utente');    
-        return $VRegistrazione->logoutTemplate();
     }
     public function tutorial(){
      $VRegistrazione=USingleton::getInstance('VRegistrazione');

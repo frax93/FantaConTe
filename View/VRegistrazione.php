@@ -63,10 +63,6 @@ class VRegistrazione extends View{
         return $this->fetch('attivazione.tpl');
         
     }
-     public function logoutTemplate() {
-        return $this->fetch('logout_success.tpl');
-        
-    }
     /**
      * Imposta i dati nel template identificati da una chiave ed il relativo valore
      *
