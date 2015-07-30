@@ -8,44 +8,26 @@
  */
 class FFormazione extends Fdb {
 
-	public function __construct()
-	{
-		$this->autoincremento = TRUE;
+	public function __construct(){
 		$this->db = USingleton::getInstance('Fdb');
 		$this->tabella="formazione";
-		$this->chiavedb="(modulo,titolari,panchina,team,countdif,countcen,countatt,giocat)";
-		$this->bind="(:modulo, :titolari, :panchina, :team, :countdif, :countcen, :countatt, :giocat)";
+		$this->chiavedb="(`modulo`, `titolari`, `panchina`, `squadra`)";
+		$this->bind="(:modulo, :titolari, :panchina, :squadra, :countdif, :countcen, :countatt)";
 	}
 	
 public function inserisciFormazione(DFormazione $_object){
 		$dati=$_object->getasArray();
-		$this->db->autoincremento = $this->autoincremento;
+                print_r($dati);
 		$this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
-                $stringa="('$dati[modulo]','$dati[titolari]','$dati[panchina]','$dati[team]','$dati[countdif]','$dati[countcen]','$dati[countatt]','$dati[giocat]')";
+                $stringa="('$dati[modulo]','$dati[titolari]','$dati[panchina]','$dati[squadra]')";
 		$this->db->insert($stringa);
 	}
 
-	public function getFormazione($team)
-	{
-		$this->db->setvariabili($this->tabella,"team",":team");
+	public function getFormazione($team){
+		$this->db->setvariabili($this->tabella,"squadra",":squadra");
 	        return $this->db->queryGenerica("*",$team);
 	}
 	
-	//data la squadra dell'utente ritorna il giocatore
-	/*public function getNoteByCartella($_id_cartella,$_posizione_finale = NULL,$_posizione_iniziale = NULL,$_tipo_ordinamento = NULL) {
-	if (!isset($_posizione_finale)) {
-			$chiavedb = "id_cartella";
-			$bind = ":".$chiavedb;
-		} else {
-			$chiavedb = array("id_cartella","posizione");
-			$bind = array(":".$chiavedb[0],":posizione_iniziale",":posizione_finale");
-			if (isset($_tipo_ordinamento)) {
-				$chiavedb[2] = strtoupper($_tipo_ordinamento);
-			}
-		}
-		$this->db->setParam($this->tabella,$chiavedb,$bind);
-		return $this->db->loadAsArray("*",$_id_cartella,$_posizione_finale,$_posizione_iniziale);
-	}*/
 	
 	public function aggiornaFormazione($dati) {
 

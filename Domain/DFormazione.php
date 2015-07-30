@@ -13,12 +13,12 @@ class DFormazione{
     private $modulo;
     private $titolari;
     private $panchina;
-    private $team;
+    private $squadra;
     private $countdif;
     private $countcen;
     private $countatt;
-    private static $giocatori;
-    public function __construct(Squadra $squadra){
+    //private static $giocatori;
+    public function __construct(DSquadra $squadra){
         $this->setmodulo('3-4-3');
         $this->setteam($squadra);
         $this->countdif=0;
@@ -29,20 +29,19 @@ class DFormazione{
         return $this->modulo;
     }
     public function gettitolari(){
-        return $this->titolari;
+        $titolari=serialize($this->titolari);
+        return $titolari;
     }
     public function getpanchina(){
-        return $this->panchina;
+        $panchina=serialize($this->panchina);
+        return $panchina;
     }
-    public function getfantasy(){
-        return $this->fantasypunteggio;
+    public function setmodulo($_modulo){
+        $this->modulo=$_modulo;
     }
-    public function setmodulo($mod){
-        $this->modulo=$mod;
-    }
-    public function setteam(Squadra $_squadra){
-        $this->team=$_squadra;
-        $this->giocatori=$_squadra->getgiocatori();
+    public function setteam(DSquadra $_squadra){
+        $this->squadra=serialize($_squadra);
+        //$this->giocatori=$_squadra->getgiocatori();
     }
     private function settitolari(){
         $this->titolari=array('POR'=>array(),'DIF'=>array(),'CEN'=>array(),'ATT'=>array());    
@@ -60,14 +59,14 @@ class DFormazione{
         else if($_giocatore->getruolo()=='DIF'&&$this->countdif<$difensori){
                 array_push($this->titolari['DIF'],$_giocatore);
                 $this->countdif++;
-                unset($this->giocat['DIF'][array_search($gioc, $this->giocat)]);
+                unset($this->giocatori['DIF'][array_search($gioc, $this->giocat)]);
              }
              else if($_giocatore->getruolo()=='CEN'&&$this->countcen<$centrocampisti){
                         array_push($this->titolari['CEN'],$_giocatore);
                         $this->countcen++;
                         unset($this->giocat['CEN'][array_search($gioc, $this->giocat)]);
                   }
-                  else if($_giocatore->getruolo()=='ATT'&&$this->countatt<$attacanti){
+                  else if($_giocatore->getruolo()=='ATT'&&$this->countatt<$attaccanti){
                             array_push($this->titolari['ATT'],$_giocatore);
                             $this->countatt++;
                             unset($this->giocat['ATT'][array_search($gioc, $this->giocat)]);
@@ -87,6 +86,19 @@ class DFormazione{
     public function reset(){
         $this->settitolari();
         $this->setpanchina();
+    }
+    public function getAsArray(){
+    	$result=array();
+    	foreach($this as $key => $value) {
+    		if (!is_array($value) && !is_object($value)) {
+
+    			$result[$key]= $value;
+    		}
+
+    	}
+
+    	return $result;
+
     }
     
 }

@@ -19,6 +19,9 @@ CREATE TABLE IF NOT EXISTS `Formazione`(
     `titolari` VARCHAR(200) NOT NULL,
     `panchina` VARCHAR(200) NOT NULL,
     `squadra`  VARCHAR(20) NOT NULL ,
+    `countdif`  INTEGER NOT NULL ,
+    `countcen`  INTEGER NOT NULL ,
+    `countatt`  INTEGER NOT NULL ,
     PRIMARY KEY(`squadra`)
 );
 CREATE TABLE IF NOT EXISTS `Classifica`(

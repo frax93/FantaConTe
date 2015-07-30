@@ -52,7 +52,6 @@ Class Fdb{
             $risultato=$sql->execute();
             return $risultato;
          }
-       
         }
         /**
 	  * Setta i parametri per la prossima query da effettuare

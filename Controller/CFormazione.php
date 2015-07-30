@@ -28,18 +28,12 @@ class CFormazione {
 		$fformazione=USingleton::getInstance('FFormazione');
 		$fdb=USingleton::getInstance('Fdb');
 		$session = USingleton::getInstance('USession');
-		$query=$fdb->getDatabase();
-		$query->beginTransaction();
-                $dati=$session->getvalore('nome_squadra');
-                $Squadra=new DSquadra($dati['nome_squadra']);
-	       try{ 
+                $nome=$session->getvalore('nome_squadra');
+                $Squadra=new DSquadra($nome);
+	        try{ 
                         $Formazione=new DFormazione($Squadra);
                         $fformazione->inserisciFormazione($Formazione);
-			$id = $query->lastInsertId();
-			$usrfor = array("id_squadra" => $id,
-				       "email_utente" => $session->getValore("email"));
-			$VFormazione->invia(array("id" => $id));
-			$query->commit();
+			//$query->commit();
 		} catch (Exception $e) {
 			$query->rollBack();
 			throw new Exception($e->getMessage());
