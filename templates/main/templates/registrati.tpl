@@ -1,4 +1,6 @@
- <div>
+<script src="Javascript/jquery.min.js"></script>
+<script src="Javascript/Login.js"></script> 
+<div>
 		<h2>Benvenuto nel modulo di registrazione</h2>
                 
 		 <form method="post" enctype="multipart/form-data" action="index.php?controller=Registrazione&task=salva">
@@ -10,6 +12,7 @@
 			<input type="text" id="email" name="email" value="" placeholder="Email">
                         <input type="text" id="nome_squadra" name="nome_squadra" value="" placeholder="Nome Squadra">
                         <input type="submit" name="submit" id="submit_1" class="button" value="Registrati"> 
+                        <div id="errore"></div>
                        
 		</form>
 	</div>

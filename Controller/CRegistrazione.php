@@ -202,6 +202,16 @@ class CRegistrazione {
      $VRegistrazione=USingleton::getInstance('VRegistrazione');
      return $VRegistrazione->tutorialTemplate();
     }  
+    public function controllaemail(){
+        $email=$_REQUEST['email'];
+        $esiste=false;
+        $futente= USingleton::getInstance('FUtente');
+        $user=$futente->getUtenteByEmail($email);
+        if($user!=false){
+            $esiste=true;
+        }   
+        echo json_encode($esiste);
+    }
     /**
      * Smista le richieste ai relativi metodi della classe
      * 
@@ -224,6 +234,8 @@ class CRegistrazione {
                 return $this->getUtenteRegistrato();
             case 'tutorial':
                 return $this->tutorial();
+            case 'Controllaemail':
+                return $this->controllaemail();
         }
     }
 }

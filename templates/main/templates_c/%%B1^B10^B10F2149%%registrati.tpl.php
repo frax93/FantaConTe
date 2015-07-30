@@ -1,6 +1,8 @@
-<?php /* Smarty version 2.6.13, created on 2015-07-23 19:33:17
+<?php /* Smarty version 2.6.13, created on 2015-07-30 15:42:36
          compiled from registrati.tpl */ ?>
- <div>
+<script src="Javascript/jquery.min.js"></script>
+<script src="Javascript/Login.js"></script> 
+<div>
 		<h2>Benvenuto nel modulo di registrazione</h2>
                 
 		 <form method="post" enctype="multipart/form-data" action="index.php?controller=Registrazione&task=salva">
@@ -12,8 +14,10 @@
 			<input type="text" id="email" name="email" value="" placeholder="Email">
                         <input type="text" id="nome_squadra" name="nome_squadra" value="" placeholder="Nome Squadra">
                         <input type="submit" name="submit" id="submit_1" class="button" value="Registrati"> 
+                        <div id="errore"></div>
                        
 		</form>
 	</div>
 
   
+
