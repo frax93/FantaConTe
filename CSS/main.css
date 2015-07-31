@@ -1753,7 +1753,6 @@
 	input[type="checkbox"],
 	input[type="radio"] {
 		-moz-appearance: none;
-		-webkit-appearance: none;
 		-ms-appearance: none;
 		appearance: none;
 		display: block;
@@ -3846,3 +3845,7 @@
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
+#premi
+{
+    opacity: 100;
+}

@@ -1,24 +1,15 @@
-<?php /* Smarty version 2.6.13, created on 2015-07-31 16:05:22
+<?php /* Smarty version 2.6.13, created on 2015-07-31 17:26:01
          compiled from mercato.tpl */ ?>
-<div id="main">                
+<div id="main"> 
   <section class="spotlight">
-    <!--<script src="Javascript/Mercato.js"></script>-->
     <div class="image"><img src="images/galliani.jpg" alt="" /></div>
     <div class="content">
       <h2>Diventa il futuro Galliani</h2>
       <p>Fate il vostro Mercato, crea subito la tua squadra....</p>
-      <div id=""></div>
     </div>
   </section>
   <h5>Mercato Giocatori</h5>
-  <button type="submit" class="button ">SALVA</button>
-  <pippo>This is a paragraph.</pippo>
-  <ol>
-  
-  </ol>
-  
-  <button id="btn1">Append text</button>
-  <button id="btn2">Append list items</button>
+  <input type="submit" name="submit" id="submit_1" class="button special" value="Salva"/>
   <h4><font color="orange">    Portieri   </font></h4>
   <div class="table-wrapper">
     <table class="tabellaportieri">
@@ -44,7 +35,7 @@
  </td>
 	    <td><?php echo $this->_tpl_vars['por']['valore']; ?>
 </td>
-            <td><input type="checkbox" name="portieri" value=<?php echo $this->_tpl_vars['por']['id']; ?>
+            <td><input type="checkbox" id="premi" name="portieri" value=<?php echo $this->_tpl_vars['por']['id']; ?>
 />   </td>
           </tr>
         <?php endforeach; endif; unset($_from); ?>

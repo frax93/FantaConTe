@@ -1,6 +1,7 @@
 <script src="Javascript/jquery.min.js"></script>
 <script src="Javascript/Login.js"></script> 
 <div>
+    <br><br>
 		<h2>Benvenuto nel modulo di registrazione</h2>
                 
 		 <form method="post" enctype="multipart/form-data" action="index.php?controller=Registrazione&task=salva">

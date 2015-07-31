@@ -1,22 +1,13 @@
-<div id="main">                
+<div id="main"> 
   <section class="spotlight">
-    <!--<script src="Javascript/Mercato.js"></script>-->
     <div class="image"><img src="images/galliani.jpg" alt="" /></div>
     <div class="content">
       <h2>Diventa il futuro Galliani</h2>
       <p>Fate il vostro Mercato, crea subito la tua squadra....</p>
-      <div id=""></div>
     </div>
   </section>
   <h5>Mercato Giocatori</h5>
-  <button type="submit" class="button ">SALVA</button>
-  <pippo>This is a paragraph.</pippo>
-  <ol>
-  
-  </ol>
-  
-  <button id="btn1">Append text</button>
-  <button id="btn2">Append list items</button>
+  <input type="submit" name="submit" id="submit_1" class="button special" value="Salva"/>
   <h4><font color="orange">    Portieri   </font></h4>
   <div class="table-wrapper">
     <table class="tabellaportieri">
@@ -36,7 +27,7 @@
             <td>{$por.cognome} </td>
 	    <td>{$por.squadra_reale} </td>
 	    <td>{$por.valore}</td>
-            <td><input type="checkbox" name="portieri" value={$por.id}/>   </td>
+            <td><input type="checkbox" id="premi" name="portieri" value={$por.id}/>   </td>
           </tr>
         {/foreach}
       </tbody>

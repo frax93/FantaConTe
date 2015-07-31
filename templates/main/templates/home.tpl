@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/tabella.css" />
+    <!-- Scripts -->
     <script src="Javascript/jquery.min.js"></script>
     <script src="Javascript/jquery.scrollex.min.js"></script>
     <script src="Javascript/jquery.scrolly.min.js"></script>
@@ -72,6 +72,5 @@
     <ul class="copyright">
       <li>&copy; Murador & Taranta & Maione</li>	
     </ul>
-    <!-- Scripts -->
   </body>
 </html>

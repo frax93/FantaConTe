@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-07-29 20:14:04
+<?php /* Smarty version 2.6.13, created on 2015-07-31 17:10:12
          compiled from home.tpl */ ?>
 <html>
   <head>
@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/tabella.css" />
+    <!-- Scripts -->
     <script src="Javascript/jquery.min.js"></script>
     <script src="Javascript/jquery.scrollex.min.js"></script>
     <script src="Javascript/jquery.scrolly.min.js"></script>
@@ -78,6 +78,5 @@
     <ul class="copyright">
       <li>&copy; Murador & Taranta & Maione</li>	
     </ul>
-    <!-- Scripts -->
   </body>
 </html>

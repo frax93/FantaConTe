@@ -5,9 +5,6 @@
  */
 
 $(document).ready(function() {
-	
-	
-    
    
     var errori=new Array();
    
