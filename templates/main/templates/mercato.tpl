@@ -1,13 +1,10 @@
 <div id="main">                
   <section class="spotlight">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!--<script src="Javascript/Mercato.js"></script>-->
     <div class="image"><img src="images/galliani.jpg" alt="" /></div>
     <div class="content">
       <h2>Diventa il futuro Galliani</h2>
       <p>Fate il vostro Mercato, crea subito la tua squadra....</p>
-      <script language="JavaScript" src="Javascript/mio.js"></script>
       <div id=""></div>
     </div>
   </section>
@@ -39,7 +36,7 @@
             <td>{$por.cognome} </td>
 	    <td>{$por.squadra_reale} </td>
 	    <td>{$por.valore}</td>
-            <td> <k>  <button type="submit" class="buttonp" id="pippo">Compra</button> </k>     </td>
+            <td><input type="checkbox" name="portieri" value={$por.id}/>   </td>
           </tr>
         {/foreach}
       </tbody>
@@ -64,7 +61,7 @@
             <td>{$dif.cognome} </td>
 	    <td>{$dif.squadra_reale} </td>
 	    <td>{$dif.valore}</td>
-            <td>    <button type="submit" class="buttond" id="login-button">Compra</button>      </td>
+            <td><input type="checkbox" name="difensori" value={$dif.id}/></td>
           </tr>
         {/foreach}
       </tbody>
@@ -89,7 +86,7 @@
             <td>{$cen.cognome} </td>
 	    <td>{$cen.squadra_reale} </td>
 	    <td>{$cen.valore} </td>
-            <td>      <button type="submit" class="buttonc" id="login-button">Compra</button>         </td>
+            <td><input type="checkbox" name="centrocampo" value={$cen.id}/>   </td>
           </tr>
         {/foreach}
       </tbody>
@@ -114,7 +111,7 @@
             <td>{$att.cognome} </td>
 	    <td>{$att.squadra_reale} </td>
 	    <td>{$att.valore}</td>
-            <td>   <button type="submit" class="buttona" id="login-button">Compra</button>     </td>
+            <td><input type="checkbox" name="attacco" value={$att.id}/></td>
           </tr>
         {/foreach}
       </tbody>
