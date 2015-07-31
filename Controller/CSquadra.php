@@ -67,6 +67,7 @@ class CSquadra {
 		}*/
 	}
         public function Salva(){
+            $VMercato=
             $Fdb=USingleton::getInstance('Fdb');
             $FSquadra=USingleton::getInstance('FSquadra');
             $query=$Fdb->getDataBase();

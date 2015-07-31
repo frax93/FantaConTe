@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-07-31 17:26:01
+<?php /* Smarty version 2.6.13, created on 2015-07-31 18:06:33
          compiled from mercato.tpl */ ?>
 <div id="main"> 
   <section class="spotlight">
@@ -9,6 +9,7 @@
     </div>
   </section>
   <h5>Mercato Giocatori</h5>
+  <form method="POST" action="index.php?controller=Mercato&task=salva">
   <input type="submit" name="submit" id="submit_1" class="button special" value="Salva"/>
   <h4><font color="orange">    Portieri   </font></h4>
   <div class="table-wrapper">
@@ -35,11 +36,13 @@
  </td>
 	    <td><?php echo $this->_tpl_vars['por']['valore']; ?>
 </td>
-            <td><input type="checkbox" id="premi" name="portieri" value=<?php echo $this->_tpl_vars['por']['id']; ?>
-/>   </td>
+            <td><input type="checkbox" id="premi" name=<?php echo $this->_tpl_vars['por']['id']; ?>
+ value=<?php echo $this->_tpl_vars['por']['id']; ?>
+>   </td>
           </tr>
         <?php endforeach; endif; unset($_from); ?>
       </tbody>
+      </form>
     </table>
   </div>
   <h4><font color="turquoise">    Difensori   </font></h4>

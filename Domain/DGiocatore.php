@@ -14,7 +14,13 @@ class DGiocatore{
     private $valore; 
     private $voto;
     private $giocato;
-    public function __construct(){
+    public function __construct($_nome,$_cognome,$_ruolo,$_squadra_reale,$_valore, $_voto,$_giocato){
+        $this->setnome($_nome);
+        $this->setcognome($_cognome);
+        $this->setruolo($_ruolo);
+        $this->setsquadra_re($_squadra_reale);
+        $this->setvalore($_valore);
+        $this->setvoto($_voto);
     } 
     
     public function getnome(){

@@ -117,6 +117,19 @@ class DSquadra {
    public function setnome($nome_squadra){
        $this->nome=$nome_squadra;
    }
+    public function Aggiungi(DGiocatore $giocatore){
+        switch($giocatore->getruolo()){
+               case 'DIF':
+                   $this->Aggiungi_Difensore($giocatore);
+               case 'CEN':
+                   $this->Aggiungi_Centrocampista($giocatore);
+               case 'ATT': 
+                   $this->Aggiungi_Attaccante($giocatore);
+               case 'POR':
+                   $this->Aggiungi_Portiere($giocatore);
+         
+       }
+   }
    
     public function getAsArray(){
 

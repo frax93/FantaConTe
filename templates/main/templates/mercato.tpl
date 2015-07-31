@@ -7,6 +7,7 @@
     </div>
   </section>
   <h5>Mercato Giocatori</h5>
+  <form method="POST" action="index.php?controller=Mercato&task=salva">
   <input type="submit" name="submit" id="submit_1" class="button special" value="Salva"/>
   <h4><font color="orange">    Portieri   </font></h4>
   <div class="table-wrapper">
@@ -27,10 +28,11 @@
             <td>{$por.cognome} </td>
 	    <td>{$por.squadra_reale} </td>
 	    <td>{$por.valore}</td>
-            <td><input type="checkbox" id="premi" name="portieri" value={$por.id}/>   </td>
+            <td><input type="checkbox" id="premi" name={$por.id} value={$por.id}>   </td>
           </tr>
         {/foreach}
       </tbody>
+      </form>
     </table>
   </div>
   <h4><font color="turquoise">    Difensori   </font></h4>

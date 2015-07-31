@@ -10,7 +10,7 @@ class VMercato extends View {
      * @param type $key
      * @param type $valore
      */
-     public function impostaDati($key,$valore) {
+    public function impostaDati($key,$valore) {
         $this->assign($key,$valore);
     }
     /**
@@ -30,10 +30,21 @@ class VMercato extends View {
         else
             return false;
     }
-   //Da fare
-     public function getDati() {
-        if (isset($_REQUEST['username']))
-            return $_REQUEST['username'];
+   /**
+    * Prende gli id dei giocatori nella view
+    * @return boolean
+    */
+     public function getDati(){
+        unset($_REQUEST['task']);
+        unset($_REQUEST['controller']);
+        unset($_REQUEST['submit']);
+        $dati=array();
+        $count=count($_REQUEST);
+        if($count==0){
+          for($i=1;$i<=$count;$i++)
+            array_push($dati,$_REQUEST[$i]);
+          return $dati;
+        }
         else
             return false;
     }

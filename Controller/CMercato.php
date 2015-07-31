@@ -18,6 +18,8 @@ class CMercato{
 				return $this->riempi();
 			case 'seleziona':
 				return $this->seleziona();
+                        case 'salva':
+                                return $this->Salva();
 		}
 	}
     /**
@@ -67,6 +69,37 @@ class CMercato{
                     
                 }*/
     }
+     public function Salva(){
+            $VMercato=  USingleton::getInstance('VMercato');
+            $FMercato=  USingleton::getInstance('FMercato');
+            $giocatori_selezionati=$VMercato->getDati();
+            
+            $Fdb=USingleton::getInstance('Fdb');
+            $FSquadra=USingleton::getInstance('FSquadra');
+            $query=$Fdb->getDataBase();
+            $session= USingleton::getInstance('USession');
+            $dati=$session->getvalore('nome_squadra');
+            $Squadra=new DSquadra($dati['nome_squadra']);
+            $count=count($giocatori_selezionati);
+            for($i=0;$i<=$count;$i++){
+                $giocatore=$FMercato->getGiocatore($giocatori_selezionati[$i]);
+                $giocatore=$giocatore[0];
+                $DGiocatore = new DGiocatore($giocatore['nome'],$giocatore['cognome'],$giocatore['ruolo'],
+                                             $giocatore['squadra_reale'],$giocatore['valore'],$giocatore['voto'],
+                                             $giocatore['giocato']);
+                $Squadra->Aggiungi($DGiocatore);
+            }
+            $FSquadra->inserisciSquadra($Squadra);
+            //$query->beginTransaction();
+            //try{
+                
+            /*    $query->commit();
+            }
+            catch(Exception $e){
+                $query->rollback();
+	        throw new Exception($e->getMessage());
+            }*/
+        }
     /**
      * 
      * @return type
