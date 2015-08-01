@@ -7,6 +7,11 @@
  */
 class VRegistrazione extends View{
     /**
+     * Serve per cambiare template a seconda dei task
+     * @var $template type string
+     */
+    private $template;
+    /**
      * restituisce email e password passata tramite GET o POST
      *
      * @return mixed
@@ -33,34 +38,9 @@ class VRegistrazione extends View{
     /**
      * @return string
      */
-    public function processaTemplate(){
-        return $this->fetch('registrati.tpl');
-        
-    }
-    /**
-     * @return string
-     */
-    public function successTemplate(){
-        return $this->fetch('success.tpl');
-    }
-    /**
-     * @return string
-     */
-    public function failedTemplate(){
-         return $this->fetch('failed.tpl');
-     
-    }
-    /**
-     * @return string
-     */
-    public function tutorialTemplate() {
-        return $this->fetch('tutorial.tpl');
-    }
-    /**
-     * @return string
-     */
-    public function activationTemplate() {
-        return $this->fetch('attivazione.tpl');
+    public function processaTemplate($_template){
+        $this->template=$_template;
+        return $this->fetch('registrati_'.$this->template.'tpl');
         
     }
     /**

@@ -7,23 +7,6 @@
  * @author Michele Taranta
  */
 class CRegistrazione {
-   /**
-     * @var string $_username
-     */
-    private $_username=null;
-    /**
-     * @var string $_password
-     */
-    private $_password=null;
-    /**
-     * @var string $_errore
-     */
-    private $_errore='';
-    /**
-     * Controlla se l'utente è registrato ed autenticato
-     *
-     * @return boolean
-     */
     public function getUtenteRegistrato() {
         $autenticato=false;
         $session=USingleton::getInstance('USession');
@@ -56,7 +39,6 @@ class CRegistrazione {
         $VRegistrazione= USingleton::getInstance('VRegistrazione');
         $login=$VRegistrazione->getDati();
         $FUtente=USingleton::getInstance('FUtente');
-        print($login['email']);
         $user=$FUtente->getUtenteByEmail($login['email']);
         if(isset($user)){
             $user=$user[0];
@@ -67,6 +49,7 @@ class CRegistrazione {
                     $session->setValore('nome',$user['nome']);
         	    $session->setValore('cognome',$user['cognome']);
         	    $session->setValore('email',$user['email']);
+                    $session->setValore('squadra',$user['nome_squadra']);
         	    $session->setValore('tipo_utente',$user['tipo_utente']);
                     return true;
                  }
@@ -107,14 +90,14 @@ class CRegistrazione {
                 //$this->invia_email($dutente);
                 //$this->attivazione();
                 //$query->commit();
-                return $VRegistrazione->successTemplate();
+                $VRegistrazione->processaTemplate("success");
                 }  
             throw new Exception("Utente già registrato");
             }
         }
         catch (Exception $e){
                 //$query->rollback();
-            	return $VRegistrazione->failedTemplate();
+            	$VRegistrazione->failedTemplate("failed");
                 
         }
         
@@ -133,7 +116,6 @@ class CRegistrazione {
         $email=$_utente->getemail();
     	$email_url = urlencode($email);
     	$utente=$FUtente->getUtenteByEmail($email);
-        //print_r($utente);
     	$codice_attivazione = $utente['codice_attivazione'];
     	$url = "http://fantaconte.altervista.org/index.php?controller=Registrazione&task=attiva&codice_attivazione=".$codice_attivazione."&mail=".$email_url;
     	$to = $email;
@@ -170,10 +152,8 @@ class CRegistrazione {
                 $view->impostaErrore('Il codice di attivazione &egrave; errato');
                 $view->setLayout('problemi');
             }
-        } else {
-            $view->setLayout('attivazione');
         }
-        return $view->processaTemplate();*/
+        return $view->processaTemplate("attivazione");*/
     }
     }
     /**
@@ -183,7 +163,7 @@ class CRegistrazione {
      */
     public function inviamodulo() {
         $VRegistrazione=USingleton::getInstance('VRegistrazione');
-        return $VRegistrazione->processaTemplate();
+        return $VRegistrazione->processaTemplate("reg");
     }
     /**
      * EfFettua il logout
@@ -198,7 +178,7 @@ class CRegistrazione {
     }
     public function tutorial(){
      $VRegistrazione=USingleton::getInstance('VRegistrazione');
-     return $VRegistrazione->tutorialTemplate();
+     return $VRegistrazione->processaTemplate("tutorial");
     }  
     public function controllaemail(){
         $email=$_REQUEST['email'];
