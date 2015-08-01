@@ -163,7 +163,7 @@ class CRegistrazione {
      */
     public function inviamodulo() {
         $VRegistrazione=USingleton::getInstance('VRegistrazione');
-        return $VRegistrazione->processaTemplate("reg");
+        return $VRegistrazione->processaTemplate('reg');
     }
     /**
      * EfFettua il logout

@@ -40,7 +40,7 @@ class VRegistrazione extends View{
      */
     public function processaTemplate($_template){
         $this->template=$_template;
-        return $this->fetch('registrati_'.$this->template.'tpl');
+        return $this->fetch('registrati_'.$this->template.'.tpl');
         
     }
     /**
