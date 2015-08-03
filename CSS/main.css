@@ -3845,7 +3845,37 @@
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
-#premi
+#cekpor
 {
     opacity: 100;
+    padding-left: 25px;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+#cekdif
+{
+    
+    opacity: 100;
+    padding-left: 25px;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+#cekcen
+{
+    
+    opacity: 100;
+    padding-left: 25px;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+#cekatt
+{
+    
+    opacity: 100;
+    padding-left: 25px;
+    margin-right: 15px;
+    font-size: 25px;
 }
