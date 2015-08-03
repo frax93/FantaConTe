@@ -39,10 +39,6 @@ Class Fdb{
         $this->bind=$_bind;
     }
     public function insert($dati){
-        if($this->autoincremento){
-             unset($dati['id']);
-        }
-        else{
             //usare $this->bind in $query
             $query = "INSERT INTO `fantaconte`.`$this->tabella` $this->chiavedb VALUES $dati";
             $sql=$this->db->prepare($query);
@@ -51,7 +47,7 @@ Class Fdb{
             //$sql->debugDumpParams();
             $risultato=$sql->execute();
             return $risultato;
-         }
+         
         }
         /**
 	  * Setta i parametri per la prossima query da effettuare

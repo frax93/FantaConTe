@@ -132,7 +132,7 @@ class DSquadra {
    }
    
     public function getAsArray(){
-
+        $this->giocatori=  serialize($this->giocatori);
     	$result=array();
 
     	foreach($this as $key => $value) {
