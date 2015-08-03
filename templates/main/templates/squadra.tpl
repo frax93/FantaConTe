@@ -27,7 +27,7 @@
             <td>{$portieri.cognome} </td>
 	    <td>{$portieri.squadra_reale} </td>
 	    <td>{$portieri.valore}</td>
-            <td><input type="checkbox" id="premi">   </td>
+            <td><input type="checkbox" id="cekpor">   </td>
           </tr>
 
       </tbody>
@@ -46,15 +46,15 @@
 	</tr>
       </thead>
       <tbody>
-	{foreach from=$difesa item=dif}
+	
           <tr>
 	    <td>{$dif.nome} </td>
             <td>{$dif.cognome} </td>
 	    <td>{$dif.squadra_reale} </td>
 	    <td>{$dif.valore}</td>
-            <td><input type="checkbox" name="difensori" value={$dif.id}/></td>
+            <td><input type="checkbox" id="cekdif"></td>
           </tr>
-        {/foreach}
+       
       </tbody>
     </table>
   </div>
@@ -71,15 +71,14 @@
         </tr>
       </thead>
       <tbody>
-	{foreach from=$centrocampo item=cen}
           <tr>                                                                                                      
 	    <td>{$cen.nome} </td>
             <td>{$cen.cognome} </td>
 	    <td>{$cen.squadra_reale} </td>
 	    <td>{$cen.valore} </td>
-            <td><input type="checkbox" name="centrocampo" value={$cen.id}/>   </td>
+            <td><input type="checkbox" id="cekcen">   </td>
           </tr>
-        {/foreach}
+       
       </tbody>
     </table>
   </div>
@@ -96,15 +95,14 @@
 	</tr>
       </thead>
       <tbody>
-        {foreach from=$attacco item=att}
           <tr>
 	    <td>{$att.nome} </td>
             <td>{$att.cognome} </td>
 	    <td>{$att.squadra_reale} </td>
 	    <td>{$att.valore}</td>
-            <td><input type="checkbox" name="attacco" value={$att.id}/></td>
+            <td><input type="checkbox" id="cekatt"></td>
           </tr>
-        {/foreach}
+      
       </tbody>
     </table>
   </div>

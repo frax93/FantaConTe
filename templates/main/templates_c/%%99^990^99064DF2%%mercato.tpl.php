@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-03 11:22:51
+<?php /* Smarty version 2.6.13, created on 2015-08-03 18:03:24
          compiled from mercato.tpl */ ?>
 <div id="main"> 
   <section class="spotlight">
@@ -36,7 +36,7 @@
  </td>
 	    <td><?php echo $this->_tpl_vars['por']['valore']; ?>
 </td>
-            <td><input type="checkbox" id="premi" name=<?php echo $this->_tpl_vars['por']['id']; ?>
+            <td><input type="checkbox" id="cekpor" name=<?php echo $this->_tpl_vars['por']['id']; ?>
  value=<?php echo $this->_tpl_vars['por']['id']; ?>
 >   </td>
           </tr>
@@ -70,7 +70,7 @@
  </td>
 	    <td><?php echo $this->_tpl_vars['dif']['valore']; ?>
 </td>
-            <td><input type="checkbox" name="difensori" value=<?php echo $this->_tpl_vars['dif']['id']; ?>
+            <td><input type="checkbox" id="cekdif" name="difensori" value=<?php echo $this->_tpl_vars['dif']['id']; ?>
 /></td>
           </tr>
         <?php endforeach; endif; unset($_from); ?>
@@ -102,7 +102,7 @@
  </td>
 	    <td><?php echo $this->_tpl_vars['cen']['valore']; ?>
  </td>
-            <td><input type="checkbox" name="centrocampo" value=<?php echo $this->_tpl_vars['cen']['id']; ?>
+            <td><input type="checkbox" id="cekcen" name="centrocampo" value=<?php echo $this->_tpl_vars['cen']['id']; ?>
 />   </td>
           </tr>
         <?php endforeach; endif; unset($_from); ?>
@@ -134,7 +134,7 @@
  </td>
 	    <td><?php echo $this->_tpl_vars['att']['valore']; ?>
 </td>
-            <td><input type="checkbox" name="attacco" value=<?php echo $this->_tpl_vars['att']['id']; ?>
+            <td><input type="checkbox" id="cekatt" name="attacco" value=<?php echo $this->_tpl_vars['att']['id']; ?>
 /></td>
           </tr>
         <?php endforeach; endif; unset($_from); ?>

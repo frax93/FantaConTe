@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-03 12:56:37
+<?php /* Smarty version 2.6.13, created on 2015-08-03 18:10:09
          compiled from squadra.tpl */ ?>
 <div id="main"> 
   <section class="spotlight">
@@ -33,7 +33,7 @@
  </td>
 	    <td><?php echo $this->_tpl_vars['portieri']['valore']; ?>
 </td>
-            <td><input type="checkbox" id="premi">   </td>
+            <td><input type="checkbox" id="cekpor">   </td>
           </tr>
 
       </tbody>
@@ -52,9 +52,7 @@
 	</tr>
       </thead>
       <tbody>
-	<?php $_from = $this->_tpl_vars['difesa']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
-    foreach ($_from as $this->_tpl_vars['dif']):
-?>
+	
           <tr>
 	    <td><?php echo $this->_tpl_vars['dif']['nome']; ?>
  </td>
@@ -64,10 +62,9 @@
  </td>
 	    <td><?php echo $this->_tpl_vars['dif']['valore']; ?>
 </td>
-            <td><input type="checkbox" name="difensori" value=<?php echo $this->_tpl_vars['dif']['id']; ?>
-/></td>
+            <td><input type="checkbox" id="cekdif"></td>
           </tr>
-        <?php endforeach; endif; unset($_from); ?>
+       
       </tbody>
     </table>
   </div>
@@ -84,9 +81,6 @@
         </tr>
       </thead>
       <tbody>
-	<?php $_from = $this->_tpl_vars['centrocampo']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
-    foreach ($_from as $this->_tpl_vars['cen']):
-?>
           <tr>                                                                                                      
 	    <td><?php echo $this->_tpl_vars['cen']['nome']; ?>
  </td>
@@ -96,10 +90,9 @@
  </td>
 	    <td><?php echo $this->_tpl_vars['cen']['valore']; ?>
  </td>
-            <td><input type="checkbox" name="centrocampo" value=<?php echo $this->_tpl_vars['cen']['id']; ?>
-/>   </td>
+            <td><input type="checkbox" id="cekcen">   </td>
           </tr>
-        <?php endforeach; endif; unset($_from); ?>
+       
       </tbody>
     </table>
   </div>
@@ -116,9 +109,6 @@
 	</tr>
       </thead>
       <tbody>
-        <?php $_from = $this->_tpl_vars['attacco']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
-    foreach ($_from as $this->_tpl_vars['att']):
-?>
           <tr>
 	    <td><?php echo $this->_tpl_vars['att']['nome']; ?>
  </td>
@@ -128,10 +118,9 @@
  </td>
 	    <td><?php echo $this->_tpl_vars['att']['valore']; ?>
 </td>
-            <td><input type="checkbox" name="attacco" value=<?php echo $this->_tpl_vars['att']['id']; ?>
-/></td>
+            <td><input type="checkbox" id="cekatt"></td>
           </tr>
-        <?php endforeach; endif; unset($_from); ?>
+      
       </tbody>
     </table>
   </div>
