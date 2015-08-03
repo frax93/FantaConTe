@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-07-31 17:11:32
+<?php /* Smarty version 2.6.13, created on 2015-08-03 17:37:09
          compiled from classifica.tpl */ ?>
 <html>
   <head>
@@ -31,6 +31,7 @@
 	            <ul>
                       <li><a href="index.php">Home</a></li>
 		      <li><a href="index.php?controller=Mercato&task=riempi">Mercato</a></li>
+                      <li><a href="index.php?controller=Squadra&task=nuova">Squadra</a></li>
 		      <li><a href="index.php?controller=Formazione&task=nuova">Formazione</a></li>
 		      <li><a href="index.php?controller=Registrazione&task=logout">Log Out</a></li>
 		    </ul>
@@ -77,4 +78,4 @@
   </div>
 </div>
 </body>
-</html>
+</html>

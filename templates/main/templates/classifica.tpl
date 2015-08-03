@@ -25,6 +25,7 @@
 	            <ul>
                       <li><a href="index.php">Home</a></li>
 		      <li><a href="index.php?controller=Mercato&task=riempi">Mercato</a></li>
+                      <li><a href="index.php?controller=Squadra&task=nuova">Squadra</a></li>
 		      <li><a href="index.php?controller=Formazione&task=nuova">Formazione</a></li>
 		      <li><a href="index.php?controller=Registrazione&task=logout">Log Out</a></li>
 		    </ul>
