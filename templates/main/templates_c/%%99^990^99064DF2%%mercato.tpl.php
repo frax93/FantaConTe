@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-07-31 18:06:33
+<?php /* Smarty version 2.6.13, created on 2015-08-03 11:22:51
          compiled from mercato.tpl */ ?>
 <div id="main"> 
   <section class="spotlight">
@@ -9,8 +9,8 @@
     </div>
   </section>
   <h5>Mercato Giocatori</h5>
-  <form method="POST" action="index.php?controller=Mercato&task=salva">
-  <input type="submit" name="submit" id="submit_1" class="button special" value="Salva"/>
+  <form method="post" action="index.php?controller=Mercato&task=salva">
+  <input type="submit" name="submit" id="submit_1" class="button special" value="Salva">
   <h4><font color="orange">    Portieri   </font></h4>
   <div class="table-wrapper">
     <table class="tabellaportieri">
@@ -42,9 +42,9 @@
           </tr>
         <?php endforeach; endif; unset($_from); ?>
       </tbody>
-      </form>
     </table>
   </div>
+  </form>
   <h4><font color="turquoise">    Difensori   </font></h4>
   <div class="table-wrapper">
     <table class="tabelladif">

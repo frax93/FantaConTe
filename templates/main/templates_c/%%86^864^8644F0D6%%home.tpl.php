@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-03 10:26:50
+<?php /* Smarty version 2.6.13, created on 2015-08-03 10:43:24
          compiled from home.tpl */ ?>
 <html>
   <head>
@@ -67,7 +67,7 @@
 		</li>
                 <li> 
                   <input type="submit" name="submit" id="login-button" class="button special" value="login"> 
-                  </form>
+              </form>
             </ul>
             <a href="index.php?controller=Registrazione&task=modulo_registrazione" class="button">Registrati</a>
 	  </div>

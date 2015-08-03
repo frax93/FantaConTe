@@ -7,8 +7,8 @@
     </div>
   </section>
   <h5>Mercato Giocatori</h5>
-  <form method="POST" action="index.php?controller=Mercato&task=salva">
-  <input type="submit" name="submit" id="submit_1" class="button special" value="Salva"/>
+  <form method="post" action="index.php?controller=Mercato&task=salva">
+  <input type="submit" name="submit" id="submit_1" class="button special" value="Salva">
   <h4><font color="orange">    Portieri   </font></h4>
   <div class="table-wrapper">
     <table class="tabellaportieri">
@@ -32,9 +32,9 @@
           </tr>
         {/foreach}
       </tbody>
-      </form>
     </table>
   </div>
+  </form>
   <h4><font color="turquoise">    Difensori   </font></h4>
   <div class="table-wrapper">
     <table class="tabelladif">

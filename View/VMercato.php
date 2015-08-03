@@ -39,10 +39,9 @@ class VMercato extends View {
         unset($_REQUEST['controller']);
         unset($_REQUEST['submit']);
         $dati=array();
-        $count=count($_REQUEST);
-        if($count==0){
-          for($i=1;$i<=$count;$i++)
-            array_push($dati,$_REQUEST[$i]);
+        if(isset($_REQUEST)){
+          foreach($_REQUEST as $key => $value)
+            array_push($dati,$value);
           return $dati;
         }
         else

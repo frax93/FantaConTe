@@ -81,8 +81,8 @@ class CMercato{
             $dati=$session->getvalore('nome_squadra');
             $Squadra=new DSquadra($dati['nome_squadra']);
             $count=count($giocatori_selezionati);
-            for($i=0;$i<=$count;$i++){
-                $giocatore=$FMercato->getGiocatore($giocatori_selezionati[$i]);
+            for($i=0;$i<$count;$i++){
+                $giocatore=$FMercato->getGiocatoreById($giocatori_selezionati[$i]);
                 $giocatore=$giocatore[0];
                 $DGiocatore = new DGiocatore($giocatore['nome'],$giocatore['cognome'],$giocatore['ruolo'],
                                              $giocatore['squadra_reale'],$giocatore['valore'],$giocatore['voto'],

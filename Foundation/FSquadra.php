@@ -8,9 +8,7 @@
  */
 class FSquadra extends Fdb {
 
-	public function __construct()
-	{
-		$this->autoincremento = TRUE;
+	public function __construct(){
 		$this->db = USingleton::getInstance('Fdb');
 		$this->tabella="squadra";
 		$this->chiavedb="(`nome`,`Cpor`,`Cdif`,`Ccen`,`Catt`,`giocatori`)";
@@ -19,7 +17,6 @@ class FSquadra extends Fdb {
 	
 public function inserisciSquadra(DSquadra $object){
                 $dati=$object->getAsArray();
-		$this->db->autoincremento = $this->autoincremento;
 		$this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
                 $stringa="('$dati[nome]','$dati[Cpor]','$dati[Cdif]','$dati[Ccen]','$dati[Catt]','$dati[giocatori]')";
 		$this->db->insert($stringa);

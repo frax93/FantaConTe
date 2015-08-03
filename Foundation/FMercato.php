@@ -22,6 +22,13 @@ class FMercato extends Fdb {
 	        return $this->db->queryGenerica("*","");
 	}
 	
+        //prende ID giocatore e ritorna tutte le info del giocatore
+        public function getGiocatoreById($_id){
+            $this->db->setvariabili($this->tabella,"id",":id");
+            //query per ottenere un solo giocatore
+	    return $this->db->queryGenerica("*","=",$_id);
+                    
+        }
 	//prende DGiocatore e cambia voto
         public function updateVoto(){
             

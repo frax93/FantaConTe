@@ -5,7 +5,7 @@
  * @author Francesco Maione
  * @author Michele Taranta
  */
-require('/lib/smarty/Smarty.class.php');
+require('lib/smarty/Smarty.class.php');
 class View extends Smarty{
     public function __construct() {
         $this->Smarty();

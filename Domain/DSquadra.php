@@ -29,20 +29,20 @@ class DSquadra {
     public function getnome(){
         return $this->nome;
     }
-    public function Aggiungi_Portiere(Giocatore $gioc){
+    public function Aggiungi_Portiere(DGiocatore $gioc){
         if($this->Cpor<3){
-            if($gioc->ruolo!='POR')
+            if($gioc->getruolo()!='POR')
                 print("Ruolo errato!!!");
             else
-                array_push($giocatori['POR'],$gioc);
+                array_push($this->giocatori['POR'],$gioc);
                 $this->Cpor++;
         }
         else
 		    print("Porta Piena!");
     }
-    public function Aggiungi_Difensore(Giocatore $gioc){
+    public function Aggiungi_Difensore(DGiocatore $gioc){
         if($this->Cdif<8){
-            if($gioc->ruolo!='DIF')
+            if($gioc->getruolo()!='DIF')
                 print("Ruolo errato!!!");
             else
                 array_push($this->giocatori['DIF'],$gioc);
@@ -51,9 +51,9 @@ class DSquadra {
         else
 		    print("Difesa Piena!");
         }
-  public function Aggiungi_Centrocampista(Giocatore $gioc){
+  public function Aggiungi_Centrocampista(DGiocatore $gioc){
       if($this->Ccen<8){
-          if($gioc->ruolo!='CEN')
+          if($gioc->getruolo()!='CEN')
               print("Ruolo errato!!!");
           else
               array_push($this->giocatori['CEN'],$gioc);
@@ -62,9 +62,9 @@ class DSquadra {
       else
           print("Centrocampo Pieno!");
         }
-  public function Aggiungi_Attacante(Giocatore $gioc){
+  public function Aggiungi_Attaccante(DGiocatore $gioc){
       if($this->Catt<6){
-          if($gioc->ruolo!='ATT')
+          if($gioc->getruolo()!='ATT')
               print("Ruolo errato!!!");
           else
               array_push($this->giocatori['ATT'],$gioc);
@@ -73,8 +73,8 @@ class DSquadra {
       else
           print("Attacco Pieno!");
         }
-    public function Rimuovi_Portiere(Giocatore $gioc){
-	if($gioc->ruolo=='POR'&&in_array($gioc, $this->giocatori)){
+    public function Rimuovi_Portiere(DGiocatore $gioc){
+	if($gioc->getruolo()=='POR'&&in_array($gioc, $this->giocatori)){
             if($this->Cpor!=0)
              unset($this->giocatori['POR'][array_search($gioc, $this->giocatori)]);
             else
@@ -85,7 +85,7 @@ class DSquadra {
         
     }
    public function Rimuovi_Difensore(Giocatore $gioc){
-	if($gioc->ruolo=='DIF'&&in_array($gioc, $this->giocatori)){
+	if($gioc->getruolo()=='DIF'&&in_array($gioc, $this->giocatori)){
             if($this->Cdif!=0)
                 unset($this->giocatori['DIF'][array_search($gioc, $this->giocatori)]);
             else
@@ -95,7 +95,7 @@ class DSquadra {
             return "giocatore non trovato";
 }
    public function Rimuovi_Centrocampista(Giocatore $gioc){
-	if($gioc->ruolo=='CEN'&&in_array($gioc, $this->giocatori)){
+	if($gioc->getruolo()=='CEN'&&in_array($gioc, $this->giocatori)){
             if($this->Ccen!=0)
               unset($this->giocatori['CEN'][array_search($gioc, $this->giocatori)]);
             else 
@@ -105,7 +105,7 @@ class DSquadra {
             return "giocatore non trovato";
 }
    public function Rimuovi_Attaccante(Giocatore $gioc){
-	if($gioc->ruolo=='ATT'&&in_array($gioc, $this->giocatori)){
+	if($gioc->getruolo()=='ATT'&&in_array($gioc, $this->giocatori)){
             if($this->Catt!=0)
               unset($this->giocatori['ATT'][array_search($gioc, $this->giocatori)]);
             else 
