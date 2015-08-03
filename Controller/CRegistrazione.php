@@ -90,14 +90,14 @@ class CRegistrazione {
                 //$this->invia_email($dutente);
                 //$this->attivazione();
                 //$query->commit();
-                $VRegistrazione->processaTemplate("success");
+                return $VRegistrazione->processaTemplate('success');
                 }  
             throw new Exception("Utente già registrato");
             }
         }
         catch (Exception $e){
                 //$query->rollback();
-            	$VRegistrazione->failedTemplate("failed");
+            	return $VRegistrazione->processaTemplate('failed');
                 
         }
         

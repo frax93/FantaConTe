@@ -46,10 +46,9 @@
 	  .... il sito per il vostro Calcio<br /></font>
 	</p>
 	<!-- per cancellare i bottoni di login <div class="cancellabottone"> -->
-        <form method="post" enctype="multipart/form-data" action="index.php?controller=Registrazione&task=login"> </form>	
+        <form method="POST" enctype="multipart/form-data" action="index.php?controller=Registrazione&task=login">	
           <div>
             <ul class="actions">
-	      <form class="form" >
 	        <li>
                   <div class="buttonin1" >
 		    <input type="text" id="email" name="email" value="" placeholder="Email">
@@ -61,7 +60,7 @@
 		  </div>
 		</li>
                 <li> 
-                  <input type="submit" name="submit" id="login-button" class="button special" value="Login"> 
+                  <input type="submit" name="submit" id="login-button" class="button special" value="login"> 
               </form>
             </ul>
             <a href="index.php?controller=Registrazione&task=modulo_registrazione" class="button">Registrati</a>
