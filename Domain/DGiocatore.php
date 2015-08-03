@@ -80,6 +80,20 @@ class DGiocatore{
     public function setgiocato($gioca){
 	$this->giocato=$gioca;
     }
+     public function getAsArray(){
+    	$result=array();
+
+    	foreach($this as $key => $value) {
+    		if (!is_array($value) && !is_object($value)) {
+
+    			$result[$key]= $value;
+    		}
+
+    	}
+
+    	return $result;
+
+    }
 }
 
 ?>

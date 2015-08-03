@@ -7,7 +7,6 @@
     </div>
   </section>
   <h5>Elenco Rosa</h5>
-  <form method="POST" action="index.php?controller=Squadra&task=salva">
   <input type="submit" name="submit" id="submit_1" class="button special" value="Salva"/>
   <h4><font color="orange">    Portieri   </font></h4>
   <div class="table-wrapper">
@@ -22,17 +21,16 @@
 	</tr>
       </thead>
       <tbody>
-	{foreach from=$portieri item=por}
+	
           <tr>
-            <td>{$por.nome} </td>
-            <td>{$por.cognome} </td>
-	    <td>{$por.squadra_reale} </td>
-	    <td>{$por.valore}</td>
-            <td><input type="checkbox" id="premi" name={$por.id} value={$por.id}>   </td>
+            <td>{$portieri.nome} </td>
+            <td>{$portieri.cognome} </td>
+	    <td>{$portieri.squadra_reale} </td>
+	    <td>{$portieri.valore}</td>
+            <td><input type="checkbox" id="premi">   </td>
           </tr>
-        {/foreach}
+
       </tbody>
-      </form>
     </table>
   </div>
   <h4><font color="turquoise">    Difensori   </font></h4>

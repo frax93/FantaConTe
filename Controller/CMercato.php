@@ -89,7 +89,14 @@ class CMercato{
                                              $giocatore['giocato']);
                 $Squadra->Aggiungi($DGiocatore);
             }
-            $FSquadra->inserisciSquadra($Squadra);
+            $VSquadra=  USingleton::getInstance('VSquadra');
+            $portieri=$Squadra->getgiocatori();
+            $portieri=$portieri['POR'][0];
+            $portieri=$portieri->getAsArray();
+            print_r($portieri);
+            $VSquadra->impostaDati('portieri',$portieri);
+            return $VSquadra->processaTemplate();
+            //$FSquadra->inserisciSquadra($Squadra);
             //$query->beginTransaction();
             //try{
                 

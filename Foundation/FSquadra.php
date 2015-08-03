@@ -12,7 +12,7 @@ class FSquadra extends Fdb {
 		$this->autoincremento = TRUE;
 		$this->db = USingleton::getInstance('Fdb');
 		$this->tabella="squadra";
-		$this->chiavedb="(`nome`,`Cpor`,`Cdif`,`Ccen`,`Catt`,`giocatori`)";
+		$this->chiavedb="(`nome`,`giocatori`)";
 		$this->bind="( :nome, :Cpor, :Cdif, :Ccen, :Catt, :giocatori)";
 	}
 	
