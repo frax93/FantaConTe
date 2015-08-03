@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-03 18:03:24
+<?php /* Smarty version 2.6.13, created on 2015-08-03 16:33:59
          compiled from mercato.tpl */ ?>
 <div id="main"> 
   <section class="spotlight">
@@ -36,7 +36,7 @@
  </td>
 	    <td><?php echo $this->_tpl_vars['por']['valore']; ?>
 </td>
-            <td><input type="checkbox" id="cekpor" name=<?php echo $this->_tpl_vars['por']['id']; ?>
+            <td><input type="checkbox" id="premi" name=<?php echo $this->_tpl_vars['por']['id']; ?>
  value=<?php echo $this->_tpl_vars['por']['id']; ?>
 >   </td>
           </tr>
@@ -44,7 +44,6 @@
       </tbody>
     </table>
   </div>
-  </form>
   <h4><font color="turquoise">    Difensori   </font></h4>
   <div class="table-wrapper">
     <table class="tabelladif">
@@ -70,8 +69,9 @@
  </td>
 	    <td><?php echo $this->_tpl_vars['dif']['valore']; ?>
 </td>
-            <td><input type="checkbox" id="cekdif" name="difensori" value=<?php echo $this->_tpl_vars['dif']['id']; ?>
-/></td>
+            <td><input type="checkbox" id="premi" name=<?php echo $this->_tpl_vars['dif']['id']; ?>
+ value=<?php echo $this->_tpl_vars['dif']['id']; ?>
+> </td>
           </tr>
         <?php endforeach; endif; unset($_from); ?>
       </tbody>
@@ -102,8 +102,9 @@
  </td>
 	    <td><?php echo $this->_tpl_vars['cen']['valore']; ?>
  </td>
-            <td><input type="checkbox" id="cekcen" name="centrocampo" value=<?php echo $this->_tpl_vars['cen']['id']; ?>
-/>   </td>
+            <td><input type="checkbox" id="premi" name=<?php echo $this->_tpl_vars['cen']['id']; ?>
+ value=<?php echo $this->_tpl_vars['cen']['id']; ?>
+>   </td>
           </tr>
         <?php endforeach; endif; unset($_from); ?>
       </tbody>
@@ -134,13 +135,15 @@
  </td>
 	    <td><?php echo $this->_tpl_vars['att']['valore']; ?>
 </td>
-            <td><input type="checkbox" id="cekatt" name="attacco" value=<?php echo $this->_tpl_vars['att']['id']; ?>
-/></td>
+            <td><input type="checkbox" id="premi" name=<?php echo $this->_tpl_vars['att']['id']; ?>
+ value=<?php echo $this->_tpl_vars['att']['id']; ?>
+> </td>
           </tr>
         <?php endforeach; endif; unset($_from); ?>
       </tbody>
     </table>
   </div>
+  </form>
   <button type="submit"  class="button special"><a href="#">Torna Su</a></button>
 </div>
 

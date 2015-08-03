@@ -28,13 +28,12 @@
             <td>{$por.cognome} </td>
 	    <td>{$por.squadra_reale} </td>
 	    <td>{$por.valore}</td>
-            <td><input type="checkbox" id="cekpor" name={$por.id} value={$por.id}>   </td>
+            <td><input type="checkbox" id="premi" name={$por.id} value={$por.id}>   </td>
           </tr>
         {/foreach}
       </tbody>
     </table>
   </div>
-  </form>
   <h4><font color="turquoise">    Difensori   </font></h4>
   <div class="table-wrapper">
     <table class="tabelladif">
@@ -54,7 +53,7 @@
             <td>{$dif.cognome} </td>
 	    <td>{$dif.squadra_reale} </td>
 	    <td>{$dif.valore}</td>
-            <td><input type="checkbox" id="cekdif" name="difensori" value={$dif.id}/></td>
+            <td><input type="checkbox" id="premi" name={$dif.id} value={$dif.id}> </td>
           </tr>
         {/foreach}
       </tbody>
@@ -79,7 +78,7 @@
             <td>{$cen.cognome} </td>
 	    <td>{$cen.squadra_reale} </td>
 	    <td>{$cen.valore} </td>
-            <td><input type="checkbox" id="cekcen" name="centrocampo" value={$cen.id}/>   </td>
+            <td><input type="checkbox" id="premi" name={$cen.id} value={$cen.id}>   </td>
           </tr>
         {/foreach}
       </tbody>
@@ -104,12 +103,13 @@
             <td>{$att.cognome} </td>
 	    <td>{$att.squadra_reale} </td>
 	    <td>{$att.valore}</td>
-            <td><input type="checkbox" id="cekatt" name="attacco" value={$att.id}/></td>
+            <td><input type="checkbox" id="premi" name={$att.id} value={$att.id}> </td>
           </tr>
         {/foreach}
       </tbody>
     </table>
   </div>
+  </form>
   <button type="submit"  class="button special"><a href="#">Torna Su</a></button>
 </div>
 

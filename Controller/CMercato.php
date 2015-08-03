@@ -16,8 +16,6 @@ class CMercato{
 		switch ($VMercato->getTask()){
 			case 'riempi':
 				return $this->riempi();
-			case 'seleziona':
-				return $this->seleziona();
                         case 'salva':
                                 return $this->Salva();
 		}
@@ -73,7 +71,6 @@ class CMercato{
             $VMercato=  USingleton::getInstance('VMercato');
             $FMercato=  USingleton::getInstance('FMercato');
             $giocatori_selezionati=$VMercato->getDati();
-            
             $Fdb=USingleton::getInstance('Fdb');
             $FSquadra=USingleton::getInstance('FSquadra');
             $query=$Fdb->getDataBase();
@@ -81,21 +78,15 @@ class CMercato{
             $dati=$session->getvalore('nome_squadra');
             $Squadra=new DSquadra($dati['nome_squadra']);
             $count=count($giocatori_selezionati);
-            for($i=0;$i<$count;$i++){
-                $giocatore=$FMercato->getGiocatoreById($giocatori_selezionati[$i]);
+            foreach($giocatori_selezionati as $key => $id_giocatore){
+                $giocatore=$FMercato->getGiocatoreById($id_giocatore);
                 $giocatore=$giocatore[0];
                 $DGiocatore = new DGiocatore($giocatore['nome'],$giocatore['cognome'],$giocatore['ruolo'],
                                              $giocatore['squadra_reale'],$giocatore['valore'],$giocatore['voto'],
                                              $giocatore['giocato']);
                 $Squadra->Aggiungi($DGiocatore);
             }
-            $VSquadra=  USingleton::getInstance('VSquadra');
-            $portieri=$Squadra->getgiocatori();
-            $portieri=$portieri['POR'][0];
-            $portieri=$portieri->getAsArray();
-            print_r($portieri);
-            $VSquadra->impostaDati('portieri',$portieri);
-            return $VSquadra->processaTemplate();
+            header("location: index.php?controller=Squadra&task=visualizza");
             //$FSquadra->inserisciSquadra($Squadra);
             //$query->beginTransaction();
             //try{

@@ -13,8 +13,8 @@ class CSquadra {
 	public function mux(){
 		$VSquadra=USingleton::getInstance('VSquadra');
 		switch ($VSquadra->getTask()) { //Controlla se nei dati arrivati c'é un task da richiamare
-			case 'nuova':
-				return $this->Nuova();
+			case 'visualizza':
+				return $this->Visualizza();
 			case 'aggiorna':
 				return $this->Aggiorna();
                         case 'salva':
@@ -25,22 +25,39 @@ class CSquadra {
 	/**
 	 * Permette di creare una nuova Squadra
 	 */
-	public function Nuova() {
-                $DSquadra=USingleton::getInstance('DSquadra');
-		$VSquadra=USingleton::getInstance('VSquadra');
-		$dati = $VSquadra->getDati();
-		$fsquadra=USingleton::getInstance('FSquadra');
-		$fdb=USingleton::getInstance('Fdb');
-		$session = USingleton::getInstance('USession');
-		$query=$fdb->getDb();
-		//$query->beginTransaction();
-		//try { 
-                        $Squadra=new DSquadra($dati['nome_squadra']);
-                        $fsquadra->inserisciSquadra($Squadra);
-			$id = $query->lastInsertId();
-			$usrsq = array("id_squadra" => $id,
-				       "email_utente" => $session->getValore("email"));
-			$VSquadra->invia(array("id" => $id));
+	public function Visualizza() {
+            $VSquadra= USingleton::getInstance('VSquadra');
+            $FSquadra=  USingleton::getInstance('FSquadra');
+            $session = USingleton::getInstance('USession');
+            $nome_squadra=$session->getValore('nome_squadra');
+            $DSquadra= new DSquadra($nome_squadra);
+            $Squadra=$FSquadra->getSquadraByNome($nome_squadra);
+            $Squadra=$Squadra[0];
+            $DSquadra->setgiocatori($Squadra['giocatori']);
+            $modulo=array('3-4-3','3-5-2','4-3-3','4-4-2','4-5-1','5-3-2','5-4-1');
+            $VSquadra->impostaDati('moduli',$modulo);
+            $giocatori=$Squadra->getgiocatori();
+            $attacco=$giocatori['ATT'];
+            $portieri=$giocatori['POR'];
+            $centrocampo=$giocatori['CEN'];
+            $difensori=$giocatori['DIF'];
+            $difensore1=array();
+            foreach($difensori as $key => $value)
+                 array_push($difensore1,$value->getAsArray());
+            $VSquadra->impostaDati('difensore',$difensore1);
+            $centrocampo1=array();
+            foreach($centrocampo as $key => $value)
+                        array_push($centrocampo1,$value->getAsArray());
+            $VSquadra->impostaDati('centrocampo',$centrocampo1);
+            $portieri1=array();
+            foreach($portieri as $key => $value)
+                        array_push($portieri1,$value->getAsArray());
+            $VSquadra->impostaDati('portieri',$portieri1);
+            $attacco1=array();
+            foreach($attacco as $key => $value)
+                        array_push($attacco1,$value->getAsArray());
+            $VSquadra->impostaDati('attacco',$attacco1);
+            return $VSquadra->processaTemplate();
 			/*$query->commit();
 		} catch (Exception $e) {
 			$query->rollBack();

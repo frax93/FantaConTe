@@ -8,10 +8,10 @@
  */
 class DSquadra {
     private $nome;
-    private static $Cpor;
-    private static $Cdif;
-    private static $Ccen;
-    private static $Catt;
+    private $Cpor;
+    private $Cdif;
+    private $Ccen;
+    private $Catt;
     private $giocatori=array('POR'=>array(),
                              'DIF'=>array(),
                              'CEN'=>array(),
@@ -84,7 +84,7 @@ class DSquadra {
             return "giocatore non trovato";
         
     }
-   public function Rimuovi_Difensore(Giocatore $gioc){
+   public function Rimuovi_Difensore(DGiocatore $gioc){
 	if($gioc->getruolo()=='DIF'&&in_array($gioc, $this->giocatori)){
             if($this->Cdif!=0)
                 unset($this->giocatori['DIF'][array_search($gioc, $this->giocatori)]);
@@ -94,7 +94,7 @@ class DSquadra {
          else 
             return "giocatore non trovato";
 }
-   public function Rimuovi_Centrocampista(Giocatore $gioc){
+   public function Rimuovi_Centrocampista(DGiocatore $gioc){
 	if($gioc->getruolo()=='CEN'&&in_array($gioc, $this->giocatori)){
             if($this->Ccen!=0)
               unset($this->giocatori['CEN'][array_search($gioc, $this->giocatori)]);
@@ -104,7 +104,7 @@ class DSquadra {
          else 
             return "giocatore non trovato";
 }
-   public function Rimuovi_Attaccante(Giocatore $gioc){
+   public function Rimuovi_Attaccante(DGiocatore $gioc){
 	if($gioc->getruolo()=='ATT'&&in_array($gioc, $this->giocatori)){
             if($this->Catt!=0)
               unset($this->giocatori['ATT'][array_search($gioc, $this->giocatori)]);
@@ -114,21 +114,22 @@ class DSquadra {
          else 
             return "giocatore non trovato";
    }
+    public function setgiocatori($giocatori){
+       $this->giocatori=  unserialize($giocatori);
+   }
    public function setnome($nome_squadra){
        $this->nome=$nome_squadra;
    }
     public function Aggiungi(DGiocatore $giocatore){
-        switch($giocatore->getruolo()){
-               case 'DIF':
-                   $this->Aggiungi_Difensore($giocatore);
-               case 'CEN':
-                   $this->Aggiungi_Centrocampista($giocatore);
-               case 'ATT': 
-                   $this->Aggiungi_Attaccante($giocatore);
-               case 'POR':
-                   $this->Aggiungi_Portiere($giocatore);
-         
-       }
+        $ruolo=$giocatore->getruolo();
+        if($ruolo=="POR")
+            $this->Aggiungi_Portiere($giocatore);
+        else if($ruolo=="DIF")
+            $this->Aggiungi_Difensore($giocatore);
+        else if($ruolo=="CEN")
+            $this->Aggiungi_Centrocampista($giocatore);
+        else 
+            $this->Aggiungi_Attaccante($giocatore);
    }
    
     public function getAsArray(){

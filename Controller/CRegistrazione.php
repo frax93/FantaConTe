@@ -87,7 +87,7 @@ class CRegistrazione {
                         "NonAttivato", $data['nome'],$data['cognome'],"normale",$Squadra);
                 $dutente->set_activationcode();
                 $futente->inserisciUtente($dutente);
-                //$this->invia_email($dutente);
+                $this->invia_email($dutente);
                 //$this->attivazione();
                 //$query->commit();
                 return $VRegistrazione->processaTemplate('success');
@@ -116,8 +116,9 @@ class CRegistrazione {
         $email=$_utente->getemail();
     	$email_url = urlencode($email);
     	$utente=$FUtente->getUtenteByEmail($email);
+        $utente=$utente[0];
     	$codice_attivazione = $utente['codice_attivazione'];
-    	$url = "http://fantaconte.altervista.org/index.php?controller=Registrazione&task=attiva&codice_attivazione=".$codice_attivazione."&mail=".$email_url;
+    	$url = "http://localhost/FantaConTe/index.php?controller=Registrazione&task=attiva&codice_attivazione=".$codice_attivazione."&mail=".$email_url;
     	$to = $email;
     	$subject = 'Benvenuto in FantaConTe';
     	$message = "Clicca sul seguente link per attivare il tuo account: " . $url;
@@ -139,6 +140,7 @@ class CRegistrazione {
         $attivazione=$VRegistrazione->getDatiAttivazione();
         $futente=USingleton::getInstance('FUtente');
         $user=$futente->getUtenteByEmail($attivazione['email']);
+        $user=$user[0];
         if (isset($attivazione)){
             if ($user->getCodiceAttivazione()==$attivazione['codice']) {
                 $update = array("stato_attivazione" => "attivato",

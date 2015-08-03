@@ -7,7 +7,20 @@
     </div>
   </section>
   <h5>Elenco Rosa</h5>
-  <input type="submit" name="submit" id="submit_1" class="button special" value="Salva"/>
+  <form method="post" action="index.php?controller=Formazione&task=nuova">
+  <input type="submit" name="submit" id="submit_1" class="button special" value="Inserisci Formazione"/>
+  <br>
+  <tr> 
+        <td align="right">Modulo</td>
+        <td> <select name="modulo" id="selezione">
+                <optgroup id="selezione">
+                    {foreach from=$moduli item=modulo}
+                    <option value={$modulo}>{$modulo}</option>
+                    {/foreach}
+                </optgroup>
+             </select>
+        </td>
+     </tr>  
   <h4><font color="orange">    Portieri   </font></h4>
   <div class="table-wrapper">
     <table class="tabellaportieri">
@@ -21,15 +34,15 @@
 	</tr>
       </thead>
       <tbody>
-	
+	  {foreach from=$portieri item=por}
           <tr>
-            <td>{$portieri.nome} </td>
-            <td>{$portieri.cognome} </td>
-	    <td>{$portieri.squadra_reale} </td>
-	    <td>{$portieri.valore}</td>
-            <td><input type="checkbox" id="cekpor">   </td>
+            <td>{$por.nome} </td>
+            <td>{$por.cognome} </td>
+	    <td>{$por.squadra_reale} </td>
+	    <td>{$por.valore}</td>
+            <td><input type="checkbox" id="premi" name={$por.id} value={$por.id}></td>
           </tr>
-
+      {/foreach}
       </tbody>
     </table>
   </div>
@@ -46,15 +59,15 @@
 	</tr>
       </thead>
       <tbody>
-	
+	{foreach from=$difensore item=dif}
           <tr>
 	    <td>{$dif.nome} </td>
             <td>{$dif.cognome} </td>
 	    <td>{$dif.squadra_reale} </td>
 	    <td>{$dif.valore}</td>
-            <td><input type="checkbox" id="cekdif"></td>
+            <td><input type="checkbox" id="premi" name={$dif.id} value={$dif.id}></td>
           </tr>
-       
+        {/foreach}
       </tbody>
     </table>
   </div>
@@ -71,14 +84,15 @@
         </tr>
       </thead>
       <tbody>
+	{foreach from=$centrocampo item=cen}
           <tr>                                                                                                      
 	    <td>{$cen.nome} </td>
             <td>{$cen.cognome} </td>
 	    <td>{$cen.squadra_reale} </td>
 	    <td>{$cen.valore} </td>
-            <td><input type="checkbox" id="cekcen">   </td>
+            <td><input type="checkbox" id="premi" name={$cen.id} value={$cen.id}></td>
           </tr>
-       
+        {/foreach}
       </tbody>
     </table>
   </div>
@@ -95,17 +109,19 @@
 	</tr>
       </thead>
       <tbody>
+        {foreach from=$attacco item=att}
           <tr>
 	    <td>{$att.nome} </td>
             <td>{$att.cognome} </td>
 	    <td>{$att.squadra_reale} </td>
 	    <td>{$att.valore}</td>
-            <td><input type="checkbox" id="cekatt"></td>
+            <td><input type="checkbox" id="premi" name={$att.id} value={$att.id}></td>
           </tr>
-      
+        {/foreach}
       </tbody>
     </table>
   </div>
+  </form>
   <button type="submit"  class="button special"><a href="#">Torna Su</a></button>
 </div>
 

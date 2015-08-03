@@ -21,6 +21,12 @@ class VSquadra extends View {
     public function processaTemplate() {
         return $this->fetch('squadra.tpl');
     }
+    public function getTask(){
+        if (isset($_REQUEST['task']))
+            return $_REQUEST['task'];
+        else
+            return false;
+    }
     
 }
 ?>
