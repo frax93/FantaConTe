@@ -20,8 +20,15 @@ class VFormazione extends View {
      */
     //Da modificare 
      public function getDati() {
-        if (isset($_REQUEST['username']))
-            return $_REQUEST['username'];
+        unset($_REQUEST['task']);
+        unset($_REQUEST['controller']);
+        unset($_REQUEST['submit']);
+        $dati=array();
+        if(isset($_REQUEST)){
+          foreach($_REQUEST as $key => $value)
+            array_push($dati,$value);
+          return $dati;
+        }
         else
             return false;
     }

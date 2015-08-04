@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-04 15:11:39
+<?php /* Smarty version 2.6.13, created on 2015-08-04 15:40:11
          compiled from squadra.tpl */ ?>
 <div id="main"> 
     <br><br>
@@ -46,7 +46,7 @@
     foreach ($_from as $this->_tpl_vars['por']):
 ?>
           <tr>
-            <td><?php echo $this->_tpl_vars['por']; ?>
+            <td><?php echo $this->_tpl_vars['por']['nome']; ?>
  </td>
             <td><?php echo $this->_tpl_vars['por']['cognome']; ?>
  </td>

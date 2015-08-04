@@ -77,16 +77,16 @@ class CMercato{
             $session= USingleton::getInstance('USession');
             $dati=$session->getvalore('nome_squadra');
             $Squadra=new DSquadra('ciao');
-            $count=count($giocatori_selezionati);
             foreach($giocatori_selezionati as $key => $id_giocatore){
                 $giocatore=$FMercato->getGiocatoreById($id_giocatore);
                 $giocatore=$giocatore[0];
-                $DGiocatore = new DGiocatore($giocatore['nome'],$giocatore['cognome'],$giocatore['ruolo'],
+                $DGiocatore = new DGiocatore($giocatore['id'],$giocatore['nome'],$giocatore['cognome'],$giocatore['ruolo'],
                                              $giocatore['squadra_reale'],$giocatore['valore'],$giocatore['voto'],
                                              $giocatore['giocato']);
                 $Squadra->Aggiungi($DGiocatore);
             }
             $FSquadra->inserisciSquadra($Squadra);
+            //Redirect per mostrare la squadra all'utente
             header("location: index.php?controller=Squadra&task=visualizza");
             //$query->beginTransaction();
             //try{
@@ -98,27 +98,7 @@ class CMercato{
 	        throw new Exception($e->getMessage());
             }*/
         }
-    /**
-     * 
-     * @return type
-     * @throws Exception
-     */
-    //SICCOME NON E' DIFFICILE, LA FARA' IL MOICANO
-    public function seleziona(){
-		$fmercato=USingleton::getInstance('FMercato');
-		$fdb=USingleton::getInstance('Fdb');
-		$query=$fdb->getDb();
-		$query->beginTransaction();
-                try{
-                    $giocatori=$fmercato->getGiocatori();
-                    return $giocatori;
-                }
-                catch (Exception $e) {
-			$query->rollback();
-			throw new Exception($e->getMessage());
-                    
-                }
-    }
+    
     
 }
 ?>

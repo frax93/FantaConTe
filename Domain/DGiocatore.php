@@ -7,6 +7,7 @@
  * @author Michele Taranta
  */
 class DGiocatore{
+    private $id;
     private $nome;
     private $cognome;
     private $ruolo;
@@ -14,7 +15,8 @@ class DGiocatore{
     private $valore; 
     private $voto;
     private $giocato;
-    public function __construct($_nome,$_cognome,$_ruolo,$_squadra_reale,$_valore, $_voto,$_giocato){
+    public function __construct($_id,$_nome,$_cognome,$_ruolo,$_squadra_reale,$_valore, $_voto,$_giocato){
+        $this->setid($_id);
         $this->setnome($_nome);
         $this->setcognome($_cognome);
         $this->setruolo($_ruolo);
@@ -22,7 +24,9 @@ class DGiocatore{
         $this->setvalore($_valore);
         $this->setvoto($_voto);
     } 
-    
+    public function getid(){
+	return $this->id;
+    }
     public function getnome(){
 	return $this->nome;
     }
@@ -50,13 +54,16 @@ class DGiocatore{
     public function getgiocato(){
 	return $this->giocato;
     }
-    
-    public function setnome($nom){
-	$this->nome=$nom;
+    public function setid($_id){
+        $this->id=$_id;
     }
 
-    public function setcognome($cog){
-	$this->cognome=$cog;
+    public function setnome($_nome){
+	$this->nome=$_nome;
+    }
+
+    public function setcognome($_cognome){
+	$this->cognome=$_cognome;
     }
 
     public function setruolo($ruolo){

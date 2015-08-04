@@ -38,7 +38,7 @@
       <tbody>
 	  {foreach from=$portieri item=por}
           <tr>
-            <td>{$por} </td>
+            <td>{$por.nome} </td>
             <td>{$por.cognome} </td>
 	    <td>{$por.squadra_reale} </td>
 	    <td>{$por.valore}</td>

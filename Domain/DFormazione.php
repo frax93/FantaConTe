@@ -15,9 +15,8 @@ class DFormazione{
     private $countdif;
     private $countcen;
     private $countatt;
-    private $giocatori;
-    public function __construct(DSquadra $squadra){
-        $this->setmodulo('3-4-3');
+    public function __construct(DSquadra $squadra,$_modulo){
+        $this->setmodulo($_modulo);
         $this->setteam($squadra);
         $this->countdif=0;
         $this->countcen=0;
@@ -27,19 +26,21 @@ class DFormazione{
         return $this->modulo;
     }
     public function gettitolari(){
-        $titolari=  base64_encode(serialize($this->titolari));
+        $titolari=base64_encode(serialize($this->titolari));
         return $titolari;
     }
     public function getpanchina(){
-        $panchina=  base64_encode(serialize($this->panchina));
+        $panchina=base64_encode(serialize($this->panchina));
         return $panchina;
     }
     public function setmodulo($_modulo){
-        $this->modulo=$_modulo;
+        if(isset($_modulo))
+           $this->modulo=$_modulo;
+        else
+           $this->modulo='3-4-3';
     }
     public function setteam(DSquadra $_squadra){
-        $this->squadra=  base64_encode(serialize($_squadra));
-        //$this->giocatori=$_squadra->getgiocatori();
+        $this->squadra=$_squadra;
     }
     private function settitolari(){
         $this->titolari=array('POR'=>array(),'DIF'=>array(),'CEN'=>array(),'ATT'=>array());    
@@ -47,37 +48,45 @@ class DFormazione{
     private function setpanchina(){
         $this->panchina=array();
     }
-    public function impostatitolari($_giocatore,$_modulo){
-        $this->settitolari();
-        list($difensori, $centrocampisti, $attaccanti)=explode("-",$_modulo);
-        if($_giocatore->getruolo()=='POR'){
-            array_push($this->titolari['POR'],$_giocatore);
-            unset($this->giocat['POR'][array_search($gioc, $this->giocat)]);
+    private function controlla(DGiocatore $_giocatore,$id){
+         if($_giocatore->getid()==$id){
+                      if($_giocatore->getruolo()=='POR')
+                          $ruolo='POR';
+                      else if($_giocatore->getruolo()=='DIF')
+                           $ruolo='DIF';
+                           else if($_giocatore->getruolo()=='CEN')
+                                 $ruolo='CEN';
+                                else 
+                                    $ruolo='ATT';
         }
-        else if($_giocatore->getruolo()=='DIF'&&$this->countdif<$difensori){
-                array_push($this->titolari['DIF'],$_giocatore);
-                $this->countdif++;
-                unset($this->giocatori['DIF'][array_search($gioc, $this->giocat)]);
-             }
-             else if($_giocatore->getruolo()=='CEN'&&$this->countcen<$centrocampisti){
-                        array_push($this->titolari['CEN'],$_giocatore);
-                        $this->countcen++;
-                        unset($this->giocat['CEN'][array_search($gioc, $this->giocat)]);
-                  }
-                  else if($_giocatore->getruolo()=='ATT'&&$this->countatt<$attaccanti){
-                            array_push($this->titolari['ATT'],$_giocatore);
-                            $this->countatt++;
-                            unset($this->giocat['ATT'][array_search($gioc, $this->giocat)]);
-                        }
-                        else 
-                            return "Impossibile impostare formazione";
+        else 
+            $ruolo="Non Corrisponde ID";
+        return $ruolo;
+    
+   }
+    public function impostatitolari($giocatori){
+        $this->settitolari();
+        list($difensori, $centrocampisti, $attaccanti)=explode("-",$this->modulo);
+        $giocatori_squadra=$this->squadra->getgiocatori();
+        foreach($giocatori_squadra as $key => $_giocatore1){
+            foreach ($_giocatore1 as $key1 => $_giocatore){
+               foreach ($giocatori as $key2 => $id){
+                       $ruolo=$this->controlla($_giocatore,$id);
+                       if($ruolo!="Non Corrisponde ID"){
+                          array_push($this->titolari[$ruolo],$_giocatore);
+                          unset($giocatori_squadra[$ruolo][array_search($_giocatore, $giocatori_squadra)]);
+                       }
+              }
+            }
+        }
+        $this->impostapanchinari($giocatori_squadra);
+        print_r($this->panchina);
     }
     
-    public function impostapanchinari(){ 
-        //in teoria bisogna guardare se esiste l'array titolare
-        if(count($this->titolari)==11){
-            $this->panchina=$this->giocatori;
-            $this->giocatori=array();
+    private function impostapanchinari($giocatori_squadra){ 
+        if(count($this->titolari)==11&&isset($this->titolari)){
+            $this->panchina=$giocatori_squadra;
+            print_r($this->panchina);
         }
         else return "non sono stati schierati tutti i titolari!!";
     }
@@ -86,6 +95,7 @@ class DFormazione{
         $this->setpanchina();
     }
     public function getAsArray(){
+        $this->squadra=serialize($this->squadra);
     	$result=array();
     	foreach($this as $key => $value) {
     		if (!is_array($value) && !is_object($value)) {
@@ -99,5 +109,11 @@ class DFormazione{
 
     }
     
+    public function get_titolari(){
+        return $this->titolari;
+    }
+    public function get_panchina(){
+        return $this->panchina;
+    }
 }
 ?>

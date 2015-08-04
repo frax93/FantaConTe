@@ -19,12 +19,10 @@ public function inserisciSquadra(DSquadra $object){
                 $dati=$object->getAsArray();
 		$this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
                 $dati['giocatori']= base64_encode($dati['giocatori']);
-                //print_r($dati['giocatori']);
                 $stringa="('$dati[nome]','$dati[giocatori]')";
 		$this->db->insert($stringa);
                 
 }
-
 	public function getSquadraByNome($_nome){
 		$this->db->setvariabili($this->tabella,"nome",":nome");
 	        return $this->db->queryGenerica("*","=",$_nome);

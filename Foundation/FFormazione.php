@@ -17,7 +17,6 @@ class FFormazione extends Fdb {
 	
 public function inserisciFormazione(DFormazione $_object){
 		$dati=$_object->getasArray();
-                print_r($dati);
 		$this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
                 $stringa="('$dati[modulo]','$dati[titolari]','$dati[panchina]','$dati[squadra]')";
 		$this->db->insert($stringa);
