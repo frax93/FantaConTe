@@ -10,8 +10,9 @@
   <form method="post" action="index.php?controller=Formazione&task=nuova">
   <input type="submit" name="submit" id="submit_1" class="button special" value="Inserisci Formazione"/>
   <br>
+  <br>
   <tr> 
-        <td align="right">Modulo</td>
+        <td align="left">Modulo</td>
         <td> <select name="modulo" id="selezione">
                 <optgroup id="selezione">
                     {foreach from=$moduli item=modulo}

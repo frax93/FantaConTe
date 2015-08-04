@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-03 17:39:02
+<?php /* Smarty version 2.6.13, created on 2015-08-04 10:10:54
          compiled from squadra.tpl */ ?>
 <div id="main"> 
   <section class="spotlight">
@@ -12,10 +12,11 @@
   <form method="post" action="index.php?controller=Formazione&task=nuova">
   <input type="submit" name="submit" id="submit_1" class="button special" value="Inserisci Formazione"/>
   <br>
+  <br>
   <tr> 
-        <td align="right">Modulo</td>
-        <td> <select name="modulo">
-                <optgroup>
+        <td align="left">Modulo</td>
+        <td> <select name="modulo" id="selezione">
+                <optgroup id="selezione">
                     <?php $_from = $this->_tpl_vars['moduli']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['modulo']):
 ?>
