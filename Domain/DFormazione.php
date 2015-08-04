@@ -7,9 +7,7 @@
  * @author Michele Taranta
  */
 class DFormazione{
-    /*
-     * @param modulo
-     */
+    
     private $modulo;
     private $titolari;
     private $panchina;
@@ -17,7 +15,7 @@ class DFormazione{
     private $countdif;
     private $countcen;
     private $countatt;
-    //private static $giocatori;
+    private $giocatori;
     public function __construct(DSquadra $squadra){
         $this->setmodulo('3-4-3');
         $this->setteam($squadra);
@@ -29,18 +27,18 @@ class DFormazione{
         return $this->modulo;
     }
     public function gettitolari(){
-        $titolari=serialize($this->titolari);
+        $titolari=  base64_encode(serialize($this->titolari));
         return $titolari;
     }
     public function getpanchina(){
-        $panchina=serialize($this->panchina);
+        $panchina=  base64_encode(serialize($this->panchina));
         return $panchina;
     }
     public function setmodulo($_modulo){
         $this->modulo=$_modulo;
     }
     public function setteam(DSquadra $_squadra){
-        $this->squadra=serialize($_squadra);
+        $this->squadra=  base64_encode(serialize($_squadra));
         //$this->giocatori=$_squadra->getgiocatori();
     }
     private function settitolari(){

@@ -115,7 +115,7 @@ class DSquadra {
             return "giocatore non trovato";
    }
     public function setgiocatori($giocatori){
-       $this->giocatori=  unserialize($giocatori);
+       $this->giocatori= unserialize(gzinflate($giocatori));
    }
    public function setnome($nome_squadra){
        $this->nome=$nome_squadra;
@@ -133,7 +133,7 @@ class DSquadra {
    }
    
     public function getAsArray(){
-        $this->giocatori=  serialize($this->giocatori);
+        $this->giocatori= gzdeflate(serialize($this->giocatori),9);
     	$result=array();
 
     	foreach($this as $key => $value) {

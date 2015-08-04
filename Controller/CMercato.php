@@ -76,7 +76,7 @@ class CMercato{
             $query=$Fdb->getDataBase();
             $session= USingleton::getInstance('USession');
             $dati=$session->getvalore('nome_squadra');
-            $Squadra=new DSquadra($dati['nome_squadra']);
+            $Squadra=new DSquadra('ciao');
             $count=count($giocatori_selezionati);
             foreach($giocatori_selezionati as $key => $id_giocatore){
                 $giocatore=$FMercato->getGiocatoreById($id_giocatore);
@@ -86,8 +86,8 @@ class CMercato{
                                              $giocatore['giocato']);
                 $Squadra->Aggiungi($DGiocatore);
             }
+            $FSquadra->inserisciSquadra($Squadra);
             header("location: index.php?controller=Squadra&task=visualizza");
-            //$FSquadra->inserisciSquadra($Squadra);
             //$query->beginTransaction();
             //try{
                 

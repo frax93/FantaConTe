@@ -6,12 +6,10 @@
             <file>file:/C:/xampp/htdocs/FantaConTe/Domain/DSquadra.php</file>
             <file>file:/C:/xampp/htdocs/FantaConTe/Controller/CRegistrazione.php</file>
             <file>file:/C:/xampp/htdocs/FantaConTe/Controller/CSquadra.php</file>
-            <file>file:/C:/xampp/htdocs/FantaConTe/View/VMercato.php</file>
-            <file>file:/C:/xampp/htdocs/FantaConTe/templates/main/templates/squadra.tpl</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/Foundation/FSquadra.php</file>
             <file>file:/C:/xampp/htdocs/FantaConTe/Controller/CMercato.php</file>
-            <file>file:/C:/xampp/htdocs/FantaConTe/templates/main/templates/mercato.tpl</file>
             <file>file:/C:/xampp/htdocs/FantaConTe/Domain/DFormazione.php</file>
-            <file>file:/C:/xampp/htdocs/FantaConTe/View/VSquadra.php</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/Foundation/Fdb.php</file>
         </group>
     </open-files>
 </project-private>

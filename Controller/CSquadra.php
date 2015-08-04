@@ -31,12 +31,12 @@ class CSquadra {
             $session = USingleton::getInstance('USession');
             $nome_squadra=$session->getValore('nome_squadra');
             $DSquadra= new DSquadra($nome_squadra);
-            $Squadra=$FSquadra->getSquadraByNome($nome_squadra);
+            $Squadra=$FSquadra->getSquadraByNome('ciao');
             $Squadra=$Squadra[0];
             $DSquadra->setgiocatori($Squadra['giocatori']);
             $modulo=array('3-4-3','3-5-2','4-3-3','4-4-2','4-5-1','5-3-2','5-4-1');
             $VSquadra->impostaDati('moduli',$modulo);
-            $giocatori=$Squadra->getgiocatori();
+            $giocatori=$DSquadra->getgiocatori();
             $attacco=$giocatori['ATT'];
             $portieri=$giocatori['POR'];
             $centrocampo=$giocatori['CEN'];

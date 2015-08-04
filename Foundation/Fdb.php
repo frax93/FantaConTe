@@ -42,7 +42,6 @@ Class Fdb{
             //usare $this->bind in $query
             $query = "INSERT INTO `fantaconte`.`$this->tabella` $this->chiavedb VALUES $dati";
             $sql=$this->db->prepare($query);
-            var_dump($sql);
             //fare il bind dei dati passati usando i place-holders
             //$sql->bindParam($this->bind,$dati);
             //$sql->debugDumpParams();
