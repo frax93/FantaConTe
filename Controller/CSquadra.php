@@ -33,29 +33,30 @@ class CSquadra {
             $DSquadra= new DSquadra($nome_squadra);
             $Squadra=$FSquadra->getSquadraByNome('ciao');
             $Squadra=$Squadra[0];
+            //print_r($Squadra['giocatori']);
             $DSquadra->setgiocatori($Squadra['giocatori']);
             $modulo=array('3-4-3','3-5-2','4-3-3','4-4-2','4-5-1','5-3-2','5-4-1');
             $VSquadra->impostaDati('moduli',$modulo);
             $giocatori=$DSquadra->getgiocatori();
-            $attacco=$giocatori['ATT'];
-            $portieri=$giocatori['POR'];
-            $centrocampo=$giocatori['CEN'];
             $difensori=$giocatori['DIF'];
             $difensore1=array();
             foreach($difensori as $key => $value)
-                 array_push($difensore1,$value->getAsArray());
+                array_push($difensore1,  unserialize($value->getAsArray()));
             $VSquadra->impostaDati('difensore',$difensore1);
+            $centrocampo=$giocatori['CEN'];
             $centrocampo1=array();
             foreach($centrocampo as $key => $value)
-                        array_push($centrocampo1,$value->getAsArray());
+                        array_push($centrocampo1,  unserialize ($value->getAsArray()));
             $VSquadra->impostaDati('centrocampo',$centrocampo1);
+            $portieri=$giocatori['POR'];
             $portieri1=array();
             foreach($portieri as $key => $value)
-                        array_push($portieri1,$value->getAsArray());
+                        array_push($portieri1,unserialize($value->getAsArray()));
             $VSquadra->impostaDati('portieri',$portieri1);
+            $attacco=$giocatori['ATT'];
             $attacco1=array();
             foreach($attacco as $key => $value)
-                        array_push($attacco1,$value->getAsArray());
+                        array_push($attacco1,  unserialize ($value->getAsArray()));
             $VSquadra->impostaDati('attacco',$attacco1);
             return $VSquadra->processaTemplate();
 			/*$query->commit();

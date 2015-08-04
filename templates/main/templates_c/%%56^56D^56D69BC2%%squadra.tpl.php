@@ -1,6 +1,7 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-04 10:10:54
+<?php /* Smarty version 2.6.13, created on 2015-08-04 15:11:39
          compiled from squadra.tpl */ ?>
 <div id="main"> 
+    <br><br>
   <section class="spotlight">
     <div class="image"><img src="images/serieA.jpg" alt="" /></div>
     <div class="content">
@@ -45,7 +46,7 @@
     foreach ($_from as $this->_tpl_vars['por']):
 ?>
           <tr>
-            <td><?php echo $this->_tpl_vars['por']['nome']; ?>
+            <td><?php echo $this->_tpl_vars['por']; ?>
  </td>
             <td><?php echo $this->_tpl_vars['por']['cognome']; ?>
  </td>

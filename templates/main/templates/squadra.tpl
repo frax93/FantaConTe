@@ -1,4 +1,5 @@
 <div id="main"> 
+    <br><br>
   <section class="spotlight">
     <div class="image"><img src="images/serieA.jpg" alt="" /></div>
     <div class="content">
@@ -37,7 +38,7 @@
       <tbody>
 	  {foreach from=$portieri item=por}
           <tr>
-            <td>{$por.nome} </td>
+            <td>{$por} </td>
             <td>{$por.cognome} </td>
 	    <td>{$por.squadra_reale} </td>
 	    <td>{$por.valore}</td>
