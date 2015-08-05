@@ -116,8 +116,8 @@ Class Fdb{
                 return false;
 	 }
     public function queryRosa($nomesquadra){
-        $sql="SELECT "."*"." FROM ".$this->tabella." WHERE ";
-        $sql=$sql."`rosa`.nomesquadra='$nomesquadra' AND `rosa`.id=`giocatori`.id";
+        $sql="SELECT "."`giocatori`.`id`,`nome`,`cognome`,`squadra_reale`,`ruolo`,`valore`,`voto`,`giocato`"." FROM ".$this->tabella." WHERE ";
+        $sql=$sql."`rosa`.id=`giocatori`.id";
         $query=$this->db->prepare($sql);
         $query->execute();
         $result=$query->fetchAll();

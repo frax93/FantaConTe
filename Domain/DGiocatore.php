@@ -98,7 +98,7 @@ class DGiocatore{
 
     	}
 
-    	return serialize($result);
+    	return $result;
 
     }
 }

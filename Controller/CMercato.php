@@ -79,14 +79,7 @@ class CMercato{
             $dati=$session->getvalore('nome_squadra');
             $Squadra=new DSquadra('ciao');
             foreach($giocatori_selezionati as $key => $id_giocatore){
-                $FRosa->inserisciRosa($id_giocatore,$nome_squadra);
-                $giocatore=$FMercato->getGiocatoreById($id_giocatore);
-                $giocatore=$giocatore[0];
-                $DGiocatore = new DGiocatore($giocatore['id'],$giocatore['nome'],$giocatore['cognome'],$giocatore['ruolo'],
-                                             $giocatore['squadra_reale'],$giocatore['valore'],$giocatore['voto'],
-                                             $giocatore['giocato']);
-                
-                $Squadra->Aggiungi($DGiocatore);
+                $FRosa->inserisciRosa($id_giocatore,'ciao');
                 
             }
             $FSquadra->inserisciSquadra($Squadra);

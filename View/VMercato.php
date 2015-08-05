@@ -43,6 +43,7 @@ class VMercato extends View {
           foreach($_REQUEST as $key => $value)
             array_push($dati,$value);
           return $dati;
+         
         }
         else
             return false;

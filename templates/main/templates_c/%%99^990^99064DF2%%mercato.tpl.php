@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-05 12:11:19
+<?php /* Smarty version 2.6.13, created on 2015-08-05 18:36:11
          compiled from mercato.tpl */ ?>
 <div id="main"> 
     <br>
@@ -11,7 +11,7 @@
     </div>
   </section>
   <h5>Mercato Giocatori</h5>
-  <form method="post" action="index.php?controller=Squadra&task=visualizza">
+  <form method="post" action="index.php?controller=Mercato&task=salva">
   <input type="submit" name="submit" id="submit_1" class="button special" value="Salva">
   <h4><font color="orange">    Portieri   </font></h4>
   <div class="table-wrapper">
