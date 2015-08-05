@@ -70,6 +70,7 @@ class CMercato{
      public function Salva(){
             $VMercato=  USingleton::getInstance('VMercato');
             $FMercato=  USingleton::getInstance('FMercato');
+            $FRosa=  USingleton::getInstance('FRosa');
             $giocatori_selezionati=$VMercato->getDati();
             $Fdb=USingleton::getInstance('Fdb');
             $FSquadra=USingleton::getInstance('FSquadra');
@@ -78,12 +79,15 @@ class CMercato{
             $dati=$session->getvalore('nome_squadra');
             $Squadra=new DSquadra('ciao');
             foreach($giocatori_selezionati as $key => $id_giocatore){
+                $FRosa->inserisciRosa($id_giocatore,$nome_squadra);
                 $giocatore=$FMercato->getGiocatoreById($id_giocatore);
                 $giocatore=$giocatore[0];
                 $DGiocatore = new DGiocatore($giocatore['id'],$giocatore['nome'],$giocatore['cognome'],$giocatore['ruolo'],
                                              $giocatore['squadra_reale'],$giocatore['valore'],$giocatore['voto'],
                                              $giocatore['giocato']);
+                
                 $Squadra->Aggiungi($DGiocatore);
+                
             }
             $FSquadra->inserisciSquadra($Squadra);
             //Redirect per mostrare la squadra all'utente

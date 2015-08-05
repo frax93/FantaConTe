@@ -34,31 +34,45 @@ class CSquadra {
             $Squadra=$FSquadra->getSquadraByNome('ciao');
             $Squadra=$Squadra[0];
             $FRosa= USingleton::getInstance('FRosa');
-            $rosa=$FRosa->getRosa('ciao',1);
-            print_r($rosa);
-           /* $modulo=array('3-4-3','3-5-2','4-3-3','4-4-2','4-5-1','5-3-2','5-4-1');
+            $giocatori=$FRosa->getRosa('ciao',1);
+            print_r($giocatori[0]);
+            $modulo=array('3-4-3','3-5-2','4-3-3','4-4-2','4-5-1','5-3-2','5-4-1');
             $VSquadra->impostaDati('moduli',$modulo);
-            $giocatori=$DSquadra->getgiocatori();
-            $difensori=$giocatori['DIF'];
-            $difensore1=array();
-            foreach($difensori as $key => $value)
-                array_push($difensore1,  unserialize($value->getAsArray()));
-            $VSquadra->impostaDati('difensore',$difensore1);
-            $centrocampo=$giocatori['CEN'];
-            $centrocampo1=array();
-            foreach($centrocampo as $key => $value)
-                        array_push($centrocampo1,  unserialize ($value->getAsArray()));
-            $VSquadra->impostaDati('centrocampo',$centrocampo1);
-            $portieri=$giocatori['POR'];
-            $portieri1=array();
-            foreach($portieri as $key => $value)
-                        array_push($portieri1,unserialize($value->getAsArray()));
-            $VSquadra->impostaDati('portieri',$portieri1);
-            $attacco=$giocatori['ATT'];
-            $attacco1=array();
-            foreach($attacco as $key => $value)
-                        array_push($attacco1,  unserialize ($value->getAsArray()));
-            $VSquadra->impostaDati('attacco',$attacco1);
+            //FUNZIONA MA DEVI CREARTI LA ROSA SUL DATABASE DA SQL 
+            //ALTRIMENTI NON SI VEDE NULLA SUL SITO
+            $portieri=array();
+              for($i=0;$i<3;$i++){
+                if($giocatori[$i][5]=='POR'){
+                   $portieri1[$i]=$giocatori[$i];
+                   $VSquadra->impostaDati('portieri',$portieri1);
+                   
+                }
+              }
+              $difensori=array();
+              for($i=3;$i<11;$i++){
+                if($giocatori[$i][5]=='DIF'){
+                   $difensori1[$i]=$giocatori[$i];
+                   $VSquadra->impostaDati('difensore',$difensori1);
+                   
+                }
+              }
+              $centrocampisti=array();
+              for($i=11;$i<19;$i++){
+                if($giocatori[$i][5]=='CEN'){
+                   $centrocampisti1[$i]=$giocatori[$i];
+                   $VSquadra->impostaDati('centrocampo',$centrocampisti1);
+                   
+                }
+              }
+              $attaccanti=array();
+              for($i=19;$i<25;$i++){
+                if($giocatori[$i][5]=='ATT'){
+                   $attaccanti1[$i]=$giocatori[$i];
+                   $VSquadra->impostaDati('attacco',$attaccanti1);
+                   
+                }
+              }
+              
             return $VSquadra->processaTemplate();
 			/*$query->commit();
 		} catch (Exception $e) {
