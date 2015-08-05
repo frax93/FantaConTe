@@ -1,10 +1,12 @@
 <div id="main">
+    <br>
+    <br>
   <section class="spotlight">
     <div class="image"><img src="images/formazione.jpg" alt="" /></div>
     <div class="content">
       <h2>Inserisci la tua formazione</h2>
       <p> Raggiungi la vetta della classifica....</p>
-      <button type="submit" class="button special">SALVA FORMAZIONE</button>
+      <button class="button special" type="submit"><a href="index.php?controller=Squadra&task=visualizza">MODIFICA FORMAZIONE</a></button>
     </div>
   </section>
     <h5>Titolari</h5>

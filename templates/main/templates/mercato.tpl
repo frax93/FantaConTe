@@ -1,4 +1,6 @@
 <div id="main"> 
+    <br>
+    <br>
   <section class="spotlight">
     <div class="image"><img src="images/galliani.jpg" alt="" /></div>
     <div class="content">

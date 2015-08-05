@@ -1,6 +1,8 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-03 16:33:59
+<?php /* Smarty version 2.6.13, created on 2015-08-05 10:06:58
          compiled from mercato.tpl */ ?>
 <div id="main"> 
+    <br>
+    <br>
   <section class="spotlight">
     <div class="image"><img src="images/galliani.jpg" alt="" /></div>
     <div class="content">
