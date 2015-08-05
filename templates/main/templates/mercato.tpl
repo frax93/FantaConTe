@@ -9,7 +9,7 @@
     </div>
   </section>
   <h5>Mercato Giocatori</h5>
-  <form method="post" action="index.php?controller=Mercato&task=salva">
+  <form method="post" action="index.php?controller=Squadra&task=visualizza">
   <input type="submit" name="submit" id="submit_1" class="button special" value="Salva">
   <h4><font color="orange">    Portieri   </font></h4>
   <div class="table-wrapper">

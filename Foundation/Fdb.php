@@ -115,6 +115,14 @@ Class Fdb{
                     return $result;
                 return false;
 	 }
+    public function queryRosa($nomesquadra){
+        $sql="SELECT "."*"." FROM ".$this->tabella." WHERE ";
+        $sql=$sql."`rosa`.nomesquadra='$nomesquadra' AND `rosa`.id=`giocatori`.id";
+        $query=$this->db->prepare($sql);
+        $query->execute();
+        $result=$query->fetchAll();
+        return $result;
+    }
     public function update($valore){
                 $sql = "UPDATE ".$this->tabella." SET ".$this->chiavedb[0]."=".$this->bind[0]." WHERE ".$this->chiavedb[1]."=".$this->bind[1];
 	 	$query=$this->db->prepare($sql);

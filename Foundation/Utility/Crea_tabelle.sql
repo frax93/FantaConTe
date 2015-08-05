@@ -35,10 +35,8 @@ CREATE TABLE IF NOT EXISTS `Classifica`(
     PRIMARY KEY (`username`)
 );
 CREATE TABLE IF NOT EXISTS `Squadra`(
-    `id`            SMALLINT NOT NULL AUTO_INCREMENT ,
     `nome`          VARCHAR(20) NOT NULL ,
-    `giocatori` VARCHAR(17000) NOT NULL,
-    PRIMARY KEY (`id`)
+    PRIMARY KEY (`nome`)
 );
 
 CREATE TABLE  IF NOT EXISTS `Giocatori` (
@@ -51,6 +49,12 @@ CREATE TABLE  IF NOT EXISTS `Giocatori` (
     `voto`          INTEGER,
     `giocato`       BOOLEAN ,
     PRIMARY KEY (`id`)
+);
+
+CREATE TABLE  IF NOT EXISTS `Rosa` (
+    `id`            SMALLINT NOT NULL,
+    `nomesquadra`          VARCHAR(20) NOT NULL ,
+    PRIMARY KEY (`id` , `nomesquadra`)
 );
 
 INSERT INTO Giocatori (`nome`,`cognome`,`ruolo`,`squadra_reale`,`valore`,`voto`,`giocato`) VALUES ( 'Gianluigi', 'Buffon', 'POR', 'Juventus',19,0,False );

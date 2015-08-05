@@ -11,18 +11,17 @@ class FSquadra extends Fdb {
 	public function __construct(){
 		$this->db = USingleton::getInstance('Fdb');
 		$this->tabella="squadra";
-		$this->chiavedb="( `nome`, `giocatori`)";
-		$this->bind="( :nome, :Cpor, :Cdif, :Ccen, :Catt, :giocatori)";
+		$this->chiavedb="( `nome`)";
+		$this->bind="( :nome)";
 	}
 	
-public function inserisciSquadra(DSquadra $object){
+        public function inserisciSquadra(DSquadra $object){
                 $dati=$object->getAsArray();
 		$this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
-                $dati['giocatori']= base64_encode($dati['giocatori']);
-                $stringa="('$dati[nome]','$dati[giocatori]')";
+                $stringa="('$dati[nome]')";
 		$this->db->insert($stringa);
                 
-}
+        }
 	public function getSquadraByNome($_nome){
 		$this->db->setvariabili($this->tabella,"nome",":nome");
 	        return $this->db->queryGenerica("*","=",$_nome);

@@ -33,8 +33,10 @@ class CSquadra {
             $DSquadra= new DSquadra($nome_squadra);
             $Squadra=$FSquadra->getSquadraByNome('ciao');
             $Squadra=$Squadra[0];
-            $DSquadra->setgiocatori($Squadra['giocatori']);
-            $modulo=array('3-4-3','3-5-2','4-3-3','4-4-2','4-5-1','5-3-2','5-4-1');
+            $FRosa= USingleton::getInstance('FRosa');
+            $rosa=$FRosa->getRosa('ciao',1);
+            print_r($rosa);
+           /* $modulo=array('3-4-3','3-5-2','4-3-3','4-4-2','4-5-1','5-3-2','5-4-1');
             $VSquadra->impostaDati('moduli',$modulo);
             $giocatori=$DSquadra->getgiocatori();
             $difensori=$giocatori['DIF'];
