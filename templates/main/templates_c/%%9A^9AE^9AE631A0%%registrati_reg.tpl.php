@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-03 10:09:07
+<?php /* Smarty version 2.6.13, created on 2015-08-05 10:13:46
          compiled from registrati_reg.tpl */ ?>
 <script src="Javascript/jquery.min.js"></script>
 
@@ -21,4 +21,3 @@
 	</div>
 
   
-

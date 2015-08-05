@@ -16,8 +16,8 @@ CREATE TABLE IF NOT EXISTS `utente` (
 );
 CREATE TABLE IF NOT EXISTS `Formazione`(
     ` modulo`  CHAR(5) NOT NULL,
-    `titolari` VARCHAR(200) NOT NULL,
-    `panchina` VARCHAR(200) NOT NULL,
+    `titolari` VARCHAR(17000) NOT NULL,
+    `panchina` VARCHAR(17000) NOT NULL,
     `squadra`  VARCHAR(20) NOT NULL ,
     `countdif`  INTEGER NOT NULL ,
     `countcen`  INTEGER NOT NULL ,
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `Classifica`(
 CREATE TABLE IF NOT EXISTS `Squadra`(
     `id`            SMALLINT NOT NULL AUTO_INCREMENT ,
     `nome`          VARCHAR(20) NOT NULL ,
-    `giocatori` VARCHAR(200) NOT NULL,
+    `giocatori` VARCHAR(17000) NOT NULL,
     PRIMARY KEY (`id`)
 );
 
