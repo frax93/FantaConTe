@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-04 15:40:11
+<?php /* Smarty version 2.6.13, created on 2015-08-06 17:36:33
          compiled from squadra.tpl */ ?>
 <div id="main"> 
     <br><br>
