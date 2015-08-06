@@ -73,6 +73,7 @@ class DFormazione{
                foreach ($giocatori as $key2 => $id){
                        $ruolo=$this->controlla($_giocatore,$id);
                        if($ruolo!="Non Corrisponde ID"){
+                           $_giocatore->settitolare(true);
                           array_push($this->titolari[$ruolo],$_giocatore);
                           unset($giocatori_squadra[$ruolo][array_search($_giocatore, $giocatori_squadra)]);
                        }
@@ -94,16 +95,20 @@ class DFormazione{
         $this->setpanchina();
     }
     public function getAsArray(){
-        $this->squadra=serialize($this->squadra);
-    	$result=array();
+    	$result=$result1=array();
     	foreach($this as $key => $value) {
-    		if (!is_array($value) && !is_object($value)) {
-
+    		if (!is_array($value) && !is_object($value)) 
     			$result[$key]= $value;
-    		}
-
+                else if($value==$this->titolari){
+                     foreach ($this->titolari as $key1 => $value1) 
+                         foreach($value1 as $key2 => $giocatore){
+                             array_push($result1,$giocatore->getid());
+                             
+                         }
+                     $result[$key]=$result1;  
+                     
+                }
     	}
-
     	return $result;
 
     }
