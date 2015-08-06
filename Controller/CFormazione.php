@@ -51,34 +51,6 @@ class CFormazione {
                 
                 //Qui si deve salvare sul Database e poi chiamare con header
                 //header("location: index.php?controller=Formazione&task=visualizza");
-<<<<<<< HEAD
-                
-                
-=======
-                $titolari=$Formazione->get_titolari();
-                $portieri=$titolari['POR'];
-                $portieri1=array();
-                foreach($portieri as $key => $value)
-                        array_push($portieri1,$value->getAsArray());
-                $VFormazione->impostaDati('portieri',$portieri1);
-                 $difensori=$titolari['DIF'];
-                $difensori1=array();
-                foreach($difensori as $key => $value)
-                        array_push($difensori1,$value->getAsArray());
-                $VFormazione->impostaDati('difensori',$difensori1);
-                $centrocampo=$titolari['CEN'];
-                $centrocampo1=array();
-                foreach($centrocampo as $key => $value)
-                        array_push($centrocampo1,$value->getAsArray());
-                $VFormazione->impostaDati('centrocampo',$centrocampo1);
-                 $attacco=$titolari['ATT'];
-                $attacco1=array();
-                foreach($attacco as $key => $value)
-                        array_push($attacco1,$value->getAsArray());
-                $VFormazione->impostaDati('attacco',$attacco1);
-                return $VFormazione->processaTemplate();
-                //$fformazione->inserisciFormazione($Formazione);
->>>>>>> origin/master
 			//$query->commit();
 		/*} catch (Exception $e) {
 			$query->rollBack();
