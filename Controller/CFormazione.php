@@ -51,8 +51,11 @@ class CFormazione {
                 
                 //Qui si deve salvare sul Database e poi chiamare con header
                 //header("location: index.php?controller=Formazione&task=visualizza");
+<<<<<<< HEAD
                 
                 
+=======
+>>>>>>> origin/master
 			//$query->commit();
 		/*} catch (Exception $e) {
 			$query->rollBack();
