@@ -26,11 +26,11 @@ class DFormazione{
         return $this->modulo;
     }
     public function gettitolari(){
-        $titolari=base64_encode(serialize($this->titolari));
+        $titolari=$this->titolari;
         return $titolari;
     }
     public function getpanchina(){
-        $panchina=base64_encode(serialize($this->panchina));
+        $panchina=$this->panchina;
         return $panchina;
     }
     public function setmodulo($_modulo){
@@ -80,7 +80,6 @@ class DFormazione{
             }
         }
         $this->impostapanchinari($giocatori_squadra);
-        print_r($this->panchina);
     }
     
     private function impostapanchinari($giocatori_squadra){ 
