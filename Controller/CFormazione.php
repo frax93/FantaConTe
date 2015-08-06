@@ -37,36 +37,22 @@ class CFormazione {
                 $nome=$session->getvalore('nome_squadra');
                 //Inserire $nome per fare la cosa dinamica
                 $DSquadra=new DSquadra('ciao');
-                $Squadra=$FSquadra->getSquadraByNome('ciao');
-                $Squadra=$Squadra[0];
-                $DSquadra->setgiocatori($Squadra['giocatori']);
+                $FRosa= USingleton::getInstance('FRosa');
+                $giocatori=$FRosa->getRosa('ciao');
+                foreach($giocatori as $key => $value){
+                    $DGiocatore=new DGiocatore($value['id'],$value['nome'],$value['cognome'],$value['ruolo'],
+                                             $value['squadra_reale'],$value['valore'],$value['voto'],
+                                             $value['giocato']);
+                    $DSquadra->Aggiungi($DGiocatore);
+                }
                 $Formazione=new DFormazione($DSquadra,$modulo);
                 $Formazione->impostatitolari($giocatori_selezionati);
+                $fformazione->inserisciFormazione($Formazione,'ciao');
+                
                 //Qui si deve salvare sul Database e poi chiamare con header
                 //header("location: index.php?controller=Formazione&task=visualizza");
-                $titolari=$Formazione->get_titolari();
-                $portieri=$titolari['POR'];
-                $portieri1=array();
-                foreach($portieri as $key => $value)
-                        array_push($portieri1,unserialize($value->getAsArray()));
-                $VFormazione->impostaDati('portieri',$portieri1);
-                 $difensori=$titolari['DIF'];
-                $difensori1=array();
-                foreach($difensori as $key => $value)
-                        array_push($difensori1,unserialize($value->getAsArray()));
-                $VFormazione->impostaDati('difensori',$difensori1);
-                $centrocampo=$titolari['CEN'];
-                $centrocampo1=array();
-                foreach($centrocampo as $key => $value)
-                        array_push($centrocampo1,unserialize($value->getAsArray()));
-                $VFormazione->impostaDati('centrocampo',$centrocampo1);
-                 $attacco=$titolari['ATT'];
-                $attacco1=array();
-                foreach($attacco as $key => $value)
-                        array_push($attacco1,unserialize($value->getAsArray()));
-                $VFormazione->impostaDati('attacco',$attacco1);
-                return $VFormazione->processaTemplate();
-                //$fformazione->inserisciFormazione($Formazione);
+                
+                
 			//$query->commit();
 		/*} catch (Exception $e) {
 			$query->rollBack();
@@ -95,9 +81,29 @@ class CFormazione {
 	}
         public function Visualizza(){
             $VFormazione=USingleton::getInstance('VFormazione');
-            
-            $VFormazione->impostaDati('portieri',$DFormazione);
-            return $VFormazione->processaTemplate();
+            //riprendere i dati dal database
+            $titolari=$Formazione->get_titolari();
+                $portieri=$titolari['POR'];
+                $portieri1=array();
+                foreach($portieri as $key => $value)
+                        array_push($portieri1,$value->getAsArray());
+                $VFormazione->impostaDati('portieri',$portieri1);
+                 $difensori=$titolari['DIF'];
+                $difensori1=array();
+                foreach($difensori as $key => $value)
+                        array_push($difensori1,$value->getAsArray());
+                $VFormazione->impostaDati('difensori',$difensori1);
+                $centrocampo=$titolari['CEN'];
+                $centrocampo1=array();
+                foreach($centrocampo as $key => $value)
+                        array_push($centrocampo1,$value->getAsArray());
+                $VFormazione->impostaDati('centrocampo',$centrocampo1);
+                 $attacco=$titolari['ATT'];
+                $attacco1=array();
+                foreach($attacco as $key => $value)
+                        array_push($attacco1,$value->getAsArray());
+                $VFormazione->impostaDati('attacco',$attacco1);
+                return $VFormazione->processaTemplate();
         }
 }
 ?>

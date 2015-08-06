@@ -14,7 +14,7 @@ class DGiocatore{
     private $squadra_reale;
     private $valore; 
     private $voto;
-    private $giocato;
+    private $titolare;
     public function __construct($_id,$_nome,$_cognome,$_ruolo,$_squadra_reale,$_valore, $_voto,$_giocato){
         $this->setid($_id);
         $this->setnome($_nome);
@@ -23,6 +23,7 @@ class DGiocatore{
         $this->setsquadra_re($_squadra_reale);
         $this->setvalore($_valore);
         $this->setvoto($_voto);
+        $this->settitolare($_giocato);
     } 
     public function getid(){
 	return $this->id;
@@ -51,8 +52,8 @@ class DGiocatore{
 	return $this->voto;
     }
 
-    public function getgiocato(){
-	return $this->giocato;
+    public function gettitolare(){
+	return $this->titolare;
     }
     public function setid($_id){
         $this->id=$_id;
@@ -84,8 +85,8 @@ class DGiocatore{
            $this->voto=$vot;
     }
 
-    public function setgiocato($gioca){
-	$this->giocato=$gioca;
+    public function settitolare($gioca){
+	$this->titolare=$gioca;
     }
      public function getAsArray(){
     	$result=array();
