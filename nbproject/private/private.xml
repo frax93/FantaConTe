@@ -3,20 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/FantaConTe/Foundation/FRosa.php</file>
-            <file>file:/C:/xampp/htdocs/FantaConTe/Domain/DSquadra.php</file>
-            <file>file:/C:/xampp/htdocs/FantaConTe/Domain/DGiocatore.php</file>
-            <file>file:/C:/xampp/htdocs/FantaConTe/Controller/CSquadra.php</file>
-            <file>file:/C:/xampp/htdocs/FantaConTe/View/VMercato.php</file>
-            <file>file:/C:/xampp/htdocs/FantaConTe/templates/main/templates/formazione.tpl</file>
-            <file>file:/C:/xampp/htdocs/FantaConTe/Domain/DFormazione.php</file>
-            <file>file:/C:/xampp/htdocs/FantaConTe/templates/main/templates/mercato.tpl</file>
-            <file>file:/C:/xampp/htdocs/FantaConTe/Foundation/FFormazione.php</file>
-            <file>file:/C:/xampp/htdocs/FantaConTe/View/VFormazione.php</file>
-            <file>file:/C:/xampp/htdocs/FantaConTe/Controller/CFormazione.php</file>
-            <file>file:/C:/xampp/htdocs/FantaConTe/templates/main/templates/squadra.tpl</file>
-            <file>file:/C:/xampp/htdocs/FantaConTe/Controller/CMercato.php</file>
-            <file>file:/C:/xampp/htdocs/FantaConTe/Foundation/Fdb.php</file>
+            <file>file:/Applications/XAMPP/htdocs/FantaConTe/templates/main/templates/squadra.tpl</file>
+            <file>file:/Applications/XAMPP/htdocs/FantaConTe/Foundation/FRosa.php</file>
+            <file>file:/Applications/XAMPP/htdocs/FantaConTe/Foundation/FSquadra.php</file>
+            <file>file:/Applications/XAMPP/htdocs/FantaConTe/Foundation/Fdb.php</file>
+            <file>file:/Applications/XAMPP/htdocs/FantaConTe/View/VSquadra.php</file>
+            <file>file:/Applications/XAMPP/htdocs/FantaConTe/Domain/DFormazione.php</file>
+            <file>file:/Applications/XAMPP/htdocs/FantaConTe/Domain/DGiocatore.php</file>
+            <file>file:/Applications/XAMPP/htdocs/FantaConTe/Foundation/FFormazione.php</file>
+            <file>file:/Applications/XAMPP/htdocs/FantaConTe/Controller/CMercato.php</file>
+            <file>file:/Applications/XAMPP/htdocs/FantaConTe/Controller/CSquadra.php</file>
+            <file>file:/Applications/XAMPP/htdocs/FantaConTe/Controller/CFormazione.php</file>
         </group>
     </open-files>
 </project-private>

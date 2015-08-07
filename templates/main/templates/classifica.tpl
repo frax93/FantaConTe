@@ -42,7 +42,6 @@
 	      <th>NomeUtente</th>
 	      <th>P.Giocate</th>
 	      <th><font color=red>Punti</font></th>
-	      <th>Percentuale Vittorie</th>
 	    </tr>
 	  </thead>
 	  <tbody>
@@ -52,7 +51,6 @@
 	      <td> {$arr.nome} </td>
 	      <td> {$arr.pgioc} </td>
 	      <td> {$arr.punti} </td>
-	      <td> {$arr.percv} </td>
             </tr>
           </tbody>
         </table>

@@ -6,7 +6,7 @@
     <div class="content">
       <h2>Inserisci la tua formazione</h2>
       <p> Raggiungi la vetta della classifica....</p>
-      <button class="button special" type="submit"><a href="index.php?controller=Squadra&task=visualizza">MODIFICA FORMAZIONE</a></button>
+      <button class="button special" type="submit" name="submit" id="submit_1"><a href="index.php?controller=Squadra&task=visualizza">MODIFICA FORMAZIONE</a></button>
     </div>
   </section>
     <h5>Titolari</h5>
@@ -18,7 +18,7 @@
 	    <th>Nome</th>
             <th>Cognome</th>
 	    <th>Squadra</th>
-	    <th>Prezzo</th>
+	    <th>Voto</th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -27,7 +27,7 @@
               <td>{$por.nome} </td>
               <td>{$por.cognome} </td>
               <td>{$por.squadra_reale} </td>
-              <td>{$por.valore}</td>
+              <td>{$por.voto}</td>
             </tr>
           {/foreach}
         </tbody>
@@ -41,7 +41,7 @@
 	    <th>Nome</th>
             <th>Cognome</th>
 	    <th>Squadra</th>
-	    <th>Prezzo</th>
+	    <th>Voto</th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -50,7 +50,7 @@
 	      <td>{$dif.nome} </td>
               <td>{$dif.cognome} </td>
 	      <td>{$dif.squadra_reale} </td>
-	      <td>{$dif.valore}</td>
+	      <td>{$dif.voto}</td>
             </tr>
           {/foreach}
 	</tbody>
@@ -64,7 +64,7 @@
             <th>Nome</th>
             <th>Cognome</th>
 	    <th>Squadra</th>
-	    <th>Prezzo</th>
+	    <th>Voto</th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -73,7 +73,7 @@
 	      <td>{$cen.nome} </td>
               <td>{$cen.cognome} </td>
 	      <td>{$cen.squadra_reale} </td>
-	      <td>{$cen.valore} </td>
+	      <td>{$cen.voto} </td>
             </tr>
           {/foreach}
 	</tbody>
@@ -87,7 +87,7 @@
             <th>Nome</th>
             <th>Cognome</th>
 	    <th>Squadra</th>
-	    <th>Prezzo</th>
+	    <th>Voto</th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -96,7 +96,7 @@
 	      <td>{$att.nome} </td>
               <td>{$att.cognome} </td>
 	      <td>{$att.squadra_reale} </td>
-	      <td>{$att.valore}</td>
+	      <td>{$att.voto}</td>
             </tr>
           {/foreach}
 	</tbody>

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-05 10:09:29
+<?php /* Smarty version 2.6.13, created on 2015-08-07 16:29:22
          compiled from formazione.tpl */ ?>
 <div id="main">
     <br>
@@ -8,7 +8,7 @@
     <div class="content">
       <h2>Inserisci la tua formazione</h2>
       <p> Raggiungi la vetta della classifica....</p>
-      <button class="button special" type="submit"><a href="index.php?controller=Squadra&task=visualizza">MODIFICA FORMAZIONE</a></button>
+      <button class="button special" type="submit" name="submit" id="submit_1"><a href="index.php?controller=Squadra&task=visualizza">MODIFICA FORMAZIONE</a></button>
     </div>
   </section>
     <h5>Titolari</h5>
@@ -20,7 +20,7 @@
 	    <th>Nome</th>
             <th>Cognome</th>
 	    <th>Squadra</th>
-	    <th>Prezzo</th>
+	    <th>Voto</th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -34,7 +34,7 @@
  </td>
               <td><?php echo $this->_tpl_vars['por']['squadra_reale']; ?>
  </td>
-              <td><?php echo $this->_tpl_vars['por']['valore']; ?>
+              <td><?php echo $this->_tpl_vars['por']['voto']; ?>
 </td>
             </tr>
           <?php endforeach; endif; unset($_from); ?>
@@ -49,7 +49,7 @@
 	    <th>Nome</th>
             <th>Cognome</th>
 	    <th>Squadra</th>
-	    <th>Prezzo</th>
+	    <th>Voto</th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -63,7 +63,7 @@
  </td>
 	      <td><?php echo $this->_tpl_vars['dif']['squadra_reale']; ?>
  </td>
-	      <td><?php echo $this->_tpl_vars['dif']['valore']; ?>
+	      <td><?php echo $this->_tpl_vars['dif']['voto']; ?>
 </td>
             </tr>
           <?php endforeach; endif; unset($_from); ?>
@@ -78,7 +78,7 @@
             <th>Nome</th>
             <th>Cognome</th>
 	    <th>Squadra</th>
-	    <th>Prezzo</th>
+	    <th>Voto</th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -92,7 +92,7 @@
  </td>
 	      <td><?php echo $this->_tpl_vars['cen']['squadra_reale']; ?>
  </td>
-	      <td><?php echo $this->_tpl_vars['cen']['valore']; ?>
+	      <td><?php echo $this->_tpl_vars['cen']['voto']; ?>
  </td>
             </tr>
           <?php endforeach; endif; unset($_from); ?>
@@ -107,7 +107,7 @@
             <th>Nome</th>
             <th>Cognome</th>
 	    <th>Squadra</th>
-	    <th>Prezzo</th>
+	    <th>Voto</th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -121,7 +121,7 @@
  </td>
 	      <td><?php echo $this->_tpl_vars['att']['squadra_reale']; ?>
  </td>
-	      <td><?php echo $this->_tpl_vars['att']['valore']; ?>
+	      <td><?php echo $this->_tpl_vars['att']['voto']; ?>
 </td>
             </tr>
           <?php endforeach; endif; unset($_from); ?>

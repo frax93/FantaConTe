@@ -30,7 +30,7 @@ public function inserisciFormazione(DFormazione $_object, $nome_squadra){
 	        return $this->db->queryGenerica("*",$team);
 	}
 	
-	
+       
 	public function aggiornaFormazione($dati) {
 
 		foreach ($dati as $key => $value) {

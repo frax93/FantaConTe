@@ -83,7 +83,7 @@ class CFormazione {
 			throw new Exception($e->getMessage());
 		}*/
 	}
-	/**
+       /**
 	 * Permette di modificare la formazione
 	 */
 	public function Modifica() {

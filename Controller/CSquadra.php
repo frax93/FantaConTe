@@ -29,8 +29,6 @@ class CSquadra {
             $session = USingleton::getInstance('USession');
             $nome_squadra=$session->getValore('nome_squadra');
             $DSquadra= new DSquadra('ciao');
-            $Squadra=$FSquadra->getSquadraByNome('ciao');
-            $Squadra=$Squadra[0];
             $FRosa= USingleton::getInstance('FRosa');
             $giocatori=$FRosa->getRosa('ciao');
             foreach($giocatori as $key => $value){

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-06 17:36:30
+<?php /* Smarty version 2.6.13, created on 2015-08-07 16:30:04
          compiled from classifica.tpl */ ?>
 <html>
   <head>
@@ -48,7 +48,6 @@
 	      <th>NomeUtente</th>
 	      <th>P.Giocate</th>
 	      <th><font color=red>Punti</font></th>
-	      <th>Percentuale Vittorie</th>
 	    </tr>
 	  </thead>
 	  <tbody>
@@ -62,8 +61,6 @@
 	      <td> <?php echo $this->_tpl_vars['arr']['pgioc']; ?>
  </td>
 	      <td> <?php echo $this->_tpl_vars['arr']['punti']; ?>
- </td>
-	      <td> <?php echo $this->_tpl_vars['arr']['percv']; ?>
  </td>
             </tr>
           </tbody>
