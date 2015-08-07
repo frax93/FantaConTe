@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-07 15:52:13
+<?php /* Smarty version 2.6.13, created on 2015-08-07 16:40:50
          compiled from home.tpl */ ?>
 <html>
   <head>
@@ -38,7 +38,7 @@
 	      <ul>
                 <li><a href="index.php">Home</a></li>
 		<li><a href="index.php?controller=Mercato&task=riempi">Mercato</a></li>
-		<li><a href="index.php?controller=Formazione&task=visualizza">Formazione</a></li>
+		<li><a href="index.php?controller=Formazione&task=nuova">Formazione</a></li>
 		<li><a href="index.php?controller=Registrazione&task=logout">Log Out</a></li>
 	      </ul>
 	    </div>
