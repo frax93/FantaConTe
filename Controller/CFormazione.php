@@ -52,29 +52,39 @@ class CFormazione {
                 //Qui si deve salvare sul Database e poi chiamare con header
                 //header("location: index.php?controller=Formazione&task=visualizza");
                 
-                
-
+                $totale=0;
                 $titolari=$Formazione->get_titolari();
                 $portieri=$titolari['POR'];
                 $portieri1=array();
-                foreach($portieri as $key => $value)
+                foreach($portieri as $key => $value){
                         array_push($portieri1,$value->getAsArray());
+                        $totale=$totale+$portieri1[$key]['voto'];
+                        
+                }
                 $VFormazione->impostaDati('portieri',$portieri1);
                  $difensori=$titolari['DIF'];
                 $difensori1=array();
-                foreach($difensori as $key => $value)
+                foreach($difensori as $key => $value){
                         array_push($difensori1,$value->getAsArray());
+                        $totale=$totale+$difensori1[$key]['voto'];
+                }
+               
                 $VFormazione->impostaDati('difensori',$difensori1);
                 $centrocampo=$titolari['CEN'];
                 $centrocampo1=array();
-                foreach($centrocampo as $key => $value)
+                foreach($centrocampo as $key => $value){
                         array_push($centrocampo1,$value->getAsArray());
+                        $totale=$totale+$centrocampo1[$key]['voto'];
+                }
                 $VFormazione->impostaDati('centrocampo',$centrocampo1);
                  $attacco=$titolari['ATT'];
                 $attacco1=array();
-                foreach($attacco as $key => $value)
+                foreach($attacco as $key => $value){
                         array_push($attacco1,$value->getAsArray());
+                        $totale=$totale+$attacco1[$key]['voto'];
+                }
                 $VFormazione->impostaDati('attacco',$attacco1);
+                $VFormazione->impostaDati('totale',$totale);
                 return $VFormazione->processaTemplate();
                 //$fformazione->inserisciFormazione($Formazione);
 			//$query->commit();

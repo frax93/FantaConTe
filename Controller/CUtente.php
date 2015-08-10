@@ -53,25 +53,7 @@ class CUtente {
 					  "path" => $session->getValore("path"));
 		$View->invia($info);
 	}
-	/**
-	*INVIASFIDA LO FARA' MICHELE DETTO IL MOICANO
-	**/
-	/*public function inviaPartecipanti($_id_cartella) {
-		$fraccoglitore=USingleton::getInstance('FRaccoglitore_cartelle');
-		$session = USingleton::getInstance('USession');
-		$futente=USingleton::getInstance('FUtente');
-		$raccoglitore = $fraccoglitore->getTupleByIdCartella($_id_cartella);
-		$condiviso = array();
-		foreach ($raccoglitore as $key => $valore) {
-			if ($valore['email_utente'] != $session->getValore("email")) {
-				$utente = $futente->getUtenteByEmail($valore['email_utente']);
-				$utente = $utente[0];
-				$condiviso[$key]["email"] = $valore['email_utente'];
-				$condiviso[$key]["path"] = "Home.php?controller=utente&lavoro=getImmagine&file=".$utente['id_immagine'];
-			}
-		}
-		return $condiviso;
-	}*/
+	
 }
 ?>
 

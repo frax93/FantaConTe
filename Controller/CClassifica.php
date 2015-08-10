@@ -23,7 +23,7 @@ class CClassifica{
             //$q->beginTransaction();
             //try{
                 $classifica=$FClassifica->getClassifica();
-                $arr=array('posizione'=> 1, 'squadra' => 'Jurassic-World','nome'=>'Maione','pgioc'=>1,'punti'=>3,'percv'=>1);
+                $arr=array('posizione'=> 1, 'squadra' => 'Jurassic-World','nome'=>'Maione','pgioc'=>1,'punti'=>$totale,'percv'=>1);
                 $key='arr';
                 $VClassifica->impostaDati($key,$arr);
                 return $VClassifica->processaTemplate();
@@ -41,7 +41,8 @@ class CClassifica{
                //$q->beginTransaction();
                //try{
                    //$classifica=$FClassifica->inserisciClassifica();
-                   $arr=array('posizione'=> 1, 'squadra' => 'Jurassic-World','nome'=>'Maione','pgioc'=>1,'punti'=>3,'percv'=>1);
+                   $arr=array('posizione'=> 1, 'squadra' => 'Jurassic-World','nome'=>'Maione','pgioc'=>1,'punti'=>$totale,'percv'=>1);    
+                    $VClassifica->impostaDati('totale',$totale);
                    $key='arr';
                    $VClassifica->impostaDati($key,$arr);
                    return $VClassifica->processaTemplate();

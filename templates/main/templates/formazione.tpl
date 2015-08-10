@@ -102,6 +102,45 @@
 	</tbody>
       </table>
     </div>  
+    <br>
+    <div class="table-wrapper">
+      <table class="tabellaatt">
+        <thead>
+          <tr>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+	    <th> </th>
+            <th> </th>
+            <th> </th>
+	    <th> </th>
+            <th> </th>
+            <th> </th>
+	    <th> </th>
+	    <th> Voto Totale</th>
+	  </tr>
+	</thead>
+	<tbody>
+          {foreach from=$totale item=tot}
+            <tr>
+	      <td> </td>
+              <td> </td>
+	      <td> </td>
+              <td> </td>
+	      <td> </td>
+	      <td> </td>
+              <td> </td>
+	      <td> </td>
+	      <td> </td>
+	      <td> </td>
+	      <td> </td>
+	      <td> {$totale}</td>
+            </tr>
+          {/foreach}
+	</tbody>
+      </table>
+    </div>  
     <button type="submit"  class="button special"><a href="#">Torna Su</a></button>
                                                                                         
 </div>

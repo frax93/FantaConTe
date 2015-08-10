@@ -15,7 +15,7 @@ class DGiocatore{
     private $valore; 
     private $voto;
     private $titolare;
-    public function __construct($_id,$_nome,$_cognome,$_ruolo,$_squadra_reale,$_valore, $_voto,$_giocato){
+    public function __construct($_id,$_nome,$_cognome,$_ruolo,$_squadra_reale,$_valore,$_voto,$_giocato){
         $this->setid($_id);
         $this->setnome($_nome);
         $this->setcognome($_cognome);
@@ -81,7 +81,7 @@ class DGiocatore{
     }
 
     public function setvoto($vot){
-	if(!(isset($this->valore)))
+	if(!(isset($this->voto))) //MANNAGGIA A TE FRANCE ABBIAMO PERSO 2 ORE PER TROVARLO:-D
            $this->voto=$vot;
     }
 

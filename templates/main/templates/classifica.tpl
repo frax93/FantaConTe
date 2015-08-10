@@ -32,7 +32,7 @@
 		  </div>
 		</li>
 	      </ul>
-	    </nav>			
+	    </nav>	
         </header>	
         <table>
           <thead>
@@ -45,12 +45,13 @@
 	    </tr>
 	  </thead>
 	  <tbody>
+              
 	    <tr>
 	      <td>{$arr.posizione}</td>
 	      <td> {$arr.squadra} </td>
 	      <td> {$arr.nome} </td>
 	      <td> {$arr.pgioc} </td>
-	      <td> {$arr.punti} </td>
+	      <td> {$totale} </td>
             </tr>
           </tbody>
         </table>
