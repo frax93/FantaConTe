@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-11 10:36:00
+<?php /* Smarty version 2.6.13, created on 2015-08-11 11:15:33
          compiled from classifica.tpl */ ?>
 <html>
   <head>
@@ -23,8 +23,13 @@
 </font><font color=white><?php echo $this->_tpl_vars['Con']; ?>
 </font><font color=red><?php echo $this->_tpl_vars['Te']; ?>
 </font></h2></a></h1>
+                      
 	    <nav id="nav">
-	      <ul>	
+    
+	      <ul>
+                  <font color=yellow> CREDITI </font>
+                  <font color=yellow> <?php echo $this->_tpl_vars['crediti']; ?>
+ 250 </font>
                 <li class="special">
 		  <a href="#menu" class="menuToggle"><span>Menu</span></a>
 		  <div id="menu">

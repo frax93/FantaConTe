@@ -17,8 +17,12 @@
       <div class="table-wrapper "> <br>
         <header id="header">
           <h1><a href="index.php?controller=Classifica&task=aggiorna"><h2><font color=green>{$Fanta}</font><font color=white>{$Con}</font><font color=red>{$Te}</font></h2></a></h1>
+                      
 	    <nav id="nav">
-	      <ul>	
+    
+	      <ul>
+                  <font color=yellow> CREDITI </font>
+                  <font color=yellow> {$crediti} 250 </font>
                 <li class="special">
 		  <a href="#menu" class="menuToggle"><span>Menu</span></a>
 		  <div id="menu">
