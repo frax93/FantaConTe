@@ -28,17 +28,15 @@ class CFormazione {
 		$VFormazione=USingleton::getInstance('VFormazione');
 		$fformazione=USingleton::getInstance('FFormazione');
                 $FSquadra= USingleton::getInstance('FSquadra');
-		$fdb=USingleton::getInstance('Fdb');
 		$session = USingleton::getInstance('USession');
+                $DSquadra=new DSquadra('ciao');
+                $FRosa= USingleton::getInstance('FRosa');
+                $giocatori=$FRosa->getRosa('ciao');
                 $dati = $VFormazione->getDati();
                 $modulo=$dati[0];
                 unset($dati[0]);
                 $giocatori_selezionati=$dati;
-                $nome=$session->getvalore('nome_squadra');
                 //Inserire $nome per fare la cosa dinamica
-                $DSquadra=new DSquadra('ciao');
-                $FRosa= USingleton::getInstance('FRosa');
-                $giocatori=$FRosa->getRosa('ciao');
                 foreach($giocatori as $key => $value){
                     $DGiocatore=new DGiocatore($value['id'],$value['nome'],$value['cognome'],$value['ruolo'],
                                              $value['squadra_reale'],$value['valore'],$value['voto'],
@@ -114,9 +112,17 @@ class CFormazione {
 		}*/
 	}
         public function Visualizza(){
-            $VFormazione=USingleton::getInstance('VFormazione');
-            //riprendere i dati dal database
-            $titolari=$Formazione->get_titolari();
+                $VFormazione=USingleton::getInstance('VFormazione');
+                $FSquadra=USingleton::getInstance('FSquadra');
+                $VSquadra= USingleton::getInstance('VSquadra');
+                $FFormazione=USingleton::getInstance('FFormazione');
+                $Fdb=USingleton::getInstance('Fdb');
+                 $query=$Fdb->getDataBase();
+                 print_r($query);
+                //riprendere i dati dal database  
+                
+                $titolari=$FFormazione->getFormazione('ciao');
+                print_r($titolari);
                 $portieri=$titolari['POR'];
                 $portieri1=array();
                 foreach($portieri as $key => $value)

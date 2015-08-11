@@ -26,8 +26,7 @@ class DFormazione{
         return $this->modulo;
     }
     public function gettitolari(){
-        $titolari=$this->titolari;
-        return $titolari;
+        return $this->titolari;
     }
     public function getpanchina(){
         $panchina=$this->panchina;

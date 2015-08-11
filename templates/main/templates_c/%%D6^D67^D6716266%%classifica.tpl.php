@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-10 17:06:33
+<?php /* Smarty version 2.6.13, created on 2015-08-11 10:36:00
          compiled from classifica.tpl */ ?>
 <html>
   <head>
@@ -61,7 +61,7 @@
  </td>
 	      <td> <?php echo $this->_tpl_vars['arr']['pgioc']; ?>
  </td>
-	      <td> <?php echo $this->_tpl_vars['totale']['voto']; ?>
+	      <td> <?php echo $this->_tpl_vars['totale']; ?>
  </td>
             </tr>
           </tbody>
