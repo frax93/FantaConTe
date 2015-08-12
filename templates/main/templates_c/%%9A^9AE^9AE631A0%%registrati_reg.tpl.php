@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-05 10:13:46
+<?php /* Smarty version 2.6.13, created on 2015-08-12 09:50:17
          compiled from registrati_reg.tpl */ ?>
 <script src="Javascript/jquery.min.js"></script>
-
+<script src="Javascript/Login.js"></script>
 <div>
     <br><br>
 		<h2>Benvenuto nel modulo di registrazione</h2>
