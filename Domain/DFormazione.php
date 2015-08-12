@@ -65,6 +65,8 @@ class DFormazione{
    }
     public function impostatitolari($giocatori){
         $this->settitolari();
+        //PROBLEMA : ogni volta che si richiama/aggiorna la pagina si perde tutto nella view
+        //poichè la settitolari azzera sempre l'array
         list($difensori, $centrocampisti, $attaccanti)=explode("-",$this->modulo);
         $giocatori_squadra=$this->squadra->getgiocatori();
         foreach($giocatori_squadra as $key => $_giocatore1){
