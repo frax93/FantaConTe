@@ -1,18 +1,18 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-26 13:13:07
+<?php /* Smarty version 2.6.13, created on 2015-08-26 18:04:31
          compiled from Amministratore.tpl */ ?>
 <div id="main"> 
     <br>
     <br>
   <section class="spotlight">
-    <div class="image"><img src="images/galliani.jpg" alt="" /></div>
+    <div class="image"><img src="images/admin.jpg" alt="" /></div>
     <div class="content">
-      <h2>Diventa il futuro Galliani</h2>
-      <p>Fate il vostro Mercato, crea subito la tua squadra....</p>
+      <h2>Aggiornamento Voti SERIE A</h2>
+      <p>Ogni giocaotore avrà il suo voto in base alla partita giocata nella giornata corrente</p>
     </div>
   </section>
   <h5>Mercato Giocatori</h5>
-  <form name="mercato" method="post" action="index.php?controller=Mercato&task=salva"> <!--abbiamo messo name -->
-  <input type="submit" name="submit" id="submit_1" class="button special" value="Salva">
+  <form name="mercato" method="post" action="index.php?controller=Mercato&task=salva">
+  <input type="submit" name="submit" id="submit_1" class="button special" value="Salva VOTI">
   <h4><font color="orange">    Portieri   </font> </h4>
   <div class="table-wrapper">
     <table class="tabellaportieri">
@@ -80,9 +80,18 @@
  </td>
 	    <td><?php echo $this->_tpl_vars['dif']['valore']; ?>
 </td>
-            <td><input type="checkbox" id="premi" name=<?php echo $this->_tpl_vars['dif']['id']; ?>
- value=<?php echo $this->_tpl_vars['dif']['id']; ?>
-> </td>
+            <td> <select name="voto" id="selezione">
+                <optgroup id="selezione">
+                    <?php $_from = $this->_tpl_vars['voti']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['voto']):
+?>
+                    <option value=<?php echo $this->_tpl_vars['voto']; ?>
+><?php echo $this->_tpl_vars['voto']; ?>
+</option>
+                    <?php endforeach; endif; unset($_from); ?>
+                </optgroup>
+             </select>
+        </td>
           </tr>
         <?php endforeach; endif; unset($_from); ?>
       </tbody>
@@ -113,9 +122,18 @@
  </td>
 	    <td><?php echo $this->_tpl_vars['cen']['valore']; ?>
  </td>
-            <td><input type="checkbox" id="premi" name=<?php echo $this->_tpl_vars['cen']['id']; ?>
- value=<?php echo $this->_tpl_vars['cen']['id']; ?>
->   </td>
+            <td> <select name="voto" id="selezione">
+                <optgroup id="selezione">
+                    <?php $_from = $this->_tpl_vars['voti']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['voto']):
+?>
+                    <option value=<?php echo $this->_tpl_vars['voto']; ?>
+><?php echo $this->_tpl_vars['voto']; ?>
+</option>
+                    <?php endforeach; endif; unset($_from); ?>
+                </optgroup>
+             </select>
+        </td>
           </tr>
         <?php endforeach; endif; unset($_from); ?>
       </tbody>
@@ -146,9 +164,18 @@
  </td>
 	    <td><?php echo $this->_tpl_vars['att']['valore']; ?>
 </td>
-            <td><input type="checkbox" id="premi" name=<?php echo $this->_tpl_vars['att']['id']; ?>
- value=<?php echo $this->_tpl_vars['att']['id']; ?>
-> </td>
+            <td> <select name="voto" id="selezione">
+                <optgroup id="selezione">
+                    <?php $_from = $this->_tpl_vars['voti']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['voto']):
+?>
+                    <option value=<?php echo $this->_tpl_vars['voto']; ?>
+><?php echo $this->_tpl_vars['voto']; ?>
+</option>
+                    <?php endforeach; endif; unset($_from); ?>
+                </optgroup>
+             </select>
+        </td>
           </tr>
         <?php endforeach; endif; unset($_from); ?>
       </tbody>

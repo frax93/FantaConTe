@@ -2,15 +2,15 @@
     <br>
     <br>
   <section class="spotlight">
-    <div class="image"><img src="images/galliani.jpg" alt="" /></div>
+    <div class="image"><img src="images/admin.jpg" alt="" /></div>
     <div class="content">
-      <h2>Diventa il futuro Galliani</h2>
-      <p>Fate il vostro Mercato, crea subito la tua squadra....</p>
+      <h2>Aggiornamento Voti SERIE A</h2>
+      <p>Ogni giocaotore avrà il suo voto in base alla partita giocata nella giornata corrente</p>
     </div>
   </section>
   <h5>Mercato Giocatori</h5>
-  <form name="mercato" method="post" action="index.php?controller=Mercato&task=salva"> <!--abbiamo messo name -->
-  <input type="submit" name="submit" id="submit_1" class="button special" value="Salva">
+  <form name="mercato" method="post" action="index.php?controller=Mercato&task=salva">
+  <input type="submit" name="submit" id="submit_1" class="button special" value="Salva VOTI">
   <h4><font color="orange">    Portieri   </font> </h4>
   <div class="table-wrapper">
     <table class="tabellaportieri">
@@ -62,7 +62,14 @@
             <td>{$dif.cognome} </td>
 	    <td>{$dif.squadra_reale} </td>
 	    <td>{$dif.valore}</td>
-            <td><input type="checkbox" id="premi" name={$dif.id} value={$dif.id}> </td>
+            <td> <select name="voto" id="selezione">
+                <optgroup id="selezione">
+                    {foreach from=$voti item=voto}
+                    <option value={$voto}>{$voto}</option>
+                    {/foreach}
+                </optgroup>
+             </select>
+        </td>
           </tr>
         {/foreach}
       </tbody>
@@ -87,7 +94,14 @@
             <td>{$cen.cognome} </td>
 	    <td>{$cen.squadra_reale} </td>
 	    <td>{$cen.valore} </td>
-            <td><input type="checkbox" id="premi" name={$cen.id} value={$cen.id}>   </td>
+            <td> <select name="voto" id="selezione">
+                <optgroup id="selezione">
+                    {foreach from=$voti item=voto}
+                    <option value={$voto}>{$voto}</option>
+                    {/foreach}
+                </optgroup>
+             </select>
+        </td>
           </tr>
         {/foreach}
       </tbody>
@@ -112,7 +126,14 @@
             <td>{$att.cognome} </td>
 	    <td>{$att.squadra_reale} </td>
 	    <td>{$att.valore}</td>
-            <td><input type="checkbox" id="premi" name={$att.id} value={$att.id}> </td>
+            <td> <select name="voto" id="selezione">
+                <optgroup id="selezione">
+                    {foreach from=$voti item=voto}
+                    <option value={$voto}>{$voto}</option>
+                    {/foreach}
+                </optgroup>
+             </select>
+        </td>
           </tr>
         {/foreach}
       </tbody>
