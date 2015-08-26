@@ -63,10 +63,8 @@ class DFormazione{
         return $ruolo;
     
    }
-    public function impostatitolari($giocatori){
+    public function impostatitolari(array $giocatori){
         $this->settitolari();
-        //PROBLEMA : ogni volta che si richiama/aggiorna la pagina si perde tutto nella view
-        //poichè la settitolari azzera sempre l'array
         list($difensori, $centrocampisti, $attaccanti)=explode("-",$this->modulo);
         $giocatori_squadra=$this->squadra->getgiocatori();
         foreach($giocatori_squadra as $key => $_giocatore1){
@@ -74,7 +72,7 @@ class DFormazione{
                foreach ($giocatori as $key2 => $id){
                        $ruolo=$this->controlla($_giocatore,$id);
                        if($ruolo!="Non Corrisponde ID"){
-                           $_giocatore->settitolare(true);
+                           $_giocatore->settitolare(true);  
                           array_push($this->titolari[$ruolo],$_giocatore);
                           unset($giocatori_squadra[$ruolo][array_search($_giocatore, $giocatori_squadra)]);
                        }
@@ -112,10 +110,6 @@ class DFormazione{
     	}
     	return $result;
 
-    }
-    
-    public function get_titolari(){
-        return $this->titolari;
     }
     public function get_panchina(){
         return $this->panchina;

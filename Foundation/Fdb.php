@@ -59,20 +59,24 @@ Class Fdb{
 	  */
 	 public function queryGenerica($_column,$_paragone,$_parametri = NULL,array $_operatori = NULL) {
 	 	if (preg_match('/^[^,]+$/',$this->tabella)) {
-	 		$sql = "SELECT ".$_column." FROM ".$this->tabella." WHERE ";
+	 		$sql = "SELECT ".$_column." FROM ".$this->tabella." WHERE ";   
 	 		if (is_array($_parametri)) {
 	 			$sql = $sql.$this->chiavedb[0].$_paragone[0].$this->bind[0];
-	 			foreach ($this->bind as $key => $valore) {
+	 			foreach($this->bind as $key => $valore) {
 	 				if ($key != 0) {
 	 					$_operatori[$key-1] = strtoupper($_operatori[$key-1]);
+                                                
 	 					if ($_operatori[$key-1] != 'ORDER BY') {
 	 						$sql = $sql." ".$_operatori[$key-1]." ".$this->chiavedb[$key].$_paragone[$key].$valore;
+                                                         var_dump($sql);
 	 					} else {
 	 						$sql = $sql." ".$_operatori[$key-1]." ".$this->chiavedb[$key]." ".$this->chiavedb[$key+1];
-	 					}	 						
+	 					}	
+                                                 print($sql);
 	 				} 				
 	 			}
 	 			$query=$this->db->prepare($sql);
+                               
 	 			foreach ($_parametri as $key => $valore) {
 	 				$query->bindValue($this->bind[$key],$valore);
 	 			}
@@ -104,7 +108,7 @@ Class Fdb{
 	 			$query=$this->db->prepare($sql);
 	 		}
 	 	}
-	 	try {   
+	 	try {   var_dump($query);
 	 		$query->execute();
 	 		$result=$query->fetchAll(PDO::FETCH_ASSOC);
 	 	} 
@@ -118,6 +122,15 @@ Class Fdb{
     public function queryRosa($nomesquadra){
         $sql="SELECT "."`giocatori`.`id`,`nome`,`cognome`,`squadra_reale`,`ruolo`,`valore`,`voto`,`giocato`"." FROM ".$this->tabella." WHERE ";
         $sql=$sql."`rosa`.id=`giocatori`.id";
+        $query=$this->db->prepare($sql);
+        $query->execute();
+        $result=$query->fetchAll();
+        return $result;
+    }
+    
+    public function queryFormazione($nomesquadra,$modulo){
+        $sql="SELECT "."`titolari`"." FROM ".$this->tabella." WHERE ";
+        $sql=$sql."` modulo`='$modulo' AND `squadra`='$nomesquadra'";
         $query=$this->db->prepare($sql);
         $query->execute();
         $result=$query->fetchAll();

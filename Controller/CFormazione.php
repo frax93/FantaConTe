@@ -48,48 +48,9 @@ class CFormazione {
                 $fformazione->inserisciFormazione($Formazione,'ciao');
                 
                 //Qui si deve salvare sul Database e poi chiamare con header
-                //header("location: index.php?controller=Formazione&task=visualizza");
+                header("location: index.php?controller=Formazione&task=visualizza");
                 
-                $totale=0;
-                $titolari=$Formazione->get_titolari();
-                $portieri=$titolari['POR'];
-                $portieri1=array();
-                foreach($portieri as $key => $value){
-                        array_push($portieri1,$value->getAsArray());
-                        $totale=$totale+$portieri1[$key]['voto'];
-                        
-                }
-                $VFormazione->impostaDati('portieri',$portieri1);
-                 $difensori=$titolari['DIF'];
-                $difensori1=array();
-                foreach($difensori as $key => $value){
-                        array_push($difensori1,$value->getAsArray());
-                        $totale=$totale+$difensori1[$key]['voto'];
-                }
                
-                $VFormazione->impostaDati('difensori',$difensori1);
-                $centrocampo=$titolari['CEN'];
-                $centrocampo1=array();
-                foreach($centrocampo as $key => $value){
-                        array_push($centrocampo1,$value->getAsArray());
-                        $totale=$totale+$centrocampo1[$key]['voto'];
-                }
-                $VFormazione->impostaDati('centrocampo',$centrocampo1);
-                 $attacco=$titolari['ATT'];
-                $attacco1=array();
-                foreach($attacco as $key => $value){
-                        array_push($attacco1,$value->getAsArray());
-                        $totale=$totale+$attacco1[$key]['voto'];
-                }
-                $VFormazione->impostaDati('attacco',$attacco1);
-                $VFormazione->impostaDati('totale',$totale);
-                return $VFormazione->processaTemplate();
-                //$fformazione->inserisciFormazione($Formazione);
-			//$query->commit();
-		/*} catch (Exception $e) {
-			$query->rollBack();
-			throw new Exception($e->getMessage());
-		}*/
 	}
        /**
 	 * Permette di modificare la formazione
@@ -116,33 +77,56 @@ class CFormazione {
                 $FSquadra=USingleton::getInstance('FSquadra');
                 $VSquadra= USingleton::getInstance('VSquadra');
                 $FFormazione=USingleton::getInstance('FFormazione');
+                $FRosa= USingleton::getInstance('FRosa');
                 $Fdb=USingleton::getInstance('Fdb');
                  $query=$Fdb->getDataBase();
-                 print_r($query);
-                //riprendere i dati dal database  
-                
-                $titolari=$FFormazione->getFormazione('ciao');
-                print_r($titolari);
-                $portieri=$titolari['POR'];
+                $titolari=$FFormazione->getFormazione('ciao','3-4-3');               
+                $giocatori=$FRosa->getRosa('ciao');
+                $DSquadra=new DSquadra('ciao');
+                $DFormazione=new DFormazione($DSquadra,'3-4-3');
+                foreach($giocatori as $key => $value){
+                    $DGiocatore=new DGiocatore($value['id'],$value['nome'],$value['cognome'],$value['ruolo'],
+                                             $value['squadra_reale'],$value['valore'],$value['voto'],
+                                             $value['giocato']);
+                    $DSquadra->Aggiungi($DGiocatore);
+                }
+                $titolare=array();
+                foreach ($titolari as $key => $id)
+                    array_push($titolare,$id['titolari']);
+                $DFormazione->impostatitolari($titolare);
+                $titolari1=$DFormazione->gettitolari();
+                $portieri=$titolari1['POR'];
+                $totale=0;
                 $portieri1=array();
-                foreach($portieri as $key => $value)
+                foreach($portieri as $key => $value){
                         array_push($portieri1,$value->getAsArray());
+                        $totale=$totale+$portieri1[$key]['voto'];
+                        
+                }
                 $VFormazione->impostaDati('portieri',$portieri1);
-                 $difensori=$titolari['DIF'];
+                 $difensori=$titolari1['DIF'];
                 $difensori1=array();
-                foreach($difensori as $key => $value)
+                foreach($difensori as $key => $value){
                         array_push($difensori1,$value->getAsArray());
+                        $totale=$totale+$difensori1[$key]['voto'];
+                }
+               
                 $VFormazione->impostaDati('difensori',$difensori1);
-                $centrocampo=$titolari['CEN'];
+                $centrocampo=$titolari1['CEN'];
                 $centrocampo1=array();
-                foreach($centrocampo as $key => $value)
+                foreach($centrocampo as $key => $value){
                         array_push($centrocampo1,$value->getAsArray());
+                        $totale=$totale+$centrocampo1[$key]['voto'];
+                }
                 $VFormazione->impostaDati('centrocampo',$centrocampo1);
-                 $attacco=$titolari['ATT'];
+                 $attacco=$titolari1['ATT'];
                 $attacco1=array();
-                foreach($attacco as $key => $value)
+                foreach($attacco as $key => $value){
                         array_push($attacco1,$value->getAsArray());
+                        $totale=$totale+$attacco1[$key]['voto'];
+                }
                 $VFormazione->impostaDati('attacco',$attacco1);
+                $VFormazione->impostaDati('totale',$totale);
                 return $VFormazione->processaTemplate();
         }
 }

@@ -36,7 +36,7 @@ class CHome {
              $fclassifica=USingleton::getInstance('FClassifica');
              $classifica=$fclassifica->getClassifica();
              $VHome->PaginaRegistrato();
-           } 
+           }
            catch (Exception $e) {
              throw new Exception("Errore DB");
            }
@@ -50,6 +50,9 @@ class CHome {
 	public function mux(){
 		$VHome=USingleton::getInstance('VHome');
 		switch ($VHome->getController()) {
+                case 'Amministratore':
+                    $CAmministratore= USingleton::getInstance('CAmministratore');
+                    return $CAmministratore->mux();
                 case 'Classifica':
                     $CClassifica= USingleton::getInstance('CClassifica');
                     return $CClassifica->mux();
@@ -65,9 +68,6 @@ class CHome {
         	case 'Registrazione':
         	    $CRegistrazione=USingleton::getInstance('CRegistrazione');
         	    return $CRegistrazione->mux();
-                case 'Tutorial':
-                    $CTutorial=  USingleton::getInstance('CTutorial');
-                    return $CTutorial->tutorial();
                 }
 	}		
 }
