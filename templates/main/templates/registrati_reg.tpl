@@ -1,5 +1,5 @@
-<script src="Javascript/jquery.min.js"></script>
-<script src="Javascript/Login.js"></script>
+<!--<script src="Javascript/jquery.min.js"></script>
+<script src="Javascript/Login.js"></script> -->
 <div>
     <br><br>
 		<h2>Benvenuto nel modulo di registrazione</h2>

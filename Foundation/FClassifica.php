@@ -10,23 +10,25 @@ class FClassifica extends Fdb {
 
 	public function __construct()
 	{
-		$this->autoincremento = TRUE;
 		$this->db = USingleton::getInstance('Fdb');
 		$this->tabella="classifica";
-                $this->chiavedb="(`utente`, `punteggio`, `partite_giocate`, `vittorie`, `pareggi`, `sconfitte`, `percentuale_vittoria`)";
-		$this->bind="(:utente, :punteggio, :partite_giocate, :vittorie, :pareggi, :sconfitte, :percentuale_vittoria)";
+                $this->chiavedb="(`email`, `punteggio`, `partite_giocate`,`nome_squadra`)";
+		$this->bind="(:email, :punteggio, :partite_giocate, :nome_squadra)";
 	}
 	
 public function inserisciClassifica(DClassifica $_object){
-                $dati=$_object->getasArray();
-		$this->db->autoincremento = $this->autoincremento;
+                $dati=$_object->getAsArray();
+                $dati['utente']= unserialize($dati['utente']);
+                $email=$dati['utente']->getemail();
+                $squadra=$dati['utente']->getsquadra();
+                $nomesquadra=$squadra['nome'];
 		$this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
-                $stringa="('$dati[utente]','$dati[punteggio]','$dati[partite_giocate]','$dati[vittorie]','$dati[pareggi]','$dati[sconfitte]','$dati[percentuale_vittoria]')";
+                $stringa="('$email','$dati[punteggio]','$dati[partite_giocate]','$nomesquadra')";
 		$this->db->insert($stringa);
         }
 
 	public function getClassifica(){
-		$this->db->setvariabili($this->tabella,"utente",":utente");
+		$this->db->setvariabili($this->tabella,"1","");
 	        return $this->db->queryGenerica("*","");
 	}
 	

@@ -56,5 +56,13 @@ class CAmministratore{
             $VAmministratore->impostaDati('voti',$dati);
             return $VAmministratore->processaTemplate();
                     
-                }                
+                }  
+                
+                public function CambiaVoti() {
+                    $Vamministratore=USingleton::getInstance('VAmministratore');
+                    $Vamministratore->getVoti();
+                    $this->Visualizza();
+                    
+                }
 }
+

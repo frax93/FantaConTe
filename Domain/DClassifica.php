@@ -11,19 +11,11 @@ class DClassifica {
     private $utente;
     private $punteggio;
     private $partite_giocate;
-    private $vittorie;
-    private $pareggi;
-    private $sconfitte;
-    private $percentuale_vittoria;
     
     public function __construct(DUtente $utente) {
         $this->set_utente($utente);
         $this->set_punteggio(0);
         $this->set_partitegiocate(0);
-        $this->set_vittorie(0);
-        $this->set_pareggi(0);
-        $this->set_sconfitte(0);
-        $this->set_percentualevittoria();
     }
     
     public function get_posizione(){
@@ -39,38 +31,26 @@ class DClassifica {
     public function get_partitegiocate(){
         return $this->partite_giocate;
     }
-    public function get_vittorie(){
-        return $this->vittorie;
-    }
-    public function get_pareggi(){
-        return $this->pareggi;
-    }
-    public function get_sconfitte(){
-        return $this->sconfitte;
-    }
-    public function get_percentualevittoria(){
-        return $this->percentuale_vittoria;
-    }
-    public function set_utente($_utente){
+
+    public function set_utente(DUtente $_utente){
         $this->utente=$_utente;
     }
     public function set_punteggio($_punteggio){
         $this->punteggio=$_punteggio;
     }
     public function set_partitegiocate($_partitegiocate){
-        $this->partite_giocate=$partgio;
+        $this->partite_giocate=$_partitegiocate;
     }
-    public function set_vittorie($_vittorie){
-        $this->vittorie=$_vittorie;
+    public function getAsArray(){
+        $this->utente=serialize($this->utente);
+    	$result=array();
+    	foreach($this as $key => $value) {
+    		if (!is_array($value) && !is_object($value)) 
+    			$result[$key]= $value;
+    	}
+    	return $result;
+
     }
-    public function set_pareggi($_pareggi){
-        $this->pareggi=$_pareggi;
-    }
-    public function set_sconfitte($sconf){
-        $this->sconfitte=$sconf;
-    }
-    public function set_percentualevittoria(){
-        $this->percentuale_vittoria=($this->vittorie/$this->partite_giocate)*100;
-    }
+    
 }
 ?>

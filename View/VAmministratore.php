@@ -36,6 +36,11 @@ class VAmministratore extends View{
             return false;
     }
     
+    public function getVoti() {
+        print_r($_REQUEST);
+        
+    }
+    
     
 }
 ?>

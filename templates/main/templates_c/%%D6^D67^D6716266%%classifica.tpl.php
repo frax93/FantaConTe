@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-26 13:11:37
+<?php /* Smarty version 2.6.13, created on 2015-08-27 13:02:05
          compiled from classifica.tpl */ ?>
 <html>
   <head>
@@ -48,27 +48,27 @@
         <table>
           <thead>
             <tr>
-              <th>Posizione</th>
-	      <th><font color=red>Squadra</font></th>
-	      <th>NomeUtente</th>
-	      <th>P.Giocate</th>
-	      <th><font color=red>Punti</font></th>
+             <th>Email</th>
+             <th><font color=red>Squadra</font></th>
+	     <th>P.Giocate</th>
+             <th><font color=red>Punti</font></th>
 	    </tr>
 	  </thead>
-	  <tbody>
-              
-	    <tr>
-	      <td><?php echo $this->_tpl_vars['arr']['posizione']; ?>
+	  <tbody>  
+              <?php $_from = $this->_tpl_vars['arr']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['arr1']):
+?>
+	    <tr> 
+	      <td> <?php echo $this->_tpl_vars['arr1']['email']; ?>
 </td>
-	      <td> <?php echo $this->_tpl_vars['arr']['squadra']; ?>
+              <td> <?php echo $this->_tpl_vars['arr1']['nome_squadra']; ?>
+ </td>  
+	      <td> <?php echo $this->_tpl_vars['arr1']['partite_giocate']; ?>
  </td>
-	      <td> <?php echo $this->_tpl_vars['arr']['nome']; ?>
- </td>
-	      <td> <?php echo $this->_tpl_vars['arr']['pgioc']; ?>
- </td>
-	      <td> <?php echo $this->_tpl_vars['totale']; ?>
- </td>
+              <td> <?php echo $this->_tpl_vars['arr1']['punteggio']; ?>
+ </td>  
             </tr>
+            <?php endforeach; endif; unset($_from); ?>
           </tbody>
         </table>
       </div>	

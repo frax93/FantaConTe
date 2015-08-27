@@ -64,24 +64,26 @@ $(document).ready(function() {
 	}
 	});
 
+    
     $('#email').blur(function () {
-        //Controllare email se già esiste con $.ajax()
-        var data=new Array();
-        data.push($(this).val());
-        $.ajax({
-            type: "POST",
-            dataType: "json",
-            url: "index.php?controller=Registrazione&task=Controllaemail&email="+data,
-       }).done(function(msg){
-                alert(msg);
-                $(this).css("border", "2px solid green");
-    	 	errori[5]=false;
-              })
-        .fail(function(msg){
-                alert(msg.toString());
-                $(this).css("border","3px solid red");
-    	 	errori[5]=true;
-              });
+      var dati = $('#email').attr('value');
+      var data_send = "username=" + dati;
+
+    $.ajax({
+       type: "POST",
+       url: "index.php?controller=Registrazione&task=Controllaemail&email=",
+       data: data_send,
+       success: function(data) {
+           if (data) {
+             $(this).css("border","3px solid red");
+    	     errori[5]=true;
+           }
+           else {
+             $(this).css("border", "2px solid green");
+             errori[5]=false;
+           }
+        }
+         });
         });
 	$('#nome_squadra').blur(function () { 
 	if ($(this).val()=="") {

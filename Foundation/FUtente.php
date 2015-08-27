@@ -10,7 +10,7 @@ Class FUtente extends Fdb {
 
 	public function __construct(){   
 	    $this->db = USingleton::getInstance('Fdb');
-	    $this->tabella="utente";
+	    $this->tabella="`utente`";
 	    $this->chiavedb="(`username`, `password`, `nome`, `cognome`, `email`, `codice_attivazione`, `stato_attivazione`, `tipo_utente`, `squadra`)";
 	    $this->bind="(:username,:password,:nome,:cognome,:email,:codice_attivazione,:stato_attivazione,:tipo,:squadra)";
 	}
@@ -26,8 +26,11 @@ Class FUtente extends Fdb {
 	public function getUtenteByEmail($_email){ 
 	     $this->db->setvariabili($this->tabella,"email",":email");
 	     return $this->db->queryGenerica("*",'=',$_email);
-	}
-	
+        }
+        public function getUtenti(){
+             $this->db->setvariabili($this->tabella,"1","");
+	     return $this->db->queryGenerica("*","");
+        }
 	public function updateUtente($dati) {
 
 		foreach ($dati as $key => $value) {

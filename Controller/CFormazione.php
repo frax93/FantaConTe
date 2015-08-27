@@ -29,9 +29,10 @@ class CFormazione {
 		$fformazione=USingleton::getInstance('FFormazione');
                 $FSquadra= USingleton::getInstance('FSquadra');
 		$session = USingleton::getInstance('USession');
-                $DSquadra=new DSquadra('ciao');
+                $nome_squadra=$session->getValore('nome_squadra');
+                $DSquadra=new DSquadra($nome_squadra);
                 $FRosa= USingleton::getInstance('FRosa');
-                $giocatori=$FRosa->getRosa('ciao');
+                $giocatori=$FRosa->getRosa($nome_squadra);
                 $dati = $VFormazione->getDati();
                 $modulo=$dati[0];
                 unset($dati[0]);
@@ -79,10 +80,12 @@ class CFormazione {
                 $FFormazione=USingleton::getInstance('FFormazione');
                 $FRosa= USingleton::getInstance('FRosa');
                 $Fdb=USingleton::getInstance('Fdb');
-                 $query=$Fdb->getDataBase();
-                $titolari=$FFormazione->getFormazione('ciao','3-4-3');               
-                $giocatori=$FRosa->getRosa('ciao');
-                $DSquadra=new DSquadra('ciao');
+                $session=  USingleton::getInstance('USession');
+                $nome_squadra=$session->getValore('nome_squadra');
+                $query=$Fdb->getDataBase();
+                $titolari=$FFormazione->getFormazione($nome_squadra,'3-4-3');               
+                $giocatori=$FRosa->getRosa($nome_squadra);
+                $DSquadra=new DSquadra($nome_squadra);
                 $DFormazione=new DFormazione($DSquadra,'3-4-3');
                 foreach($giocatori as $key => $value){
                     $DGiocatore=new DGiocatore($value['id'],$value['nome'],$value['cognome'],$value['ruolo'],

@@ -40,6 +40,7 @@ Class Fdb{
     }
     public function insert($dati){
             //usare $this->bind in $query
+ 
             $query = "INSERT INTO `fantaconte`.`$this->tabella` $this->chiavedb VALUES $dati";
             $sql=$this->db->prepare($query);
             //fare il bind dei dati passati usando i place-holders
@@ -68,11 +69,9 @@ Class Fdb{
                                                 
 	 					if ($_operatori[$key-1] != 'ORDER BY') {
 	 						$sql = $sql." ".$_operatori[$key-1]." ".$this->chiavedb[$key].$_paragone[$key].$valore;
-                                                         var_dump($sql);
 	 					} else {
 	 						$sql = $sql." ".$_operatori[$key-1]." ".$this->chiavedb[$key]." ".$this->chiavedb[$key+1];
 	 					}	
-                                                 print($sql);
 	 				} 				
 	 			}
 	 			$query=$this->db->prepare($sql);
@@ -108,7 +107,7 @@ Class Fdb{
 	 			$query=$this->db->prepare($sql);
 	 		}
 	 	}
-	 	try {   var_dump($query);
+	 	try {   
 	 		$query->execute();
 	 		$result=$query->fetchAll(PDO::FETCH_ASSOC);
 	 	} 
