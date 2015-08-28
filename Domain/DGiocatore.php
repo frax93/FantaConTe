@@ -15,7 +15,7 @@ class DGiocatore{
     private $valore; 
     private $voto;
     private $titolare;
-    public function __construct($_id,$_nome,$_cognome,$_ruolo,$_squadra_reale,$_valore,$_voto,$_giocato){
+    public function __construct($_id,$_nome,$_cognome,$_ruolo,$_squadra_reale,$_valore,$_voto){
         $this->setid($_id);
         $this->setnome($_nome);
         $this->setcognome($_cognome);
@@ -23,7 +23,6 @@ class DGiocatore{
         $this->setsquadra_re($_squadra_reale);
         $this->setvalore($_valore);
         $this->setvoto($_voto);
-        $this->settitolare($_giocato);
     } 
     public function getid(){
 	return $this->id;
@@ -51,10 +50,7 @@ class DGiocatore{
     public function getvoto(){
 	return $this->voto;
     }
-
-    public function gettitolare(){
-	return $this->titolare;
-    }
+    
     public function setid($_id){
         $this->id=$_id;
     }
@@ -81,13 +77,10 @@ class DGiocatore{
     }
 
     public function setvoto($vot){
-	if(!(isset($this->voto))) //MANNAGGIA A TE FRANCE ABBIAMO PERSO 2 ORE PER TROVARLO:-D
+	if(!(isset($this->voto))) 
            $this->voto=$vot;
     }
 
-    public function settitolare($gioca){
-	$this->titolare=$gioca;
-    }
      public function getAsArray(){
     	$result=array();
 

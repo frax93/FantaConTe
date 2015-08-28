@@ -23,7 +23,7 @@
         </section>
     </div>
     <header id="header">
-      <h1><a href="index.php?controller=Classifica&task=aggiorna"><h2><font color=green>{$Fanta}</font><font color=white>{$Con}</font><font color=red>{$Te}</font></h2></a></h1>
+      <h1><a href="index.php?controller=Classifica&task=nuova"><h2><font color=green>{$Fanta}</font><font color=white>{$Con}</font><font color=red>{$Te}</font></h2></a></h1>
       <nav id="nav">
         <ul>
 	  <li class="special">

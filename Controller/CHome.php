@@ -35,7 +35,7 @@ class CHome {
            try{
              $fclassifica=USingleton::getInstance('FClassifica');
              $classifica=$fclassifica->getClassifica();
-             $VHome->PaginaRegistrato();
+             $VHome->PaginaRegistrato($classifica);
            }
            catch (Exception $e) {
              throw new Exception("Errore DB");

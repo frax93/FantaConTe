@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-07 16:40:50
+<?php /* Smarty version 2.6.13, created on 2015-08-28 17:35:21
          compiled from home.tpl */ ?>
 <html>
   <head>
@@ -26,7 +26,7 @@
         </section>
     </div>
     <header id="header">
-      <h1><a href="index.php?controller=Classifica&task=aggiorna"><h2><font color=green><?php echo $this->_tpl_vars['Fanta']; ?>
+      <h1><a href="index.php?controller=Classifica&task=nuova"><h2><font color=green><?php echo $this->_tpl_vars['Fanta']; ?>
 </font><font color=white><?php echo $this->_tpl_vars['Con']; ?>
 </font><font color=red><?php echo $this->_tpl_vars['Te']; ?>
 </font></h2></a></h1>

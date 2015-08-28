@@ -12,8 +12,8 @@ class FClassifica extends Fdb {
 	{
 		$this->db = USingleton::getInstance('Fdb');
 		$this->tabella="classifica";
-                $this->chiavedb="(`email`, `punteggio`, `partite_giocate`,`nome_squadra`)";
-		$this->bind="(:email, :punteggio, :partite_giocate, :nome_squadra)";
+                $this->chiavedb="(`email`,`nome_squadra`, `partite_giocate`,`punteggio`)";
+		$this->bind="(:email,:nome_squadra, :partite_giocate,:punteggio)";
 	}
 	
 public function inserisciClassifica(DClassifica $_object){
@@ -23,7 +23,7 @@ public function inserisciClassifica(DClassifica $_object){
                 $squadra=$dati['utente']->getsquadra();
                 $nomesquadra=$squadra['nome'];
 		$this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
-                $stringa="('$email','$dati[punteggio]','$dati[partite_giocate]','$nomesquadra')";
+                $stringa="('$email','$nomesquadra','$dati[partite_giocate]','$dati[punteggio]')";
 		$this->db->insert($stringa);
         }
 

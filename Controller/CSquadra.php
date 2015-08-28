@@ -25,16 +25,14 @@ class CSquadra {
 	 */
 	public function Visualizza() {
             $VSquadra= USingleton::getInstance('VSquadra');
-            $FSquadra=  USingleton::getInstance('FSquadra');
             $session = USingleton::getInstance('USession');
-            $nome_squadra=$session->getValore('nome_squadra');
+            $nome_squadra=$session->getValore('squadra');
             $DSquadra= new DSquadra($nome_squadra);
             $FRosa= USingleton::getInstance('FRosa');
             $giocatori=$FRosa->getRosa($nome_squadra);
             foreach($giocatori as $key => $value){
                 $DGiocatore=new DGiocatore($value['id'],$value['nome'],$value['cognome'],$value['ruolo'],
-                                             $value['squadra_reale'],$value['valore'],$value['voto'],
-                                             $value['giocato']);
+                                             $value['squadra_reale'],$value['valore'],$value['voto']);                                            
                 $DSquadra->Aggiungi($DGiocatore);
             }
             $array_giocatori=$DSquadra->getgiocatori();

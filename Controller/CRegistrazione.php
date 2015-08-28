@@ -50,7 +50,8 @@ class CRegistrazione {
                     $session->setValore('nome',$user['nome']);
         	    $session->setValore('cognome',$user['cognome']);
         	    $session->setValore('email',$user['email']);
-                    $session->setValore('squadra',$user['nome_squadra']);
+                    $user['squadra']=unserialize($user['squadra']);
+                    $session->setValore('squadra',$user['squadra']['nome']);
         	    $session->setValore('tipo_utente',$user['tipo_utente']);
                     return true;
                  }
@@ -76,7 +77,7 @@ class CRegistrazione {
         $futente=USingleton::getInstance('FUtente');
         $fdb=USingleton::getInstance('Fdb');
         $data=$VRegistrazione->getDatiRegistrazione();
-        $Squadra= new DSquadra($data['nome_squadra']); 
+        $Squadra= new DSquadra($data['nome_squadra']);
         $query=$fdb->getDataBase();
         //$query->beginTransaction();
         try{

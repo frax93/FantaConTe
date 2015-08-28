@@ -27,9 +27,8 @@ class CFormazione {
 	public function Nuova() {        
 		$VFormazione=USingleton::getInstance('VFormazione');
 		$fformazione=USingleton::getInstance('FFormazione');
-                $FSquadra= USingleton::getInstance('FSquadra');
 		$session = USingleton::getInstance('USession');
-                $nome_squadra=$session->getValore('nome_squadra');
+                $nome_squadra=$session->getValore('squadra');
                 $DSquadra=new DSquadra($nome_squadra);
                 $FRosa= USingleton::getInstance('FRosa');
                 $giocatori=$FRosa->getRosa($nome_squadra);
@@ -40,13 +39,12 @@ class CFormazione {
                 //Inserire $nome per fare la cosa dinamica
                 foreach($giocatori as $key => $value){
                     $DGiocatore=new DGiocatore($value['id'],$value['nome'],$value['cognome'],$value['ruolo'],
-                                             $value['squadra_reale'],$value['valore'],$value['voto'],
-                                             $value['giocato']);
+                                             $value['squadra_reale'],$value['valore'],$value['voto']);
                     $DSquadra->Aggiungi($DGiocatore);
                 }
                 $Formazione=new DFormazione($DSquadra,$modulo);
                 $Formazione->impostatitolari($giocatori_selezionati);
-                $fformazione->inserisciFormazione($Formazione,'ciao');
+                $fformazione->inserisciFormazione($Formazione,$nome_squadra);
                 
                 //Qui si deve salvare sul Database e poi chiamare con header
                 header("location: index.php?controller=Formazione&task=visualizza");
@@ -75,13 +73,11 @@ class CFormazione {
 	}
         public function Visualizza(){
                 $VFormazione=USingleton::getInstance('VFormazione');
-                $FSquadra=USingleton::getInstance('FSquadra');
-                $VSquadra= USingleton::getInstance('VSquadra');
                 $FFormazione=USingleton::getInstance('FFormazione');
                 $FRosa= USingleton::getInstance('FRosa');
                 $Fdb=USingleton::getInstance('Fdb');
                 $session=  USingleton::getInstance('USession');
-                $nome_squadra=$session->getValore('nome_squadra');
+                $nome_squadra=$session->getValore('squadra');
                 $query=$Fdb->getDataBase();
                 $titolari=$FFormazione->getFormazione($nome_squadra,'3-4-3');               
                 $giocatori=$FRosa->getRosa($nome_squadra);
@@ -89,18 +85,18 @@ class CFormazione {
                 $DFormazione=new DFormazione($DSquadra,'3-4-3');
                 foreach($giocatori as $key => $value){
                     $DGiocatore=new DGiocatore($value['id'],$value['nome'],$value['cognome'],$value['ruolo'],
-                                             $value['squadra_reale'],$value['valore'],$value['voto'],
-                                             $value['giocato']);
+                                             $value['squadra_reale'],$value['valore'],$value['voto']);
                     $DSquadra->Aggiungi($DGiocatore);
                 }
                 $titolare=array();
-                foreach ($titolari as $key => $id)
+                foreach ($titolari as $key => $id){
                     array_push($titolare,$id['titolari']);
+                }
                 $DFormazione->impostatitolari($titolare);
                 $titolari1=$DFormazione->gettitolari();
                 $portieri=$titolari1['POR'];
-                $totale=0;
                 $portieri1=array();
+                $totale=0;
                 foreach($portieri as $key => $value){
                         array_push($portieri1,$value->getAsArray());
                         $totale=$totale+$portieri1[$key]['voto'];
@@ -120,6 +116,7 @@ class CFormazione {
                 foreach($centrocampo as $key => $value){
                         array_push($centrocampo1,$value->getAsArray());
                         $totale=$totale+$centrocampo1[$key]['voto'];
+                        
                 }
                 $VFormazione->impostaDati('centrocampo',$centrocampo1);
                  $attacco=$titolari1['ATT'];
@@ -127,6 +124,7 @@ class CFormazione {
                 foreach($attacco as $key => $value){
                         array_push($attacco1,$value->getAsArray());
                         $totale=$totale+$attacco1[$key]['voto'];
+                        $session->setValore('fantasypunteggio',$totale);
                 }
                 $VFormazione->impostaDati('attacco',$attacco1);
                 $VFormazione->impostaDati('totale',$totale);

@@ -69,17 +69,16 @@ class CMercato{
     }
      public function Salva(){
             $VMercato=  USingleton::getInstance('VMercato');
-            $FMercato=  USingleton::getInstance('FMercato');
             $FRosa=  USingleton::getInstance('FRosa');
             $giocatori_selezionati=$VMercato->getDati();
             $Fdb=USingleton::getInstance('Fdb');
             $FSquadra=USingleton::getInstance('FSquadra');
             $query=$Fdb->getDataBase();
             $session= USingleton::getInstance('USession');
-            $dati=$session->getvalore('nome_squadra');
-            $Squadra=new DSquadra('ciao');
+            $nome_squadra=$session->getvalore('squadra');
+            $Squadra=new DSquadra($nome_squadra);
             foreach($giocatori_selezionati as $key => $id_giocatore){
-                $FRosa->inserisciRosa($id_giocatore,'ciao');
+                $FRosa->inserisciRosa($id_giocatore,$nome_squadra);
                 
             }
             $FSquadra->inserisciSquadra($Squadra);

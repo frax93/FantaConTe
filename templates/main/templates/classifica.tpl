@@ -4,7 +4,6 @@
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="stylesheet" href="css/main.css" />
-      <link rel="stylesheet" href="css/tabella.css" />
       <script src="Javascript/jquery.min.js"></script>
       <script src="Javascript/jquery.scrollex.min.js"></script>
       <script src="Javascript/jquery.scrolly.min.js"></script>
@@ -15,19 +14,27 @@
   <body class="landing">
     <div class="classifica"><br>							
       <div class="table-wrapper "> <br>
+     <div id="page-wrapper">
+      <!-- Header -->
+      <article id="main">
+	<section class="spotlight">
+	  <div class="content"> </div>
+    
+        </section>
+    </div>
         <header id="header">
-          <h1><a href="index.php?controller=Classifica&task=aggiorna"><h2><font color=green>{$Fanta}</font><font color=white>{$Con}</font><font color=red>{$Te}</font></h2></a></h1>
+          <h1><a href="index.php?controller=Classifica&task=nuova"><h2><font color=green>{$Fanta}</font><font color=white>{$Con}</font><font color=red>{$Te}</font></h2></a></h1>
                       
 	    <nav id="nav">
     
 	      <ul>
-                  <font color=yellow> CREDITI </font>
+                  <font color=LIME> Benvenuto {$Benvenuto}</font>&nbsp;&nbsp;&nbsp;&nbsp;<font color=yellow>CREDITI </font>
                   <font color=yellow> {$crediti} 250 </font>
                 <li class="special">
 		  <a href="#menu" class="menuToggle"><span>Menu</span></a>
 		  <div id="menu">
 	            <ul>
-                      <li><a href="index.php">Home</a></li>
+                      <li><a href="index.php?controller=Classifica&task=nuova">Home</a></li>
 		      <li><a href="index.php?controller=Mercato&task=riempi">Mercato</a></li>
                       <li><a href="index.php?controller=Squadra&task=visualizza">Squadra</a></li>
 		      <li><a href="index.php?controller=Formazione&task=nuova">Formazione</a></li>
@@ -37,7 +44,8 @@
 		</li>
 	      </ul>
 	    </nav>	
-        </header>	
+        </header>
+                
         <table>
           <thead>
             <tr>

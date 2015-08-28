@@ -16,7 +16,7 @@ class FRosa extends Fdb {
 
 	public function __construct(){
 		$this->db = USingleton::getInstance('Fdb');
-		$this->tabella="rosa";
+		$this->tabella="`rosa`";
 		$this->chiavedb="( `id`,`nomesquadra`)";
 		$this->bind="( :id, :nomesquadra)";
 	}
@@ -28,7 +28,7 @@ class FRosa extends Fdb {
                 
         }
 	public function getRosa($_nomesquadra){
-                $this->tabella="`$this->tabella`".','.'`giocatori`';
+                $this->tabella="$this->tabella".','.'`giocatori`';
 		$this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
 	        return $this->db->queryRosa($_nomesquadra);
 	}

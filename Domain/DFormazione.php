@@ -71,8 +71,7 @@ class DFormazione{
             foreach ($_giocatore1 as $key1 => $_giocatore){
                foreach ($giocatori as $key2 => $id){
                        $ruolo=$this->controlla($_giocatore,$id);
-                       if($ruolo!="Non Corrisponde ID"){
-                           $_giocatore->settitolare(true);  
+                       if($ruolo!="Non Corrisponde ID"){ 
                           array_push($this->titolari[$ruolo],$_giocatore);
                           unset($giocatori_squadra[$ruolo][array_search($_giocatore, $giocatori_squadra)]);
                        }

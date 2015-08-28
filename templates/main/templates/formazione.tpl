@@ -122,7 +122,6 @@
 	  </tr>
 	</thead>
 	<tbody>
-          {foreach from=$totale item=tot}
             <tr>
 	      <td> </td>
               <td> </td>
@@ -137,7 +136,6 @@
 	      <td> </td>
 	      <td> {$totale}</td>
             </tr>
-          {/foreach}
 	</tbody>
       </table>
     </div>  

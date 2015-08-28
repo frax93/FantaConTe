@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-27 13:02:05
+<?php /* Smarty version 2.6.13, created on 2015-08-28 17:59:50
          compiled from classifica.tpl */ ?>
 <html>
   <head>
@@ -7,7 +7,6 @@
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="stylesheet" href="css/main.css" />
-      <link rel="stylesheet" href="css/tabella.css" />
       <script src="Javascript/jquery.min.js"></script>
       <script src="Javascript/jquery.scrollex.min.js"></script>
       <script src="Javascript/jquery.scrolly.min.js"></script>
@@ -18,8 +17,16 @@
   <body class="landing">
     <div class="classifica"><br>							
       <div class="table-wrapper "> <br>
+     <div id="page-wrapper">
+      <!-- Header -->
+      <article id="main">
+	<section class="spotlight">
+	  <div class="content"> </div>
+    
+        </section>
+    </div>
         <header id="header">
-          <h1><a href="index.php?controller=Classifica&task=aggiorna"><h2><font color=green><?php echo $this->_tpl_vars['Fanta']; ?>
+          <h1><a href="index.php?controller=Classifica&task=nuova"><h2><font color=green><?php echo $this->_tpl_vars['Fanta']; ?>
 </font><font color=white><?php echo $this->_tpl_vars['Con']; ?>
 </font><font color=red><?php echo $this->_tpl_vars['Te']; ?>
 </font></h2></a></h1>
@@ -27,14 +34,15 @@
 	    <nav id="nav">
     
 	      <ul>
-                  <font color=yellow> CREDITI </font>
+                  <font color=LIME> Benvenuto <?php echo $this->_tpl_vars['Benvenuto']; ?>
+</font>&nbsp;&nbsp;&nbsp;&nbsp;<font color=yellow>CREDITI </font>
                   <font color=yellow> <?php echo $this->_tpl_vars['crediti']; ?>
  250 </font>
                 <li class="special">
 		  <a href="#menu" class="menuToggle"><span>Menu</span></a>
 		  <div id="menu">
 	            <ul>
-                      <li><a href="index.php">Home</a></li>
+                      <li><a href="index.php?controller=Classifica&task=nuova">Home</a></li>
 		      <li><a href="index.php?controller=Mercato&task=riempi">Mercato</a></li>
                       <li><a href="index.php?controller=Squadra&task=visualizza">Squadra</a></li>
 		      <li><a href="index.php?controller=Formazione&task=nuova">Formazione</a></li>
@@ -44,7 +52,8 @@
 		</li>
 	      </ul>
 	    </nav>	
-        </header>	
+        </header>
+                
         <table>
           <thead>
             <tr>

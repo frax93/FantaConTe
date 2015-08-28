@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-10 16:43:57
+<?php /* Smarty version 2.6.13, created on 2015-08-28 16:46:08
          compiled from formazione.tpl */ ?>
 <div id="main">
     <br>
@@ -148,9 +148,6 @@
 	  </tr>
 	</thead>
 	<tbody>
-          <?php $_from = $this->_tpl_vars['totale']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
-    foreach ($_from as $this->_tpl_vars['tot']):
-?>
             <tr>
 	      <td> </td>
               <td> </td>
@@ -166,7 +163,6 @@
 	      <td> <?php echo $this->_tpl_vars['totale']; ?>
 </td>
             </tr>
-          <?php endforeach; endif; unset($_from); ?>
 	</tbody>
       </table>
     </div>  

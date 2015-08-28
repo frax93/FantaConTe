@@ -41,7 +41,7 @@ Class Fdb{
     public function insert($dati){
             //usare $this->bind in $query
  
-            $query = "INSERT INTO `fantaconte`.`$this->tabella` $this->chiavedb VALUES $dati";
+            $query = "INSERT INTO `fantaconte`.$this->tabella $this->chiavedb VALUES $dati";
             $sql=$this->db->prepare($query);
             //fare il bind dei dati passati usando i place-holders
             //$sql->bindParam($this->bind,$dati);
@@ -119,8 +119,8 @@ Class Fdb{
                 return false;
 	 }
     public function queryRosa($nomesquadra){
-        $sql="SELECT "."`giocatori`.`id`,`nome`,`cognome`,`squadra_reale`,`ruolo`,`valore`,`voto`,`giocato`"." FROM ".$this->tabella." WHERE ";
-        $sql=$sql."`rosa`.id=`giocatori`.id";
+        $sql="SELECT "."`giocatori`.`id`,`nome`,`cognome`,`squadra_reale`,`ruolo`,`valore`,`voto`"." FROM ".$this->tabella." WHERE ";
+        $sql=$sql."`rosa`.id=`giocatori`.id AND `rosa`.nomesquadra='$nomesquadra'";
         $query=$this->db->prepare($sql);
         $query->execute();
         $result=$query->fetchAll();
