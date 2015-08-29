@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-28 16:46:08
+<?php /* Smarty version 2.6.13, created on 2015-08-29 10:12:25
          compiled from formazione.tpl */ ?>
 <div id="main">
     <br>
@@ -8,7 +8,7 @@
     <div class="content">
       <h2>Inserisci la tua formazione</h2>
       <p> Raggiungi la vetta della classifica....</p>
-      <button class="button special" type="submit" name="submit" id="submit_1"><a href="index.php?controller=Squadra&task=visualizza">MODIFICA FORMAZIONE</a></button>
+      <button class="button special" type="submit" name="submit" id="submit_1"><a href="index.php?controller=Formazione&task=modifica">MODIFICA FORMAZIONE</a></button>
     </div>
   </section>
     <h5>Titolari</h5>
@@ -28,20 +28,20 @@
     foreach ($_from as $this->_tpl_vars['por']):
 ?>
             <tr>
-              <td><?php echo $this->_tpl_vars['por']['nome']; ?>
- </td>
-              <td><?php echo $this->_tpl_vars['por']['cognome']; ?>
- </td>
-              <td><?php echo $this->_tpl_vars['por']['squadra_reale']; ?>
- </td>
-              <td><?php echo $this->_tpl_vars['por']['voto']; ?>
-</td>
+              <td><font color="orange"><?php echo $this->_tpl_vars['por']['nome']; ?>
+ </font></td>
+              <td><font color="orange"><?php echo $this->_tpl_vars['por']['cognome']; ?>
+ </font></td>
+              <td><font color="orange"><?php echo $this->_tpl_vars['por']['squadra_reale']; ?>
+ </font></td>
+              <td><font color="orange"><?php echo $this->_tpl_vars['por']['voto']; ?>
+ </font></td>
             </tr>
           <?php endforeach; endif; unset($_from); ?>
         </tbody>
       </table>
     </div>
-    <h4><font color="yellow">    Difensori   </font></h4>
+    <h4><font color="turquoise">    Difensori   </font></h4>
     <div class="table-wrapper">
       <table class="tabelladif">
         <thead>
@@ -57,20 +57,20 @@
     foreach ($_from as $this->_tpl_vars['dif']):
 ?>
             <tr>
-	      <td><?php echo $this->_tpl_vars['dif']['nome']; ?>
- </td>
-              <td><?php echo $this->_tpl_vars['dif']['cognome']; ?>
- </td>
-	      <td><?php echo $this->_tpl_vars['dif']['squadra_reale']; ?>
- </td>
-	      <td><?php echo $this->_tpl_vars['dif']['voto']; ?>
-</td>
+	      <td><font color="turquoise"><?php echo $this->_tpl_vars['dif']['nome']; ?>
+ </font> </td>
+              <td><font color="turquoise"><?php echo $this->_tpl_vars['dif']['cognome']; ?>
+  </font></td>
+	      <td><font color="turquoise"><?php echo $this->_tpl_vars['dif']['squadra_reale']; ?>
+ </font> </td>
+	      <td><font color="turquoise"><?php echo $this->_tpl_vars['dif']['voto']; ?>
+ </font></td>
             </tr>
           <?php endforeach; endif; unset($_from); ?>
 	</tbody>
       </table>
     </div>
-    <h4><font color="green">Centrocampisti  </font></h4>
+    <h4><font color="CHARTREUSE">Centrocampisti  </font></h4>
     <div class="table-wrapper">
       <table class="tabellacen">
         <thead>
@@ -86,20 +86,20 @@
     foreach ($_from as $this->_tpl_vars['cen']):
 ?>
             <tr>                                                                                                      
-	      <td><?php echo $this->_tpl_vars['cen']['nome']; ?>
- </td>
-              <td><?php echo $this->_tpl_vars['cen']['cognome']; ?>
- </td>
-	      <td><?php echo $this->_tpl_vars['cen']['squadra_reale']; ?>
- </td>
-	      <td><?php echo $this->_tpl_vars['cen']['voto']; ?>
- </td>
+	      <td><font color="CHARTREUSE"><?php echo $this->_tpl_vars['cen']['nome']; ?>
+ </font></td>
+              <td><font color="CHARTREUSE"><?php echo $this->_tpl_vars['cen']['cognome']; ?>
+ </font></td>
+	      <td><font color="CHARTREUSE"><?php echo $this->_tpl_vars['cen']['squadra_reale']; ?>
+ </font></td>
+	      <td><font color="CHARTREUSE"><?php echo $this->_tpl_vars['cen']['voto']; ?>
+ </font></td>
             </tr>
           <?php endforeach; endif; unset($_from); ?>
 	</tbody>
       </table>
     </div>
-    <h4><font color="blue">   Attaccanti   </font></h4>
+    <h4><font color="DEEPSKYBLUE">   Attaccanti   </font></h4>
     <div class="table-wrapper">
       <table class="tabellaatt">
         <thead>
@@ -115,14 +115,14 @@
     foreach ($_from as $this->_tpl_vars['att']):
 ?>
             <tr>
-	      <td><?php echo $this->_tpl_vars['att']['nome']; ?>
- </td>
-              <td><?php echo $this->_tpl_vars['att']['cognome']; ?>
- </td>
-	      <td><?php echo $this->_tpl_vars['att']['squadra_reale']; ?>
- </td>
-	      <td><?php echo $this->_tpl_vars['att']['voto']; ?>
-</td>
+	      <td><font color="DEEPSKYBLUE"><?php echo $this->_tpl_vars['att']['nome']; ?>
+ </font></td>
+              <td><font color="DEEPSKYBLUE"><?php echo $this->_tpl_vars['att']['cognome']; ?>
+ </font></td>
+	      <td><font color="DEEPSKYBLUE"><?php echo $this->_tpl_vars['att']['squadra_reale']; ?>
+ </font></td>
+	      <td><font color="DEEPSKYBLUE"><?php echo $this->_tpl_vars['att']['voto']; ?>
+ </font></td>
             </tr>
           <?php endforeach; endif; unset($_from); ?>
 	</tbody>

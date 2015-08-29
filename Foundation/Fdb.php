@@ -152,6 +152,15 @@ Class Fdb{
 	 	$result=$query->rowCount();
 	 	return $result;  
     }
+    public function deleteFormazione($nomesquadra){ 
+        $sql="DELETE FROM ".$this->tabella." WHERE ";
+        $sql=$sql."`squadra`='$nomesquadra'";
+        var_dump($sql);
+        $query=$this->db->prepare($sql);
+        $query->execute();
+        $result=$query->rowCount();
+        return $result;
+    }
     public function getDataBase(){
         return $this->db;
     }

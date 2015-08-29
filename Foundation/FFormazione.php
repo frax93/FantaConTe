@@ -30,6 +30,12 @@ public function inserisciFormazione(DFormazione $_object, $nome_squadra){
 	        return $this->db->queryFormazione($nomesquadra,$modulo);
              
 	}
+        public function ResetFormazione($nomesquadra){
+            
+		$this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
+	        $this->db->deleteFormazione($nomesquadra);
+             
+	}
 	
        
 	public function aggiornaFormazione($dati) {

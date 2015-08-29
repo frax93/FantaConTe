@@ -55,21 +55,14 @@ class CFormazione {
 	 * Permette di modificare la formazione
 	 */
 	public function Modifica() {
-      	        $fformazione=USingleton::getInstance('FFormazione');	
-                $VFormazione=USingleton::getInstance('VFormazione');
-		$DFormazione=USingleton::getInstance('DFormazione');
-		$fdb=USingleton::getInstance('Fdb');
-		$session = USingleton::getInstance('USession');
-		$dati = $VFormazione->getDati();
-                        $Formazione=new DFormazione($dati[$Squadra]);
-                        $Formazione->impostatitolari($dati['giocatore'],$dati['modulo']);
-                        $Formazione->impostapanchinari();
-                        $fformazione->inserisciFormazione($Formazione);
-			//$query->commit();
-		/*} catch (Exception $e) {
-			$query->rollBack();
-			throw new Exception($e->getMessage());
-		}*/
+                $FFormazione=USingleton::getInstance('FFormazione');
+                $Fdb=USingleton::getInstance('Fdb');
+                $session=  USingleton::getInstance('USession');
+                $nome_squadra=$session->getValore('squadra');
+                $query=$Fdb->getDataBase();
+                $FFormazione->ResetFormazione($nome_squadra);
+               header("location: index.php?controller=Squadra&task=visualizza");
+                 
 	}
         public function Visualizza(){
                 $VFormazione=USingleton::getInstance('VFormazione');

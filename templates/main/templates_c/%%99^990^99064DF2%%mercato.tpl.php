@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-12 10:42:56
+<?php /* Smarty version 2.6.13, created on 2015-08-28 21:10:05
          compiled from mercato.tpl */ ?>
 <div id="main"> 
     <br>
@@ -31,19 +31,19 @@
 	<?php $_from = $this->_tpl_vars['portieri']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['por']):
 ?>
-          <tr>
-            <td><?php echo $this->_tpl_vars['por']['nome']; ?>
- </td>
-            <td><?php echo $this->_tpl_vars['por']['cognome']; ?>
- </td>
-	    <td><?php echo $this->_tpl_vars['por']['squadra_reale']; ?>
- </td>
-	    <td><?php echo $this->_tpl_vars['por']['valore']; ?>
-</td>
+          <tr>  
+            <td><font color="orange"><?php echo $this->_tpl_vars['por']['nome']; ?>
+ </font> </td>
+            <td><font color="orange"><?php echo $this->_tpl_vars['por']['cognome']; ?>
+</font> </td>
+	    <td><font color="orange"><?php echo $this->_tpl_vars['por']['squadra_reale']; ?>
+ </font> </td>
+	    <td><font color="orange"><?php echo $this->_tpl_vars['por']['valore']; ?>
+</font> </td>
             <td><input type="checkbox" id="premi" name=<?php echo $this->_tpl_vars['por']['id']; ?>
  value=<?php echo $this->_tpl_vars['por']['id']; ?>
 >   </td>
-          </tr>
+         </tr>
         <?php endforeach; endif; unset($_from); ?>
       </tbody>
     </table>
@@ -65,14 +65,14 @@
     foreach ($_from as $this->_tpl_vars['dif']):
 ?>
           <tr>
-	    <td><?php echo $this->_tpl_vars['dif']['nome']; ?>
- </td>
-            <td><?php echo $this->_tpl_vars['dif']['cognome']; ?>
- </td>
-	    <td><?php echo $this->_tpl_vars['dif']['squadra_reale']; ?>
- </td>
-	    <td><?php echo $this->_tpl_vars['dif']['valore']; ?>
-</td>
+	    <td><font color="turquoise"><?php echo $this->_tpl_vars['dif']['nome']; ?>
+ </font> </td>
+            <td><font color="turquoise"><?php echo $this->_tpl_vars['dif']['cognome']; ?>
+ </font> </td>
+	    <td><font color="turquoise"><?php echo $this->_tpl_vars['dif']['squadra_reale']; ?>
+ </font> </td>
+	    <td><font color="turquoise"><?php echo $this->_tpl_vars['dif']['valore']; ?>
+ </font> </td>
             <td><input type="checkbox" id="premi" name=<?php echo $this->_tpl_vars['dif']['id']; ?>
  value=<?php echo $this->_tpl_vars['dif']['id']; ?>
 > </td>
@@ -81,7 +81,7 @@
       </tbody>
     </table>
   </div>
-  <h4><font color="green">Centrocampisti  </font></h4>
+  <h4><font color="CHARTREUSE">Centrocampisti  </font></h4>
   <div class="table-wrapper">
     <table class="tabellacen">
       <thead>
@@ -98,14 +98,14 @@
     foreach ($_from as $this->_tpl_vars['cen']):
 ?>
           <tr>                                                                                                      
-	    <td><?php echo $this->_tpl_vars['cen']['nome']; ?>
- </td>
-            <td><?php echo $this->_tpl_vars['cen']['cognome']; ?>
- </td>
-	    <td><?php echo $this->_tpl_vars['cen']['squadra_reale']; ?>
- </td>
-	    <td><?php echo $this->_tpl_vars['cen']['valore']; ?>
- </td>
+	    <td><font color="CHARTREUSE"><?php echo $this->_tpl_vars['cen']['nome']; ?>
+ </font> </td>
+            <td><font color="CHARTREUSE"><?php echo $this->_tpl_vars['cen']['cognome']; ?>
+ </font> </td>
+	    <td><font color="CHARTREUSE"><?php echo $this->_tpl_vars['cen']['squadra_reale']; ?>
+ </font> </td>
+	    <td><font color="CHARTREUSE"><?php echo $this->_tpl_vars['cen']['valore']; ?>
+ </font> </td>
             <td><input type="checkbox" id="premi" name=<?php echo $this->_tpl_vars['cen']['id']; ?>
  value=<?php echo $this->_tpl_vars['cen']['id']; ?>
 >   </td>
@@ -114,7 +114,7 @@
       </tbody>
     </table>
   </div>
-  <h4><font color="blue">   Attaccanti   </font></h4>
+  <h4><font color="DEEPSKYBLUE">   Attaccanti   </font></h4>
   <div class="table-wrapper">
     <table class="tabellaatt">
       <thead>
@@ -131,14 +131,14 @@
     foreach ($_from as $this->_tpl_vars['att']):
 ?>
           <tr>
-	    <td><?php echo $this->_tpl_vars['att']['nome']; ?>
- </td>
-            <td><?php echo $this->_tpl_vars['att']['cognome']; ?>
- </td>
-	    <td><?php echo $this->_tpl_vars['att']['squadra_reale']; ?>
- </td>
-	    <td><?php echo $this->_tpl_vars['att']['valore']; ?>
-</td>
+	    <td><font color="DEEPSKYBLUE"><?php echo $this->_tpl_vars['att']['nome']; ?>
+ </font> </td>
+            <td><font color="DEEPSKYBLUE"><?php echo $this->_tpl_vars['att']['cognome']; ?>
+ </font> </td>
+	    <td><font color="DEEPSKYBLUE"><?php echo $this->_tpl_vars['att']['squadra_reale']; ?>
+ </font> </td>
+	    <td><font color="DEEPSKYBLUE"><?php echo $this->_tpl_vars['att']['valore']; ?>
+</font> </td>
             <td><input type="checkbox" id="premi" name=<?php echo $this->_tpl_vars['att']['id']; ?>
  value=<?php echo $this->_tpl_vars['att']['id']; ?>
 > </td>

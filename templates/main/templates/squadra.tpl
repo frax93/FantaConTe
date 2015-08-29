@@ -38,10 +38,10 @@
       <tbody>
 	  {foreach from=$portieri item=por}
           <tr>
-            <td>{$por.nome} </td>
-            <td>{$por.cognome} </td>
-	    <td>{$por.squadra_reale} </td>
-	    <td>{$por.valore}</td>
+            <td><font color="orange">{$por.nome} </font></td>
+            <td><font color="orange">{$por.cognome} </font></td>
+	    <td><font color="orange">{$por.squadra_reale} </font></td>
+	    <td><font color="orange">{$por.valore} </font></td>
             <td><input type="checkbox" id="premi" name={$por.id} value={$por.id}></td>
           </tr>
       {/foreach}
@@ -63,17 +63,17 @@
       <tbody>
 	{foreach from=$difensore item=dif}
           <tr>
-	    <td>{$dif.nome} </td>
-            <td>{$dif.cognome} </td>
-	    <td>{$dif.squadra_reale} </td>
-	    <td>{$dif.valore}</td>
+	    <td><font color="turquoise">{$dif.nome} </font></td>
+            <td><font color="turquoise">{$dif.cognome} </font></td>
+	    <td><font color="turquoise">{$dif.squadra_reale} </font></td>
+	    <td><font color="turquoise">{$dif.valore} </font></td>
             <td><input type="checkbox" id="premi" name={$dif.id} value={$dif.id}></td>
           </tr>
         {/foreach}
       </tbody>
     </table>
   </div>
-  <h4><font color="green">Centrocampisti  </font></h4>
+  <h4><font color="CHARTREUSE">Centrocampisti  </font></h4>
   <div class="table-wrapper">
     <table class="tabellacen">
       <thead>
@@ -88,17 +88,17 @@
       <tbody>
 	{foreach from=$centrocampo item=cen}
           <tr>                                                                                                      
-	    <td>{$cen.nome} </td>
-            <td>{$cen.cognome} </td>
-	    <td>{$cen.squadra_reale} </td>
-	    <td>{$cen.valore} </td>
+	    <td><font color="CHARTREUSE">{$cen.nome} </font></td>
+            <td><font color="CHARTREUSE">{$cen.cognome} </font></td>
+	    <td><font color="CHARTREUSE">{$cen.squadra_reale} </font></td>
+	    <td><font color="CHARTREUSE">{$cen.valore} </font></td>
             <td><input type="checkbox" id="premi" name={$cen.id} value={$cen.id}></td>
           </tr>
         {/foreach}
       </tbody>
     </table>
   </div>
-  <h4><font color="blue">   Attaccanti   </font></h4>
+  <h4><font color="DEEPSKYBLUE">   Attaccanti   </font></h4>
   <div class="table-wrapper">
     <table class="tabellaatt">
       <thead>
@@ -113,10 +113,10 @@
       <tbody>
         {foreach from=$attacco item=att}
           <tr>
-	    <td>{$att.nome} </td>
-            <td>{$att.cognome} </td>
-	    <td>{$att.squadra_reale} </td>
-	    <td>{$att.valore}</td>
+	    <td><font color="DEEPSKYBLUE">{$att.nome}  </font></td>
+            <td><font color="DEEPSKYBLUE">{$att.cognome}  </font></td>
+	    <td><font color="DEEPSKYBLUE">{$att.squadra_reale}  </font></td>
+	    <td><font color="DEEPSKYBLUE">{$att.valore} </font></td>
             <td><input type="checkbox" id="premi" name={$att.id} value={$att.id}></td>
           </tr>
         {/foreach}

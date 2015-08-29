@@ -6,7 +6,7 @@
     <div class="content">
       <h2>Inserisci la tua formazione</h2>
       <p> Raggiungi la vetta della classifica....</p>
-      <button class="button special" type="submit" name="submit" id="submit_1"><a href="index.php?controller=Squadra&task=visualizza">MODIFICA FORMAZIONE</a></button>
+      <button class="button special" type="submit" name="submit" id="submit_1"><a href="index.php?controller=Formazione&task=modifica">MODIFICA FORMAZIONE</a></button>
     </div>
   </section>
     <h5>Titolari</h5>
@@ -24,16 +24,16 @@
 	<tbody>
 	  {foreach from=$portieri item=por}
             <tr>
-              <td>{$por.nome} </td>
-              <td>{$por.cognome} </td>
-              <td>{$por.squadra_reale} </td>
-              <td>{$por.voto}</td>
+              <td><font color="orange">{$por.nome} </font></td>
+              <td><font color="orange">{$por.cognome} </font></td>
+              <td><font color="orange">{$por.squadra_reale} </font></td>
+              <td><font color="orange">{$por.voto} </font></td>
             </tr>
           {/foreach}
         </tbody>
       </table>
     </div>
-    <h4><font color="yellow">    Difensori   </font></h4>
+    <h4><font color="turquoise">    Difensori   </font></h4>
     <div class="table-wrapper">
       <table class="tabelladif">
         <thead>
@@ -47,16 +47,16 @@
 	<tbody>
 	  {foreach from=$difensori item=dif}
             <tr>
-	      <td>{$dif.nome} </td>
-              <td>{$dif.cognome} </td>
-	      <td>{$dif.squadra_reale} </td>
-	      <td>{$dif.voto}</td>
+	      <td><font color="turquoise">{$dif.nome} </font> </td>
+              <td><font color="turquoise">{$dif.cognome}  </font></td>
+	      <td><font color="turquoise">{$dif.squadra_reale} </font> </td>
+	      <td><font color="turquoise">{$dif.voto} </font></td>
             </tr>
           {/foreach}
 	</tbody>
       </table>
     </div>
-    <h4><font color="green">Centrocampisti  </font></h4>
+    <h4><font color="CHARTREUSE">Centrocampisti  </font></h4>
     <div class="table-wrapper">
       <table class="tabellacen">
         <thead>
@@ -70,16 +70,16 @@
 	<tbody>
 	  {foreach from=$centrocampo item=cen}
             <tr>                                                                                                      
-	      <td>{$cen.nome} </td>
-              <td>{$cen.cognome} </td>
-	      <td>{$cen.squadra_reale} </td>
-	      <td>{$cen.voto} </td>
+	      <td><font color="CHARTREUSE">{$cen.nome} </font></td>
+              <td><font color="CHARTREUSE">{$cen.cognome} </font></td>
+	      <td><font color="CHARTREUSE">{$cen.squadra_reale} </font></td>
+	      <td><font color="CHARTREUSE">{$cen.voto} </font></td>
             </tr>
           {/foreach}
 	</tbody>
       </table>
     </div>
-    <h4><font color="blue">   Attaccanti   </font></h4>
+    <h4><font color="DEEPSKYBLUE">   Attaccanti   </font></h4>
     <div class="table-wrapper">
       <table class="tabellaatt">
         <thead>
@@ -93,10 +93,10 @@
 	<tbody>
           {foreach from=$attacco item=att}
             <tr>
-	      <td>{$att.nome} </td>
-              <td>{$att.cognome} </td>
-	      <td>{$att.squadra_reale} </td>
-	      <td>{$att.voto}</td>
+	      <td><font color="DEEPSKYBLUE">{$att.nome} </font></td>
+              <td><font color="DEEPSKYBLUE">{$att.cognome} </font></td>
+	      <td><font color="DEEPSKYBLUE">{$att.squadra_reale} </font></td>
+	      <td><font color="DEEPSKYBLUE">{$att.voto} </font></td>
             </tr>
           {/foreach}
 	</tbody>
