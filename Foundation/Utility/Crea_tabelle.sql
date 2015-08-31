@@ -47,8 +47,8 @@ CREATE TABLE  IF NOT EXISTS `Giocatori` (
 
 CREATE TABLE  IF NOT EXISTS `Rosa` (
     `id`            SMALLINT NOT NULL,
-    `nomesquadra`          VARCHAR(20) NOT NULL ,
-    PRIMARY KEY (`id` , `nomesquadra`)
+    `squadra`          VARCHAR(20) NOT NULL ,
+    PRIMARY KEY (`id` , `squadra`)
 );
 
 INSERT INTO utente (`username`,`password`,`nome`,`cognome`,`email`,`codice_attivazione`,`stato_attivazione`,`tipo_utente`,`squadra`) VALUES ( 'michele225','82a8f10c5e9252347bb5bd3419448401','Michele', 'Taranta', 'michele.taranta@libero.it','55c4c38fb0792','Attivato','Admin','');

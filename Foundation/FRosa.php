@@ -17,8 +17,13 @@ class FRosa extends Fdb {
 	public function __construct(){
 		$this->db = USingleton::getInstance('Fdb');
 		$this->tabella="`rosa`";
-		$this->chiavedb="( `id`,`nomesquadra`)";
-		$this->bind="( :id, :nomesquadra)";
+		$this->chiavedb="( `id`,`squadra`)";
+		$this->bind="( :id, :squadra)";
+	}
+         public function ResetRosa($nomesquadra){           
+		$this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
+	        $this->db->deleteRighe($nomesquadra);
+             
 	}
 	
         public function inserisciRosa($id,$nomesquadra){

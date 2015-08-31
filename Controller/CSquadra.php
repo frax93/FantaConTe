@@ -17,8 +17,19 @@ class CSquadra {
 				return $this->Visualizza();
 			case 'aggiorna':
 				return $this->Aggiorna();
+                        case 'modifica':
+				return $this->Modifica();
                 }
                         
+	}
+        public function Modifica() {
+                $FRosa=USingleton::getInstance('FRosa');
+                $Fdb=USingleton::getInstance('Fdb');
+                $session=  USingleton::getInstance('USession');
+                $nome_squadra=$session->getValore('squadra');
+                $FRosa->ResetRosa($nome_squadra);
+                header("location: index.php?controller=Mercato&task=riempi");
+                 
 	}
 	/**
 	 * Permette di visualizzare la Squadra creata dall'utente

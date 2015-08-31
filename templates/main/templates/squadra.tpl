@@ -5,6 +5,7 @@
     <div class="content">
       <h2>La tua Rosa</h2>
       <p>Gioca inserendo la tua formazione</p>
+            <button class="button special" type="submit" name="submit" id="submit_1"><a href="index.php?controller=Squadra&task=modifica">RESET ROSA</a></button>
     </div>
   </section>
   <h5>Elenco Rosa</h5>

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-31 10:14:57
+<?php /* Smarty version 2.6.13, created on 2015-08-31 15:43:47
          compiled from squadra.tpl */ ?>
 <div id="main"> 
     <br><br>
@@ -7,6 +7,7 @@
     <div class="content">
       <h2>La tua Rosa</h2>
       <p>Gioca inserendo la tua formazione</p>
+            <button class="button special" type="submit" name="submit" id="submit_1"><a href="index.php?controller=Squadra&task=modifica">RESET ROSA</a></button>
     </div>
   </section>
   <h5>Elenco Rosa</h5>

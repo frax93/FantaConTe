@@ -37,7 +37,7 @@ public function inserisciFormazione(DFormazione $_object, $nome_squadra){
         public function ResetFormazione($nomesquadra){
             
 		$this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
-	        $this->db->deleteFormazione($nomesquadra);
+	        $this->db->deleteRighe($nomesquadra);
              
 	}
 	

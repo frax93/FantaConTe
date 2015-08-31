@@ -121,7 +121,7 @@ Class Fdb{
 	 }
     public function queryRosa($nomesquadra){
         $sql="SELECT "."`giocatori`.`id`,`nome`,`cognome`,`squadra_reale`,`ruolo`,`valore`,`voto`"." FROM ".$this->tabella." WHERE ";
-        $sql=$sql."`rosa`.id=`giocatori`.id AND `rosa`.nomesquadra='$nomesquadra'";
+        $sql=$sql."`rosa`.id=`giocatori`.id AND `rosa`.squadra='$nomesquadra'";
         $query=$this->db->prepare($sql);
         $query->execute();
         $result=$query->fetchAll();
@@ -153,10 +153,9 @@ Class Fdb{
 	 	$result=$query->rowCount();
 	 	return $result;  
     }
-    public function deleteFormazione($nomesquadra){ 
+    public function deleteRighe($valore){ 
         $sql="DELETE FROM ".$this->tabella." WHERE ";
-        $sql=$sql."`squadra`='$nomesquadra'";
-        var_dump($sql);
+        $sql=$sql."`squadra`='$valore'";
         $query=$this->db->prepare($sql);
         $query->execute();
         $result=$query->rowCount();
