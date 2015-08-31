@@ -30,7 +30,9 @@ class FMercato extends Fdb {
                     
         }
 	//prende DGiocatore e cambia voto
-        public function updateVoto(){
+        public function updateVoto($voto,$id){
+            $this->setvariabili($this->tabella,"`voto`", "");
+            return $this->db->update($voto,$id);
             
         }
 

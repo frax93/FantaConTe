@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-27 10:34:26
+<?php /* Smarty version 2.6.13, created on 2015-08-31 17:39:21
          compiled from Amministratore.tpl */ ?>
 <div id="main"> 
     <br>
@@ -11,8 +11,8 @@
     </div>
   </section>
   <h5>Mercato Giocatori</h5>
-  <form name="mercato" method="post" action="index.php?controller=Amministatore&task=cambiovoti">
-  <input type="submit" name="submit" id="submit_1" class="button special" value="Salva VOTI">
+  <form method="post" action="index.php?controller=Amministratore&task=cambiovoti">
+  <input type="submit" name="submit" id="submit_1" class="button special" value="Salva VOTI"/>
   <h4><font color="orange">    Portieri   </font> </h4>
   <div class="table-wrapper">
     <table class="tabellaportieri">
@@ -38,14 +38,21 @@
  </td>
 	    <td><?php echo $this->_tpl_vars['por']['valore']; ?>
 </td>
-            <td> <select name="voto" id="selezione">
-                <optgroup id="selezione">
+            <td> <select name=<?php echo $this->_tpl_vars['por']['id']; ?>
+ id="voto" >
+                <optgroup id="voto" >
                     <?php $_from = $this->_tpl_vars['voti']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['voto']):
 ?>
+                        <?php if ($this->_tpl_vars['voto'] == '6'): ?>
                     <option value=<?php echo $this->_tpl_vars['voto']; ?>
-><?php echo $this->_tpl_vars['voto']; ?>
+ <?php echo $this->_tpl_vars['selected'];  echo $this->_tpl_vars['default']; ?>
+ ><?php echo $this->_tpl_vars['voto']; ?>
 </option>
+                    <?php else: ?>
+                        <option value=<?php echo $this->_tpl_vars['voto']; ?>
+><?php echo $this->_tpl_vars['voto']; ?>
+</option> <?php endif; ?>
                     <?php endforeach; endif; unset($_from); ?>
                 </optgroup>
              </select>
@@ -55,7 +62,7 @@
       </tbody>
     </table>
   </div>
-  <h4><font color="turquoise">    Difensori   </font></h4>
+ <h4><font color="turquoise">    Difensori   </font></h4>
   <div class="table-wrapper">
     <table class="tabelladif">
       <thead>
@@ -80,8 +87,9 @@
  </td>
 	    <td><?php echo $this->_tpl_vars['dif']['valore']; ?>
 </td>
-            <td> <select name="voto" id="selezione">
-                <optgroup id="selezione">
+            <td> <select name=<?php echo $this->_tpl_vars['dif']['id']; ?>
+ id="voto">
+                <optgroup id="voto">
                     <?php $_from = $this->_tpl_vars['voti']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['voto']):
 ?>
@@ -122,8 +130,9 @@
  </td>
 	    <td><?php echo $this->_tpl_vars['cen']['valore']; ?>
  </td>
-            <td> <select name="voto" id="selezione">
-                <optgroup id="selezione">
+            <td> <select name=<?php echo $this->_tpl_vars['cen']['id']; ?>
+ id="voto">
+                <optgroup id="voto">
                     <?php $_from = $this->_tpl_vars['voti']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['voto']):
 ?>
@@ -164,8 +173,9 @@
  </td>
 	    <td><?php echo $this->_tpl_vars['att']['valore']; ?>
 </td>
-            <td> <select name="voto" id="selezione">
-                <optgroup id="selezione">
+            <td> <select name=<?php echo $this->_tpl_vars['att']['id']; ?>
+ id="voto">
+                <optgroup id="voto">
                     <?php $_from = $this->_tpl_vars['voti']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['voto']):
 ?>

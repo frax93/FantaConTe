@@ -9,8 +9,8 @@
     </div>
   </section>
   <h5>Mercato Giocatori</h5>
-  <form name="mercato" method="post" action="index.php?controller=Amministatore&task=cambiovoti">
-  <input type="submit" name="submit" id="submit_1" class="button special" value="Salva VOTI">
+  <form method="post" action="index.php?controller=Amministratore&task=cambiovoti">
+  <input type="submit" name="submit" id="submit_1" class="button special" value="Salva VOTI"/>
   <h4><font color="orange">    Portieri   </font> </h4>
   <div class="table-wrapper">
     <table class="tabellaportieri">
@@ -30,10 +30,13 @@
             <td>{$por.cognome} </td>
 	    <td>{$por.squadra_reale} </td>
 	    <td>{$por.valore}</td>
-            <td> <select name="voto" id="selezione">
-                <optgroup id="selezione">
+            <td> <select name={$por.id} id="voto" >
+                <optgroup id="voto" >
                     {foreach from=$voti item=voto}
-                    <option value={$voto}>{$voto}</option>
+                        {if $voto eq "6"}
+                    <option value={$voto} {$selected}{$default} >{$voto}</option>
+                    {else}
+                        <option value={$voto}>{$voto}</option> {/if}
                     {/foreach}
                 </optgroup>
              </select>
@@ -43,7 +46,7 @@
       </tbody>
     </table>
   </div>
-  <h4><font color="turquoise">    Difensori   </font></h4>
+ <h4><font color="turquoise">    Difensori   </font></h4>
   <div class="table-wrapper">
     <table class="tabelladif">
       <thead>
@@ -62,8 +65,8 @@
             <td>{$dif.cognome} </td>
 	    <td>{$dif.squadra_reale} </td>
 	    <td>{$dif.valore}</td>
-            <td> <select name="voto" id="selezione">
-                <optgroup id="selezione">
+            <td> <select name={$dif.id} id="voto">
+                <optgroup id="voto">
                     {foreach from=$voti item=voto}
                     <option value={$voto}>{$voto}</option>
                     {/foreach}
@@ -94,8 +97,8 @@
             <td>{$cen.cognome} </td>
 	    <td>{$cen.squadra_reale} </td>
 	    <td>{$cen.valore} </td>
-            <td> <select name="voto" id="selezione">
-                <optgroup id="selezione">
+            <td> <select name={$cen.id} id="voto">
+                <optgroup id="voto">
                     {foreach from=$voti item=voto}
                     <option value={$voto}>{$voto}</option>
                     {/foreach}
@@ -126,8 +129,8 @@
             <td>{$att.cognome} </td>
 	    <td>{$att.squadra_reale} </td>
 	    <td>{$att.valore}</td>
-            <td> <select name="voto" id="selezione">
-                <optgroup id="selezione">
+            <td> <select name={$att.id} id="voto">
+                <optgroup id="voto">
                     {foreach from=$voti item=voto}
                     <option value={$voto}>{$voto}</option>
                     {/foreach}

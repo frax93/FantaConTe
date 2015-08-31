@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-31 15:43:47
+<?php /* Smarty version 2.6.13, created on 2015-08-31 16:03:36
          compiled from squadra.tpl */ ?>
 <div id="main"> 
     <br><br>
@@ -19,8 +19,8 @@
   <br>
   <tr> 
         <td align="left">Modulo</td>
-        <td> <select name="modulo" id="selezione">
-                <optgroup id="selezione">
+        <td> <select name="modulo" id="modulo">
+                <optgroup id="modulo">
                     <?php $_from = $this->_tpl_vars['moduli']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['modulo']):
 ?>

@@ -51,8 +51,13 @@ class CAmministratore{
             $VAmministratore->impostaDati('centrocampo',$centrocampo);
             $VAmministratore->impostaDati('attacco',$attacco);
             $dati=array();
-            for($i=0;$i<=20;$i++)
+            for($i=0;$i<=20;$i++){
                 array_push($dati, $i);
+                if($i==6){
+                    $VAmministratore->impostaDati('selected',"selected=");
+                    $VAmministratore->impostaDati('default',$i);
+                }
+            }
             $VAmministratore->impostaDati('voti',$dati);
             return $VAmministratore->processaTemplate();
                     
@@ -60,7 +65,10 @@ class CAmministratore{
                 
                 public function CambiaVoti() {
                     $Vamministratore=USingleton::getInstance('VAmministratore');
-                    $Vamministratore->getVoti();
+                    $FMercato=  USingleton::getInstance('FMercato');
+                    $dati=$Vamministratore->getVoti();
+                    foreach($dati as $id => $voto) 
+                        $FMercato->updateVoto($voto,$id);
                    
                     
                 }

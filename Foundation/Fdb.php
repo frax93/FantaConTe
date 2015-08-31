@@ -136,11 +136,10 @@ Class Fdb{
         $result=$query->fetchAll();
         return $result;
     }
-    public function update($valore){
-                $sql = "UPDATE ".$this->tabella." SET ".$this->chiavedb[0]."=".$this->bind[0]." WHERE ".$this->chiavedb[1]."=".$this->bind[1];
+    public function update($voto,$id){
+        //UPDATE `Giocatori` SET `voto`= WHERE `id`=1
+                $sql = "UPDATE "."`Giocatori`"." SET "."`voto`"."=".$voto." WHERE "."`id`"."=".$id;
 	 	$query=$this->db->prepare($sql);
-	 	$query->bindValue($this->bind[0],$valore[0]);
-	 	$query->bindvalue($this->bind[1],$valore[1]);
 	 	$query->execute();
 	 	$result=$query->rowCount();
 	 	return $result;

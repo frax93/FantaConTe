@@ -3847,8 +3847,13 @@
 {
     opacity: 100;
 }
-#selezione{
-    width: 8%;
+#modulo{
+     width: 8%;
+     padding:13px;
+     background-color: #4876FF;
+}
+#voto{
+    width: 40%;
      padding:13px;
      background-color: #4876FF;
 }

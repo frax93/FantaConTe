@@ -16,8 +16,8 @@
   <br>
   <tr> 
         <td align="left">Modulo</td>
-        <td> <select name="modulo" id="selezione">
-                <optgroup id="selezione">
+        <td> <select name="modulo" id="modulo">
+                <optgroup id="modulo">
                     {foreach from=$moduli item=modulo}
                     <option value={$modulo}>{$modulo}</option>
                     {/foreach}

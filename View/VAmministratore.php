@@ -37,9 +37,18 @@ class VAmministratore extends View{
     }
     
     public function getVoti() {
-        print_r($_REQUEST);
-        
-    }
+        unset($_REQUEST['controller']);
+        unset($_REQUEST['task']);
+        unset($_REQUEST['submit']);
+        $voti=array();
+        if(isset($_REQUEST)){
+          foreach($_REQUEST as $key => $value)
+            array_push($voti,$value);
+          return $voti;
+        }
+        else
+            return false;
+        }
     
     
 }
