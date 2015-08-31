@@ -59,13 +59,14 @@ class VHome extends View{
     /**
      * Imposta la pagina per gli utenti registrati/autenticati
      */
-    public function PaginaRegistrato() {
-        $session=USingleton::getInstance('USession');
+    public function PaginaRegistrato($classifica) {
+        $session=USingleton::getInstance('USession');            
         $this->assign('Fanta','Fanta');
         $this->assign('Con','Con');
         $this->assign('Te','Te');
         $this->assign('Benvenuto',$session->getvalore('username'));
         $this->assign('title','FantaConTe');
+        $this->assign('arr',$classifica);
         $this->display('classifica.tpl');
     }
     /*

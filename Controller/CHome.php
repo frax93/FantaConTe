@@ -22,7 +22,7 @@ class CHome {
         /**
          * Metodo che imposta la pagina home iniziale
          */
-      public function impostaPagina () {
+      public function impostaPagina() {
         $VHome= USingleton::getInstance('VHome');
         $CRegistrazione=USingleton::getInstance('CRegistrazione');
         $registrato=$CRegistrazione->getUtenteRegistrato();
@@ -31,25 +31,28 @@ class CHome {
         $fdb=USingleton::getInstance('Fdb');
         $query=$fdb->getDatabase();
         //$query->beginTransaction();
-        if($registrato) {    
+           if($registrato) {    
            try{
              $fclassifica=USingleton::getInstance('FClassifica');
              $classifica=$fclassifica->getClassifica();
-             $VHome->PaginaRegistrato($classifica);
+             $classifica1=array();
+             foreach($classifica as $key => $class)
+                   array_push($classifica1, $class);
+             $VHome->PaginaRegistrato($classifica1);
            }
            catch (Exception $e) {
              throw new Exception("Errore DB");
            }
         }
-        else 
+        else
             $VHome->PaginaGuest();
-      }
+        }
 	/**
 	 * Smista le richieste delegando i corrispondenti controller.
 	 */
 	public function mux(){
 		$VHome=USingleton::getInstance('VHome');
-		switch ($VHome->getController()) {
+		switch ($VHome->getController()){
                 case 'Amministratore':
                     $CAmministratore= USingleton::getInstance('CAmministratore');
                     return $CAmministratore->mux();

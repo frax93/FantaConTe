@@ -43,6 +43,7 @@ class CFormazione {
                     $DSquadra->Aggiungi($DGiocatore);
                 }
                 $Formazione=new DFormazione($DSquadra,$modulo);
+                $session->setValore('modulo',$modulo);
                 $Formazione->impostatitolari($giocatori_selezionati);
                 $fformazione->inserisciFormazione($Formazione,$nome_squadra);
                 
@@ -71,11 +72,12 @@ class CFormazione {
                 $Fdb=USingleton::getInstance('Fdb');
                 $session=  USingleton::getInstance('USession');
                 $nome_squadra=$session->getValore('squadra');
+                $modulo=$session->getValore('modulo');
                 $query=$Fdb->getDataBase();
-                $titolari=$FFormazione->getFormazione($nome_squadra,'3-4-3');               
+                $titolari=$FFormazione->getFormazione($nome_squadra,$modulo);               
                 $giocatori=$FRosa->getRosa($nome_squadra);
                 $DSquadra=new DSquadra($nome_squadra);
-                $DFormazione=new DFormazione($DSquadra,'3-4-3');
+                $DFormazione=new DFormazione($DSquadra,$modulo);
                 foreach($giocatori as $key => $value){
                     $DGiocatore=new DGiocatore($value['id'],$value['nome'],$value['cognome'],$value['ruolo'],
                                              $value['squadra_reale'],$value['valore'],$value['voto']);

@@ -27,8 +27,6 @@
       <nav id="nav">
         <ul>
              <font color=LIME> Benvenuto {$Benvenuto}</font>&nbsp;&nbsp;&nbsp;&nbsp;
-             <font color=yellow>CREDITI </font>
-             <font color=yellow> {$fantasycosto} </font>
 	  <li class="special">
 	    <a href="#menu" class="menuToggle"><span>Menu</span></a>
 	    <div id="menu">

@@ -36,7 +36,7 @@
                       <li><a href="index.php?controller=Classifica&task=nuova">Classifica</a></li>
 		      <li><a href="index.php?controller=Mercato&task=riempi">Mercato</a></li>
                       <li><a href="index.php?controller=Squadra&task=visualizza">Squadra</a></li>
-		      <li><a href="index.php?controller=Formazione&task=nuova">Formazione</a></li>
+		      <li><a href="index.php?controller=Formazione&task=visualizza">Formazione</a></li>
 		      <li><a href="index.php?controller=Registrazione&task=logout">Log Out</a></li>
 		    </ul>
 		  </div>
@@ -66,7 +66,7 @@
           </tbody>
         </table>
       </div>
-            <div><font color=yellow>Complimenti {$vincitore} hai vinto!</font></div>
+            <div><font color=yellow>Complimenti {$vincitore} HAI VINTO!</font></div>
     </div>
     <footer id="footer">
       <ul class="copyright">

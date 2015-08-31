@@ -26,7 +26,7 @@ class DFormazione{
     public function getpunteggio(){
         return $this->fpunteggio;
     }
-    private function getmodulo(){
+    public function getmodulo(){
         return $this->modulo;
     }
     public function gettitolari(){

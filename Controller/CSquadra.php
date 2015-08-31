@@ -60,6 +60,7 @@ class CSquadra {
                 array_push($attacco1,$value->getAsArray());
             $crediti=$DSquadra->get_crediti();
             $VSquadra->impostaDati('attacco',$attacco1);
+            $VSquadra->impostaDati('crediti',"CREDITI");
             $VSquadra->impostaDati('fantasycosto',$crediti);
             }
             return $VSquadra->processaTemplate();

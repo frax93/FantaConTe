@@ -61,7 +61,7 @@ class CAmministratore{
                 public function CambiaVoti() {
                     $Vamministratore=USingleton::getInstance('VAmministratore');
                     $Vamministratore->getVoti();
-                    $this->Visualizza();
+                   
                     
                 }
 }

@@ -44,7 +44,8 @@ class CRegistrazione {
             $user=$user[0];
             if($user['password']==md5($login['password'])){
                 if($user['stato_attivazione']==="Attivato"){
-                    if($user['tipo_utente']=="Admin") header("location: index.php?controller=Amministratore&task=amministratore");
+                    if($user['tipo_utente']=="Admin") 
+                        header("location: index.php?controller=Amministratore&task=amministratore");
                     $session=USingleton::getInstance('USession');
                     $session->setvalore('username',$user['username']);
                     $session->setValore('nome',$user['nome']);
@@ -53,6 +54,7 @@ class CRegistrazione {
                     $user['squadra']=unserialize($user['squadra']);
                     $session->setValore('squadra',$user['squadra']['nome']);
         	    $session->setValore('tipo_utente',$user['tipo_utente']);
+                    $session->setValore('primoaccesso',true);
                     return true;
                  }
                 else 

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-31 11:19:02
+<?php /* Smarty version 2.6.13, created on 2015-08-31 15:18:36
          compiled from classifica.tpl */ ?>
 <html>
   <head>
@@ -43,7 +43,7 @@
                       <li><a href="index.php?controller=Classifica&task=nuova">Classifica</a></li>
 		      <li><a href="index.php?controller=Mercato&task=riempi">Mercato</a></li>
                       <li><a href="index.php?controller=Squadra&task=visualizza">Squadra</a></li>
-		      <li><a href="index.php?controller=Formazione&task=nuova">Formazione</a></li>
+		      <li><a href="index.php?controller=Formazione&task=visualizza">Formazione</a></li>
 		      <li><a href="index.php?controller=Registrazione&task=logout">Log Out</a></li>
 		    </ul>
 		  </div>
@@ -80,7 +80,7 @@
         </table>
       </div>
             <div><font color=yellow>Complimenti <?php echo $this->_tpl_vars['vincitore']; ?>
- hai vinto!</font></div>
+ HAI VINTO!</font></div>
     </div>
     <footer id="footer">
       <ul class="copyright">

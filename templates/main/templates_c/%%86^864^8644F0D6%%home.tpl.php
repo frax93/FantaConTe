@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-31 09:41:58
+<?php /* Smarty version 2.6.13, created on 2015-08-31 11:55:55
          compiled from home.tpl */ ?>
 <html>
   <head>
@@ -34,9 +34,6 @@
         <ul>
              <font color=LIME> Benvenuto <?php echo $this->_tpl_vars['Benvenuto']; ?>
 </font>&nbsp;&nbsp;&nbsp;&nbsp;
-             <font color=yellow>CREDITI </font>
-             <font color=yellow> <?php echo $this->_tpl_vars['fantasycosto']; ?>
- </font>
 	  <li class="special">
 	    <a href="#menu" class="menuToggle"><span>Menu</span></a>
 	    <div id="menu">
