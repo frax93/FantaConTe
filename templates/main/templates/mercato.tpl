@@ -11,7 +11,7 @@
   <h5>Mercato Giocatori</h5>
   <form name="mercato" method="post" action="index.php?controller=Mercato&task=salva"> <!--abbiamo messo name -->
   <input type="submit" name="submit" id="submit_1" class="button special" value="Salva">
-  <a id="crediti" > CREDITI {$crediti}</a> <!--abbiamo messo crediti-->
+  <div id="crediti" > CREDITI : 500</div> 
   <h4><font color="orange">    Portieri   </font> </h4>
   <div class="table-wrapper">
     <table class="tabellaportieri">

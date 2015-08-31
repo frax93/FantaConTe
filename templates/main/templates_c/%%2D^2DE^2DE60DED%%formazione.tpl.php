@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-29 10:12:25
+<?php /* Smarty version 2.6.13, created on 2015-08-29 10:43:10
          compiled from formazione.tpl */ ?>
 <div id="main">
     <br>
@@ -8,7 +8,7 @@
     <div class="content">
       <h2>Inserisci la tua formazione</h2>
       <p> Raggiungi la vetta della classifica....</p>
-      <button class="button special" type="submit" name="submit" id="submit_1"><a href="index.php?controller=Formazione&task=modifica">MODIFICA FORMAZIONE</a></button>
+      <button class="button special" type="submit" name="submit" id="submit_1"><a href="index.php?controller=Formazione&task=modifica">RESET FORMAZIONE</a></button>
     </div>
   </section>
     <h5>Titolari</h5>

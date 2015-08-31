@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-28 17:35:21
+<?php /* Smarty version 2.6.13, created on 2015-08-31 09:41:58
          compiled from home.tpl */ ?>
 <html>
   <head>
@@ -32,14 +32,19 @@
 </font></h2></a></h1>
       <nav id="nav">
         <ul>
+             <font color=LIME> Benvenuto <?php echo $this->_tpl_vars['Benvenuto']; ?>
+</font>&nbsp;&nbsp;&nbsp;&nbsp;
+             <font color=yellow>CREDITI </font>
+             <font color=yellow> <?php echo $this->_tpl_vars['fantasycosto']; ?>
+ </font>
 	  <li class="special">
 	    <a href="#menu" class="menuToggle"><span>Menu</span></a>
 	    <div id="menu">
-	      <ul>
-                <li><a href="index.php">Home</a></li>
-		<li><a href="index.php?controller=Mercato&task=riempi">Mercato</a></li>
-		<li><a href="index.php?controller=Formazione&task=nuova">Formazione</a></li>
-		<li><a href="index.php?controller=Registrazione&task=logout">Log Out</a></li>
+	      <ul <li><a href="index.php?controller=Classifica&task=nuova">Classifica</a></li>
+		      <li><a href="index.php?controller=Mercato&task=riempi">Mercato</a></li>
+                      <li><a href="index.php?controller=Squadra&task=visualizza">Squadra</a></li>
+		      <li><a href="index.php?controller=Formazione&task=nuova">Formazione</a></li>
+		      <li><a href="index.php?controller=Registrazione&task=logout">Log Out</a></li>
 	      </ul>
 	    </div>
 	  </li>
@@ -52,7 +57,7 @@
 	  .... il sito per il vostro Calcio<br /></font>
 	</p>
 	<!-- per cancellare i bottoni di login <div class="cancellabottone"> -->
-        <form method="POST" enctype="multipart/form-data" action="index.php?controller=Registrazione&task=login">	
+        <form method="POST" enctype="multipart/form-data" action="index.php?controller=Registrazione&task=login">
           <div>
             <ul class="actions">
 	        <li>

@@ -38,6 +38,7 @@ class CSquadra {
             $array_giocatori=$DSquadra->getgiocatori();
             $modulo=array('3-4-3','3-5-2','4-3-3','4-4-2','4-5-1','5-3-2','5-4-1');
             $VSquadra->impostaDati('moduli',$modulo);
+            if(isset($array_giocatori)){
             $portieri=$array_giocatori['POR'];
             $portieri1=array();
             foreach($portieri as $key => $value)
@@ -57,31 +58,15 @@ class CSquadra {
             $attacco1=array();
             foreach($attacco as $key => $value)
                 array_push($attacco1,$value->getAsArray());
+            $crediti=$DSquadra->get_crediti();
             $VSquadra->impostaDati('attacco',$attacco1);
+            $VSquadra->impostaDati('fantasycosto',$crediti);
+            }
             return $VSquadra->processaTemplate();
 			/*$query->commit();
 		} catch (Exception $e) {
 			$query->rollBack();
 			throw new Exception($e->getMessage());
-		}*/
-	}
-	/**
-	 * Permette di aggiornare una squadra
-	 */
-	public function Aggiorna(){
-		$session = USingleton::getInstance('USession');
-		$fdb=USingleton::getInstance('Fdb');
-		$VSquadra=USingleton::getInstance('VSquadra');
-		$dati = $VSquadra->getDati();
-		$fsquadra=USingleton::getInstance('FSquadra');
-		$query=$fdb->getDb();
-		//$query->beginTransaction();
-		//try{
-			$fsquadra->aggiornaSquadra($dati);
-			/*$query->commit();
-		} catch (Exception $e) {
-			$query->rollback();
-			throw new Exception($e->getMessage());			
 		}*/
 	}
 }

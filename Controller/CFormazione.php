@@ -61,7 +61,7 @@ class CFormazione {
                 $nome_squadra=$session->getValore('squadra');
                 $query=$Fdb->getDataBase();
                 $FFormazione->ResetFormazione($nome_squadra);
-               header("location: index.php?controller=Squadra&task=visualizza");
+                header("location: index.php?controller=Squadra&task=visualizza");
                  
 	}
         public function Visualizza(){
@@ -89,38 +89,26 @@ class CFormazione {
                 $titolari1=$DFormazione->gettitolari();
                 $portieri=$titolari1['POR'];
                 $portieri1=array();
-                $totale=0;
-                foreach($portieri as $key => $value){
+                foreach($portieri as $key => $value)
                         array_push($portieri1,$value->getAsArray());
-                        $totale=$totale+$portieri1[$key]['voto'];
-                        
-                }
                 $VFormazione->impostaDati('portieri',$portieri1);
                  $difensori=$titolari1['DIF'];
                 $difensori1=array();
-                foreach($difensori as $key => $value){
+                foreach($difensori as $key => $value)
                         array_push($difensori1,$value->getAsArray());
-                        $totale=$totale+$difensori1[$key]['voto'];
-                }
-               
                 $VFormazione->impostaDati('difensori',$difensori1);
                 $centrocampo=$titolari1['CEN'];
                 $centrocampo1=array();
-                foreach($centrocampo as $key => $value){
+                foreach($centrocampo as $key => $value)
                         array_push($centrocampo1,$value->getAsArray());
-                        $totale=$totale+$centrocampo1[$key]['voto'];
-                        
-                }
                 $VFormazione->impostaDati('centrocampo',$centrocampo1);
                  $attacco=$titolari1['ATT'];
                 $attacco1=array();
-                foreach($attacco as $key => $value){
+                foreach($attacco as $key => $value)
                         array_push($attacco1,$value->getAsArray());
-                        $totale=$totale+$attacco1[$key]['voto'];
-                        $session->setValore('fantasypunteggio',$totale);
-                }
                 $VFormazione->impostaDati('attacco',$attacco1);
-                $VFormazione->impostaDati('totale',$totale);
+                $punteggio_totale=$DFormazione->getpunteggio();
+                $VFormazione->impostaDati('totale',$punteggio_totale);
                 return $VFormazione->processaTemplate();
         }
 }

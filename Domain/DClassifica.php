@@ -31,7 +31,6 @@ class DClassifica {
     public function get_partitegiocate(){
         return $this->partite_giocate;
     }
-
     public function set_utente(DUtente $_utente){
         $this->utente=$_utente;
     }

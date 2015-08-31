@@ -11,15 +11,15 @@ class FFormazione extends Fdb {
 	public function __construct(){
 		$this->db = USingleton::getInstance('Fdb');
 		$this->tabella="`Formazione`";
-		$this->chiavedb="(` modulo`, `titolari`, `squadra`)";
-		$this->bind="(:modulo, :titolari, :squadra)";
+		$this->chiavedb="(` modulo`, `titolari`, `squadra`,`fpunteggio`)";
+		$this->bind="(:modulo, :titolari, :squadra, :fpunteggio)";
 	}
 	
 public function inserisciFormazione(DFormazione $_object, $nome_squadra){
 		$dati=$_object->getasArray();
                 $this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
                 foreach ($dati['titolari'] as $key => $value) {
-                    $stringa="('$dati[modulo]','$value','$nome_squadra')";
+                    $stringa="('$dati[modulo]','$value','$nome_squadra',$dati[fpunteggio])";
                     $this->db->insert($stringa);
                 } 
 		
@@ -30,6 +30,10 @@ public function inserisciFormazione(DFormazione $_object, $nome_squadra){
 	        return $this->db->queryFormazione($nomesquadra,$modulo);
              
 	}
+        public function getpunteggiobySquadra($nomesquadra){
+                $this->db->setvariabili($this->tabella,"squadra",":squadra");
+	        return $this->db->queryGenerica("*","=",$nomesquadra);
+        }
         public function ResetFormazione($nomesquadra){
             
 		$this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);

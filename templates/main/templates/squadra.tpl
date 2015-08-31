@@ -8,6 +8,7 @@
     </div>
   </section>
   <h5>Elenco Rosa</h5>
+   <font color=yellow>CREDITI </font>   <font color=yellow>{$fantasycosto}</font>
   <form method="post" action="index.php?controller=Formazione&task=nuova">
   <input type="submit" name="submit" id="submit_1" class="button special" value="Inserisci Formazione"/>
   <br>

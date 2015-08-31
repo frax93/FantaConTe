@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-28 21:10:05
+<?php /* Smarty version 2.6.13, created on 2015-08-31 10:55:27
          compiled from mercato.tpl */ ?>
 <div id="main"> 
     <br>
@@ -13,8 +13,7 @@
   <h5>Mercato Giocatori</h5>
   <form name="mercato" method="post" action="index.php?controller=Mercato&task=salva"> <!--abbiamo messo name -->
   <input type="submit" name="submit" id="submit_1" class="button special" value="Salva">
-  <a id="crediti" > CREDITI <?php echo $this->_tpl_vars['crediti']; ?>
-</a> <!--abbiamo messo crediti-->
+  <div id="crediti" > CREDITI : 500</div> 
   <h4><font color="orange">    Portieri   </font> </h4>
   <div class="table-wrapper">
     <table class="tabellaportieri">

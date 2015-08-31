@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-28 21:03:10
+<?php /* Smarty version 2.6.13, created on 2015-08-31 10:14:57
          compiled from squadra.tpl */ ?>
 <div id="main"> 
     <br><br>
@@ -10,6 +10,8 @@
     </div>
   </section>
   <h5>Elenco Rosa</h5>
+   <font color=yellow>CREDITI </font>   <font color=yellow><?php echo $this->_tpl_vars['fantasycosto']; ?>
+</font>
   <form method="post" action="index.php?controller=Formazione&task=nuova">
   <input type="submit" name="submit" id="submit_1" class="button special" value="Inserisci Formazione"/>
   <br>

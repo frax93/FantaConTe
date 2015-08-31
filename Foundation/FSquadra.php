@@ -11,14 +11,14 @@ class FSquadra extends Fdb {
 	public function __construct(){
 		$this->db = USingleton::getInstance('Fdb');
 		$this->tabella="squadra";
-		$this->chiavedb="( `nome`)";
-		$this->bind="( :nome)";
+		$this->chiavedb="( `nome`,`crediti`)";
+		$this->bind="( :nome, :crediti)";
 	}
 	
         public function inserisciSquadra(DSquadra $object){
                 $dati=$object->getAsArray();
 		$this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
-                $stringa="('$dati[nome]')";
+                $stringa="('$dati[nome]', '$dati[crediti]')";
 		$this->db->insert($stringa);
                 
         }

@@ -10,27 +10,27 @@ class DFormazione{
     
     private $modulo;
     private $titolari;
-    private $panchina;
     private $squadra;
+    private $fpunteggio;
     private $countdif;
     private $countcen;
     private $countatt;
     public function __construct(DSquadra $squadra,$_modulo){
         $this->setmodulo($_modulo);
         $this->setteam($squadra);
+        $this->fpunteggio=0;
         $this->countdif=0;
         $this->countcen=0;
         $this->countatt=0;
     } 
+    public function getpunteggio(){
+        return $this->fpunteggio;
+    }
     private function getmodulo(){
         return $this->modulo;
     }
     public function gettitolari(){
         return $this->titolari;
-    }
-    public function getpanchina(){
-        $panchina=$this->panchina;
-        return $panchina;
     }
     public function setmodulo($_modulo){
         if(isset($_modulo))
@@ -43,9 +43,6 @@ class DFormazione{
     }
     private function settitolari(){
         $this->titolari=array('POR'=>array(),'DIF'=>array(),'CEN'=>array(),'ATT'=>array());    
-    }
-    private function setpanchina(){
-        $this->panchina=array();
     }
     private function controlla(DGiocatore $_giocatore,$id){
          if($_giocatore->getid()==$id){
@@ -72,22 +69,15 @@ class DFormazione{
                foreach ($giocatori as $key2 => $id){
                        $ruolo=$this->controlla($_giocatore,$id);
                        if($ruolo!="Non Corrisponde ID"){ 
+                           $this->fpunteggio=$this->fpunteggio+$_giocatore->getVoto();
                           array_push($this->titolari[$ruolo],$_giocatore);
                           unset($giocatori_squadra[$ruolo][array_search($_giocatore, $giocatori_squadra)]);
                        }
               }
             }
         }
-        $this->impostapanchinari($giocatori_squadra);
     }
     
-    private function impostapanchinari($giocatori_squadra){ 
-        if(count($this->titolari)==11&&isset($this->titolari)){
-            $this->panchina=$giocatori_squadra;
-            print_r($this->panchina);
-        }
-        else return "non sono stati schierati tutti i titolari!!";
-    }
     public function reset(){
         $this->settitolari();
         $this->setpanchina();
@@ -109,9 +99,6 @@ class DFormazione{
     	}
     	return $result;
 
-    }
-    public function get_panchina(){
-        return $this->panchina;
     }
 }
 ?>

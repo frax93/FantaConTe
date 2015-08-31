@@ -26,14 +26,17 @@
       <h1><a href="index.php?controller=Classifica&task=nuova"><h2><font color=green>{$Fanta}</font><font color=white>{$Con}</font><font color=red>{$Te}</font></h2></a></h1>
       <nav id="nav">
         <ul>
+             <font color=LIME> Benvenuto {$Benvenuto}</font>&nbsp;&nbsp;&nbsp;&nbsp;
+             <font color=yellow>CREDITI </font>
+             <font color=yellow> {$fantasycosto} </font>
 	  <li class="special">
 	    <a href="#menu" class="menuToggle"><span>Menu</span></a>
 	    <div id="menu">
-	      <ul>
-                <li><a href="index.php">Home</a></li>
-		<li><a href="index.php?controller=Mercato&task=riempi">Mercato</a></li>
-		<li><a href="index.php?controller=Formazione&task=nuova">Formazione</a></li>
-		<li><a href="index.php?controller=Registrazione&task=logout">Log Out</a></li>
+	      <ul <li><a href="index.php?controller=Classifica&task=nuova">Classifica</a></li>
+		      <li><a href="index.php?controller=Mercato&task=riempi">Mercato</a></li>
+                      <li><a href="index.php?controller=Squadra&task=visualizza">Squadra</a></li>
+		      <li><a href="index.php?controller=Formazione&task=nuova">Formazione</a></li>
+		      <li><a href="index.php?controller=Registrazione&task=logout">Log Out</a></li>
 	      </ul>
 	    </div>
 	  </li>
@@ -46,7 +49,7 @@
 	  .... il sito per il vostro Calcio<br /></font>
 	</p>
 	<!-- per cancellare i bottoni di login <div class="cancellabottone"> -->
-        <form method="POST" enctype="multipart/form-data" action="index.php?controller=Registrazione&task=login">	
+        <form method="POST" enctype="multipart/form-data" action="index.php?controller=Registrazione&task=login">
           <div>
             <ul class="actions">
 	        <li>

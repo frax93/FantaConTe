@@ -18,6 +18,7 @@ CREATE TABLE IF NOT EXISTS `Formazione`(
     ` modulo`  CHAR(5) NOT NULL,
     `titolari` VARCHAR(5) NOT NULL,
     `squadra`  VARCHAR(20) NOT NULL ,
+    `fpunteggio` INTEGER NOT NULL,
     PRIMARY KEY(`titolari`,`squadra`)
 );
 CREATE TABLE IF NOT EXISTS `Classifica`(
@@ -29,6 +30,7 @@ CREATE TABLE IF NOT EXISTS `Classifica`(
 );
 CREATE TABLE IF NOT EXISTS `Squadra`(
     `nome`          VARCHAR(20) NOT NULL ,
+    `crediti`          INTEGER NOT NULL ,
     PRIMARY KEY (`nome`)
 );
 

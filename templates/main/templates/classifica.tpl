@@ -28,13 +28,12 @@
 	    <nav id="nav">
     
 	      <ul>
-                  <font color=LIME> Benvenuto {$Benvenuto}</font>&nbsp;&nbsp;&nbsp;&nbsp;<font color=yellow>CREDITI </font>
-                  <font color=yellow> {$crediti} 250 </font>
+                  <font color=LIME> Benvenuto {$Benvenuto}</font>&nbsp;&nbsp;&nbsp;&nbsp;
                 <li class="special">
 		  <a href="#menu" class="menuToggle"><span>Menu</span></a>
 		  <div id="menu">
 	            <ul>
-                      <li><a href="index.php?controller=Classifica&task=nuova">Home</a></li>
+                      <li><a href="index.php?controller=Classifica&task=nuova">Classifica</a></li>
 		      <li><a href="index.php?controller=Mercato&task=riempi">Mercato</a></li>
                       <li><a href="index.php?controller=Squadra&task=visualizza">Squadra</a></li>
 		      <li><a href="index.php?controller=Formazione&task=nuova">Formazione</a></li>
@@ -66,7 +65,8 @@
             {/foreach}
           </tbody>
         </table>
-      </div>	
+      </div>
+            <div><font color=yellow>Complimenti {$vincitore} hai vinto!</font></div>
     </div>
     <footer id="footer">
       <ul class="copyright">

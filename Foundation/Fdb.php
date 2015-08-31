@@ -58,7 +58,7 @@ Class Fdb{
 	  * @param array $_operatori Operatori logici da applicare in caso ci siano più condizioni (AND,OR,ORDER BY)
 	  * @return array $result Risultato della query effettuata
 	  */
-	 public function queryGenerica($_column,$_paragone,$_parametri = NULL,array $_operatori = NULL) {
+	 public function queryGenerica($_column,$_paragone,$_parametri = NULL, $_operatori = NULL) {
 	 	if (preg_match('/^[^,]+$/',$this->tabella)) {
 	 		$sql = "SELECT ".$_column." FROM ".$this->tabella." WHERE ";   
 	 		if (is_array($_parametri)) {
@@ -107,7 +107,7 @@ Class Fdb{
 	 			$query=$this->db->prepare($sql);
 	 		}
 	 	}
-	 	try {   
+	 	try {  
 	 		$query->execute();
 	 		$result=$query->fetchAll(PDO::FETCH_ASSOC);
 	 	} 

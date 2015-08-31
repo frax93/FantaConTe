@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-28 20:43:04
+<?php /* Smarty version 2.6.13, created on 2015-08-31 11:19:02
          compiled from classifica.tpl */ ?>
 <html>
   <head>
@@ -35,14 +35,12 @@
     
 	      <ul>
                   <font color=LIME> Benvenuto <?php echo $this->_tpl_vars['Benvenuto']; ?>
-</font>&nbsp;&nbsp;&nbsp;&nbsp;<font color=yellow>CREDITI </font>
-                  <font color=yellow> <?php echo $this->_tpl_vars['crediti']; ?>
- 250 </font>
+</font>&nbsp;&nbsp;&nbsp;&nbsp;
                 <li class="special">
 		  <a href="#menu" class="menuToggle"><span>Menu</span></a>
 		  <div id="menu">
 	            <ul>
-                      <li><a href="index.php?controller=Classifica&task=nuova">Home</a></li>
+                      <li><a href="index.php?controller=Classifica&task=nuova">Classifica</a></li>
 		      <li><a href="index.php?controller=Mercato&task=riempi">Mercato</a></li>
                       <li><a href="index.php?controller=Squadra&task=visualizza">Squadra</a></li>
 		      <li><a href="index.php?controller=Formazione&task=nuova">Formazione</a></li>
@@ -80,7 +78,9 @@
             <?php endforeach; endif; unset($_from); ?>
           </tbody>
         </table>
-      </div>	
+      </div>
+            <div><font color=yellow>Complimenti <?php echo $this->_tpl_vars['vincitore']; ?>
+ hai vinto!</font></div>
     </div>
     <footer id="footer">
       <ul class="copyright">

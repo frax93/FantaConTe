@@ -19,7 +19,7 @@ class CClassifica{
             $FClassifica=USingleton::getInstance('FClassifica');
             $FUtente=  USingleton::getInstance('FUtente');
             $Fdb=USingleton::getInstance('Fdb');
-            $Session=  USingleton::getInstance('USession');
+            $FFormazione=  USingleton::getInstance('FFormazione');
             $q=$Fdb->getDataBase();
             $utenti=$FUtente->getUtenti();
             foreach($utenti as $key => $utente){
@@ -30,17 +30,17 @@ class CClassifica{
                                      $utente['stato_attivazione'], $utente['nome'], 
                                      $utente['cognome'], $utente['tipo_utente'],$DSquadra);
                 $classifica=new DClassifica($Dutente);
-                $fantasypunteggio=$Session->getValore('fantasypunteggio');
-                $classifica->set_punteggio($fantasypunteggio);
+                $punteggio=$FFormazione->getpunteggiobySquadra($squadra['nome']);
+                $punteggio=$punteggio[0]['fpunteggio'];
+                $classifica->set_punteggio($punteggio);
                 $FClassifica->inserisciClassifica($classifica);
-                $Session->cancellaValore('fantasypunteggio');
                 }
             }
             header("location: index.php?controller=Classifica&task=visualizza");
         }
         public function Visualizza(){
                $VClassifica=USingleton::getInstance('VClassifica');
-               $FClassifica=USingleton::getInstance('FClassifica');      
+               $FClassifica=USingleton::getInstance('FClassifica');  
                $Fdb=USingleton::getInstance('Fdb');
                $q=$Fdb->getDataBase();
                $classifica=$FClassifica->getClassifica();
@@ -48,6 +48,8 @@ class CClassifica{
                foreach($classifica as $key => $class)
                    array_push($classifica1, $class);
                $VClassifica->impostaDati('arr',$classifica1);
+               $vincitore=$classifica1[0]['nome_squadra'];
+               $VClassifica->impostaDati('vincitore',$vincitore);
                return $VClassifica->processaTemplate();
                /*}
                catch(Exception $error) {
