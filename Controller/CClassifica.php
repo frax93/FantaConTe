@@ -51,7 +51,7 @@ class CClassifica{
                 $email=$session->getValore('email');
                 $query=$Fdb->getDataBase();
                 $FClassifica->ResetUtenteClassifica($email); 
-                header("location: index.php?controller=Classifica&task=visualizza");
+                header("location: index.php?controller=Formazione&task=visualizza");
                  
 	}
         

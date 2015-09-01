@@ -68,7 +68,10 @@
             <td> <select name={$dif.id} id="voto">
                 <optgroup id="voto">
                     {foreach from=$voti item=voto}
-                    <option value={$voto}>{$voto}</option>
+                   {if $voto eq "6"}
+                    <option value={$voto} {$selected}{$default} >{$voto}</option>
+                    {else}
+                        <option value={$voto}>{$voto}</option> {/if}
                     {/foreach}
                 </optgroup>
              </select>
@@ -100,7 +103,10 @@
             <td> <select name={$cen.id} id="voto">
                 <optgroup id="voto">
                     {foreach from=$voti item=voto}
-                    <option value={$voto}>{$voto}</option>
+                    {if $voto eq "6"}
+                    <option value={$voto} {$selected}{$default} >{$voto}</option>
+                    {else}
+                        <option value={$voto}>{$voto}</option> {/if}
                     {/foreach}
                 </optgroup>
              </select>
@@ -132,7 +138,10 @@
             <td> <select name={$att.id} id="voto">
                 <optgroup id="voto">
                     {foreach from=$voti item=voto}
-                    <option value={$voto}>{$voto}</option>
+                    {if $voto eq "6"}
+                    <option value={$voto} {$selected}{$default} >{$voto}</option>
+                    {else}
+                        <option value={$voto}>{$voto}</option> {/if}
                     {/foreach}
                 </optgroup>
              </select>
