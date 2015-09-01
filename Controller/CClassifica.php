@@ -41,20 +41,6 @@ class CClassifica{
               header("location: index.php?controller=Classifica&task=visualizza");
         }
         
-        /**
-	 * Permette di modificare la classifica
-	 */
-	public function Modifica() {
-                $FClassifica=USingleton::getInstance('FClassifica');
-                $Fdb=USingleton::getInstance('Fdb');
-                $session=  USingleton::getInstance('USession');
-                $email=$session->getValore('email');
-                $query=$Fdb->getDataBase();
-                $FClassifica->ResetUtenteClassifica($email); 
-                header("location: index.php?controller=Formazione&task=visualizza");
-                 
-	}
-        
         public function Visualizza(){
                $VClassifica=USingleton::getInstance('VClassifica');
                $FClassifica=USingleton::getInstance('FClassifica');  

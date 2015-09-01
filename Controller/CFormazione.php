@@ -36,6 +36,7 @@ class CFormazione {
                 $modulo=$dati[0];
                 unset($dati[0]);
                 $giocatori_selezionati=$dati;
+                print_r($giocatori_selezionati);
                 //Inserire $nome per fare la cosa dinamica
                 foreach($giocatori as $key => $value){
                     $DGiocatore=new DGiocatore($value['id'],$value['nome'],$value['cognome'],$value['ruolo'],
@@ -48,7 +49,7 @@ class CFormazione {
                 $fformazione->inserisciFormazione($Formazione,$nome_squadra);
                 
                 //Qui si deve salvare sul Database e poi chiamare con header
-                header("location: index.php?controller=Formazione&task=visualizza");
+               header("location: index.php?controller=Formazione&task=visualizza");
                 
                
 	}
@@ -57,11 +58,15 @@ class CFormazione {
 	 */
 	public function Modifica() {
                 $FFormazione=USingleton::getInstance('FFormazione');
+                $FClassifica=USingleton::getInstance('FClassifica');
                 $Fdb=USingleton::getInstance('Fdb');
                 $session=  USingleton::getInstance('USession');
                 $nome_squadra=$session->getValore('squadra');
                 $query=$Fdb->getDataBase();
                 $FFormazione->ResetFormazione($nome_squadra);  
+                $email=$session->getValore('email');
+                $FClassifica->ResetUtenteClassifica($email); 
+                
                 header("location: index.php?controller=Squadra&task=visualizza");
                  
 	}

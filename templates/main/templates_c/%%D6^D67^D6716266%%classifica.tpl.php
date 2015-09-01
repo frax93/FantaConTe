@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-09-01 10:29:45
+<?php /* Smarty version 2.6.13, created on 2015-09-01 15:09:59
          compiled from classifica.tpl */ ?>
 <html>
   <head>
@@ -22,7 +22,6 @@
       <article id="main">
 	<section class="spotlight">
 	  <div class="content"> </div>
-         <button class="button special" type="submit" name="submit" id="submit_1"><a href="index.php?controller=Classifica&task=modifica">CANCELLATI DALLA CLASSIFICA</a></button>
         </section>
     </div>
         <header id="header">

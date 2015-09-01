@@ -68,7 +68,7 @@
             <td> <select name={$dif.id} id="voto">
                 <optgroup id="voto">
                     {foreach from=$voti item=voto}
-                   {if $voto eq "6"}
+                      {if $voto eq "6"}
                     <option value={$voto} {$selected}{$default} >{$voto}</option>
                     {else}
                         <option value={$voto}>{$voto}</option> {/if}

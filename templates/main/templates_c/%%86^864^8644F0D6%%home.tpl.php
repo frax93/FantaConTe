@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-09-01 11:43:31
+<?php /* Smarty version 2.6.13, created on 2015-09-01 15:38:07
          compiled from home.tpl */ ?>
 <html>
   <head>
@@ -25,11 +25,7 @@
     
         </section>
     </div>
-    <header id="header">
-      <h1><a href="index.php?controller=Registrazione&task=tutorial"  class="more scrolly"><h2><font color=green>TUT</font><font color=white>OR</font><font color=red>IAL</font></h2></a></h1>
-      <nav id="nav">
-      </nav>
-    </header>
+    
     <div class="inner" id="banner">
       <h2><font color=green>Fanta</font><font color=white>Con</font><font color=red>Te</font></h2>
         <p><font color=yellow>Crea la tua squadra e diventa un Allenatore<br/>
@@ -56,6 +52,8 @@
             <a href="index.php?controller=Registrazione&task=modulo_registrazione" class="button">Registrati</a>
 	  </div>
     </div>
+    <a href="index.php?controller=Registrazione&task=tutorial" class="more scrolly">Segui Tutorial</a>
+    <!-- collegare il bottone per il tutorial -->
     <ul class="copyright">
       <li>&copy; Murador & Taranta & Maione</li>	
     </ul>

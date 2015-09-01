@@ -19,7 +19,6 @@
       <article id="main">
 	<section class="spotlight">
 	  <div class="content"> </div>
-         <button class="button special" type="submit" name="submit" id="submit_1"><a href="index.php?controller=Classifica&task=modifica">CANCELLATI DALLA CLASSIFICA</a></button>
         </section>
     </div>
         <header id="header">

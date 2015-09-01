@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-31 17:39:21
+<?php /* Smarty version 2.6.13, created on 2015-09-01 15:21:04
          compiled from Amministratore.tpl */ ?>
 <div id="main"> 
     <br>
@@ -93,9 +93,15 @@
                     <?php $_from = $this->_tpl_vars['voti']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['voto']):
 ?>
+                      <?php if ($this->_tpl_vars['voto'] == '6'): ?>
                     <option value=<?php echo $this->_tpl_vars['voto']; ?>
-><?php echo $this->_tpl_vars['voto']; ?>
+ <?php echo $this->_tpl_vars['selected'];  echo $this->_tpl_vars['default']; ?>
+ ><?php echo $this->_tpl_vars['voto']; ?>
 </option>
+                    <?php else: ?>
+                        <option value=<?php echo $this->_tpl_vars['voto']; ?>
+><?php echo $this->_tpl_vars['voto']; ?>
+</option> <?php endif; ?>
                     <?php endforeach; endif; unset($_from); ?>
                 </optgroup>
              </select>
@@ -136,9 +142,15 @@
                     <?php $_from = $this->_tpl_vars['voti']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['voto']):
 ?>
+                    <?php if ($this->_tpl_vars['voto'] == '6'): ?>
                     <option value=<?php echo $this->_tpl_vars['voto']; ?>
-><?php echo $this->_tpl_vars['voto']; ?>
+ <?php echo $this->_tpl_vars['selected'];  echo $this->_tpl_vars['default']; ?>
+ ><?php echo $this->_tpl_vars['voto']; ?>
 </option>
+                    <?php else: ?>
+                        <option value=<?php echo $this->_tpl_vars['voto']; ?>
+><?php echo $this->_tpl_vars['voto']; ?>
+</option> <?php endif; ?>
                     <?php endforeach; endif; unset($_from); ?>
                 </optgroup>
              </select>
@@ -179,9 +191,15 @@
                     <?php $_from = $this->_tpl_vars['voti']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['voto']):
 ?>
+                    <?php if ($this->_tpl_vars['voto'] == '6'): ?>
                     <option value=<?php echo $this->_tpl_vars['voto']; ?>
-><?php echo $this->_tpl_vars['voto']; ?>
+ <?php echo $this->_tpl_vars['selected'];  echo $this->_tpl_vars['default']; ?>
+ ><?php echo $this->_tpl_vars['voto']; ?>
 </option>
+                    <?php else: ?>
+                        <option value=<?php echo $this->_tpl_vars['voto']; ?>
+><?php echo $this->_tpl_vars['voto']; ?>
+</option> <?php endif; ?>
                     <?php endforeach; endif; unset($_from); ?>
                 </optgroup>
              </select>

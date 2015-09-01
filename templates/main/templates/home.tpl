@@ -23,7 +23,6 @@
         </section>
     </div>
     <header id="header">
-      <h1><a href="index.php?controller=Registrazione&task=tutorial"  class="more scrolly"><h2><font color=green>TUT</font><font color=white>OR</font><font color=red>IAL</font></h2></a></h1>
       <nav id="nav">
       </nav>
     </header>
@@ -53,6 +52,8 @@
             <a href="index.php?controller=Registrazione&task=modulo_registrazione" class="button">Registrati</a>
 	  </div>
     </div>
+    <a href="index.php?controller=Registrazione&task=tutorial" class="more scrolly">Segui Tutorial</a>
+    <!-- collegare il bottone per il tutorial -->
     <ul class="copyright">
       <li>&copy; Murador & Taranta & Maione</li>	
     </ul>
