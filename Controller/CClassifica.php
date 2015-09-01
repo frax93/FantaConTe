@@ -13,6 +13,8 @@ class CClassifica{
 				return $this->Nuova();
 			case 'visualizza':
 				return $this->Visualizza();
+                        case 'modifica':
+				return $this->Modifica();
 			}
 	}
         public function Nuova(){
@@ -36,8 +38,23 @@ class CClassifica{
                 $FClassifica->inserisciClassifica($classifica);
                 }
             }
-            header("location: index.php?controller=Classifica&task=visualizza");
+              header("location: index.php?controller=Classifica&task=visualizza");
         }
+        
+        /**
+	 * Permette di modificare la classifica
+	 */
+	public function Modifica() {
+                $FClassifica=USingleton::getInstance('FClassifica');
+                $Fdb=USingleton::getInstance('Fdb');
+                $session=  USingleton::getInstance('USession');
+                $email=$session->getValore('email');
+                $query=$Fdb->getDataBase();
+                $FClassifica->ResetUtenteClassifica($email); 
+                header("location: index.php?controller=Classifica&task=visualizza");
+                 
+	}
+        
         public function Visualizza(){
                $VClassifica=USingleton::getInstance('VClassifica');
                $FClassifica=USingleton::getInstance('FClassifica');  

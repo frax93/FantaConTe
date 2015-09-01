@@ -155,6 +155,17 @@ Class Fdb{
     public function deleteRighe($valore){ 
         $sql="DELETE FROM ".$this->tabella." WHERE ";
         $sql=$sql."`squadra`='$valore'";
+        var_dump($sql);
+        $query=$this->db->prepare($sql);
+        $query->execute();
+        $result=$query->rowCount();
+        return $result;
+    }
+    
+    public function deleteUtente($valore){ 
+        $sql="DELETE FROM ".$this->tabella." WHERE ";
+        $sql=$sql."`email`='$valore'";
+        var_dump($sql);
         $query=$this->db->prepare($sql);
         $query->execute();
         $result=$query->rowCount();

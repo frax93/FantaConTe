@@ -23,7 +23,7 @@ public function inserisciClassifica(DClassifica $_object){
                 $squadra=$dati['utente']->getsquadra();
                 $nomesquadra=$squadra['nome'];
 		$this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
-                $stringa="('$email','$nomesquadra','$dati[partite_giocate]','$dati[punteggio]')";
+                $stringa="('$email','$nomesquadra','$dati[punteggio]')";
 		$this->db->insert($stringa);
         }
 
@@ -48,6 +48,12 @@ public function inserisciClassifica(DClassifica $_object){
 
 		return $this->db->update($valori);
 
+	}
+        
+         public function ResetUtenteClassifica($email){           
+		$this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
+	        $this->db->deleteUtente($email);
+             
 	}
 	
 	public function deleteClassifica($dati) {

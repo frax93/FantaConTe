@@ -61,7 +61,7 @@ class CFormazione {
                 $session=  USingleton::getInstance('USession');
                 $nome_squadra=$session->getValore('squadra');
                 $query=$Fdb->getDataBase();
-                $FFormazione->ResetFormazione($nome_squadra);
+                $FFormazione->ResetFormazione($nome_squadra);  
                 header("location: index.php?controller=Squadra&task=visualizza");
                  
 	}
