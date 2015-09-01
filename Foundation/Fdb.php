@@ -136,7 +136,6 @@ Class Fdb{
         return $result;
     }
     public function update($voto,$id){
-        //UPDATE `Giocatori` SET `voto`= WHERE `id`=1
                 $sql = "UPDATE "."`Giocatori`"." SET "."`voto`"."=".$voto." WHERE "."`id`"."=".$id;
 	 	$query=$this->db->prepare($sql);
 	 	$query->execute();

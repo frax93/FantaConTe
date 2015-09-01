@@ -41,24 +41,5 @@ public function inserisciFormazione(DFormazione $_object, $nome_squadra){
              
 	}
 	
-       
-	public function aggiornaFormazione($dati) {
-
-		foreach ($dati as $key => $value) {
-
-			$chiavedb[]=$key;
-
-			$bind[]=":".$key;
-
-			$valori[]=$value;
-
-		}
-
-		$this->db->setvariabili($this->tabella,$chiavedb,$bind);
-
-		return $this->db->update($valori);
-
-	}
-	
 }
 ?>
