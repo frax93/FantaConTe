@@ -40,7 +40,7 @@ class VAmministratore extends View{
         unset($_REQUEST['controller']);
         unset($_REQUEST['task']);
         unset($_REQUEST['submit']);
-        $voti=array();
+        $voti=array(0=>'');
         if(isset($_REQUEST)){
           foreach($_REQUEST as $key => $value)
             array_push($voti,$value);
