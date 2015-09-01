@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-09-01 15:38:07
+<?php /* Smarty version 2.6.13, created on 2015-09-01 15:38:56
          compiled from home.tpl */ ?>
 <html>
   <head>
@@ -25,7 +25,10 @@
     
         </section>
     </div>
-    
+    <header id="header">
+      <nav id="nav">
+      </nav>
+    </header>
     <div class="inner" id="banner">
       <h2><font color=green>Fanta</font><font color=white>Con</font><font color=red>Te</font></h2>
         <p><font color=yellow>Crea la tua squadra e diventa un Allenatore<br/>

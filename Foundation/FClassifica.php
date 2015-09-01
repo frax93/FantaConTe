@@ -31,45 +31,11 @@ public function inserisciClassifica(DClassifica $_object){
 		$this->db->setvariabili($this->tabella,"1 ","");
 	        return $this->db->queryGenerica("*","ORDER BY `punteggio` DESC");
 	}
-	
-	public function aggiornaClassifica($dati) {
-
-		foreach ($dati as $key => $value) {
-
-			$chiavedb[]=$key;
-
-			$bind[]=":".$key;
-
-			$valori[]=$value;
-
-		}
-
-		$this->db->setvariabili($this->tabella,$chiavedb,$bind);
-
-		return $this->db->update($valori);
-
-	}
         
          public function ResetUtenteClassifica($email){           
 		$this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
 	        $this->db->deleteUtente($email);
              
-	}
-	
-	public function deleteClassifica($dati) {
-
-		$chiavedb = array_keys($dati); //ritorna le chiavi numeriche e stringhe dall'array
-
-		$chiavedb = $chiavedb[0];
-
-		$bind = ":".$chiavedb;
-
-		$valori = $dati[$chiavedb];
-
-		$this->db->setvariabili($this->tabella,$chiavedb,$bind);
-
-		return $this->db->delete($valori);
-
 	}
 }
 ?>
