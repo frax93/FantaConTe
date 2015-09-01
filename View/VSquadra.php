@@ -7,26 +7,6 @@
  */
 
 class VSquadra extends View {
-    /**
-     * @param type $key
-     * @param type $valore
-     */
-    public function impostaDati($key,$valore) {
-        $this->assign($key,$valore);
-    }
-    /**
-     * 
-     * @return type
-     */
-    public function processaTemplate() {
-        return $this->fetch('squadra.tpl');
-    }
-    public function getTask(){
-        if (isset($_REQUEST['task']))
-            return $_REQUEST['task'];
-        else
-            return false;
-    }
     
 }
 ?>

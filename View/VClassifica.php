@@ -6,29 +6,12 @@
  * @author Michele Taranta
  */
 class VClassifica extends View{
-    /**
-     * @param type $key
-     * @param type $valore
-     */
-     public function impostaDati($key,$valore) {
-        $this->assign($key,$valore);
-    }
-    /**
+   /**
      * 
      * @return type
      */
-    public function processaTemplate() {
+    public function processaClassifica() {
         return $this->display('classifica.tpl');
-    }
-    /**
-     * 
-     * @return boolean
-     */
-    public function getTask(){
-        if (isset($_REQUEST['task']))
-            return $_REQUEST['task'];
-        else
-            return false;
     }
 }
 

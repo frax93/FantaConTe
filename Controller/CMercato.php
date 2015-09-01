@@ -26,7 +26,6 @@ class CMercato{
      */
     public function riempi(){
                 $vmercato= USingleton::getInstance('VMercato');
-                $dMercato=USingleton::getInstance('DMercato');
 		$fmercato=USingleton::getInstance('FMercato');
 		$fdb=USingleton::getInstance('Fdb');
 		/*$query=$fdb->getDataBase();
@@ -58,7 +57,7 @@ class CMercato{
                     $vmercato->impostaDati('centrocampo',$centrocampo);
                     $vmercato->impostaDati('attacco',$attacco);
                     //$query->commit();
-                    return $vmercato->processaTemplate();
+                    return $vmercato->processaTemplate('mercato');
                     
                /* }
                 catch (Exception $e) {

@@ -88,20 +88,20 @@ class CRegistrazione {
               if($data['password_1']===$data['password']) {
                 unset($data['password_1']);
                 $dutente=new DUtente($data['username'],$data['password'],$data['email'],
-                        "NonAttivato", $data['nome'],$data['cognome'],"normale",$Squadra);
+                        "Attivato", $data['nome'],$data['cognome'],"normale",$Squadra);
                 $dutente->set_activationcode();
                 $futente->inserisciUtente($dutente);
                 $this->invia_email($dutente);
                 //$this->attivazione();
                 //$query->commit();
-                return $VRegistrazione->processaTemplate('success');
+                return $VRegistrazione->processaTemplate('registrati_success');
                 }  
             throw new Exception("Utente già registrato");
             }
         }
         catch (Exception $e){
                 //$query->rollback();
-            	return $VRegistrazione->processaTemplate('failed');
+            	return $VRegistrazione->processaTemplate('registrati_failed');
                 
         }
         
@@ -169,7 +169,7 @@ class CRegistrazione {
      */
     public function inviamodulo() {
         $VRegistrazione=USingleton::getInstance('VRegistrazione');
-        return $VRegistrazione->processaTemplate('reg');
+        return $VRegistrazione->processaTemplate('registrati_reg');
     }
     /**
      * EfFettua il logout
@@ -184,17 +184,17 @@ class CRegistrazione {
     }
     public function tutorial(){
      $VRegistrazione=USingleton::getInstance('VRegistrazione');
-     return $VRegistrazione->processaTemplate("tutorial");
+     return $VRegistrazione->processaTemplate("registrati_tutorial");
     }  
     public function controllaemail(){
         $email=$_REQUEST['email'];
-        $esiste=false;
+        $esiste=0;
         $futente= USingleton::getInstance('FUtente');
         $user=$futente->getUtenteByEmail($email);
-        if($user!=false){
-            $esiste=true;
+        if($user!=false||!(filter_var($email,FILTER_VALIDATE_EMAIL))){
+            $esiste=1;
         }   
-        echo json_encode($esiste);
+        return($esiste);
     }
     /**
      * Smista le richieste ai relativi metodi della classe

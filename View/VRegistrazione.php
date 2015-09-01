@@ -27,32 +27,6 @@ class VRegistrazione extends View{
             return false;     
     }
     /**
-     * @return mixed
-     */
-    public function getTask() {
-        if (isset($_REQUEST['task']))
-            return $_REQUEST['task'];
-        else
-            return false;
-    }
-    /**
-     * @return string
-     */
-    public function processaTemplate($_template){
-        $this->template=$_template;
-        return $this->fetch('registrati_'.$this->template.'.tpl');
-        
-    }
-    /**
-     * Imposta i dati nel template identificati da una chiave ed il relativo valore
-     *
-     * @param string $key
-     * @param mixed $valore
-     */
-    public function impostaDati($key,$valore){
-        $this->assign($key,$valore);
-    }
-    /**
      * Restituisce l'array contenente i dati di registrazione
      *
      * @return array();
@@ -77,11 +51,5 @@ class VRegistrazione extends View{
         else
             return false;
     } 
-      public function getController() {
-        if (isset($_REQUEST['controller']))
-            return $_REQUEST['controller'];
-        else
-            return false;
-    }
 }
 ?>

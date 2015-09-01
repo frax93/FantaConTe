@@ -36,7 +36,6 @@ class CFormazione {
                 $modulo=$dati[0];
                 unset($dati[0]);
                 $giocatori_selezionati=$dati;
-                print_r($giocatori_selezionati);
                 //Inserire $nome per fare la cosa dinamica
                 foreach($giocatori as $key => $value){
                     $DGiocatore=new DGiocatore($value['id'],$value['nome'],$value['cognome'],$value['ruolo'],
@@ -116,7 +115,7 @@ class CFormazione {
                 $VFormazione->impostaDati('attacco',$attacco1);
                 $punteggio_totale=$DFormazione->getpunteggio();
                 $VFormazione->impostaDati('totale',$punteggio_totale);
-                return $VFormazione->processaTemplate();
+                return $VFormazione->processaTemplate('formazione');
         }
 }
 ?>

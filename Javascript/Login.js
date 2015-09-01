@@ -65,21 +65,20 @@ $(document).ready(function() {
 	});
 
     
-    $('#email').blur(function () {
-      var dati = $('#email').attr('value');
-      var data_send = "username=" + dati;
+$('#email').blur(function () {
+      var dati=new Array();
+      dati['0']=$(this).val();
 
     $.ajax({
        type: "POST",
-       url: "index.php?controller=Registrazione&task=Controllaemail&email=",
-       data: data_send,
+       url: "index.php?controller=Registrazione&task=Controllaemail&email="+dati['0'],
        success: function(data) {
-           if (data) {
-             $(this).css("border","3px solid red");
+           if (data['2']!=0) {
+             $('#email').css("border","3px solid red");
     	     errori[5]=true;
            }
            else {
-             $(this).css("border", "2px solid green");
+             $('#email').css("border", "2px solid green");
              errori[5]=false;
            }
         }

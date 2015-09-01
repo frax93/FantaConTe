@@ -74,7 +74,7 @@ class CSquadra {
             $VSquadra->impostaDati('crediti',"CREDITI");
             $VSquadra->impostaDati('fantasycosto',$crediti);
             }
-            return $VSquadra->processaTemplate();
+            return $VSquadra->processaTemplate('squadra');
 			/*$query->commit();
 		} catch (Exception $e) {
 			$query->rollBack();

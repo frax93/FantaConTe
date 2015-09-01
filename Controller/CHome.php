@@ -31,7 +31,6 @@ class CHome {
         $fdb=USingleton::getInstance('Fdb');
         $query=$fdb->getDatabase();
         //$query->beginTransaction();
-        if(!isset($contenuto)){
            if($registrato) {    
            try{
              $fclassifica=USingleton::getInstance('FClassifica');
@@ -48,7 +47,6 @@ class CHome {
         
         else
             $VHome->PaginaGuest();
-        }
       }
 	/**
 	 * Smista le richieste delegando i corrispondenti controller.

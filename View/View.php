@@ -18,33 +18,57 @@ class View extends Smarty{
         $this->caching = false;
         $this->assign('app_name', 'FantaConTe');
     }
-	
-	/*public function inviodati($dati){
-		echo json_encode($dati);
-	}
-	
-	public function getController(){
-		if (isset($_REQUEST['controller']))
-			return $_REQUEST['controller'];
-		else
-			return false;
-	}
-	
-	public function getTask() {
-		if (isset($_REQUEST['lavoro']))
-			return $_REQUEST['lavoro'];
-		else
-			return false;
-
-	}
-        public function getDati(){
-		unset($_REQUEST["lavoro"]);
-		unset($_REQUEST["controller"]);
-		foreach ($_REQUEST as $key => $valore) {
-			$this::controllaInput($key, $valore);
-			$dati[$key] = $valore;
-		}
-		return $dati;
-	}*/
+   /**
+     * @param type $key
+     * @param type $valore
+     */
+     public function impostaDati($key,$valore) {
+        $this->assign($key,$valore);
+    }
+    /**
+     * 
+     * @return boolean
+     */
+    //Da modificare 
+     public function getDati() {
+        unset($_REQUEST['task']);
+        unset($_REQUEST['controller']);
+        unset($_REQUEST['submit']);
+        $dati=array();
+        if(isset($_REQUEST)){
+          foreach($_REQUEST as $key => $value)
+            array_push($dati,$value);
+          return $dati;
+        }
+        else
+            return false;
+    }
+    /**
+     * 
+     * @return type
+     */
+    public function processaTemplate($pagina) {
+        return $this->fetch("$pagina".'.tpl');
+    }
+    /**
+     * 
+     * @return boolean
+     */
+    public function getTask(){
+        if (isset($_REQUEST['task']))
+            return $_REQUEST['task'];
+        else
+            return false;
+    }
+    /**
+     * 
+     * @return boolean
+     */
+    public function getController(){
+        if (isset($_REQUEST['controller']))
+            return $_REQUEST['controller'];
+        else
+            return false;
+    }
 }
 ?>

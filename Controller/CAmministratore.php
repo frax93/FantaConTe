@@ -59,7 +59,7 @@ class CAmministratore{
                 }
             }
             $VAmministratore->impostaDati('voti',$dati);
-            return $VAmministratore->processaTemplate();
+            return $VAmministratore->processaTemplate('Amministratore');
                     
                 }  
                 

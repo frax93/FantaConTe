@@ -53,7 +53,7 @@ class CClassifica{
                $VClassifica->impostaDati('arr',$classifica1);
                $vincitore=$classifica1[0]['nome_squadra'];
                $VClassifica->impostaDati('vincitore',$vincitore);
-               return $VClassifica->processaTemplate();
+               return $VClassifica->processaClassifica();
                /*}
                catch(Exception $error) {
 	            $q->rollback();
