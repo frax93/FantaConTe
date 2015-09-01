@@ -24,7 +24,6 @@ CREATE TABLE IF NOT EXISTS `Formazione`(
 CREATE TABLE IF NOT EXISTS `Classifica`(
     `email`  VARCHAR(50) NOT NULL ,
     `nome_squadra` VARCHAR(20) NOT NULL,
-    `partite_giocate` INTEGER NOT NULL,
     `punteggio` INTEGER NOT NULL,
     PRIMARY KEY (`email`)
 );

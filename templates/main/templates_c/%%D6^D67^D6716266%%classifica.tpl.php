@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-31 15:18:36
+<?php /* Smarty version 2.6.13, created on 2015-09-01 09:46:59
          compiled from classifica.tpl */ ?>
 <html>
   <head>
@@ -57,7 +57,6 @@
             <tr>
              <th>Email</th>
              <th><font color=red>Squadra</font></th>
-	     <th>P.Giocate</th>
              <th><font color=red>Punti</font></th>
 	    </tr>
 	  </thead>
@@ -70,8 +69,6 @@
 </td>
               <td> <?php echo $this->_tpl_vars['arr1']['nome_squadra']; ?>
  </td>  
-	      <td> <?php echo $this->_tpl_vars['arr1']['partite_giocate']; ?>
- </td>
               <td> <?php echo $this->_tpl_vars['arr1']['punteggio']; ?>
  </td>  
             </tr>

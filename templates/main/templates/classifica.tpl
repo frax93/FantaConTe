@@ -50,7 +50,6 @@
             <tr>
              <th>Email</th>
              <th><font color=red>Squadra</font></th>
-	     <th>P.Giocate</th>
              <th><font color=red>Punti</font></th>
 	    </tr>
 	  </thead>
@@ -59,7 +58,6 @@
 	    <tr> 
 	      <td> {$arr1.email}</td>
               <td> {$arr1.nome_squadra} </td>  
-	      <td> {$arr1.partite_giocate} </td>
               <td> {$arr1.punteggio} </td>  
             </tr>
             {/foreach}
