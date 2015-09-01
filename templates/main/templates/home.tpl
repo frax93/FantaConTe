@@ -23,22 +23,8 @@
         </section>
     </div>
     <header id="header">
-      <h1><a href="index.php?controller=Classifica&task=nuova"><h2><font color=green>{$Fanta}</font><font color=white>{$Con}</font><font color=red>{$Te}</font></h2></a></h1>
+      <h1><a href="index.php?controller=Registrazione&task=tutorial"  class="more scrolly"><h2><font color=green>TUT</font><font color=white>OR</font><font color=red>IAL</font></h2></a></h1>
       <nav id="nav">
-        <ul>
-             <font color=LIME> Benvenuto {$Benvenuto}</font>&nbsp;&nbsp;&nbsp;&nbsp;
-	  <li class="special">
-	    <a href="#menu" class="menuToggle"><span>Menu</span></a>
-	    <div id="menu">
-	      <ul <li><a href="index.php?controller=Classifica&task=nuova">Classifica</a></li>
-		      <li><a href="index.php?controller=Mercato&task=riempi">Mercato</a></li>
-                      <li><a href="index.php?controller=Squadra&task=visualizza">Squadra</a></li>
-		      <li><a href="index.php?controller=Formazione&task=nuova">Formazione</a></li>
-		      <li><a href="index.php?controller=Registrazione&task=logout">Log Out</a></li>
-	      </ul>
-	    </div>
-	  </li>
-	</ul>
       </nav>
     </header>
     <div class="inner" id="banner">
@@ -67,8 +53,6 @@
             <a href="index.php?controller=Registrazione&task=modulo_registrazione" class="button">Registrati</a>
 	  </div>
     </div>
-    <a href="index.php?controller=Registrazione&task=tutorial" class="more scrolly">Segui Tutorial</a>
-    <!-- collegare il bottone per il tutorial -->
     <ul class="copyright">
       <li>&copy; Murador & Taranta & Maione</li>	
     </ul>
