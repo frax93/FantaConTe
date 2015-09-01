@@ -69,6 +69,7 @@ class CAmministratore{
                     $dati=$Vamministratore->getVoti();
                     foreach($dati as $id => $voto) 
                         $FMercato->updateVoto($voto,$id);
+                    header('location:index.php?controller=Amministratore&task=amministratore');
                    
                     
                 }
