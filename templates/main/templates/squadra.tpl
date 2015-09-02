@@ -1,6 +1,6 @@
 <div id="main">
  <script src="Javascript/jquery.min.js"></script>
-<script src="Javascript/Crediti.js"></script>
+<script src="Javascript/crediti.js"></script>
     <br><br>
   <section class="spotlight">
     <div class="image"><img src="images/serieA.jpg" alt="" /></div>
