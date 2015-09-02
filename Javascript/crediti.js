@@ -7,7 +7,7 @@
 $(window).ready(function() {  
         var crediti=$('#crediti').html();
         if(crediti<0){
-           crediti=250-crediti;
+           crediti=-crediti;
            alert("Hai speso "+crediti+" crediti");
            $(location).attr('href','http://localhost/FantaConTe/index.php?controller=Squadra&task=modifica');
         }    
