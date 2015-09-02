@@ -35,8 +35,10 @@ class CSquadra {
 	 * Permette di visualizzare la Squadra creata dall'utente
 	 */
 	public function Visualizza() {
+            
             $VSquadra= USingleton::getInstance('VSquadra');
             $session = USingleton::getInstance('USession');
+            
             $nome_squadra=$session->getValore('squadra');
             $DSquadra= new DSquadra($nome_squadra);
             $FRosa= USingleton::getInstance('FRosa');

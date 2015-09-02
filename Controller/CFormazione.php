@@ -27,7 +27,11 @@ class CFormazione {
 	public function Nuova() {        
 		$VFormazione=USingleton::getInstance('VFormazione');
 		$fformazione=USingleton::getInstance('FFormazione');
+                $FClassifica=USingleton::getInstance('FClassifica');
+                $Fdb=USingleton::getInstance('Fdb');
 		$session = USingleton::getInstance('USession');
+                $email=$session->getValore('email');
+                $FClassifica->ResetUtenteClassifica($email); 
                 $nome_squadra=$session->getValore('squadra');
                 $DSquadra=new DSquadra($nome_squadra);
                 $FRosa= USingleton::getInstance('FRosa');
@@ -46,9 +50,7 @@ class CFormazione {
                 $session->setValore('modulo',$modulo);
                 $Formazione->impostatitolari($giocatori_selezionati);
                 $fformazione->inserisciFormazione($Formazione,$nome_squadra);
-                
-                //Qui si deve salvare sul Database e poi chiamare con header
-               header("location: index.php?controller=Formazione&task=visualizza");
+                 header("location: index.php?controller=Formazione&task=visualizza");
                 
                
 	}
@@ -56,18 +58,13 @@ class CFormazione {
 	 * Permette di modificare la formazione
 	 */
 	public function Modifica() {
-                $FFormazione=USingleton::getInstance('FFormazione');
-                $FClassifica=USingleton::getInstance('FClassifica');
+                $FFormazione=USingleton::getInstance('FFormazione');             
                 $Fdb=USingleton::getInstance('Fdb');
                 $session=  USingleton::getInstance('USession');
                 $nome_squadra=$session->getValore('squadra');
                 $query=$Fdb->getDataBase();
-                $FFormazione->ResetFormazione($nome_squadra);  
-                $email=$session->getValore('email');
-                $FClassifica->ResetUtenteClassifica($email); 
-                
-                header("location: index.php?controller=Squadra&task=visualizza");
-                 
+                $FFormazione->ResetFormazione($nome_squadra);                  
+                header("location: index.php?controller=Squadra&task=visualizza");         
 	}
         public function Visualizza(){
                 $VFormazione=USingleton::getInstance('VFormazione');

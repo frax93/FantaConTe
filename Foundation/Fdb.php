@@ -153,7 +153,6 @@ Class Fdb{
     public function deleteRighe($valore){ 
         $sql="DELETE FROM ".$this->tabella." WHERE ";
         $sql=$sql."`squadra`='$valore'";
-        var_dump($sql);
         $query=$this->db->prepare($sql);
         $query->execute();
         $result=$query->rowCount();

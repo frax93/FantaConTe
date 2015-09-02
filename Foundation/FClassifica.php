@@ -32,7 +32,8 @@ public function inserisciClassifica(DClassifica $_object){
 	        return $this->db->queryGenerica("*","ORDER BY `punteggio` DESC");
 	}
         
-         public function ResetUtenteClassifica($email){           
+         public function ResetUtenteClassifica($email){   
+                print_r("CIAOOOO");
 		$this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
 	        $this->db->deleteUtente($email);
              
