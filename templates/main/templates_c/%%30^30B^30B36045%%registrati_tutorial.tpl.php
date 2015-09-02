@@ -1,5 +1,7 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-04 10:49:58
+<?php /* Smarty version 2.6.13, created on 2015-09-02 14:31:41
          compiled from registrati_tutorial.tpl */ ?>
+ <script src="Javascript/jquery.min.js"></script>
+ <script src="Javascript/Elimina.js"></script>
 <div>
   <!-- One -->
   <section id="one" class="wrapper style2 special">
@@ -59,7 +61,7 @@
 	  <p>Entra nel sito e gioca...</p>
 	</header>
 	<ul class="actions vertical">
-	  <li><a href="#" class="button fit special">Torna Su</a></li>
+	  <li><a href="index.php" class="button fit special">Indietro</a></li>
 	</ul>
       </div>
     </section>

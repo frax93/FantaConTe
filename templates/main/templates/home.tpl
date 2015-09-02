@@ -19,14 +19,13 @@
       <article id="main">
 	<section class="spotlight">
 	  <div class="content"> </div>
-    
         </section>
     </div>
     <header id="header">
       <nav id="nav">
       </nav>
     </header>
-    <div class="inner" id="banner">
+    <div class="doppio" id="banner">
       <h2><font color=green>Fanta</font><font color=white>Con</font><font color=red>Te</font></h2>
         <p><font color=yellow>Crea la tua squadra e diventa un Allenatore<br/>
 	  .... il sito per il vostro Calcio<br /></font>
@@ -51,9 +50,10 @@
             </ul>
             <a href="index.php?controller=Registrazione&task=modulo_registrazione" class="button">Registrati</a>
 	  </div>
-    </div>
+    
     <a href="index.php?controller=Registrazione&task=tutorial" class="more scrolly">Segui Tutorial</a>
     <!-- collegare il bottone per il tutorial -->
+    </div>
     <ul class="copyright">
       <li>&copy; Murador & Taranta & Maione</li>	
     </ul>

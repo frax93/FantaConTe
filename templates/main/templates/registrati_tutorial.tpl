@@ -1,3 +1,5 @@
+ <script src="Javascript/jquery.min.js"></script>
+ <script src="Javascript/Elimina.js"></script>
 <div>
   <!-- One -->
   <section id="one" class="wrapper style2 special">
@@ -57,7 +59,7 @@
 	  <p>Entra nel sito e gioca...</p>
 	</header>
 	<ul class="actions vertical">
-	  <li><a href="#" class="button fit special">Torna Su</a></li>
+	  <li><a href="index.php" class="button fit special">Indietro</a></li>
 	</ul>
       </div>
     </section>

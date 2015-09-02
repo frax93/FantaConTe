@@ -1,6 +1,5 @@
-<div id="main">
- <script src="Javascript/jquery.min.js"></script>
-<script src="Javascript/crediti.js"></script>
+<script src="Javascript/jquery.min.js"></script>
+<script src="Javascript/Elimina.js"></script>
     <br><br>
   <section class="spotlight">
     <div class="image"><img src="images/serieA.jpg" alt="" /></div>
@@ -130,6 +129,7 @@
   </form>
   <a href="#"><input type="submit" name="submit" id="submit_1" class="button special" value="TORNA SU"/></a>
 </div>
+
 
 
 	

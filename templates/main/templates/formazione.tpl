@@ -1,3 +1,5 @@
+<script src="Javascript/jquery.min.js"></script>
+<script src="Javascript/Elimina.js"></script>
 <div id="main">
     <br>
     <br>

@@ -12,7 +12,7 @@
       <script src="Javascript/main.js"></script>
   </head>
   <body class="landing">
-    <div class="classifica"><br>							
+    <div class="laisias"><br>							
       <div class="table-wrapper "> <br>
      <div id="page-wrapper">
       <!-- Header -->
@@ -43,7 +43,7 @@
 	      </ul>
 	    </nav>	
         </header>
-                
+ <div class="classifica">
         <table>
           <thead>
             <tr>
@@ -62,7 +62,6 @@
             {/foreach}
           </tbody>
         </table>
-      </div>
             <div><font color=yellow>Complimenti {$vincitore} HAI VINTO!</font></div>
     </div>
     <footer id="footer">
@@ -70,7 +69,9 @@
         <li>&copy; Murador & Taranta & Maione</li>
       </ul>
     </footer>
+    </div>
   </div>
 </div>
 </body>
 </html>
+
