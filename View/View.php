@@ -8,9 +8,7 @@
 require('lib/smarty/Smarty.class.php');
 class View extends Smarty{
     public function __construct() {
-        $this->Smarty();
-        //global $config;
-        
+        $this->Smarty();      
         $this->template_dir = 'templates/main/templates/';
         $this->compile_dir = 'templates/main/templates_c/';
         $this->config_dir = 'templates/main/configs/';
@@ -29,7 +27,6 @@ class View extends Smarty{
      * 
      * @return boolean
      */
-    //Da modificare 
      public function getDati() {
         unset($_REQUEST['task']);
         unset($_REQUEST['controller']);

@@ -21,13 +21,8 @@ Class Fdb{
         //si crea una stringa con il nome dell'host e del database
         //in seguito si crea un oggetto PDO per creare la connessione al DB
         try{ 
-            //Attiva impostazione PDO per controllo errori try-catch
-            
             $connection="$dbms:host=".$config[$dbms]['host'].";dbname=".$config[$dbms]['database'];
             $this->db= new PDO($connection,$config[$dbms]['user'],$config[$dbms]['password']);
-            //$this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            //Disabilita Auto-commit del PDO al database
-            //$this->db->setAttribute(PDO::ATTR_AUTOCOMMIT, FALSE);
         }
         catch(PDOException $error){
             die("Attenzione..! \n Errore durante la connessione al database: ".$error->getMessage());
@@ -39,13 +34,8 @@ Class Fdb{
         $this->bind=$_bind;
     }
     public function insert($dati){
-            //usare $this->bind in $query
- 
             $query = "INSERT INTO `fantaconte`.$this->tabella $this->chiavedb VALUES $dati";
             $sql=$this->db->prepare($query);
-            //fare il bind dei dati passati usando i place-holders
-            //$sql->bindParam($this->bind,$dati);
-            //$sql->debugDumpParams();
             $risultato=$sql->execute();
             return $risultato;
          

@@ -7,11 +7,6 @@
  */
 class VRegistrazione extends View{
     /**
-     * Serve per cambiare template a seconda dei task
-     * @var $template type string
-     */
-    private $template;
-    /**
      * restituisce email e password passata tramite GET o POST
      *
      * @return mixed

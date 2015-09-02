@@ -54,11 +54,6 @@ class CClassifica{
                $vincitore=$classifica1[0]['nome_squadra'];
                $VClassifica->impostaDati('vincitore',$vincitore);
                return $VClassifica->processaClassifica();
-               /*}
-               catch(Exception $error) {
-	            $q->rollback();
-		    throw new Exception($error->getMessage());   
-            } */
         }
         
 }

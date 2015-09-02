@@ -15,9 +15,6 @@ class CHome {
 		//try {
 			$contenuto=$this->mux();
 			echo $contenuto;
-		//} catch (Exception $e) {
-                    //throw new Exception ("Errore");
-		//}
 	}
         /**
          * Metodo che imposta la pagina home iniziale
@@ -28,9 +25,6 @@ class CHome {
         $registrato=$CRegistrazione->getUtenteRegistrato();
         $contenuto=$this->mux();
         $VHome->impostaContenuto($contenuto);
-        $fdb=USingleton::getInstance('Fdb');
-        $query=$fdb->getDatabase();
-        //$query->beginTransaction();
            if($registrato) {    
            try{
              $fclassifica=USingleton::getInstance('FClassifica');

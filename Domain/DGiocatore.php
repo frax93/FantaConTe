@@ -14,7 +14,6 @@ class DGiocatore{
     private $squadra_reale;
     private $valore; 
     private $voto;
-    private $titolare;
     public function __construct($_id,$_nome,$_cognome,$_ruolo,$_squadra_reale,$_valore,$_voto){
         $this->setid($_id);
         $this->setnome($_nome);

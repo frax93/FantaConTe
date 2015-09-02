@@ -27,10 +27,6 @@ class CMercato{
     public function riempi(){
                 $vmercato= USingleton::getInstance('VMercato');
 		$fmercato=USingleton::getInstance('FMercato');
-		$fdb=USingleton::getInstance('Fdb');
-		/*$query=$fdb->getDataBase();
-		$query->beginTransaction();
-                try{*/
                     $giocatori=$fmercato->getGiocatori();
                     $p=$d=$c=$a=0;
                     for($i=0;$i<count($giocatori);$i++){
@@ -56,22 +52,13 @@ class CMercato{
                     $vmercato->impostaDati('difesa',$difesa);
                     $vmercato->impostaDati('centrocampo',$centrocampo);
                     $vmercato->impostaDati('attacco',$attacco);
-                    //$query->commit();
                     return $vmercato->processaTemplate('mercato');
-                    
-               /* }
-                catch (Exception $e) {
-			$query->rollback();
-			throw new Exception($e->getMessage());
-                    
-                }*/
     }
      public function Salva(){
             $VMercato=  USingleton::getInstance('VMercato');
             $FMercato=  USingleton::getInstance('FMercato');
             $FRosa=  USingleton::getInstance('FRosa');
             $giocatori_selezionati=$VMercato->getDati();
-            $Fdb=USingleton::getInstance('Fdb');
             $FSquadra=USingleton::getInstance('FSquadra');
             $session= USingleton::getInstance('USession');
             $nome_squadra=$session->getvalore('squadra');
@@ -87,17 +74,6 @@ class CMercato{
             $FSquadra->inserisciSquadra($Squadra);
             //Redirect per mostrare la squadra all'utente
             header("location: index.php?controller=Squadra&task=visualizza");
-            //$query->beginTransaction();
-            //try{
-                
-            /*    $query->commit();
-            }
-            catch(Exception $e){
-                $query->rollback();
-	        throw new Exception($e->getMessage());
-            }*/
         }
-    
-    
 }
 ?>

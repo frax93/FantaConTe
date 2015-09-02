@@ -7,7 +7,6 @@
  * @author Michele Taranta
  */
 class DClassifica {
-    private $posizione;
     private $utente;
     private $punteggio;
     
@@ -15,11 +14,6 @@ class DClassifica {
         $this->set_utente($utente);
         $this->set_punteggio(0);
     }
-    
-    public function get_posizione(){
-        return $this->posizione;
-    }
-    
     public function get_utente(){
         return $this->utente;
     }

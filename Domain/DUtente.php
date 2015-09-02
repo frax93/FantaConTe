@@ -12,8 +12,6 @@ class DUtente{
     private $password;
     private $nome;
     private $cognome;
-    /*se si vuole inserire immagine nel profilo  
-    private $image;*/
     private $email;
     private $codice_attivazione;
     private $stato_attivazione;

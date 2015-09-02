@@ -40,7 +40,6 @@ class CFormazione {
                 $modulo=$dati[0];
                 unset($dati[0]);
                 $giocatori_selezionati=$dati;
-                //Inserire $nome per fare la cosa dinamica
                 foreach($giocatori as $key => $value){
                     $DGiocatore=new DGiocatore($value['id'],$value['nome'],$value['cognome'],$value['ruolo'],
                                              $value['squadra_reale'],$value['valore'],$value['voto']);

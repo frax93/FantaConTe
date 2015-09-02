@@ -7,9 +7,11 @@
  */
 
 /**
- * Description of FRosa
- *
- * @author micheletaranta
+ * Description of Rosa
+ * @package Foundation
+ * @author Francesco Murador
+ * @author Francesco Maione
+ * @author Michele Taranta
  */
 class FRosa extends Fdb {
     //put your code hereclass FSquadra extends Fdb {

@@ -82,8 +82,6 @@ class CRegistrazione {
         $fdb=USingleton::getInstance('Fdb');
         $data=$VRegistrazione->getDatiRegistrazione();
         $Squadra= new DSquadra($data['nome_squadra']);
-        $query=$fdb->getDataBase();
-        //$query->beginTransaction();
         try{
         /*Controlla se l'utente non è già stato registrato*/
             if (!($futente->getUtenteByEmail($data['email']))){
@@ -95,14 +93,12 @@ class CRegistrazione {
                 $futente->inserisciUtente($dutente);
                 $this->invia_email($dutente);
                 //$this->attivazione();
-                //$query->commit();
                 return $VRegistrazione->processaTemplate('registrati_success');
                 }  
             throw new Exception("Utente già registrato");
             }
         }
         catch (Exception $e){
-                //$query->rollback();
             	return $VRegistrazione->processaTemplate('registrati_failed');
                 
         }
@@ -154,14 +150,6 @@ class CRegistrazione {
     		$futente->updateUtente($update);
                 
             }
-            
-            //Return template successo attivazione
-            /*else {
-                $view->impostaErrore('Il codice di attivazione &egrave; errato');
-                $view->setLayout('problemi');
-            }
-        }
-        return $view->processaTemplate("attivazione");*/
     }
     }
     /**

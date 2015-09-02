@@ -8,7 +8,7 @@
 class VAmministratore extends View{
     /**
      * 
-     * @return boolean
+     * @return mixed
      */
     public function getVoti() {
         unset($_REQUEST['controller']);
