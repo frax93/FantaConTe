@@ -33,7 +33,6 @@ public function inserisciClassifica(DClassifica $_object){
 	}
         
          public function ResetUtenteClassifica($email){   
-                print_r("CIAOOOO");
 		$this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
 	        $this->db->deleteUtente($email);
              

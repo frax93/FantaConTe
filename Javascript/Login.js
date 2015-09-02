@@ -9,7 +9,7 @@ $(document).ready(function() {
     var errori=new Array();
    
     $('#username').blur(function () { 
-	if (!$(this).val().match(/^[a-zA-z' ]{2,30}$/)) {
+	if (!$(this).val().match(/^[a-zA-Z0-9]{2,30}$/)) {
 		$(this).css("border", "3px solid red");
 		errori[0]=true;
 	}

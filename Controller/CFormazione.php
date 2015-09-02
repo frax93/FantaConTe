@@ -75,7 +75,7 @@ class CFormazione {
                 $nome_squadra=$session->getValore('squadra');
                 $modulo=$session->getValore('modulo');
                 $query=$Fdb->getDataBase();
-                $titolari=$FFormazione->getFormazione($nome_squadra,$modulo);               
+                $titolari=$FFormazione->getFormazione($nome_squadra,$modulo); 
                 $giocatori=$FRosa->getRosa($nome_squadra);
                 $DSquadra=new DSquadra($nome_squadra);
                 $DFormazione=new DFormazione($DSquadra,$modulo);

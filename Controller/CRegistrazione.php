@@ -51,8 +51,7 @@ class CRegistrazione {
                     $session->setValore('nome',$user['nome']);
         	    $session->setValore('cognome',$user['cognome']);
         	    $session->setValore('email',$user['email']);
-                    $user['squadra']=unserialize($user['squadra']);
-                    $session->setValore('squadra',$user['squadra']['nome']);
+                    $session->setValore('squadra',$user['squadra']);
         	    $session->setValore('tipo_utente',$user['tipo_utente']);
                     $session->setValore('primoaccesso',true);
                     return true;

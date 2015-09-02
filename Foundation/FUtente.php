@@ -16,9 +16,11 @@ Class FUtente extends Fdb {
 	}
 	
 	public function inserisciUtente(DUtente $utente){   
+                $squadra=$utente->getsquadra();
+                $nome_squadra=$squadra['nome'];
 		$dati=$utente->getAsArray();
                 $this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
-                $stringa="('$dati[username]','$dati[password]','$dati[nome]','$dati[cognome]','$dati[email]','$dati[codice_attivazione]','$dati[stato_attivazione]','$dati[tipo]','$dati[squadra]')";
+                $stringa="('$dati[username]','$dati[password]','$dati[nome]','$dati[cognome]','$dati[email]','$dati[codice_attivazione]','$dati[stato_attivazione]','$dati[tipo]','$nome_squadra')";
                 $this->db->insert($stringa);
 	}
 	

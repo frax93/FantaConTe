@@ -7,31 +7,6 @@
  */
 class VHome extends View{
     /**
-     * @var string $content
-     */
-    private $content;
-    /**
-     * @var array $_main_button
-     */
-    private $button=array();
-    /**
-     * @var string $_side_content
-     */
-    private $side_content;
-    /**
-     * @var array $_side_button
-     */
-    private $side_button=array();
-    /**
-     * Aggiunge il modulo di login nella pagina principale, per gli utenti non autenticato
-     */
-    public function aggiungiModuloLogin() {
-        $VRegistrazione=USingleton::getInstance('VRegistrazione');
-        $modulo_login=$VRegistrazione->processaTemplate();
-        $this->side_content=$modulo_login; //qui c'era un punto dopo side_content
-
-    }
-    /**
      * Assegna il contenuto al template e lo manda in output
      */
     public function mostraPagina() {
@@ -67,6 +42,8 @@ class VHome extends View{
         $this->assign('Benvenuto',$session->getvalore('username'));
         $this->assign('title','FantaConTe');
         $this->assign('arr',$classifica);
+        $vincitore=$classifica[0]['nome_squadra'];
+        $this->assign('vincitore',$vincitore);
         $this->display('classifica.tpl');
     }
     /*

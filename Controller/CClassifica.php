@@ -26,14 +26,14 @@ class CClassifica{
             $utenti=$FUtente->getUtenti();
             foreach($utenti as $key => $utente){
                 if($utente['tipo_utente']!="Admin"){
-                $squadra=  unserialize($utente['squadra']);
-                $DSquadra=new DSquadra($squadra['nome']);
+                $DSquadra=new DSquadra($utente['squadra']);
                 $Dutente=new DUtente($utente['username'], $utente['password'], $utente['email'], 
                                      $utente['stato_attivazione'], $utente['nome'], 
                                      $utente['cognome'], $utente['tipo_utente'],$DSquadra);
                 $classifica=new DClassifica($Dutente);
-                $punteggio=$FFormazione->getpunteggiobySquadra($squadra['nome']);
+                $punteggio=$FFormazione->getpunteggiobySquadra($utente['squadra']);
                 $punteggio=$punteggio[0]['fpunteggio'];
+                print($punteggio);
                 $classifica->set_punteggio($punteggio);
                 $FClassifica->inserisciClassifica($classifica);
                 }
