@@ -50,7 +50,7 @@ class CFormazione {
                 $session->setValore('modulo',$modulo);
                 $Formazione->impostatitolari($giocatori_selezionati);
                 $fformazione->inserisciFormazione($Formazione,$nome_squadra);
-                 header("location: index.php?controller=Formazione&task=visualizza");
+                header("location: index.php?controller=Formazione&task=visualizza");
                 
                
 	}

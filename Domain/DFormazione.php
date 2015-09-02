@@ -48,12 +48,18 @@ class DFormazione{
          if($_giocatore->getid()==$id){
                       if($_giocatore->getruolo()=='POR')
                           $ruolo='POR';
-                      else if($_giocatore->getruolo()=='DIF')
+                      else if($_giocatore->getruolo()=='DIF'){
                            $ruolo='DIF';
-                           else if($_giocatore->getruolo()=='CEN')
+                           $this->countdif++; 
+                      }
+                           else if($_giocatore->getruolo()=='CEN'){
                                  $ruolo='CEN';
-                                else 
+                                 $this->countcen++;
+                           }
+                                else {
                                     $ruolo='ATT';
+                                    $this->countatt++;
+                                }
         }
         else 
             $ruolo="Non Corrisponde ID";
@@ -68,10 +74,13 @@ class DFormazione{
             foreach ($_giocatore1 as $key1 => $_giocatore){
                foreach ($giocatori as $key2 => $id){
                        $ruolo=$this->controlla($_giocatore,$id);
-                       if($ruolo!="Non Corrisponde ID"){ 
-                           $this->fpunteggio=$this->fpunteggio+$_giocatore->getVoto();
-                          array_push($this->titolari[$ruolo],$_giocatore);
-                          unset($giocatori_squadra[$ruolo][array_search($_giocatore, $giocatori_squadra)]);
+                       if($this->countdif<$difensori&&$this->countcen<$centrocampisti&&$this->countatt<$attaccanti){
+                          if($ruolo!="Non Corrisponde ID"){ 
+                             $this->fpunteggio=$this->fpunteggio+$_giocatore->getVoto();
+                             array_push($this->titolari[$ruolo],$_giocatore);
+                             unset($giocatori_squadra[$ruolo][array_search($_giocatore, $giocatori_squadra)]);
+                          }
+                       
                        }
               }
             }

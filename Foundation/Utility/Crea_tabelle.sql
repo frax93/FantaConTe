@@ -15,10 +15,13 @@ CREATE TABLE IF NOT EXISTS `utente` (
     PRIMARY KEY (`email`)
 );
 CREATE TABLE IF NOT EXISTS `Formazione`(
-    ` modulo`  CHAR(5) NOT NULL,
+    `modulo`  CHAR(5) NOT NULL,
     `titolari` VARCHAR(5) NOT NULL,
     `squadra`  VARCHAR(20) NOT NULL ,
-    `fpunteggio` INTEGER NOT NULL,
+    `fpunteggio` INTEGER NOT NULL
+    `countdif` INTEGER NOT NULL,
+    `countcen` INTEGER NOT NULL,
+    `countatt` INTEGER NOT NULL,
     PRIMARY KEY(`titolari`,`squadra`)
 );
 CREATE TABLE IF NOT EXISTS `Classifica`(
@@ -29,7 +32,11 @@ CREATE TABLE IF NOT EXISTS `Classifica`(
 );
 CREATE TABLE IF NOT EXISTS `Squadra`(
     `nome`          VARCHAR(20) NOT NULL ,
-    `crediti`          INTEGER NOT NULL ,
+    `crediti`       INTEGER NOT NULL ,
+    `Cpor`          INTEGER NOT NULL,
+    `Cdif`          INTEGER NOT NULL,
+    `Ccen`          INTEGER NOT NULL,
+    `Catt`          INTEGER NOT NULL,
     PRIMARY KEY (`nome`)
 );
 

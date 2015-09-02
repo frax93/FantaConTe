@@ -11,15 +11,15 @@ class FFormazione extends Fdb {
 	public function __construct(){
 		$this->db = USingleton::getInstance('Fdb');
 		$this->tabella="`Formazione`";
-		$this->chiavedb="(` modulo`, `titolari`, `squadra`,`fpunteggio`)";
-		$this->bind="(:modulo, :titolari, :squadra, :fpunteggio)";
+		$this->chiavedb="(` modulo`, `titolari`, `squadra`,`fpunteggio`,`countdif`,`countcen`,`countatt`)";
+		$this->bind="(:modulo, :titolari, :squadra, :fpunteggio,:countdif, :countcen, :countatt)";
 	}
 	
 public function inserisciFormazione(DFormazione $_object, $nome_squadra){
 		$dati=$_object->getasArray();
                 $this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
                 foreach ($dati['titolari'] as $key => $value) {
-                    $stringa="('$dati[modulo]','$value','$nome_squadra',$dati[fpunteggio])";
+                    $stringa="('$dati[modulo]','$value','$nome_squadra',$dati[fpunteggio],$dati[countdif],$dati[countcen],$dati[countatt])";
                     $this->db->insert($stringa);
                 } 
 		
