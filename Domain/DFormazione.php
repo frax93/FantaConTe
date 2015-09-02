@@ -12,6 +12,7 @@ class DFormazione{
     private $titolari;
     private $squadra;
     private $fpunteggio;
+    private $countpor;
     private $countdif;
     private $countcen;
     private $countatt;
@@ -19,6 +20,7 @@ class DFormazione{
         $this->setmodulo($_modulo);
         $this->setteam($squadra);
         $this->fpunteggio=0;
+        $this->countpor=0;
         $this->countdif=0;
         $this->countcen=0;
         $this->countatt=0;
@@ -45,37 +47,40 @@ class DFormazione{
         $this->titolari=array('POR'=>array(),'DIF'=>array(),'CEN'=>array(),'ATT'=>array());    
     }
     private function controlla(DGiocatore $_giocatore,$id){
+        list($difensori, $centrocampisti, $attaccanti)=explode("-",$this->modulo);
          if($_giocatore->getid()==$id){
-                      if($_giocatore->getruolo()=='POR')
-                          $ruolo='POR';
-                      else if($_giocatore->getruolo()=='DIF'){
+                      if($_giocatore->getruolo()=='POR'&&$this->countpor==0){
+                      $ruolo='POR';
+                      $this->countpor++;
+                      }
+                      else if($_giocatore->getruolo()=='DIF'&&$this->countdif<$difensori){
                            $ruolo='DIF';
                            $this->countdif++; 
                       }
-                           else if($_giocatore->getruolo()=='CEN'){
+                           else if($_giocatore->getruolo()=='CEN'&&$this->countcen<$centrocampisti){
                                  $ruolo='CEN';
                                  $this->countcen++;
                            }
-                                else {
+                                else if($_giocatore->getruolo()=='ATT'&&$this->countatt<$attaccanti){
                                     $ruolo='ATT';
                                     $this->countatt++;
                                 }
+                                    else 
+                                       $ruolo="Non Corrisponde ID e/o formazione piena";
         }
         else 
-            $ruolo="Non Corrisponde ID";
+            $ruolo="Non Corrisponde ID e/o formazione piena";
         return $ruolo;
     
    }
     public function impostatitolari(array $giocatori){
         $this->settitolari();
-        list($difensori, $centrocampisti, $attaccanti)=explode("-",$this->modulo);
         $giocatori_squadra=$this->squadra->getgiocatori();
         foreach($giocatori_squadra as $key => $_giocatore1){
             foreach ($_giocatore1 as $key1 => $_giocatore){
                foreach ($giocatori as $key2 => $id){
                        $ruolo=$this->controlla($_giocatore,$id);
-                       if($this->countdif<$difensori&&$this->countcen<$centrocampisti&&$this->countatt<$attaccanti){
-                          if($ruolo!="Non Corrisponde ID"){ 
+                          if($ruolo!="Non Corrisponde ID e/o formazione piena"){ 
                              $this->fpunteggio=$this->fpunteggio+$_giocatore->getVoto();
                              array_push($this->titolari[$ruolo],$_giocatore);
                              unset($giocatori_squadra[$ruolo][array_search($_giocatore, $giocatori_squadra)]);
@@ -85,7 +90,6 @@ class DFormazione{
               }
             }
         }
-    }
     
     public function reset(){
         $this->settitolari();
