@@ -73,7 +73,7 @@ $('#email').blur(function () {
        type: "POST",
        url: "index.php?controller=Registrazione&task=Controllaemail&email="+dati['0'],
        success: function(data) {
-           if (data['2']!=0) {
+           if (data['4']==1) {
              $('#email').css("border","3px solid red");
     	     errori[5]=true;
            }

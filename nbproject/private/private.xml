@@ -11,6 +11,37 @@
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/xampp/htdocs/FantaConTe/Foundation/FRosa.php</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/Foundation/FMercato.php</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/templates/main/templates/classifica.tpl</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/Controller/CHome.php</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/templates/main/templates/formazione.tpl</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/Domain/DFormazione.php</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/Domain/DUtente.php</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/images/serieA.jpg</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/images/mercato.jpg</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/Controller/CRegistrazione.php</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/Foundation/FFormazione.php</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/Foundation/FUtente.php</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/templates/main/templates/squadra.tpl</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/Foundation/FClassifica.php</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/Foundation/Fdb.php</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/Controller/CAmministratore.php</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/Domain/DSquadra.php</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/images/formazione.jpg</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/templates/main/templates/registrati_reg.tpl</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/Domain/DGiocatore.php</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/images/galliani.jpg</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/Domain/DClassifica.php</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/Foundation/FSquadra.php</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/View/VMercato.php</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/templates/main/templates/home.tpl</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/View/VHome.php</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/templates/main/templates/attivazione.tpl</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/templates/main/templates/Amministratore.tpl</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/images/modulo.jpg</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/Javascript/Login.js</file>
+        </group>
     </open-files>
 </project-private>

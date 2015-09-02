@@ -6,6 +6,7 @@
  * @author Michele Taranta
  */
 class VHome extends View{
+    private $content;
     /**
      * imposta il contenuto principale alla variabile privata della classe
      */
