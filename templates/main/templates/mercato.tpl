@@ -8,6 +8,7 @@
     <div class="content">
       <h2>Diventa il futuro Galliani</h2>
       <p>Fate il vostro Mercato, crea subito la tua squadra....</p>
+      <p>Composta da 25 giocatori: 3 Portieri, 8 Difensori, 8 Centrocampisti e 6 Attaccanti.</p>
     </div>
   </section>
   <h5>Mercato Giocatori</h5>

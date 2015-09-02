@@ -11,7 +11,7 @@ class VClassifica extends View{
      * @return type
      */
     public function processaClassifica() {
-        return $this->display('classifica.tpl');
+         $this->fetch('classifica.tpl');
     }
 }
 

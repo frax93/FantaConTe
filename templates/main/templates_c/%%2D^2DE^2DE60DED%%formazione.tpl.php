@@ -1,3 +1,5 @@
+<?php /* Smarty version 2.6.13, created on 2015-09-02 14:38:21
+         compiled from formazione.tpl */ ?>
 <script src="Javascript/jquery.min.js"></script>
 <script src="Javascript/Elimina.js"></script>
 <div id="main">
@@ -24,14 +26,20 @@
 	  </tr>
 	</thead>
 	<tbody>
-	  {foreach from=$portieri item=por}
+	  <?php $_from = $this->_tpl_vars['portieri']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['por']):
+?>
             <tr>
-              <td><font color="orange">{$por.nome} </font></td>
-              <td><font color="orange">{$por.cognome} </font></td>
-              <td><font color="orange">{$por.squadra_reale} </font></td>
-              <td><font color="orange">{$por.voto} </font></td>
+              <td><font color="orange"><?php echo $this->_tpl_vars['por']['nome']; ?>
+ </font></td>
+              <td><font color="orange"><?php echo $this->_tpl_vars['por']['cognome']; ?>
+ </font></td>
+              <td><font color="orange"><?php echo $this->_tpl_vars['por']['squadra_reale']; ?>
+ </font></td>
+              <td><font color="orange"><?php echo $this->_tpl_vars['por']['voto']; ?>
+ </font></td>
             </tr>
-          {/foreach}
+          <?php endforeach; endif; unset($_from); ?>
         </tbody>
       </table>
     </div>
@@ -47,14 +55,20 @@
 	  </tr>
 	</thead>
 	<tbody>
-	  {foreach from=$difensori item=dif}
+	  <?php $_from = $this->_tpl_vars['difensori']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['dif']):
+?>
             <tr>
-	      <td><font color="turquoise">{$dif.nome} </font> </td>
-              <td><font color="turquoise">{$dif.cognome}  </font></td>
-	      <td><font color="turquoise">{$dif.squadra_reale} </font> </td>
-	      <td><font color="turquoise">{$dif.voto} </font></td>
+	      <td><font color="turquoise"><?php echo $this->_tpl_vars['dif']['nome']; ?>
+ </font> </td>
+              <td><font color="turquoise"><?php echo $this->_tpl_vars['dif']['cognome']; ?>
+  </font></td>
+	      <td><font color="turquoise"><?php echo $this->_tpl_vars['dif']['squadra_reale']; ?>
+ </font> </td>
+	      <td><font color="turquoise"><?php echo $this->_tpl_vars['dif']['voto']; ?>
+ </font></td>
             </tr>
-          {/foreach}
+          <?php endforeach; endif; unset($_from); ?>
 	</tbody>
       </table>
     </div>
@@ -70,14 +84,20 @@
 	  </tr>
 	</thead>
 	<tbody>
-	  {foreach from=$centrocampo item=cen}
+	  <?php $_from = $this->_tpl_vars['centrocampo']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['cen']):
+?>
             <tr>                                                                                                      
-	      <td><font color="CHARTREUSE">{$cen.nome} </font></td>
-              <td><font color="CHARTREUSE">{$cen.cognome} </font></td>
-	      <td><font color="CHARTREUSE">{$cen.squadra_reale} </font></td>
-	      <td><font color="CHARTREUSE">{$cen.voto} </font></td>
+	      <td><font color="CHARTREUSE"><?php echo $this->_tpl_vars['cen']['nome']; ?>
+ </font></td>
+              <td><font color="CHARTREUSE"><?php echo $this->_tpl_vars['cen']['cognome']; ?>
+ </font></td>
+	      <td><font color="CHARTREUSE"><?php echo $this->_tpl_vars['cen']['squadra_reale']; ?>
+ </font></td>
+	      <td><font color="CHARTREUSE"><?php echo $this->_tpl_vars['cen']['voto']; ?>
+ </font></td>
             </tr>
-          {/foreach}
+          <?php endforeach; endif; unset($_from); ?>
 	</tbody>
       </table>
     </div>
@@ -93,14 +113,20 @@
 	  </tr>
 	</thead>
 	<tbody>
-          {foreach from=$attacco item=att}
+          <?php $_from = $this->_tpl_vars['attacco']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['att']):
+?>
             <tr>
-	      <td><font color="DEEPSKYBLUE">{$att.nome} </font></td>
-              <td><font color="DEEPSKYBLUE">{$att.cognome} </font></td>
-	      <td><font color="DEEPSKYBLUE">{$att.squadra_reale} </font></td>
-	      <td><font color="DEEPSKYBLUE">{$att.voto} </font></td>
+	      <td><font color="DEEPSKYBLUE"><?php echo $this->_tpl_vars['att']['nome']; ?>
+ </font></td>
+              <td><font color="DEEPSKYBLUE"><?php echo $this->_tpl_vars['att']['cognome']; ?>
+ </font></td>
+	      <td><font color="DEEPSKYBLUE"><?php echo $this->_tpl_vars['att']['squadra_reale']; ?>
+ </font></td>
+	      <td><font color="DEEPSKYBLUE"><?php echo $this->_tpl_vars['att']['voto']; ?>
+ </font></td>
             </tr>
-          {/foreach}
+          <?php endforeach; endif; unset($_from); ?>
 	</tbody>
       </table>
     </div>  
@@ -136,7 +162,8 @@
 	      <td> </td>
 	      <td> </td>
 	      <td> </td>
-	      <td> {$totale}</td>
+	      <td> <?php echo $this->_tpl_vars['totale']; ?>
+</td>
             </tr>
 	</tbody>
       </table>

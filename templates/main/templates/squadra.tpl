@@ -5,7 +5,7 @@
     <div class="image"><img src="images/serieA.jpg" alt="" /></div>
     <div class="content">
       <h2>La tua Rosa</h2>
-      <p>Gioca inserendo la tua formazione</p>
+      <p>Scegli il modulo e inserisci la tua formazione</p>
             <a href="index.php?controller=Squadra&task=modifica"><input class="button special" type="submit" name="submit" id="submit_1"  value="RESET ROSA"></a>
     </div>
   </section>

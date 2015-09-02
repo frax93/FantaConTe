@@ -18,8 +18,9 @@
         <div class="content">
 	  <h2>2) Crea la tua squadra perfetta <br>
 	      nel mercato della Serie A</h2>
-	    <p>Potrai scegliere una squadra di 25 giocatori della Serie A<br>
-	       con 3 Portieri, 8 Difensori, 8 Centrocampisti e 6 Attaccanti.</p>
+	    <li> Potrai scegliere una squadra di 25 giocatori della Serie A<br>
+                 con 3 Portieri, 8 Difensori, 8 Centrocampisti e 6 Attaccanti.</li>
+            <li>Potrai inoltre resettare la tua ROSA ogni volta che vorrai. </li>
 	</div>
       </section>
     </section>
@@ -30,9 +31,10 @@
       <section class="spotlight">
 	<div class="image"><img src="images/modulo.jpg" alt="" /></div>
         <div class="content">
-	  <h2>3) Inserisci il modulo della tua squadra </h2>
-	    <p>Potrai scegliere i giocatori Titolari<br />
-	        e i giocatori Panchinari.</p>
+	  <h2>3) Inserisci la tua formazione </h2>
+	    <li>Potrai scegliere i giocatori Titolari e il Modulo  <br />
+	        per realizzare il punteggio piu' alto tra gli utenti.</li>
+            <li>Potrai inoltre resettare la tua FORMAZIONE ogni volta che vorrai.</li>
 	</div>
       </section>
     </section>
@@ -43,9 +45,11 @@
       <section class="spotlight">
 	<div class="image"><img src="images/ciao.jpg" alt="" /></div>
           <div class="content">
-	    <h2>4) Sfida i tuoi amici</h2>
-	      <p>Aspetta la prossima giornata di Serie A<br />
-		 e sconfiggi i tuoi avversari.</p>
+	    <h2>4) Sfida tutti gli utenti di FantaConTe</h2>
+            <li>Aspetta che l'amministratore aggiorni i <br>
+                  voti dopo le partite della Serie A.</li>
+            <li>Raggiungi la vetta della classifica, realizzando <br>
+                  il punteggio piu' alto tra gli utenti.</li>
 	  </div>
       </section>
     </section>
@@ -64,4 +68,4 @@
       </div>
     </section>
   </section>
-					</div>
+</div>
