@@ -23,7 +23,7 @@ class DSquadra {
         $this->Cdif=0;
         $this->Ccen=0;
         $this->Catt=0;
-        $this->set_crediti(500);
+        $this->set_crediti(250);
     }
      public function getgiocatori(){
        return $this->giocatori;

@@ -1,6 +1,8 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-31 16:03:36
+<?php /* Smarty version 2.6.13, created on 2015-09-02 10:33:24
          compiled from squadra.tpl */ ?>
-<div id="main"> 
+<div id="main">
+ <script src="Javascript/jquery.min.js"></script>
+<script src="Javascript/Crediti.js"></script>
     <br><br>
   <section class="spotlight">
     <div class="image"><img src="images/serieA.jpg" alt="" /></div>
