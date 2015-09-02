@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-08-31 10:55:27
+<?php /* Smarty version 2.6.13, created on 2015-09-02 11:29:24
          compiled from mercato.tpl */ ?>
 <div id="main"> 
     <br>
@@ -147,7 +147,7 @@
     </table>
   </div>
   </form>
-  <button type="submit"  class="button special"><a href="#">Torna Su</a></button>
+  <a href="#"><input type="submit" name="submit" id="submit_1" class="button special" value="TORNA SU"/></a>
 </div>
 
 

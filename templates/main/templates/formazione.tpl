@@ -6,7 +6,7 @@
     <div class="content">
       <h2>Inserisci la tua formazione</h2>
       <p> Raggiungi la vetta della classifica....</p>
-      <button class="button special" type="submit" name="submit" id="submit_1"><a href="index.php?controller=Formazione&task=modifica">RESET FORMAZIONE</a></button>
+       <a href="index.php?controller=Formazione&task=modifica"><input class="button special" type="submit" name="submit" id="submit_1"  value="RESET FORMAZIONE"></a>
     </div>
   </section>
     <h5>Titolari</h5>
@@ -139,6 +139,6 @@
 	</tbody>
       </table>
     </div>  
-    <button type="submit"  class="button special"><a href="#">Torna Su</a></button>
+    <a href="#"><input type="submit" name="submit" id="submit_1" class="button special" value="TORNA SU"/></a>
                                                                                         
 </div>

@@ -113,7 +113,7 @@
     </table>
   </div>
   </form>
-  <button type="submit"  class="button special"><a href="#">Torna Su</a></button>
+  <a href="#"><input type="submit" name="submit" id="submit_1" class="button special" value="TORNA SU"/></a>
 </div>
 
 

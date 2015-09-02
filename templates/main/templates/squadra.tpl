@@ -7,7 +7,7 @@
     <div class="content">
       <h2>La tua Rosa</h2>
       <p>Gioca inserendo la tua formazione</p>
-            <button class="button special" type="submit" name="submit" id="submit_1"><a href="index.php?controller=Squadra&task=modifica">RESET ROSA</a></button>
+            <a href="index.php?controller=Squadra&task=modifica"><input class="button special" type="submit" name="submit" id="submit_1"  value="RESET ROSA"></a>
     </div>
   </section>
   <h5>Elenco Rosa</h5>
@@ -128,7 +128,7 @@
     </table>
   </div>
   </form>
-  <button type="submit"  class="button special"><a href="#">Torna Su</a></button>
+  <a href="#"><input type="submit" name="submit" id="submit_1" class="button special" value="TORNA SU"/></a>
 </div>
 
 

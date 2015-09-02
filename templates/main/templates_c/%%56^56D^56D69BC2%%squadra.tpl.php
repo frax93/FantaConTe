@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-09-02 10:33:24
+<?php /* Smarty version 2.6.13, created on 2015-09-02 11:26:50
          compiled from squadra.tpl */ ?>
 <div id="main">
  <script src="Javascript/jquery.min.js"></script>
@@ -9,7 +9,7 @@
     <div class="content">
       <h2>La tua Rosa</h2>
       <p>Gioca inserendo la tua formazione</p>
-            <button class="button special" type="submit" name="submit" id="submit_1"><a href="index.php?controller=Squadra&task=modifica">RESET ROSA</a></button>
+            <a href="index.php?controller=Squadra&task=modifica"><input class="button special" type="submit" name="submit" id="submit_1"  value="RESET ROSA"></a>
     </div>
   </section>
   <h5>Elenco Rosa</h5>
@@ -167,7 +167,7 @@
     </table>
   </div>
   </form>
-  <button type="submit"  class="button special"><a href="#">Torna Su</a></button>
+  <a href="#"><input type="submit" name="submit" id="submit_1" class="button special" value="TORNA SU"/></a>
 </div>
 
 
