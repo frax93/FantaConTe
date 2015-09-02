@@ -61,8 +61,11 @@ class CRegistrazione {
                     //Account non attivato dare errore
                     throw new Exception("Utente non attivato");
             }
-            else
-        	throw new Exception("Username e/o Password Errati");
+            else{
+                $VRegistrazione->impostaDati('errore','DATI ERRATI o MANCANTI!!!');
+                $VRegistrazione->impostaDati('fallito','Torna indietro e riprova.');
+                return $VRegistrazione->processaTemplate('loginfallito');
+            }
         }   
          else 
             throw new Exception("Utente non trovato");
