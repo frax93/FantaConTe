@@ -8,7 +8,7 @@ $(window).ready(function() {
         var crediti=$('#crediti').html();
         if(crediti<0){
            crediti=-crediti;
-           alert("Hai speso "+crediti+" crediti");
+           alert("Hai speso "+crediti+" crediti in più, rifai la rosa");
            $(location).attr('href','http://localhost/FantaConTe/index.php?controller=Squadra&task=modifica');
         }    
 });
