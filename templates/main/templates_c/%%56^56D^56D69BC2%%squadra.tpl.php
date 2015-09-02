@@ -1,8 +1,8 @@
-<?php /* Smarty version 2.6.13, created on 2015-09-02 11:26:50
+<?php /* Smarty version 2.6.13, created on 2015-09-02 12:44:36
          compiled from squadra.tpl */ ?>
 <div id="main">
  <script src="Javascript/jquery.min.js"></script>
-<script src="Javascript/Crediti.js"></script>
+<script src="Javascript/crediti.js"></script>
     <br><br>
   <section class="spotlight">
     <div class="image"><img src="images/serieA.jpg" alt="" /></div>
@@ -13,8 +13,9 @@
     </div>
   </section>
   <h5>Elenco Rosa</h5>
-   <font color=yellow>CREDITI </font>   <font color=yellow><?php echo $this->_tpl_vars['fantasycosto']; ?>
-</font>
+   <font color=yellow>CREDITI </font>   <font color=yellow><div id="crediti" value=<?php echo $this->_tpl_vars['fantasycosto']; ?>
+><?php echo $this->_tpl_vars['fantasycosto']; ?>
+</div></font>
   <form method="post" action="index.php?controller=Formazione&task=nuova">
   <input type="submit" name="submit" id="submit_1" class="button special" value="Inserisci Formazione"/>
   <br>

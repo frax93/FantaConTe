@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-09-02 11:29:24
+<?php /* Smarty version 2.6.13, created on 2015-09-02 12:42:14
          compiled from mercato.tpl */ ?>
 <div id="main"> 
     <br>
@@ -13,7 +13,7 @@
   <h5>Mercato Giocatori</h5>
   <form name="mercato" method="post" action="index.php?controller=Mercato&task=salva"> <!--abbiamo messo name -->
   <input type="submit" name="submit" id="submit_1" class="button special" value="Salva">
-  <div id="crediti" > CREDITI : 500</div> 
+  <div id="crediti" > CREDITI : 250</div> 
   <h4><font color="orange">    Portieri   </font> </h4>
   <div class="table-wrapper">
     <table class="tabellaportieri">

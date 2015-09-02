@@ -11,7 +11,7 @@
     </div>
   </section>
   <h5>Elenco Rosa</h5>
-   <font color=yellow>CREDITI </font>   <font color=yellow><div id="crediti" value={$fantasycosto}>{$fantasycosto}</font></div>
+   <font color=yellow>CREDITI </font>   <font color=yellow><div id="crediti" value={$fantasycosto}>{$fantasycosto}</div></font>
   <form method="post" action="index.php?controller=Formazione&task=nuova">
   <input type="submit" name="submit" id="submit_1" class="button special" value="Inserisci Formazione"/>
   <br>
