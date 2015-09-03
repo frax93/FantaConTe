@@ -65,6 +65,10 @@ class CFormazione {
                 $FFormazione->ResetFormazione($nome_squadra);                  
                 header("location: index.php?controller=Squadra&task=visualizza");         
 	}
+        /**
+         * Permette di visualizzare la formazione inserita dall'utente
+         * @return mixed
+         */
         public function Visualizza(){
                 $VFormazione=USingleton::getInstance('VFormazione');
                 $FFormazione=USingleton::getInstance('FFormazione');

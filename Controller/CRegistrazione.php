@@ -111,7 +111,6 @@ class CRegistrazione {
      *
      * @global array $config
      * @param EUtente $utente
-     * @return boolean
      */
     //Da fare
     private function invia_email(DUtente $_utente) {
@@ -136,7 +135,6 @@ class CRegistrazione {
     /**
      * Attiva un utente che inserisce un codice di attivazione valido oppure clicca sul link di autenticazione nell'email
      *
-     * @return string
      */
     public function attivazione() {
         $VRegistrazione = USingleton::getInstance('VRegistrazione');
@@ -173,15 +171,17 @@ class CRegistrazione {
         $session->cancellaValore('email');
         $session->cancellaValore('tipo_utente');    
     }
-    /*
-     * 
+    /**
+     * Mostra il tutorial per gli utenti non registrati
+     * @return mixed
      */
     public function tutorial(){
      $VRegistrazione=USingleton::getInstance('VRegistrazione');
      return $VRegistrazione->processaTemplate("registrati_tutorial");
     }  
-    /*
-     * 
+    /**
+     * Controlla se esiste un utente gia' registrato con la stessa email
+     * @return mixed
      */
     public function controllaemail(){
         $email=$_REQUEST['email'];
@@ -195,8 +195,7 @@ class CRegistrazione {
     }
     /**
      * Smista le richieste ai relativi metodi della classe
-     * PELATO DI MERDA
-     * @return mixed
+     * 
      */
     public function mux() {
         $view=USingleton::getInstance('VRegistrazione');

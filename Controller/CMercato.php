@@ -8,8 +8,7 @@
  */
 class CMercato{
     /**
-     * 
-     * @return type
+     * Smista le varie richieste delegando i metodi corrispondenti
      */
     public function mux(){
 		$VMercato=USingleton::getInstance('VMercato');
@@ -21,8 +20,8 @@ class CMercato{
 		}
 	}
     /**
-     * 
-     * @throws Exception
+     * Riempie il mercato con i giocatori del database
+     * @return mixed
      */
     public function riempi(){
                 $vmercato= USingleton::getInstance('VMercato');
@@ -54,6 +53,9 @@ class CMercato{
                     $vmercato->impostaDati('attacco',$attacco);
                     return $vmercato->processaTemplate('mercato');
     }
+    /**
+     * Permette di salvare i giocatori scelti nel mercato nella propria rosa
+     */
      public function Salva(){
             $VMercato=  USingleton::getInstance('VMercato');
             $FMercato=  USingleton::getInstance('FMercato');

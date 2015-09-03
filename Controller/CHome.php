@@ -18,6 +18,7 @@ class CHome {
 	}
         /**
          * Metodo che imposta la pagina home iniziale
+         * @return mixed 
          */
       public function impostaPagina() {
         $VHome= USingleton::getInstance('VHome');

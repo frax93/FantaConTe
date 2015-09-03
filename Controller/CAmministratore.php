@@ -1,14 +1,16 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Questa è la classe che gestisce l'amministratore
+ * @package Controller
+ * @author Francesco Murador
+ * @author Francesco Maione
+ * @author Michele Taranta
  */
 
 class CAmministratore{
     
-    /**
+         /**
 	 * Smista le varie richieste delegando i metodi corrispondenti.
 	 */
 	public function mux(){
@@ -20,7 +22,10 @@ class CAmministratore{
 				return $this->CambiaVoti();
                 }
 	}
-        
+        /**
+         * Permette di visualizzare la tabella di tutti i giocatori del database
+         * @return mixed
+         */
         public function Visualizza() {
             $VAmministratore=  USingleton::getInstance('VAmministratore');
             $Fdb=  USingleton::getInstance('Fdb');
@@ -61,8 +66,10 @@ class CAmministratore{
             $VAmministratore->impostaDati('voti',$dati);
             return $VAmministratore->processaTemplate('Amministratore');
                     
-                }  
-                
+    }  
+              /**
+               * Permette all'amministratore di aggiornare i voti dei giocatori
+               */
                 public function CambiaVoti() {
                     $Vamministratore=USingleton::getInstance('VAmministratore');
                     $FMercato=  USingleton::getInstance('FMercato');

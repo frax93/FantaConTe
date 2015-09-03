@@ -1,6 +1,6 @@
 <?php
 /**
- * Questa è la classe che gestisce la registrazione
+ * Questa è la classe che gestisce la squadra
  * @package Controller
  * @author Francesco Murador
  * @author Francesco Maione
@@ -22,6 +22,9 @@ class CSquadra {
                 }
                         
 	}
+        /**
+	 * Permette di modificare la squdra , resettando la rosa.
+	 */
         public function Modifica() {
                 $FRosa=USingleton::getInstance('FRosa');
                 $Fdb=USingleton::getInstance('Fdb');
@@ -32,7 +35,8 @@ class CSquadra {
                  
 	}
 	/**
-	 * Permette di visualizzare la Squadra creata dall'utente
+	 * Permette di visualizzare la Squadra creata dall'utente.
+         * @return mixed
 	 */
 	public function Visualizza(){         
             $VSquadra= USingleton::getInstance('VSquadra');

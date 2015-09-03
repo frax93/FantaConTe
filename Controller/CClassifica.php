@@ -1,11 +1,15 @@
 <?php
 /**
+ * Questa è la classe che gestisce la classifica
  * @package Controller
  * @author Francesco Murador
  * @author Francesco Maione
  * @author Michele Taranta
  */
 class CClassifica{
+    /**
+     * Smista le varie richieste delegando i metodi corrispondenti
+     */
         public function mux(){
 		$VClassifica=USingleton::getInstance('VClassifica');
 		switch ($VClassifica->getTask()) { //Controlla se nei dati arrivati c'é un task da richiamare
@@ -17,6 +21,9 @@ class CClassifica{
 				return $this->Modifica();
 			}
 	}
+        /**
+         * Permette di creare la nuova classifica
+         */
         public function Nuova(){
             $FClassifica=USingleton::getInstance('FClassifica');
             $FUtente=  USingleton::getInstance('FUtente');
@@ -40,7 +47,10 @@ class CClassifica{
             }
               header("location: index.php?controller=Classifica&task=visualizza");
         }
-        
+        /**
+         * Permette di visualizzare la classifica degli utenti registrati
+         * @return mixed
+         */
         public function Visualizza(){
                $VClassifica=USingleton::getInstance('VClassifica');
                $FClassifica=USingleton::getInstance('FClassifica');  
