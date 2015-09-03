@@ -62,7 +62,7 @@
             {/foreach}
           </tbody>
         </table>
-            <div><font color=yellow>Complimenti {$vincitore} HAI VINTO!</font></div>
+            <div><font color=yellow>1°Classificato : {$vincitore} </font></div>
     </div>
     <footer id="footer">
       <ul class="copyright">

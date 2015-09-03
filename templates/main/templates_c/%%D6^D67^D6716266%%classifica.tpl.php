@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-09-02 14:34:08
+<?php /* Smarty version 2.6.13, created on 2015-09-03 09:53:40
          compiled from classifica.tpl */ ?>
 <html>
   <head>
@@ -74,8 +74,8 @@
             <?php endforeach; endif; unset($_from); ?>
           </tbody>
         </table>
-            <div><font color=yellow>Complimenti <?php echo $this->_tpl_vars['vincitore']; ?>
- HAI VINTO!</font></div>
+            <div><font color=yellow>1°Classificato : <?php echo $this->_tpl_vars['vincitore']; ?>
+ </font></div>
     </div>
     <footer id="footer">
       <ul class="copyright">
