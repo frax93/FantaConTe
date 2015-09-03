@@ -1,5 +1,6 @@
 <?php
 /**
+ * Classe View che ha i metodi fondamentali delle view
  * @package View
  * @author Francesco Murador
  * @author Francesco Maione
@@ -7,6 +8,9 @@
  */
 require('lib/smarty/Smarty.class.php');
 class View extends Smarty{
+    /**
+     * Costruttore di View
+     */
     public function __construct() {
         $this->Smarty();      
         $this->template_dir = 'templates/main/templates/';
@@ -17,14 +21,15 @@ class View extends Smarty{
         $this->assign('app_name', 'FantaConTe');
     }
    /**
-     * @param type $key
-     * @param type $valore
+     * Imposta i dati 
+     * @param string $key
+     * @param mixed $valore
      */
      public function impostaDati($key,$valore) {
         $this->assign($key,$valore);
     }
     /**
-     * 
+     * Restituisce i dati arrivati
      * @return boolean
      */
      public function getDati() {
@@ -41,14 +46,15 @@ class View extends Smarty{
             return false;
     }
     /**
-     * 
-     * @return type
+     * Processa il template della pagina
+     * @param string $pagina
+     * @return mixed
      */
     public function processaTemplate($pagina) {
         return $this->fetch("$pagina".'.tpl');
     }
     /**
-     * 
+     * Controlla se nei dati arrivati c'è un task da richiamare
      * @return boolean
      */
     public function getTask(){
@@ -58,7 +64,7 @@ class View extends Smarty{
             return false;
     }
     /**
-     * 
+     * Controlla se nei dati arrivati c'è un controller da richiamare
      * @return boolean
      */
     public function getController(){

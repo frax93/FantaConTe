@@ -1,14 +1,16 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Classe VAmministratore che recupera i dati dell'amministratore e controlla gli stessi
+ * @package View
+ * @author Francesco Murador
+ * @author Francesco Maione
+ * @author Michele Taranta
  */
 class VAmministratore extends View{
     /**
-     * 
-     * @return mixed
+     *  Prende i voti dei giocatori nella view
+     * @return boolean
      */
     public function getVoti() {
         unset($_REQUEST['controller']);

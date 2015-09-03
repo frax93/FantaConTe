@@ -1,5 +1,6 @@
 <?php
 /**
+ * Classe VHome che recupera i dati dell'amministratore e controlla gli stessi
  * @package View
  * @author Francesco Murador
  * @author Francesco Maione
@@ -9,12 +10,14 @@ class VHome extends View{
     private $content;
     /**
      * imposta il contenuto principale alla variabile privata della classe
+     * @param mixed $contenuto
      */
     public function impostaContenuto($contenuto) {
         $this->content=$contenuto;
     }
     /**
      * Imposta la pagina per gli utenti registrati/autenticati
+     * @param mixed $classifica
      */
     public function PaginaRegistrato($classifica) {
         $session=USingleton::getInstance('USession');            
