@@ -1,6 +1,6 @@
 <?php
 /**
- * Description of db
+ * Classe Fdb che gestisce l'interazione con il database
  * @package Foundation
  * @author francesco murador
  * @author francesco maione
@@ -11,11 +11,34 @@ Class Fdb{
     * la proprietà o il metodo dichiarato come protected è rispettivamente accessibile/modificabile e richiamabile dall’interno della classe stessa
     * e dall’interno delle classi che ereditano, ma non è accessibile dall’esterno della classe
     */
+    /**
+     *
+     * @var PDO $db mantiene la connessione al database
+     */
     protected $db;
+    /**
+     *
+     * @var string $tabella mantiene il nome della tabella attiva 
+     */
     protected $tabella;
+    /**
+     *
+     * @var string|array $chiavedb mantiene le chiavi della tabella attiva o le chiavi della query da eseguire
+     */
     protected $chiavedb;
+    /**
+     *
+     * @var string $bind mantiene i segnaposto per i parametri reali alla query da effettuare
+     */
     protected $bind;
+    /**
+     *
+     * @var bool $autoincremento indica se la tabella dove si sta lavorando utilizza l'auto increment
+     */
     protected $autoincremento=FALSE;
+    /**
+     * Costruttore di Fdb
+     */
     public function __construct(){
         require("includes/config.php");
         //si crea una stringa con il nome dell'host e del database
@@ -28,11 +51,22 @@ Class Fdb{
             die("Attenzione..! \n Errore durante la connessione al database: ".$error->getMessage());
         }
     }
+    /**
+     * Setta i parametri per la prossima query da effettuare
+     * @param string $table tabella/e che sono coinvolte nella prossima query
+     * @param strin|array $dbkey campo/i che sono coinvolti nella prossima query
+     * @param string|array $_bind segnaposti che verranno rimpiazzati dai parametri reali nella prossima query 
+     */
     public function setvariabili($table,$dbkey,$_bind){
         $this->chiavedb=$dbkey;
         $this->tabella=$table;
         $this->bind=$_bind;
     }
+    /**
+     * Inserisce nel database una tupla
+     * @param array $dati contiene come chiavi le stesse dei segnaposto e come valori i parametri reali
+     * @return array 
+     */
     public function insert($dati){
             $query = "INSERT INTO `fantaconte`.$this->tabella $this->chiavedb VALUES $dati";
             $sql=$this->db->prepare($query);
@@ -108,6 +142,11 @@ Class Fdb{
                     return $result;
                 return false;
 	 }
+         /**
+          * Seleziona una rosa nel database
+          * @param string $nomesquadra nome della squadra 
+          * @return array Array che contiene la rosa
+          */
     public function queryRosa($nomesquadra){
         $sql="SELECT "."`giocatori`.`id`,`nome`,`cognome`,`squadra_reale`,`ruolo`,`valore`,`voto`"." FROM ".$this->tabella." WHERE ";
         $sql=$sql."`rosa`.id=`giocatori`.id AND `rosa`.squadra='$nomesquadra'";
@@ -116,7 +155,12 @@ Class Fdb{
         $result=$query->fetchAll();
         return $result;
     }
-    
+    /**
+     * Restituisce una formazione
+     * @param string $nomesquadra nome della squadra della formazione
+     * @param string $modulo modulo della formazione
+     * @return array Array contenente la formazione
+     */
     public function queryFormazione($nomesquadra,$modulo){
         $sql="SELECT "."`titolari`"." FROM ".$this->tabella." WHERE ";
         $sql=$sql."` modulo`='$modulo' AND `squadra`='$nomesquadra'";
@@ -125,6 +169,12 @@ Class Fdb{
         $result=$query->fetchAll();
         return $result;
     }
+    /**
+     * Aggiorna il voto dei giocatori
+     * @param int $voto intero che identifica il nuovo voto del giocatore
+     * @param int $id intero che identifica l'id del giocatore
+     * @return array Array contenente voto e id del giocatore
+     */
     public function update($voto,$id){
                 $sql = "UPDATE "."`Giocatori`"." SET "."`voto`"."=".$voto." WHERE "."`id`"."=".$id;
 	 	$query=$this->db->prepare($sql);
@@ -132,6 +182,11 @@ Class Fdb{
 	 	$result=$query->rowCount();
 	 	return $result;
     }
+    /**
+     * Elimina parte di una tabella
+     * @param string $valore paragone della query
+     * @return array Array che contiene il risultato della query
+     */
     public function delete($valore){
                 $sql = "DELETE FROM ".$this->tabella." WHERE ".$this->chiavedb."=".$this->bind;
 	 	$query=$this->db->prepare($sql);
@@ -140,6 +195,11 @@ Class Fdb{
 	 	$result=$query->rowCount();
 	 	return $result;  
     }
+    /**
+     * Elimina la squadra da una tabella
+     * @param string $valore paragone della query 
+     * @return array Array che contiene il risultato della query
+     */
     public function deleteRighe($valore){ 
         $sql="DELETE FROM ".$this->tabella." WHERE ";
         $sql=$sql."`squadra`='$valore'";
@@ -148,7 +208,11 @@ Class Fdb{
         $result=$query->rowCount();
         return $result;
     }
-    
+    /**
+     * Elimina un utente da una tabella
+     * @param string $valore paragone della query 
+     * @return array Array che contiene il risultato della query
+     */
     public function deleteUtente($valore){ 
         $sql="DELETE FROM ".$this->tabella." WHERE ";
         $sql=$sql."`email`='$valore'";
@@ -158,6 +222,9 @@ Class Fdb{
         $result=$query->rowCount();
         return $result;
     }
+    /*
+     * Restituisce l'intero database
+     */
     public function getDataBase(){
         return $this->db;
     }

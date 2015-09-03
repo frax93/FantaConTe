@@ -1,13 +1,15 @@
 <?php
 /**
- * Description of Mercato
+ * Classe FMercato che gestisce l'interazione con il database che ha come oggetto i giocatori
  * @package Foundation
  * @author Francesco Murador
  * @author Francesco Maione
  * @author Michele Taranta
  */
 class FMercato extends Fdb {
-
+        /**
+         * Costruttore di FMercato
+         */
 	public function __construct()
 	{
 		$this->autoincremento = TRUE;
@@ -16,20 +18,31 @@ class FMercato extends Fdb {
 		$this->chiavedb="(nome,cognome,ruolo,squadra_reale,valore,voto,giocato)";
 		$this->bind="(:nome,:cognome,:ruolo,:squadra_reale,:valore,:voto,:giocato)";
 	}
-
+        /**
+         * Restituisce i giocatori che si trovano nel database
+         * @return array Array che contiene i giocatori del database
+         */
 	public function getGiocatori(){
 		$this->db->setvariabili($this->tabella,"id",""); //query per ottenere i 434 giocatori
 	        return $this->db->queryGenerica("*","");
 	}
-	
-        //prende ID giocatore e ritorna tutte le info del giocatore
+        /**
+         * Restituisce un giocatore con tutte le sue informazioni
+         * @param int $_id intero che identifica l'id del giocatore 
+         * @return array Array che contiene le info del giocatore
+         */
         public function getGiocatoreById($_id){
             $this->db->setvariabili($this->tabella,"id",":id");
             //query per ottenere un solo giocatore
 	    return $this->db->queryGenerica("*","=",$_id);
                     
         }
-	//prende DGiocatore e cambia voto
+        /**
+         * Permette l'update del voto di un giocatore
+         * @param int $voto intero che rappresenta il nuovo voto da apportare al giocatore
+         * @param int $id intero che identifica l'id del giocatore
+         * @return array Array che contiene il nuovo voto e l'id del giocatore
+         */
         public function updateVoto($voto,$id){
             $this->setvariabili($this->tabella,"`voto`", "");
             return $this->db->update($voto,$id);
