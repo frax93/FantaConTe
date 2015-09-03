@@ -7,6 +7,10 @@
  * @author Michele Taranta
  */
 class CRegistrazione {
+    /**
+     * Controlla se l'utente è registrato o meno
+     * @return boolean
+     */
     public function getUtenteRegistrato() {
         $autenticato=false;
         $session=USingleton::getInstance('USession');
@@ -31,9 +35,7 @@ class CRegistrazione {
     /**
      * Controlla se una coppia username e password corrispondono ad un utente regirtrato ed in tal caso impostano le variabili di sessione relative all'autenticazione
      *
-     * @param string $username
-     * @param string $password
-     * @return boolean
+     * @return mixed
      */
     public function login() {
         $VRegistrazione= USingleton::getInstance('VRegistrazione');
@@ -57,7 +59,6 @@ class CRegistrazione {
                     return true;
                  }
                 else 
-                    //Account non attivato dare errore
                     throw new Exception("Utente non attivato");
             }
             else{
@@ -172,10 +173,16 @@ class CRegistrazione {
         $session->cancellaValore('email');
         $session->cancellaValore('tipo_utente');    
     }
+    /*
+     * 
+     */
     public function tutorial(){
      $VRegistrazione=USingleton::getInstance('VRegistrazione');
      return $VRegistrazione->processaTemplate("registrati_tutorial");
     }  
+    /*
+     * 
+     */
     public function controllaemail(){
         $email=$_REQUEST['email'];
         $esiste=0;
@@ -188,7 +195,7 @@ class CRegistrazione {
     }
     /**
      * Smista le richieste ai relativi metodi della classe
-     * 
+     * PELATO DI MERDA
      * @return mixed
      */
     public function mux() {
