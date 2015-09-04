@@ -1,0 +1,2383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; Compilation errors
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">FantaConTe</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">174</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">Navigation</li>
+                                                                            <li><a href="#Controller\CAmministratore.php"><i class="icon-file"></i> Controller\CAmministratore.php</a></li>
+                                                                                                    <li><a href="#Controller\CClassifica.php"><i class="icon-file"></i> Controller\CClassifica.php</a></li>
+                                                                                                    <li><a href="#Controller\CFormazione.php"><i class="icon-file"></i> Controller\CFormazione.php</a></li>
+                                                                                                    <li><a href="#Controller\CHome.php"><i class="icon-file"></i> Controller\CHome.php</a></li>
+                                                                                                    <li><a href="#Controller\CMercato.php"><i class="icon-file"></i> Controller\CMercato.php</a></li>
+                                                                                                    <li><a href="#Controller\CRegistrazione.php"><i class="icon-file"></i> Controller\CRegistrazione.php</a></li>
+                                                                                                    <li><a href="#Controller\CSquadra.php"><i class="icon-file"></i> Controller\CSquadra.php</a></li>
+                                                                                                    <li><a href="#Domain\DClassifica.php"><i class="icon-file"></i> Domain\DClassifica.php</a></li>
+                                                                                                    <li><a href="#Domain\DFormazione.php"><i class="icon-file"></i> Domain\DFormazione.php</a></li>
+                                                                                                    <li><a href="#Domain\DGiocatore.php"><i class="icon-file"></i> Domain\DGiocatore.php</a></li>
+                                                                                                    <li><a href="#Domain\DSquadra.php"><i class="icon-file"></i> Domain\DSquadra.php</a></li>
+                                                                                                    <li><a href="#Domain\DUtente.php"><i class="icon-file"></i> Domain\DUtente.php</a></li>
+                                                                                                    <li><a href="#Foundation\FClassifica.php"><i class="icon-file"></i> Foundation\FClassifica.php</a></li>
+                                                                                                    <li><a href="#Foundation\Fdb.php"><i class="icon-file"></i> Foundation\Fdb.php</a></li>
+                                                                                                    <li><a href="#Foundation\FFormazione.php"><i class="icon-file"></i> Foundation\FFormazione.php</a></li>
+                                                                                                    <li><a href="#Foundation\FMercato.php"><i class="icon-file"></i> Foundation\FMercato.php</a></li>
+                                                                                                    <li><a href="#Foundation\FRosa.php"><i class="icon-file"></i> Foundation\FRosa.php</a></li>
+                                                                                                    <li><a href="#Foundation\FSquadra.php"><i class="icon-file"></i> Foundation\FSquadra.php</a></li>
+                                                                                                    <li><a href="#Foundation\FUtente.php"><i class="icon-file"></i> Foundation\FUtente.php</a></li>
+                                                                                                    <li><a href="#includes\autoload.inc.php"><i class="icon-file"></i> includes\autoload.inc.php</a></li>
+                                                                                                                                                            <li><a href="#index.php"><i class="icon-file"></i> index.php</a></li>
+                                                                                                    <li><a href="#lib\smarty\Config_File.class.php"><i class="icon-file"></i> lib\smarty\Config_File.class.php</a></li>
+                                                                                                                                                                                                                    <li><a href="#lib\smarty\internals\core.create_dir_structure.php"><i class="icon-file"></i> lib\smarty\internals\core.create_dir_structure.php</a></li>
+                                                                                                                                                                                                                    <li><a href="#lib\smarty\internals\core.get_microtime.php"><i class="icon-file"></i> lib\smarty\internals\core.get_microtime.php</a></li>
+                                                                                                                                                                                                                                                                            <li><a href="#lib\smarty\internals\core.load_plugins.php"><i class="icon-file"></i> lib\smarty\internals\core.load_plugins.php</a></li>
+                                                                                                    <li><a href="#lib\smarty\internals\core.load_resource_plugin.php"><i class="icon-file"></i> lib\smarty\internals\core.load_resource_plugin.php</a></li>
+                                                                                                    <li><a href="#lib\smarty\internals\core.process_cached_inserts.php"><i class="icon-file"></i> lib\smarty\internals\core.process_cached_inserts.php</a></li>
+                                                                                                                                                                                                                                                                                                                                    <li><a href="#lib\smarty\internals\core.run_insert_handler.php"><i class="icon-file"></i> lib\smarty\internals\core.run_insert_handler.php</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li><a href="#lib\smarty\plugins\function.html_checkboxes.php"><i class="icon-file"></i> lib\smarty\plugins\function.html_checkboxes.php</a></li>
+                                                                                                                                                            <li><a href="#lib\smarty\plugins\function.html_options.php"><i class="icon-file"></i> lib\smarty\plugins\function.html_options.php</a></li>
+                                                                                                    <li><a href="#lib\smarty\plugins\function.html_radios.php"><i class="icon-file"></i> lib\smarty\plugins\function.html_radios.php</a></li>
+                                                                                                                                                                                                                    <li><a href="#lib\smarty\plugins\function.html_table.php"><i class="icon-file"></i> lib\smarty\plugins\function.html_table.php</a></li>
+                                                                                                                                                                                                                                                                                                                                    <li><a href="#lib\smarty\plugins\modifier.capitalize.php"><i class="icon-file"></i> lib\smarty\plugins\modifier.capitalize.php</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li><a href="#lib\smarty\plugins\modifier.escape.php"><i class="icon-file"></i> lib\smarty\plugins\modifier.escape.php</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li><a href="#lib\smarty\plugins\outputfilter.trimwhitespace.php"><i class="icon-file"></i> lib\smarty\plugins\outputfilter.trimwhitespace.php</a></li>
+                                                                                                                                                                                                                    <li><a href="#lib\smarty\Smarty.class.php"><i class="icon-file"></i> lib\smarty\Smarty.class.php</a></li>
+                                                                                                    <li><a href="#lib\smarty\Smarty_Compiler.class.php"><i class="icon-file"></i> lib\smarty\Smarty_Compiler.class.php</a></li>
+                                                                                                    <li><a href="#templates\main\templates_c\%%07^078^0781633F%%Amministratore.tpl.php"><i class="icon-file"></i> templates\main\templates_c\%%07^078^0781633F%%Amministratore.tpl.php</a></li>
+                                                                                                    <li><a href="#templates\main\templates_c\%%2D^2DE^2DE60DED%%formazione.tpl.php"><i class="icon-file"></i> templates\main\templates_c\%%2D^2DE^2DE60DED%%formazione.tpl.php</a></li>
+                                                                                                    <li><a href="#templates\main\templates_c\%%30^30B^30B36045%%registrati_tutorial.tpl.php"><i class="icon-file"></i> templates\main\templates_c\%%30^30B^30B36045%%registrati_tutorial.tpl.php</a></li>
+                                                                                                    <li><a href="#templates\main\templates_c\%%56^56D^56D69BC2%%squadra.tpl.php"><i class="icon-file"></i> templates\main\templates_c\%%56^56D^56D69BC2%%squadra.tpl.php</a></li>
+                                                                                                    <li><a href="#templates\main\templates_c\%%85^858^858F1615%%registrati_success.tpl.php"><i class="icon-file"></i> templates\main\templates_c\%%85^858^858F1615%%registrati_success.tpl.php</a></li>
+                                                                                                    <li><a href="#templates\main\templates_c\%%86^864^8644F0D6%%home.tpl.php"><i class="icon-file"></i> templates\main\templates_c\%%86^864^8644F0D6%%home.tpl.php</a></li>
+                                                                                                    <li><a href="#templates\main\templates_c\%%93^93F^93FDC725%%loginfallito.tpl.php"><i class="icon-file"></i> templates\main\templates_c\%%93^93F^93FDC725%%loginfallito.tpl.php</a></li>
+                                                                                                    <li><a href="#templates\main\templates_c\%%99^990^99064DF2%%mercato.tpl.php"><i class="icon-file"></i> templates\main\templates_c\%%99^990^99064DF2%%mercato.tpl.php</a></li>
+                                                                                                    <li><a href="#templates\main\templates_c\%%9A^9AE^9AE631A0%%registrati_reg.tpl.php"><i class="icon-file"></i> templates\main\templates_c\%%9A^9AE^9AE631A0%%registrati_reg.tpl.php</a></li>
+                                                                                                    <li><a href="#templates\main\templates_c\%%D6^D67^D6716266%%classifica.tpl.php"><i class="icon-file"></i> templates\main\templates_c\%%D6^D67^D6716266%%classifica.tpl.php</a></li>
+                                                                                                    <li><a href="#Utility\USession.php"><i class="icon-file"></i> Utility\USession.php</a></li>
+                                                                                                    <li><a href="#Utility\USingleton.php"><i class="icon-file"></i> Utility\USingleton.php</a></li>
+                                                                                                    <li><a href="#View\VAmministratore.php"><i class="icon-file"></i> View\VAmministratore.php</a></li>
+                                                                                                    <li><a href="#View\VClassifica.php"><i class="icon-file"></i> View\VClassifica.php</a></li>
+                                                                                                    <li><a href="#View\VFormazione.php"><i class="icon-file"></i> View\VFormazione.php</a></li>
+                                                                                                    <li><a href="#View\VHome.php"><i class="icon-file"></i> View\VHome.php</a></li>
+                                                                                                    <li><a href="#View\View.php"><i class="icon-file"></i> View\View.php</a></li>
+                                                                                                    <li><a href="#View\VMercato.php"><i class="icon-file"></i> View\VMercato.php</a></li>
+                                                                                                    <li><a href="#View\VRegistrazione.php"><i class="icon-file"></i> View\VRegistrazione.php</a></li>
+                                                                                                    <li><a href="#View\VSquadra.php"><i class="icon-file"></i> View\VSquadra.php</a></li>
+                                                                    </ul>
+        </div>
+
+        <div class="span10 offset2">
+            <ul class="breadcrumb">
+                <li><a href="../"><i class="icon-remove-sign"></i></a><span class="divider">\</span></li>
+                <li>Compilation Errors</li>
+            </ul>
+
+            
+                            <div class="package-contents">
+                                            <a name="Controller\CAmministratore.php" id="Controller\CAmministratore.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Controller\CAmministratore.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Controller\CClassifica.php" id="Controller\CClassifica.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Controller\CClassifica.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Controller\CFormazione.php" id="Controller\CFormazione.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Controller\CFormazione.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Controller\CHome.php" id="Controller\CHome.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Controller\CHome.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Controller\CMercato.php" id="Controller\CMercato.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Controller\CMercato.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Controller\CRegistrazione.php" id="Controller\CRegistrazione.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Controller\CRegistrazione.php
+                            <small style="float: right;padding-right: 10px;">3</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>116</td>
+                                        <td>Argument $_utente is missing from the Docblock of invia_email</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>116</td>
+                                        <td>No summary for method invia_email()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Controller\CSquadra.php" id="Controller\CSquadra.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Controller\CSquadra.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Domain\DClassifica.php" id="Domain\DClassifica.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Domain\DClassifica.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Domain\DFormazione.php" id="Domain\DFormazione.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Domain\DFormazione.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Domain\DGiocatore.php" id="Domain\DGiocatore.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Domain\DGiocatore.php
+                            <small style="float: right;padding-right: 10px;">8</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>55</td>
+                                        <td>The type for the param tag $_id in __construct() is either &quot;type&quot; or &quot;unknown&quot;; isn&#039;t this an IDE default?</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>55</td>
+                                        <td>The type for the param tag $_nome in __construct() is either &quot;type&quot; or &quot;unknown&quot;; isn&#039;t this an IDE default?</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>55</td>
+                                        <td>The type for the param tag $_cognome in __construct() is either &quot;type&quot; or &quot;unknown&quot;; isn&#039;t this an IDE default?</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>55</td>
+                                        <td>The type for the param tag $_ruolo in __construct() is either &quot;type&quot; or &quot;unknown&quot;; isn&#039;t this an IDE default?</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>55</td>
+                                        <td>The type for the param tag $_squadra_reale in __construct() is either &quot;type&quot; or &quot;unknown&quot;; isn&#039;t this an IDE default?</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>55</td>
+                                        <td>The type for the param tag $_valore in __construct() is either &quot;type&quot; or &quot;unknown&quot;; isn&#039;t this an IDE default?</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>55</td>
+                                        <td>The type for the param tag $_voto in __construct() is either &quot;type&quot; or &quot;unknown&quot;; isn&#039;t this an IDE default?</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Domain\DSquadra.php" id="Domain\DSquadra.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Domain\DSquadra.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Domain\DUtente.php" id="Domain\DUtente.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Domain\DUtente.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Foundation\FClassifica.php" id="Foundation\FClassifica.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Foundation\FClassifica.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Foundation\Fdb.php" id="Foundation\Fdb.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Foundation\Fdb.php
+                            <small style="float: right;padding-right: 10px;">2</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>228</td>
+                                        <td>No summary for method getDataBase()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Foundation\FFormazione.php" id="Foundation\FFormazione.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Foundation\FFormazione.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Foundation\FMercato.php" id="Foundation\FMercato.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Foundation\FMercato.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Foundation\FRosa.php" id="Foundation\FRosa.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Foundation\FRosa.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Foundation\FSquadra.php" id="Foundation\FSquadra.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Foundation\FSquadra.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Foundation\FUtente.php" id="Foundation\FUtente.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Foundation\FUtente.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="includes\autoload.inc.php" id="includes\autoload.inc.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            includes\autoload.inc.php
+                            <small style="float: right;padding-right: 10px;">3</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>2</td>
+                                        <td>Argument $class_name is missing from the Docblock of autoload</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>2</td>
+                                        <td>No summary for function \autoload()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="index.php" id="index.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            index.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="lib\smarty\Config_File.class.php" id="lib\smarty\Config_File.class.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            lib\smarty\Config_File.class.php
+                            <small style="float: right;padding-right: 10px;">4</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>348</td>
+                                        <td>No summary for method _set_config_var()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>382</td>
+                                        <td>No summary for method _trigger_error_msg()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>63</td>
+                                        <td>No summary for property $_config_path</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>64</td>
+                                        <td>No summary for property $_config_data</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="lib\smarty\internals\core.create_dir_structure.php" id="lib\smarty\internals\core.create_dir_structure.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            lib\smarty\internals\core.create_dir_structure.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>16</td>
+                                        <td>Argument $smarty is missing from the Docblock of smarty_core_create_dir_structure</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="lib\smarty\internals\core.get_microtime.php" id="lib\smarty\internals\core.get_microtime.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            lib\smarty\internals\core.get_microtime.php
+                            <small style="float: right;padding-right: 10px;">2</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>12</td>
+                                        <td>Argument $params is missing from the Docblock of smarty_core_get_microtime</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>12</td>
+                                        <td>Argument $smarty is missing from the Docblock of smarty_core_get_microtime</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="lib\smarty\internals\core.load_plugins.php" id="lib\smarty\internals\core.load_plugins.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            lib\smarty\internals\core.load_plugins.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>16</td>
+                                        <td>Argument $smarty is missing from the Docblock of smarty_core_load_plugins</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="lib\smarty\internals\core.load_resource_plugin.php" id="lib\smarty\internals\core.load_resource_plugin.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            lib\smarty\internals\core.load_resource_plugin.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>16</td>
+                                        <td>Argument $smarty is missing from the Docblock of smarty_core_load_resource_plugin</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="lib\smarty\internals\core.process_cached_inserts.php" id="lib\smarty\internals\core.process_cached_inserts.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            lib\smarty\internals\core.process_cached_inserts.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>14</td>
+                                        <td>Argument $smarty is missing from the Docblock of smarty_core_process_cached_inserts</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="lib\smarty\internals\core.run_insert_handler.php" id="lib\smarty\internals\core.run_insert_handler.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            lib\smarty\internals\core.run_insert_handler.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>14</td>
+                                        <td>Argument $smarty is missing from the Docblock of smarty_core_run_insert_handler</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="lib\smarty\plugins\function.html_checkboxes.php" id="lib\smarty\plugins\function.html_checkboxes.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            lib\smarty\plugins\function.html_checkboxes.php
+                            <small style="float: right;padding-right: 10px;">8</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>126</td>
+                                        <td>Argument $name is missing from the Docblock of smarty_function_html_checkboxes_output</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>126</td>
+                                        <td>Argument $value is missing from the Docblock of smarty_function_html_checkboxes_output</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>126</td>
+                                        <td>Argument $output is missing from the Docblock of smarty_function_html_checkboxes_output</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>126</td>
+                                        <td>Argument $selected is missing from the Docblock of smarty_function_html_checkboxes_output</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>126</td>
+                                        <td>Argument $extra is missing from the Docblock of smarty_function_html_checkboxes_output</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>126</td>
+                                        <td>Argument $separator is missing from the Docblock of smarty_function_html_checkboxes_output</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>126</td>
+                                        <td>Argument $labels is missing from the Docblock of smarty_function_html_checkboxes_output</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>126</td>
+                                        <td>No summary for function \smarty_function_html_checkboxes_output()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="lib\smarty\plugins\function.html_options.php" id="lib\smarty\plugins\function.html_options.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            lib\smarty\plugins\function.html_options.php
+                            <small style="float: right;padding-right: 10px;">8</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>98</td>
+                                        <td>Argument $key is missing from the Docblock of smarty_function_html_options_optoutput</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>98</td>
+                                        <td>Argument $value is missing from the Docblock of smarty_function_html_options_optoutput</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>98</td>
+                                        <td>Argument $selected is missing from the Docblock of smarty_function_html_options_optoutput</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>98</td>
+                                        <td>No summary for function \smarty_function_html_options_optoutput()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>111</td>
+                                        <td>Argument $key is missing from the Docblock of smarty_function_html_options_optgroup</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>111</td>
+                                        <td>Argument $values is missing from the Docblock of smarty_function_html_options_optgroup</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>111</td>
+                                        <td>Argument $selected is missing from the Docblock of smarty_function_html_options_optgroup</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>111</td>
+                                        <td>No summary for function \smarty_function_html_options_optgroup()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="lib\smarty\plugins\function.html_radios.php" id="lib\smarty\plugins\function.html_radios.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            lib\smarty\plugins\function.html_radios.php
+                            <small style="float: right;padding-right: 10px;">9</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>130</td>
+                                        <td>Argument $name is missing from the Docblock of smarty_function_html_radios_output</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>130</td>
+                                        <td>Argument $value is missing from the Docblock of smarty_function_html_radios_output</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>130</td>
+                                        <td>Argument $output is missing from the Docblock of smarty_function_html_radios_output</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>130</td>
+                                        <td>Argument $selected is missing from the Docblock of smarty_function_html_radios_output</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>130</td>
+                                        <td>Argument $extra is missing from the Docblock of smarty_function_html_radios_output</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>130</td>
+                                        <td>Argument $separator is missing from the Docblock of smarty_function_html_radios_output</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>130</td>
+                                        <td>Argument $labels is missing from the Docblock of smarty_function_html_radios_output</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>130</td>
+                                        <td>Argument $label_ids is missing from the Docblock of smarty_function_html_radios_output</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>130</td>
+                                        <td>No summary for function \smarty_function_html_radios_output()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="lib\smarty\plugins\function.html_table.php" id="lib\smarty\plugins\function.html_table.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            lib\smarty\plugins\function.html_table.php
+                            <small style="float: right;padding-right: 10px;">4</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>124</td>
+                                        <td>Argument $name is missing from the Docblock of smarty_function_html_table_cycle</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>124</td>
+                                        <td>Argument $var is missing from the Docblock of smarty_function_html_table_cycle</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>124</td>
+                                        <td>Argument $no is missing from the Docblock of smarty_function_html_table_cycle</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>124</td>
+                                        <td>No summary for function \smarty_function_html_table_cycle()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="lib\smarty\plugins\modifier.capitalize.php" id="lib\smarty\plugins\modifier.capitalize.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            lib\smarty\plugins\modifier.capitalize.php
+                            <small style="float: right;padding-right: 10px;">4</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>21</td>
+                                        <td>Argument $uc_digits is missing from the Docblock of smarty_modifier_capitalize</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>27</td>
+                                        <td>Argument $string is missing from the Docblock of smarty_modifier_capitalize_ucfirst</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>27</td>
+                                        <td>Argument $uc_digits is missing from the Docblock of smarty_modifier_capitalize_ucfirst</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>27</td>
+                                        <td>No summary for function \smarty_modifier_capitalize_ucfirst()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="lib\smarty\plugins\modifier.escape.php" id="lib\smarty\plugins\modifier.escape.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            lib\smarty\plugins\modifier.escape.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>22</td>
+                                        <td>Argument $char_set is missing from the Docblock of smarty_modifier_escape</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="lib\smarty\plugins\outputfilter.trimwhitespace.php" id="lib\smarty\plugins\outputfilter.trimwhitespace.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            lib\smarty\plugins\outputfilter.trimwhitespace.php
+                            <small style="float: right;padding-right: 10px;">4</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>64</td>
+                                        <td>Argument $search_str is missing from the Docblock of smarty_outputfilter_trimwhitespace_replace</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>64</td>
+                                        <td>Argument $replace is missing from the Docblock of smarty_outputfilter_trimwhitespace_replace</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>64</td>
+                                        <td>Argument $subject is missing from the Docblock of smarty_outputfilter_trimwhitespace_replace</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>64</td>
+                                        <td>No summary for function \smarty_outputfilter_trimwhitespace_replace()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="lib\smarty\Smarty.class.php" id="lib\smarty\Smarty.class.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            lib\smarty\Smarty.class.php
+                            <small style="float: right;padding-right: 10px;">19</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>64</td>
+                                        <td>No summary for class \Smarty</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>612</td>
+                                        <td>Argument $merge is missing from the Docblock of append</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>652</td>
+                                        <td>Argument $merge is missing from the Docblock of append_by_ref</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>690</td>
+                                        <td>Argument $cacheable is missing from the Docblock of register_function</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>690</td>
+                                        <td>Argument $cache_attrs is missing from the Docblock of register_function</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>741</td>
+                                        <td>Argument $cacheable is missing from the Docblock of register_block</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>741</td>
+                                        <td>Argument $cache_attrs is missing from the Docblock of register_block</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>763</td>
+                                        <td>Argument $cacheable is missing from the Docblock of register_compiler_function</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>1450</td>
+                                        <td>Argument $cache_include_path is missing from the Docblock of _compile_source</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>1828</td>
+                                        <td>Argument $match is missing from the Docblock of _process_compiled_include_callback</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>1847</td>
+                                        <td>Argument $params is missing from the Docblock of _smarty_include</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>1847</td>
+                                        <td>No summary for method _smarty_include()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>1897</td>
+                                        <td>Argument $cache_serial is missing from the Docblock of _smarty_cache_attrs</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>1897</td>
+                                        <td>Argument $count is missing from the Docblock of _smarty_cache_attrs</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>1920</td>
+                                        <td>Argument $filename is missing from the Docblock of _include</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>1920</td>
+                                        <td>Argument $once is missing from the Docblock of _include</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>1920</td>
+                                        <td>Argument $params is missing from the Docblock of _include</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>1934</td>
+                                        <td>Argument $code is missing from the Docblock of _eval</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>1934</td>
+                                        <td>Argument $params is missing from the Docblock of _eval</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="lib\smarty\Smarty_Compiler.class.php" id="lib\smarty\Smarty_Compiler.class.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            lib\smarty\Smarty_Compiler.class.php
+                            <small style="float: right;padding-right: 10px;">44</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>756</td>
+                                        <td>Argument $output is missing from the Docblock of _compile_custom_tag</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>1406</td>
+                                        <td>Argument $type is missing from the Docblock of _compile_arg_list</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>1406</td>
+                                        <td>Argument $name is missing from the Docblock of _compile_arg_list</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>1406</td>
+                                        <td>Argument $attrs is missing from the Docblock of _compile_arg_list</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>1406</td>
+                                        <td>Argument $cache_code is missing from the Docblock of _compile_arg_list</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>1406</td>
+                                        <td>No summary for method _compile_arg_list()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>2214</td>
+                                        <td>Argument $type is missing from the Docblock of _push_cacheable_state</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>2214</td>
+                                        <td>Argument $name is missing from the Docblock of _push_cacheable_state</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>2232</td>
+                                        <td>Argument $type is missing from the Docblock of _pop_cacheable_state</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>2232</td>
+                                        <td>Argument $name is missing from the Docblock of _pop_cacheable_state</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>41</td>
+                                        <td>No summary for property $_folded_blocks</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>42</td>
+                                        <td>No summary for property $_current_file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>43</td>
+                                        <td>No summary for property $_current_line_no</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>44</td>
+                                        <td>No summary for property $_capture_stack</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>45</td>
+                                        <td>No summary for property $_plugin_info</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>46</td>
+                                        <td>No summary for property $_init_smarty_vars</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>47</td>
+                                        <td>No summary for property $_permitted_tokens</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>48</td>
+                                        <td>No summary for property $_db_qstr_regexp</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>49</td>
+                                        <td>No summary for property $_si_qstr_regexp</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>50</td>
+                                        <td>No summary for property $_qstr_regexp</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>51</td>
+                                        <td>No summary for property $_func_regexp</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>52</td>
+                                        <td>No summary for property $_reg_obj_regexp</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>53</td>
+                                        <td>No summary for property $_var_bracket_regexp</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>54</td>
+                                        <td>No summary for property $_num_const_regexp</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>55</td>
+                                        <td>No summary for property $_dvar_guts_regexp</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>56</td>
+                                        <td>No summary for property $_dvar_regexp</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>57</td>
+                                        <td>No summary for property $_cvar_regexp</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>58</td>
+                                        <td>No summary for property $_svar_regexp</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>59</td>
+                                        <td>No summary for property $_avar_regexp</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>60</td>
+                                        <td>No summary for property $_mod_regexp</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>61</td>
+                                        <td>No summary for property $_var_regexp</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>62</td>
+                                        <td>No summary for property $_parenth_param_regexp</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>63</td>
+                                        <td>No summary for property $_func_call_regexp</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>64</td>
+                                        <td>No summary for property $_obj_ext_regexp</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>65</td>
+                                        <td>No summary for property $_obj_start_regexp</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>66</td>
+                                        <td>No summary for property $_obj_params_regexp</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>67</td>
+                                        <td>No summary for property $_obj_call_regexp</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>68</td>
+                                        <td>No summary for property $_cacheable_state</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>69</td>
+                                        <td>No summary for property $_cache_attrs_count</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>70</td>
+                                        <td>No summary for property $_nocache_count</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>71</td>
+                                        <td>No summary for property $_cache_serial</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>72</td>
+                                        <td>No summary for property $_cache_include</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>74</td>
+                                        <td>No summary for property $_strip_depth</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>75</td>
+                                        <td>No summary for property $_additional_newline</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="templates\main\templates_c\%%07^078^0781633F%%Amministratore.tpl.php" id="templates\main\templates_c\%%07^078^0781633F%%Amministratore.tpl.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            templates\main\templates_c\%%07^078^0781633F%%Amministratore.tpl.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="templates\main\templates_c\%%2D^2DE^2DE60DED%%formazione.tpl.php" id="templates\main\templates_c\%%2D^2DE^2DE60DED%%formazione.tpl.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            templates\main\templates_c\%%2D^2DE^2DE60DED%%formazione.tpl.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="templates\main\templates_c\%%30^30B^30B36045%%registrati_tutorial.tpl.php" id="templates\main\templates_c\%%30^30B^30B36045%%registrati_tutorial.tpl.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            templates\main\templates_c\%%30^30B^30B36045%%registrati_tutorial.tpl.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="templates\main\templates_c\%%56^56D^56D69BC2%%squadra.tpl.php" id="templates\main\templates_c\%%56^56D^56D69BC2%%squadra.tpl.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            templates\main\templates_c\%%56^56D^56D69BC2%%squadra.tpl.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="templates\main\templates_c\%%85^858^858F1615%%registrati_success.tpl.php" id="templates\main\templates_c\%%85^858^858F1615%%registrati_success.tpl.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            templates\main\templates_c\%%85^858^858F1615%%registrati_success.tpl.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="templates\main\templates_c\%%86^864^8644F0D6%%home.tpl.php" id="templates\main\templates_c\%%86^864^8644F0D6%%home.tpl.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            templates\main\templates_c\%%86^864^8644F0D6%%home.tpl.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="templates\main\templates_c\%%93^93F^93FDC725%%loginfallito.tpl.php" id="templates\main\templates_c\%%93^93F^93FDC725%%loginfallito.tpl.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            templates\main\templates_c\%%93^93F^93FDC725%%loginfallito.tpl.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="templates\main\templates_c\%%99^990^99064DF2%%mercato.tpl.php" id="templates\main\templates_c\%%99^990^99064DF2%%mercato.tpl.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            templates\main\templates_c\%%99^990^99064DF2%%mercato.tpl.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="templates\main\templates_c\%%9A^9AE^9AE631A0%%registrati_reg.tpl.php" id="templates\main\templates_c\%%9A^9AE^9AE631A0%%registrati_reg.tpl.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            templates\main\templates_c\%%9A^9AE^9AE631A0%%registrati_reg.tpl.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="templates\main\templates_c\%%D6^D67^D6716266%%classifica.tpl.php" id="templates\main\templates_c\%%D6^D67^D6716266%%classifica.tpl.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            templates\main\templates_c\%%D6^D67^D6716266%%classifica.tpl.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Utility\USession.php" id="Utility\USession.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Utility\USession.php
+                            <small style="float: right;padding-right: 10px;">6</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>No summary for class \USession</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>21</td>
+                                        <td>The type for the param tag $_chiave in setValore() is either &quot;type&quot; or &quot;unknown&quot;; isn&#039;t this an IDE default?</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>21</td>
+                                        <td>The type for the param tag $_valore in setValore() is either &quot;type&quot; or &quot;unknown&quot;; isn&#039;t this an IDE default?</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>28</td>
+                                        <td>The type for the param tag $_chiave in cancellaValore() is either &quot;type&quot; or &quot;unknown&quot;; isn&#039;t this an IDE default?</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>36</td>
+                                        <td>The type for the param tag $_chiave in getValore() is either &quot;type&quot; or &quot;unknown&quot;; isn&#039;t this an IDE default?</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Utility\USingleton.php" id="Utility\USingleton.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Utility\USingleton.php
+                            <small style="float: right;padding-right: 10px;">3</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>No summary for class \USingleton</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>29</td>
+                                        <td>Argument $c is missing from the Docblock of getInstance</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="View\VAmministratore.php" id="View\VAmministratore.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            View\VAmministratore.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="View\VClassifica.php" id="View\VClassifica.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            View\VClassifica.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="View\VFormazione.php" id="View\VFormazione.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            View\VFormazione.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="View\VHome.php" id="View\VHome.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            View\VHome.php
+                            <small style="float: right;padding-right: 10px;">3</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>37</td>
+                                        <td>No summary for method PaginaGuest()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>10</td>
+                                        <td>No summary for property $content</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="View\View.php" id="View\View.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            View\View.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>10</td>
+                                        <td>No summary for class \View</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="View\VMercato.php" id="View\VMercato.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            View\VMercato.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="View\VRegistrazione.php" id="View\VRegistrazione.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            View\VRegistrazione.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="View\VSquadra.php" id="View\VSquadra.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            View\VSquadra.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                    </div>
+    </section>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on September 4th, 2015 at 10:39.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

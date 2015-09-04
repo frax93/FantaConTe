@@ -1,0 +1,85 @@
+<?php
+
+/**
+ * Questa è la classe che gestisce l'amministratore
+ * @package Controller
+ * @author Francesco Murador
+ * @author Francesco Maione
+ * @author Michele Taranta
+ */
+
+class CAmministratore{
+    
+         /**
+	 * Smista le varie richieste delegando i metodi corrispondenti.
+	 */
+	public function mux(){
+		$VAmministratore=USingleton::getInstance('VAmministratore');
+		switch ($VAmministratore->getTask()) { 
+			case 'amministratore':
+				return $this->Visualizza();
+                            case 'cambiovoti':
+				return $this->CambiaVoti();
+                }
+	}
+        /**
+         * Permette di visualizzare la tabella di tutti i giocatori del database
+         * @return mixed
+         */
+        public function Visualizza() {
+            $VAmministratore=  USingleton::getInstance('VAmministratore');
+            $Fdb=  USingleton::getInstance('Fdb');
+            $FMercato= USingleton::getInstance('FMercato');
+            $giocatori=$FMercato->getGiocatori();
+            $p=$d=$c=$a=0;
+                    for($i=0;$i<count($giocatori);$i++){
+                    	if($giocatori[$i]['ruolo']=="POR"){
+                           $portieri[$p]=$giocatori[$i];
+                           $p++;
+                         }
+                         if($giocatori[$i]['ruolo']=="DIF"){
+                           $difesa[$d]=$giocatori[$i];
+                           $d++;
+                         }
+                         if($giocatori[$i]['ruolo']=="CEN"){
+                           $centrocampo[$c]=$giocatori[$i];
+                           $c++;
+                         }
+                         if($giocatori[$i]['ruolo']=="ATT"){
+                           $attacco[$a]=$giocatori[$i];
+                           $a++;
+                         }
+                        
+                    }
+            $VAmministratore->impostaDati('portieri',$portieri);
+            $VAmministratore->impostaDati('difesa',$difesa);
+            $VAmministratore->impostaDati('centrocampo',$centrocampo);
+            $VAmministratore->impostaDati('attacco',$attacco);
+            $dati=array();
+            for($i=0;$i<=20;$i++){
+                array_push($dati, $i);
+                if($i==6){
+                    $VAmministratore->impostaDati('selected',"selected=");
+                    $VAmministratore->impostaDati('default',$i);
+                }
+            }
+            $VAmministratore->impostaDati('voti',$dati);
+            return $VAmministratore->processaTemplate('Amministratore');
+                    
+    }  
+              /**
+               * Permette all'amministratore di aggiornare i voti dei giocatori
+               */
+                public function CambiaVoti() {
+                    $Vamministratore=USingleton::getInstance('VAmministratore');
+                    $FMercato=  USingleton::getInstance('FMercato');
+                    $dati=$Vamministratore->getVoti();
+                    foreach($dati as $id => $voto) 
+                        $FMercato->updateVoto($voto,$id);
+                    header('location:index.php?controller=Amministratore&task=amministratore');
+                   
+                    
+                }
+}
+?>
+

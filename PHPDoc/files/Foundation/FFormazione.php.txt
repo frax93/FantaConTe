@@ -1,0 +1,64 @@
+<?php
+/**
+ * Classe FFormazione che gestisce l'interazione con il database che ha come oggetto le formazioni
+ * @package Foundation
+ * @author Francesco Murador
+ * @author Francesco Maione
+ * @author Michele Taranta
+ */
+class FFormazione extends Fdb {
+        /**
+         * Costruttore di FFormazione
+         */
+	public function __construct(){
+		$this->db = USingleton::getInstance('Fdb');
+		$this->tabella="`Formazione`";
+		$this->chiavedb="(` modulo`, `titolari`, `squadra`,`fpunteggio`,`countpor`,`countdif`,`countcen`,`countatt`)";
+		$this->bind="(:modulo, :titolari, :squadra, :fpunteggio,:countpor,:countdif, :countcen, :countatt)";
+	}
+	/**
+         * Inserisce una formazione nel database
+         * @param DFormazione $_object Formazione da inserire
+         * @param string $nome_squadra nome della squadra della formazione
+         */
+        public function inserisciFormazione(DFormazione $_object, $nome_squadra){
+		$dati=$_object->getasArray();
+                $this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
+                foreach ($dati['titolari'] as $key => $value) {
+                    $stringa="('$dati[modulo]','$value','$nome_squadra',$dati[fpunteggio],$dati[countpor],$dati[countdif],$dati[countcen],$dati[countatt])";
+                    $this->db->insert($stringa);
+                }	
+	}
+        /**
+         * Restituisce una formazione
+         * @param string $nomesquadra nome della squadra della formazione
+         * @param string $modulo modulo utilizzato dalla formazione
+         * @return array Array contenente la formazione
+         */
+	public function getFormazione($nomesquadra,$modulo){
+		$this->db->setvariabili($this->tabella,"","");
+	        return $this->db->queryFormazione($nomesquadra,$modulo);
+             
+	}
+        /**
+         * Restituisce il punteggio della formazione
+         * @param  string $nomesquadra nome della squadra della formazione
+         * @return array Array contenente il punteggio
+         */
+        public function getpunteggiobySquadra($nomesquadra){
+                $this->db->setvariabili($this->tabella,"squadra",":squadra");
+	        return $this->db->queryGenerica("*","=",$nomesquadra);
+        }
+        /**
+         * Resetta la formazione
+         * @param string $nomesquadra nome della squadra della formazione
+         */
+        public function ResetFormazione($nomesquadra){
+            
+		$this->db->setvariabili($this->tabella,$this->chiavedb,$this->bind);
+	        $this->db->deleteRighe($nomesquadra);
+             
+	}
+	
+}
+?>
