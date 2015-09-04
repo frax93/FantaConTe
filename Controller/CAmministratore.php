@@ -30,6 +30,7 @@ class CAmministratore{
             $VAmministratore=  USingleton::getInstance('VAmministratore');
             $Fdb=  USingleton::getInstance('Fdb');
             $FMercato= USingleton::getInstance('FMercato');
+            $Session=  USingleton::getInstance('USession');
             $giocatori=$FMercato->getGiocatori();
             $p=$d=$c=$a=0;
                     for($i=0;$i<count($giocatori);$i++){
@@ -64,6 +65,8 @@ class CAmministratore{
                 }
             }
             $VAmministratore->impostaDati('voti',$dati);
+            $VAmministratore->impostaDati('title','FantaConTe');
+            $VAmministratore->impostaDati('Benvenuto',$Session->getValore('username'));
             return $VAmministratore->processaTemplate('Amministratore');
                     
     }  

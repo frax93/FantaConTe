@@ -1,10 +1,52 @@
-<?php /* Smarty version 2.6.13, created on 2015-09-03 10:12:23
+<?php /* Smarty version 2.6.13, created on 2015-09-04 10:51:59
          compiled from Amministratore.tpl */ ?>
- <script src="Javascript/jquery.min.js"></script>
-    <script src="Javascript/Elimina.js"></script>
-<div id="main"> 
-    <br>
-    <br>
+ <head>
+    <title><?php echo $this->_tpl_vars['title']; ?>
+</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="stylesheet" href="css/main.css" />
+      <script src="Javascript/jquery.min.js"></script>
+      <script src="Javascript/jquery.scrollex.min.js"></script>
+      <script src="Javascript/jquery.scrolly.min.js"></script>
+      <script src="Javascript/skel.min.js"></script>
+      <script src="Javascript/util.js"></script>
+      <script src="Javascript/Elimina.js"></script>
+      <script src="Javascript/main.js"></script>
+  </head>
+  <body class="landing">
+    <div class="laisias"><br>							
+      <div class="table-wrapper "> <br>
+     <div id="page-wrapper">
+      <!-- Header -->
+      <article id="main">
+	<section class="spotlight">
+	  <div class="content"> </div>
+        </section>
+    </div>
+        <header id="header">
+          <h1><a href="index.php?controller=Classifica&task=nuova"><h2><font color=green><?php echo $this->_tpl_vars['Fanta']; ?>
+</font><font color=white><?php echo $this->_tpl_vars['Con']; ?>
+</font><font color=red><?php echo $this->_tpl_vars['Te']; ?>
+</font></h2></a></h1>
+                      
+	    <nav id="nav">
+    
+	      <ul>
+                  <font color=LIME> Benvenuto <?php echo $this->_tpl_vars['Benvenuto']; ?>
+</font>&nbsp;&nbsp;&nbsp;&nbsp;
+                <li class="special">
+		  <a href="#menu" class="menuToggle"><span>Menu</span></a>
+		  <div id="menu">
+	            <ul>
+                      <li><a href="index.php?controller=Amministratore&task=amministratore">Cambia Voti</a></li>
+		      <li><a href="index.php?controller=Registrazione&task=logout">Log Out</a></li>
+		    </ul>
+		  </div>
+		</li>
+	      </ul>
+	    </nav>	
+        </header>
   <section class="spotlight">
     <div class="image"><img src="images/admin.jpg" alt="" /></div>
     <div class="content">

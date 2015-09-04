@@ -89,19 +89,7 @@ INSERT INTO Rosa (`id`,`squadra`) VALUES (420, 'Collettara F.C.');
 
 INSERT INTO `Squadra`(`nome`, `crediti`, `Cpor`, `Cdif`, `Ccen`, `Catt`) VALUES ('Collettara F.C.',28,3,8,8,6);
 
-INSERT INTO `Formazione`(` modulo`, `titolari`, `squadra`, `fpunteggio`, `countpor`, `countdif`, `countcen`, `countatt`) VALUES ('3-4-3',1,'Collettara F.C.',66,1,3,4,3);
-INSERT INTO `Formazione`(` modulo`, `titolari`, `squadra`, `fpunteggio`, `countpor`, `countdif`, `countcen`, `countatt`) VALUES ('3-4-3',198,'Collettara F.C.',66,1,3,4,3);
-INSERT INTO `Formazione`(` modulo`, `titolari`, `squadra`, `fpunteggio`, `countpor`, `countdif`, `countcen`, `countatt`) VALUES ('3-4-3',200,'Collettara F.C.',66,1,3,4,3);
-INSERT INTO `Formazione`(` modulo`, `titolari`, `squadra`, `fpunteggio`, `countpor`, `countdif`, `countcen`, `countatt`) VALUES ('3-4-3',223,'Collettara F.C.',66,1,3,4,3);
-INSERT INTO `Formazione`(` modulo`, `titolari`, `squadra`, `fpunteggio`, `countpor`, `countdif`, `countcen`, `countatt`) VALUES ('3-4-3',225,'Collettara F.C.',66,1,3,4,3);
-INSERT INTO `Formazione`(` modulo`, `titolari`, `squadra`, `fpunteggio`, `countpor`, `countdif`, `countcen`, `countatt`) VALUES ('3-4-3',356,'Collettara F.C.',66,1,3,4,3);
-INSERT INTO `Formazione`(` modulo`, `titolari`, `squadra`, `fpunteggio`, `countpor`, `countdif`, `countcen`, `countatt`) VALUES ('3-4-3',364,'Collettara F.C.',66,1,3,4,3);
-INSERT INTO `Formazione`(` modulo`, `titolari`, `squadra`, `fpunteggio`, `countpor`, `countdif`, `countcen`, `countatt`) VALUES ('3-4-3',384,'Collettara F.C.',66,1,3,4,3);
-INSERT INTO `Formazione`(` modulo`, `titolari`, `squadra`, `fpunteggio`, `countpor`, `countdif`, `countcen`, `countatt`) VALUES ('3-4-3',66,'Collettara F.C.',66,1,3,4,3);
-INSERT INTO `Formazione`(` modulo`, `titolari`, `squadra`, `fpunteggio`, `countpor`, `countdif`, `countcen`, `countatt`) VALUES ('3-4-3',67,'Collettara F.C.',66,1,3,4,3);
-INSERT INTO `Formazione`(` modulo`, `titolari`, `squadra`, `fpunteggio`, `countpor`, `countdif`, `countcen`, `countatt`) VALUES ('3-4-3',68,'Collettara F.C.',66,1,3,4,3);
-
-INSERT INTO `Classifica`(`email`, `nome_squadra`, `punteggio`) VALUES ('frank.md93@gmail.com','Collettara F.C.',66);
+INSERT INTO `Classifica`(`email`, `nome_squadra`, `punteggio`) VALUES ('frank.md93@gmail.com','Collettara F.C.',0);
 
 INSERT INTO Giocatori (`nome`,`cognome`,`ruolo`,`squadra_reale`,`valore`,`voto`) VALUES ( 'Gianluigi', 'Buffon', 'POR', 'Juventus',19,6 );
 INSERT INTO Giocatori (`nome`,`cognome`,`ruolo`,`squadra_reale`,`valore`,`voto`) VALUES ( 'Morgan', 'De Sanctis', 'POR', 'Roma',17,6); 

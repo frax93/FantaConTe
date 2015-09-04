@@ -23,23 +23,22 @@ class CHome {
       public function impostaPagina() {
         $VHome= USingleton::getInstance('VHome');
         $CRegistrazione=USingleton::getInstance('CRegistrazione');
+        $Session=  USingleton::getInstance('USession');
         $registrato=$CRegistrazione->getUtenteRegistrato();
         $contenuto=$this->mux();
         $VHome->impostaContenuto($contenuto);
            if($registrato) {    
-           try{
-             $fclassifica=USingleton::getInstance('FClassifica');
-             $classifica=$fclassifica->getClassifica();
-             $classifica1=array();
-             foreach($classifica as $key => $class)
+             if($Session->getValore('tipo_utente')=="normale"){
+                $fclassifica=USingleton::getInstance('FClassifica');
+                $classifica=$fclassifica->getClassifica();
+                $classifica1=array();
+                foreach($classifica as $key => $class)
                    array_push($classifica1, $class);
-             $VHome->PaginaRegistrato($classifica1);
-           }
-           catch (Exception $e) {
-             throw new Exception("Errore DB");
-           }
+                $VHome->PaginaRegistrato($classifica1);
+            }
+          else 
+              header("location:index.php?controller=Amministratore&task=amministratore");
         }
-        
         else
             $VHome->PaginaGuest();
       }
