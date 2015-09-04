@@ -73,7 +73,8 @@ $('#email').blur(function () {
        type: "POST",
        url: "index.php?controller=Registrazione&task=Controllaemail&email="+dati['0'],
        success: function(data) {
-           if (data['2']==1) {
+           if(navigator.userAgent.indexOf("Win") != -1){
+            if (data['4']==1) {
              $('#email').css("border","3px solid red");
     	     errori[5]=true;
            }
@@ -82,8 +83,19 @@ $('#email').blur(function () {
              errori[5]=false;
            }
         }
-         });
-        });
+       else if(navigator.userAgent.indexOf("Mac") != -1){
+          if (data['2']==1) {
+             $('#email').css("border","3px solid red");
+    	     errori[5]=true;
+           }
+           else {
+             $('#email').css("border", "2px solid green");
+             errori[5]=false;
+           }
+        }
+        }
+})
+});
 	$('#nome_squadra').blur(function () { 
 	if ($(this).val()=="") {
 		$(this).css("border", "3px solid red");

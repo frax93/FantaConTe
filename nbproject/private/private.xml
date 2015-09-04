@@ -11,6 +11,16 @@
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/xampp/htdocs/FantaConTe/Controller/CAmministratore.php</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/Foundation/Utility/Crea_tabelle.sql</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/Controller/CRegistrazione.php</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/templates/main/templates/attivazione.tpl</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/templates/main/templates/Amministratore.tpl</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/templates/main/templates/classifica.tpl</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/Controller/CHome.php</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/Javascript/Login.js</file>
+            <file>file:/C:/xampp/htdocs/FantaConTe/Domain/DFormazione.php</file>
+        </group>
     </open-files>
 </project-private>
