@@ -162,7 +162,7 @@ class DGiocatore{
            $this->voto=$vot;
     }
     /**
-     * Funzione che restituisce l'array dato dalla trasformazione dell'oggetto Classifica
+     * Funzione che restituisce l'array dato dalla trasformazione dell'oggetto Giocatore
      * @return array Trasforma l'oggetto in un array
      */
      public function getAsArray(){

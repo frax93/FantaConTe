@@ -155,14 +155,7 @@ class DFormazione{
             }
         }
     /**
-     * NON USATA, MURADOR?
-     */
-    public function reset(){
-        $this->settitolari();
-        $this->setpanchina();
-    }
-    /**
-     * Funzione che restituisce l'array dato dalla trasformazione dell'oggetto Classifica
+     * Funzione che restituisce l'array dato dalla trasformazione dell'oggetto Formazione
      * @return array Trasforma l'oggetto in un array
      */
     public function getAsArray(){

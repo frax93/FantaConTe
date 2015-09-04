@@ -242,7 +242,7 @@ class DSquadra {
             $this->Aggiungi_Attaccante($giocatore);
    }
    /**
-     * Funzione che restituisce l'array dato dalla trasformazione dell'oggetto Classifica
+     * Funzione che restituisce l'array dato dalla trasformazione dell'oggetto Squadra
      * @return array Trasforma l'oggetto in un array
      */
     public function getAsArray(){
