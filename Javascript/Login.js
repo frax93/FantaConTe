@@ -7,7 +7,7 @@
 $(document).ready(function() {
    
     var errori=new Array();
-   
+    var pieno=0;
     $('#username').blur(function () { 
 	if (!$(this).val().match(/^[a-zA-Z0-9]{2,30}$/)) {
 		$(this).css("border", "3px solid red");
@@ -16,6 +16,7 @@ $(document).ready(function() {
 	else{
 		$(this).css("border", "2px solid green");
 		errori[0]=false;
+                pieno++;
 	}
 	});
     
@@ -28,6 +29,7 @@ $(document).ready(function() {
 	else{
 		$(this).css("border", "2px solid green");
 		errori[1]=false;
+                pieno++;
 	}
 	});
           
@@ -39,6 +41,7 @@ $(document).ready(function() {
 	else{
 		$(this).css("border", "2px solid green");
 		errori[2]=false;
+                pieno++;
 	}
 	});
     
@@ -50,6 +53,7 @@ $(document).ready(function() {
 	else{
 		$(this).css("border", "");
 		errori[3]=false;
+                pieno++;
 	}
 	});
 	
@@ -57,6 +61,7 @@ $(document).ready(function() {
 	if ( $(this).val()==$('#password').val() && errori[4] ) {
 		$("#password_1,#password").css("border", "2px solid green");
 		errori[4]=false;
+                pieno++;
 	}
 	else{
 		$(this).css("border", "3px solid red");
@@ -81,6 +86,7 @@ $('#email').blur(function () {
            else {
              $('#email').css("border", "2px solid green");
              errori[5]=false;
+             pieno++;
            }
         }
        else if(navigator.userAgent.indexOf("Mac") != -1){
@@ -91,6 +97,7 @@ $('#email').blur(function () {
            else {
              $('#email').css("border", "2px solid green");
              errori[5]=false;
+             pieno++;
            }
         }
         }
@@ -104,14 +111,17 @@ $('#email').blur(function () {
 	else{
 		$(this).css("border", "2px solid green");
 		errori[6]=false;
+                pieno++;
 	}
 	});
 	
 	
 	
 	$('#submit_1').click(function (event) {
-		if ( errori.indexOf(true) >= 0  ) {
+		if ( errori.indexOf(true)>=0 || pieno<7  ){ 
 			var testoerrore="";
+                                if (pieno<7)
+					testoerrore +="- Ci sono dei campi vuoti  \n ";
 				if (errori[0])
 					testoerrore +="- Il campo username contiene caratteri non validi  \n ";
 				if (errori[1])
