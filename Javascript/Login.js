@@ -73,7 +73,7 @@ $('#email').blur(function () {
        type: "POST",
        url: "index.php?controller=Registrazione&task=Controllaemail&email="+dati['0'],
        success: function(data) {
-           if (data['4']==1) {
+           if (data['2']==1) {
              $('#email').css("border","3px solid red");
     	     errori[5]=true;
            }
@@ -103,17 +103,17 @@ $('#email').blur(function () {
 				if (errori[0])
 					testoerrore +="- Il campo username contiene caratteri non validi  \n ";
 				if (errori[1])
-					testoerrore += "- Il campo nome puo contenere da 2 a 20 caratteri testuali, spazi o '\n";
+					testoerrore += "- Il campo nome puo contenere da 2 a 20 caratteri testuali \n";
 				if (errori[2])
-					testoerrore +="- Il campo cognome puo contenere da 2 a 20 caratteri testuali, spazi o '\n";
+					testoerrore +="- Il campo cognome puo contenere da 2 a 20 caratteri testuali \n";
 				if (errori[3])
 					testoerrore +="- Il campo password può contenere da 6 a 20 caratteri alfanumerici e speciali \n";	
 				if (errori[4])
 					testoerrore +="- Le password non corrispondono \n";
 				if (errori[5])
-					testoerrore +="- Hai inserito una email già registrata!";
+					testoerrore +="- Hai inserito una email già registrata! \n";
                                 if (errori[6])
-					testoerrore +="- Il campo nome squadra puo contenere da 2 a 20 caratteri testuali, spazi o '\n";
+					testoerrore +="- Il campo nome squadra puo contenere da 2 a 20 caratteri testuali \n";
                         $("#errore").append(testoerrore);
 			return false;
 		}
