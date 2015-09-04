@@ -42,7 +42,7 @@ class CRegistrazione {
         $login=$VRegistrazione->getDati();
         $FUtente=USingleton::getInstance('FUtente');
         $user=$FUtente->getUtenteByEmail($login['email']);
-        if(isset($user)){
+        if(empty($user)==0){
             $user=$user[0];
             if($user['password']==md5($login['password'])){
                 if($user['stato_attivazione']==="Attivato"){
@@ -65,8 +65,11 @@ class CRegistrazione {
                 return $VRegistrazione->processaTemplate('loginfallito');
             }
         }   
-         else 
-            throw new Exception("Utente non trovato");
+         else {
+            $VRegistrazione->impostaDati('errore','Utente non registrato');
+            $VRegistrazione->impostaDati('fallito','Torna indietro e registrati.');
+            return $VRegistrazione->processaTemplate('loginfallito');
+         }
     return false;
 }
     

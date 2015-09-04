@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS `utente` (
     `codice_attivazione` VARCHAR(13) NOT NULL,
     `stato_attivazione` VARCHAR(11) NOT NULL,
     `tipo_utente` VARCHAR(7) NOT NULL,
-    `squadra` VARCHAR(200) NOT NULL,
+    `squadra` VARCHAR(20) NOT NULL,
     PRIMARY KEY (`email`)
 );
 CREATE TABLE IF NOT EXISTS `Formazione`(

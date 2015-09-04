@@ -36,8 +36,9 @@ class CHome {
                    array_push($classifica1, $class);
                 $VHome->PaginaRegistrato($classifica1);
             }
-          else 
+          else if($Session->getValore('tipo_utente')=="Admin")
               header("location:index.php?controller=Amministratore&task=amministratore");
+          else return $VHome->processaTemplate('loginfallito');
         }
         else
             $VHome->PaginaGuest();
