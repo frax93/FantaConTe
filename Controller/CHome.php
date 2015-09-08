@@ -39,7 +39,11 @@ class CHome {
         else{
             $VHome->PaginaGuest();
             $Session->end();
+<<<<<<< HEAD
         }  
+=======
+        }
+>>>>>>> origin/master
       }
 	/**
 	 * Smista le richieste delegando i corrispondenti controller.

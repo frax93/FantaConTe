@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.13, created on 2015-09-02 16:48:00
+<?php /* Smarty version 2.6.13, created on 2015-09-08 14:47:22
          compiled from squadra.tpl */ ?>
 <script src="Javascript/jquery.min.js"></script>
 <script src="Javascript/Elimina.js"></script>
