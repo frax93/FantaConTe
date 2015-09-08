@@ -51,7 +51,7 @@ class View extends Smarty{
      * @return mixed
      */
     public function processaTemplate($pagina) {
-        return $this->fetch("$pagina".'.tpl');
+        return $this->display("$pagina".'.tpl');
     }
     /**
      * Controlla se nei dati arrivati c'è un task da richiamare
