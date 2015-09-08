@@ -1,6 +1,6 @@
 <?php
 /**
- * Classe VClassifica che recupera i dati dell'amministratore e controlla gli stessi
+ * Classe VClassifica che recupera i dati dalla classifica e controlla gli stessi
  * @package View
  * @author Francesco Murador
  * @author Francesco Maione

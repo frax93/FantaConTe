@@ -1,6 +1,6 @@
 <?php
 /**
- * Classe VRegistrazione che recupera i dati dell'amministratore e controlla gli stessi
+ * Classe VRegistrazione che recupera i dati dalla registrazione e controlla gli stessi
  * @package View
  * @author Francesco Murador
  * @author Francesco Maione

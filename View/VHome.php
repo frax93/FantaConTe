@@ -1,6 +1,6 @@
 <?php
 /**
- * Classe VHome che recupera i dati dell'amministratore e controlla gli stessi
+ * Classe VHome che recupera i dati dalla home e controlla gli stessi
  * @package View
  * @author Francesco Murador
  * @author Francesco Maione

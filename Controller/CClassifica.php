@@ -29,7 +29,6 @@ class CClassifica{
             $FUtente=  USingleton::getInstance('FUtente');
             $Fdb=USingleton::getInstance('Fdb');
             $FFormazione=  USingleton::getInstance('FFormazione');
-            $q=$Fdb->getDataBase();
             $utenti=$FUtente->getUtenti();
             foreach($utenti as $key => $utente){
                 if($utente['tipo_utente']!="Admin"){
@@ -55,7 +54,6 @@ class CClassifica{
                $VClassifica=USingleton::getInstance('VClassifica');
                $FClassifica=USingleton::getInstance('FClassifica');  
                $Fdb=USingleton::getInstance('Fdb');
-               $q=$Fdb->getDataBase();
                $classifica=$FClassifica->getClassifica();
                $classifica1=array();
                foreach($classifica as $key => $class)

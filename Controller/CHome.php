@@ -11,10 +11,7 @@ class CHome {
 	 * Imposta la pagina e verifica anche l'autenticazione.
 	 */
 	public function __construct(){
-		$View = USingleton::getInstance('VHome');
-		//try {
-			$contenuto=$this->mux();
-			echo $contenuto;
+		$this->impostaPagina();
 	}
         /**
          * Metodo che imposta la pagina home iniziale
@@ -25,8 +22,7 @@ class CHome {
         $CRegistrazione=USingleton::getInstance('CRegistrazione');
         $Session=  USingleton::getInstance('USession');
         $registrato=$CRegistrazione->getUtenteRegistrato();
-        $contenuto=$this->mux();
-        $VHome->impostaContenuto($contenuto);
+        $this->mux();
            if($registrato) {    
              if($Session->getValore('tipo_utente')=="normale"){
                 $fclassifica=USingleton::getInstance('FClassifica');
@@ -40,8 +36,10 @@ class CHome {
               header("location:index.php?controller=Amministratore&task=amministratore");
           else return $VHome->processaTemplate('loginfallito');
         }
-        else
+        else{
             $VHome->PaginaGuest();
+            $Session->end();
+        }  
       }
 	/**
 	 * Smista le richieste delegando i corrispondenti controller.
